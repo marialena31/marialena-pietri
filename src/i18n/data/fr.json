@@ -1,0 +1,335 @@
+{
+  "common": {
+    "close": "Fermer"
+  },
+  "nav": {
+    "about": "À propos",
+    "skills": "Compétences",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "contact": "Contact",
+    "references": "Références",
+    "bookMeeting": "Prendre RDV"
+  },
+  "hero": {
+    "title": "Maria-Lena Pietri",
+    "subtitle": "Développeuse Magento Senior & Consultante E-commerce",
+    "experience": "Plus de 8 ans d'expérience en développement Magento et solutions e-commerce",
+    "description": "Spécialisée dans le développement Magento sur mesure, l'optimisation des performances et la stratégie e-commerce",
+    "cta": "Prendre Rendez-vous",
+    "downloadCV": "Télécharger CV"
+  },
+  "about": {
+    "title": "À Propos",
+    "whoAmI": {
+      "title": "Qui suis-je",
+      "content": "Je suis une développeuse Magento passionnée avec une vaste expérience dans la création et l'optimisation de solutions e-commerce. Basée en France, je travaille avec des clients du monde entier pour créer des expériences d'achat en ligne exceptionnelles."
+    },
+    "expertise": {
+      "title": "Mon Expertise",
+      "content": "Je suis spécialisée dans le développement Magento 2, la création de modules personnalisés, l'optimisation des performances et le conseil en e-commerce. Mon approche combine excellence technique et compréhension business."
+    },
+    "languages": {
+      "title": "Langues",
+      "list": [
+        {
+          "language": "Français",
+          "level": "Langue maternelle"
+        },
+        {
+          "language": "Anglais",
+          "level": "Professionnel"
+        },
+        {
+          "language": "Espagnol",
+          "level": "Professionnel"
+        }
+      ]
+    }
+  },
+  "services": {
+    "title": "Mes Services",
+    "subtitle": "Des solutions sur mesure pour votre succès e-commerce",
+    "cta": "En savoir plus",
+    "maintenance": {
+      "title": "Maintenance & Support Magento",
+      "description": "Mises à jour régulières, optimisation des performances et support technique pour maintenir votre plateforme e-commerce."
+    },
+    "development": {
+      "title": "Développement Sur Mesure",
+      "description": "Solutions personnalisées, développement de modules et correction de bugs pour répondre à vos besoins spécifiques."
+    },
+    "migration": {
+      "title": "Mises à Niveau & Migrations",
+      "description": "Transitions en douceur des anciennes versions Magento vers les plus récentes ou migrations de Magento 1 vers Magento 2."
+    },
+    "security": {
+      "title": "Cybersécurité",
+      "description": "Évaluations complètes de sécurité, analyses de vulnérabilités et veille sur les menaces pour protéger votre entreprise."
+    },
+    "management": {
+      "title": "Gestion de Projet",
+      "description": "Gestion experte de projet utilisant les méthodologies Agile/SCRUM, leadership d'équipe et livraison de bout en bout."
+    },
+    "performance": {
+      "title": "Optimisation des Performances",
+      "description": "Optimisation de la vitesse, mise en place du cache et configuration serveur pour des performances optimales."
+    }
+  },
+  "portfolio": {
+    "title": "Portfolio",
+    "subtitle": "Projets Magento et Solutions E-commerce",
+    "viewProject": "Voir le Projet",
+    "projects": {
+      "chausson": {
+        "title": "Chausson Matériaux",
+        "description": "Implémentation complète de Magento 2 pour un leader des matériaux de construction, incluant des fonctionnalités B2B et une gestion complexe du catalogue produits."
+      },
+      "eram": {
+        "title": "ERAM Group",
+        "description": "Solution e-commerce multi-boutiques pour un grand groupe de mode, avec gestion avancée des stocks et expériences d'achat personnalisées."
+      },
+      "whisky": {
+        "title": "La Maison du Whisky",
+        "description": "Plateforme e-commerce sophistiquée pour les spiritueux haut de gamme, incluant la vérification de l'âge, des règles d'expédition complexes et des recommandations personnalisées."
+      },
+      "legrand": {
+        "title": "Legrand",
+        "description": "Solution e-commerce B2B pour un fabricant mondial d'équipements électriques, avec configurations produits complexes et inventaire en temps réel."
+      },
+      "marjane": {
+        "title": "Marjane Mall",
+        "description": "Solution marketplace à grande échelle pour le premier détaillant marocain, supportant plusieurs vendeurs et des capacités de reporting avancées."
+      },
+      "valrhona": {
+        "title": "Valrhona",
+        "description": "Plateforme B2B/B2C premium pour un fabricant de chocolat de luxe, avec tarification complexe, gestion multi-entrepôts et gestion des recettes."
+      }
+    }
+  },
+  "skills": {
+    "title": "Compétences Techniques",
+    "subtitle": "Expertise en Développement Magento et Technologies Associées",
+    "list": [
+      {
+        "skill": "Magento",
+        "level": "Expert"
+      },
+      {
+        "skill": "Adobe Commerce",
+        "level": "Expert"
+      },
+      {
+        "skill": "Cybersécurité",
+        "level": "Avancé"
+      },
+      {
+        "skill": "Gestion de Projet",
+        "level": "Avancé"
+      },
+      {
+        "skill": "E-Commerce",
+        "level": "Expert"
+      }
+    ]
+  },
+  "references": {
+    "title": "Ils m'ont fait confiance",
+    "subtitle": "Des marques de renom avec lesquelles j'ai eu le plaisir de collaborer",
+    "list": [
+      {
+        "reference": "Chausson Matériaux",
+        "description": "Création d'une stratégie cross-canal et lancement de la plateforme e-commerce pour un leader des matériaux de construction."
+      },
+      {
+        "reference": "Valrhona",
+        "description": "Refonte de la plateforme B2B Valrhona Selection avec intégration marketplace Mirakl et API Salesforce."
+      },
+      {
+        "reference": "Legrand",
+        "description": "Conception et développement de la version alpha d'une plateforme B2B Magento 2."
+      },
+      {
+        "reference": "La Maison du Whisky",
+        "description": "Leadership technique de la plateforme Magento 2, focus sur la performance et la sécurité."
+      },
+      {
+        "reference": "Eram Group",
+        "description": "Evolution technique des sites Magento pour Eram, Mellow Yellow et Bocage."
+      },
+      {
+        "reference": "Marjane Mall",
+        "description": "Gestion de l'intégration Magento 2 et déploiement de la marketplace Octopia."
+      }
+    ]
+  },
+  "contact": {
+    "title": "Me Contacter",
+    "description": "Intéressé(e) par une collaboration ? Discutons de votre projet !",
+    "success": "Merci pour votre message ! Je vous répondrai bientôt.",
+    "error": "Une erreur s'est produite lors de l'envoi de votre message. Veuillez réessayer.",
+    "recaptchaError": "Impossible de vérifier que vous êtes humain. Veuillez réessayer.",
+    "form": {
+      "name": "Votre Nom",
+      "email": "Votre Email",
+      "subject": "Sujet",
+      "message": "Message",
+      "send": "Envoyer le Message",
+      "sending": "Envoi en cours...",
+      "characters": "caractères"
+    },
+    "validation": {
+      "nameRequired": "Veuillez saisir votre nom",
+      "emailRequired": "Veuillez saisir votre email",
+      "emailInvalid": "Veuillez saisir une adresse email valide",
+      "subjectRequired": "Veuillez saisir un sujet",
+      "messageRequired": "Veuillez saisir un message"
+    }
+  },
+  "cta": {
+    "title": "Prêt à Transformer Votre Business E-Commerce ?",
+    "description": "Discutons de votre projet et trouvons la solution parfaite.",
+    "email": "Contactez-moi",
+    "call": "Appelez-moi"
+  },
+  "footer": {
+    "followMe": "Me suivre",
+    "legal": "Mentions Légales",
+    "terms": "Conditions Générales",
+    "privacy": "Politique de Confidentialité",
+    "copyright": " Maria-Lena Pietri. Tous droits réservés."
+  },
+  "legal": {
+    "title": "Mentions Légales",
+    "sections": {
+      "identity": {
+        "title": "Identité",
+        "content": "Maria-Lena Pietri\nDéveloppeur Magento & Consultante E-commerce\n30 Allée de la Gâtine\n31770 Colomiers, France\nSIRET: 48374376100056\nN° TVA: FR36483743761\nEmail: contact@marialena-pietri.fr"
+      },
+      "publication": {
+        "title": "Direction de la Publication",
+        "content": "Directeur de la publication : Maria-Lena Pietri\nResponsable de la rédaction : Maria-Lena Pietri"
+      },
+      "hosting": {
+        "title": "Hébergement",
+        "content": "Ce site est hébergé par Netlify Inc.\n44 Montgomery Street, Suite 300\nSan Francisco, California 94104\nÉtats-Unis"
+      },
+      "cookies": {
+        "title": "Gestion des Cookies",
+        "content": "Ce site utilise des cookies techniques essentiels au fonctionnement du site. Ces cookies ne collectent aucune donnée personnelle. Conformément à la législation en vigueur, leur utilisation ne nécessite pas de consentement préalable."
+      },
+      "cnil": {
+        "title": "Protection des Données",
+        "content": "Conformément à la loi « Informatique et Libertés » du 6 janvier 1978 modifiée et au Règlement Général sur la Protection des Données (RGPD), vous disposez d'un droit d'accès, de rectification, de suppression et d'opposition aux données personnelles vous concernant. Pour exercer ces droits, contactez-nous à l'adresse : contact@marialena-pietri.fr"
+      },
+      "intellectual": {
+        "title": "Propriété Intellectuelle",
+        "content": "L'ensemble de ce site relève de la législation française et internationale sur le droit d'auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés. La reproduction de tout ou partie de ce site sur quelque support que ce soit est formellement interdite sauf autorisation expresse de Maria-Lena Pietri."
+      },
+      "credits": {
+        "title": "Crédits",
+        "content": "Conception et développement : Maria-Lena Pietri\nFramework : Gatsby/React\nBibliothèque UI : Material-UI\nIllustrations et logos : Droits réservés à leurs propriétaires respectifs"
+      }
+    }
+  },
+  "terms": {
+    "title": "Conditions Générales de Vente (CGV)",
+    "preamble": {
+      "title": "Préambule",
+      "content": "Les présentes conditions générales de vente (CGV) s'appliquent à toutes les prestations réalisées par Maria-Lena Pietri, freelance spécialisée en maintenance de sites Magento, e-commerce, et développement web, pour une clientèle exclusivement professionnelle."
+    },
+    "provider": {
+      "title": "Identité de la prestataire",
+      "name": "Nom : Maria-Lena Pietri",
+      "address": "Adresse : 30 Allée de la Gâtine, 31770 Colomiers, France",
+      "siret": "48374376100056",
+      "email": "Email : contact@marialena-pietri.fr",
+      "vat": "Numéro TVA intracommunautaire : FR36483743761"
+    },
+    "services": {
+      "title": "Prestations proposées",
+      "list": [
+        "Maintenance corrective et évolutive des sites Magento",
+        "Mises à jour des versions et des modules Magento",
+        "Migration de sites Magento vers d'autres plateformes",
+        "Renforcement de la sécurité (audits, correctifs, surveillance)",
+        "Assistance et dépannage en cas de cyberattaques"
+      ]
+    },
+    "pricing": {
+      "title": "Tarifs",
+      "content": "Les tarifs des prestations sont indiqués en euros, hors taxes (HT)."
+    },
+    "payment": {
+      "title": "Modalités de paiement",
+      "methods": [
+        "Paiement : 50 % à la commande et 50 % à la livraison pour les prestations ponctuelles. Pour les forfaits, le paiement est mensuel ou annuel selon l'accord conclu.",
+        "Modes de paiement acceptés : Virement bancaire et carte bancaire."
+      ]
+    },
+    "execution": {
+      "title": "Délais et conditions d'exécution",
+      "content": "Les délais d'exécution sont mentionnés dans le devis et varient en fonction de la complexité de la prestation. Toute modification ou demande supplémentaire pendant l'exécution fera l'objet d'un avenant au devis initial."
+    },
+    "withdrawal": {
+      "title": "Absence de droit de rétractation",
+      "content": "Conformément à l'article L.221-3 du Code de la consommation, les présentes prestations s'adressant exclusivement à des professionnels, aucun droit de rétractation ne s'applique."
+    },
+    "liability": {
+      "title": "Responsabilité",
+      "list": [
+        "De mauvaises configurations ou interventions par des tiers non autorisés.",
+        "De force majeure (pannes, cyberattaques indépendantes)."
+      ]
+    },
+    "property": {
+      "title": "Propriété des livrables",
+      "content": "Les livrables (codes, analyses, rapports) restent la propriété de la prestataire jusqu'au paiement intégral des prestations convenues."
+    },
+    "disputes": {
+      "title": "Réclamations et litiges",
+      "content": "En cas de litige, les parties s'efforceront de trouver une solution amiable. À défaut, le litige sera soumis aux juridictions compétentes de Toulouse."
+    }
+  },
+  "privacy": {
+    "title": "Politique de Confidentialité",
+    "collection": {
+      "title": "Collecte et utilisation des données personnelles",
+      "description": "Ce site collecte uniquement les données personnelles transmises via le formulaire de contact (nom, email, téléphone, message). Ces données sont utilisées exclusivement pour :",
+      "purposes": [
+        "Répondre aux demandes des utilisateurs.",
+        "Communiquer sur des prestations ou devis professionnels."
+      ]
+    },
+    "legal_basis": {
+      "title": "Base légale",
+      "content": "Le traitement des données repose sur l'intérêt légitime de répondre aux demandes de prospects ou clients professionnels."
+    },
+    "retention": {
+      "title": "Durée de conservation",
+      "content": "Les données sont conservées pour une durée maximale de 3 ans après le dernier contact."
+    },
+    "sharing": {
+      "title": "Partage des données",
+      "content": "Aucune donnée personnelle collectée via ce site n'est partagée avec des tiers, sauf obligation légale."
+    },
+    "rights": {
+      "title": "Droits des utilisateurs",
+      "list": [
+        "Accès aux données personnelles les concernant.",
+        "Rectification ou suppression des données.",
+        "Opposition au traitement des données pour des motifs légitimes."
+      ],
+      "contact": "Pour exercer ces droits, contactez : contact@marialena-pietri.fr."
+    },
+    "security": {
+      "title": "Sécurité des données",
+      "content": "Les données collectées sont sécurisées et protégées contre tout accès non autorisé."
+    }
+  },
+  "404": {
+    "title": "Page Non Trouvée",
+    "description": "La page que vous recherchez n'existe pas ou a été déplacée.",
+    "backHome": "Retour à l'Accueil"
+  }
+}

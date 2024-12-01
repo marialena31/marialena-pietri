@@ -1,0 +1,53 @@
+{
+  "name": "personal-website",
+  "private": true,
+  "description": "Maria-Lena Pietri - Magento Developer Portfolio",
+  "version": "1.0.0",
+  "author": "Maria-Lena Pietri",
+  "dependencies": {
+    "@emailjs/browser": "^3.11.0",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.14.10",
+    "@mui/material": "^5.14.10",
+    "@types/dompurify": "^3.0.5",
+    "dompurify": "^3.2.2",
+    "dotenv": "^16.4.5",
+    "gatsby": "^5.12.4",
+    "gatsby-plugin-image": "^3.12.0",
+    "gatsby-plugin-react-helmet": "^6.12.0",
+    "gatsby-plugin-sharp": "^5.12.0",
+    "gatsby-source-filesystem": "^5.12.0",
+    "gatsby-transformer-sharp": "^5.12.0",
+    "i18next": "^23.5.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-google-recaptcha": "^3.1.0",
+    "react-helmet": "^6.1.0",
+    "react-i18next": "^13.2.2",
+    "react-intersection-observer": "^9.5.2"
+  },
+  "devDependencies": {
+    "@types/node": "^20.6.2",
+    "@types/react": "^18.2.21",
+    "@types/react-dom": "^18.2.7",
+    "prettier": "^3.0.3",
+    "typescript": "^5.2.2"
+  },
+  "keywords": [
+    "gatsby",
+    "portfolio",
+    "magento",
+    "developer"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
+    "start": "gatsby develop",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
+  }
+}
