@@ -22,14 +22,18 @@ const About = () => {
   const sanitize = useSanitize();
 
   const getLanguageLevel = (level: string): number => {
-    switch (level) {
-      case "Langue maternelle":
-        return 100;
-      case "Professionnel":
-        return 90;
-      default:
-        return 75;
+    const nativeLevels = ["Langue maternelle", "Native", "Nativo"];
+    const professionalLevels = ["Professionnel", "Professional", "Profesional"];
+    const advancedLevels = ["Avancé", "Advanced", "Avanzado"];
+
+    if (nativeLevels.includes(level)) {
+      return 100;
+    } else if (professionalLevels.includes(level)) {
+      return 90;
+    } else if (advancedLevels.includes(level)) {
+      return 75;
     }
+    return 0;
   };
 
   const languages = t('about.languages.list', { returnObjects: true });

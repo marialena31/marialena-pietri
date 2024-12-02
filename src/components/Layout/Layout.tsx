@@ -5,15 +5,23 @@ import { Box, Link } from '@mui/material';
 import theme from '../../theme';
 import Navbar from '../Navbar/Navbar';
 import Footer from '../Footer/Footer';
+import SEO from '../SEO/SEO';
+import StructuredData from '../SEO/StructuredData';
 
 interface LayoutProps {
   children: React.ReactNode;
+  title?: string;
+  description?: string;
+  image?: string;
+  article?: boolean;
 }
 
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+const Layout: React.FC<LayoutProps> = ({ children, title, description, image, article }) => {
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
+      <SEO title={title} description={description} image={image} article={article} />
+      <StructuredData />
       <Link
         href="#main-content"
         sx={{

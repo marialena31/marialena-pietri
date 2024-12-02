@@ -6,16 +6,43 @@ dotenv.config();
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: `Maria-Lena Pietri - Magento Developer`,
-    description: `Tech Lead and Project Manager with over 15 years of experience in web development and e-commerce.`,
+    title: `Maria-Lena Pietri - Expert Magento & E-commerce`,
+    titleTemplate: `%s | Maria-Lena Pietri`,
+    description: `Expert Magento avec plus de 15 ans d'expérience en développement web et e-commerce. Spécialisée dans les solutions e-commerce B2B et B2C, l'optimisation des performances et la sécurité.`,
     author: `Maria-Lena Pietri`,
-    siteUrl: `https://www.marialena-pietri.com`,
+    siteUrl: `https://marialena-pietri.fr`,
+    image: '/images/profile.webp',
+    twitterUsername: '@mlpietri',
   },
   graphqlTypegen: true,
   plugins: [
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-robots-txt`,
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Maria-Lena Pietri - Expert Magento`,
+        short_name: `ML Pietri`,
+        start_url: `/`,
+        background_color: `#ffffff`,
+        theme_color: `#4A90E2`,
+        display: `minimal-ui`,
+        icon: `static/images/logo.jpg`,
+        icon_options: {
+          purpose: `any maskable`,
+        },
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-html-attributes',
+      options: {
+        lang: 'fr'
+      }
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -28,6 +55,18 @@ const config: GatsbyConfig = {
       options: {
         name: `i18n`,
         path: `${__dirname}/src/i18n/data`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        defaults: {
+          formats: [`auto`, `webp`, `avif`],
+          placeholder: `blurred`,
+          quality: 90,
+          breakpoints: [320, 480, 768, 1024, 1366],
+          backgroundColor: `transparent`,
+        },
       },
     },
   ],

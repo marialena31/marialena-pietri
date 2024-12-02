@@ -9,7 +9,6 @@ import {
   useTheme,
   useMediaQuery,
 } from '@mui/material';
-import DownloadIcon from '@mui/icons-material/Download';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 
 const Hero = () => {
@@ -76,8 +75,6 @@ const Hero = () => {
               <Box
                 sx={{
                   display: 'flex',
-                  gap: 2,
-                  flexDirection: { xs: 'column', sm: 'row' },
                   justifyContent: { xs: 'center', md: 'flex-start' },
                 }}
               >
@@ -90,23 +87,6 @@ const Hero = () => {
                   sx={{ minWidth: 200 }}
                 >
                   {t('hero.cta')}
-                </Button>
-                <Button
-                  variant="outlined"
-                  size="large"
-                  color="inherit"
-                  startIcon={<DownloadIcon />}
-                  href={`/cv?lang=${i18n.language}`}
-                  sx={{
-                    minWidth: 200,
-                    borderColor: 'white',
-                    '&:hover': {
-                      borderColor: 'rgba(255, 255, 255, 0.8)',
-                      backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                    },
-                  }}
-                >
-                  {t('hero.downloadCV')}
                 </Button>
               </Box>
             </Box>

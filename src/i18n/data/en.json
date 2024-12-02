@@ -23,8 +23,8 @@
   "about": {
     "title": "About Me",
     "whoAmI": {
-      "title": "Who I Am",
-      "content": "I am an experienced <strong>Tech Lead</strong> and <strong>Project Manager</strong> with over 15 years of experience in web development and e-commerce.<br /><br />My expertise spans <strong>Magento</strong>, <strong>ReactJS</strong>, and <strong>Cybersecurity</strong>, with a strong track record in project leadership, team mentoring, and delivering scalable digital solutions.<br /><br />With a 360° view of technology, I excel in both technical and functional roles to drive business growth."
+      "title": "Who Am I?",
+      "content": "I am a passionate Full Stack Developer with expertise in Magento 2 development. With a strong foundation in both front-end and back-end technologies, I specialize in creating robust e-commerce solutions."
     },
     "expertise": {
       "title": "Expertise",
@@ -39,17 +39,18 @@
         },
         {
           "language": "English",
-          "level": "Advanced"
+          "level": "Professional"
         },
         {
           "language": "Spanish",
-          "level": "Professional"
+          "level": "Advanced"
         }
       ]
     }
   },
   "contact": {
     "title": "Contact",
+    "subtitle": "Interested in collaborating? Let's discuss your project!",
     "description": "Feel free to reach out to me for any questions or opportunities.",
     "success": "Message sent successfully! I'll get back to you soon.",
     "form": {
@@ -79,11 +80,11 @@
       },
       {
         "language": "English",
-        "level": "Advanced"
+        "level": "Professional"
       },
       {
         "language": "Spanish",
-        "level": "Professional"
+        "level": "Advanced"
       }
     ]
   },
@@ -405,12 +406,22 @@
   "cv": {
     "title": "Curriculum Vitae",
     "description": "Here you can download my CV to learn more about my professional experience and skills",
-    "downloadPrompt": "Download my CV",
-    "languageSelector": "Language",
-    "downloadButton": "Download CV",
-    "generatingButton": "Generating...",
+    "download": {
+      "button": "Download CV",
+      "generating": "Generating...",
+      "error": "An error occurred while generating the CV"
+    },
+    "sections": {
+      "contact": "Contact Information",
+      "skills": "Technical Skills",
+      "languages": "Languages",
+      "aboutMe": "About Me",
+      "experience": "Professional Experience",
+      "education": "Education"
+    },
     "about": {
       "whoAmI": {
+        "title": "Who Am I?",
         "content": "I am a passionate Full Stack Developer with expertise in Magento 2 development. With a strong foundation in both front-end and back-end technologies, I specialize in creating robust e-commerce solutions."
       }
     },
@@ -424,13 +435,33 @@
       },
       "linkedin": "linkedin.com/in/maria-lena-pietri"
     },
-    "sections": {
-      "contact": "Contact Information",
-      "skills": "Technical Skills",
-      "languages": "Languages",
-      "aboutMe": "About Me",
-      "experience": "Professional Experience",
-      "education": "Education"
+    "skills": {
+      "title": "Technical Skills",
+      "list": [
+        "E-commerce Development",
+        "FullStack Development",
+        "DevOps & Infrastructure",
+        "Project Management",
+        "Cybersecurity",
+        "Performance Optimization"
+      ]
+    },
+    "languages": {
+      "title": "Languages",
+      "list": [
+        {
+          "language": "French",
+          "level": "Native"
+        },
+        {
+          "language": "English",
+          "level": "Professional"
+        },
+        {
+          "language": "Spanish",
+          "level": "Advanced"
+        }
+      ]
     }
   },
   "resume": {
@@ -461,11 +492,11 @@
         },
         {
           "language": "English",
-          "level": "Advanced"
+          "level": "Professional"
         },
         {
           "language": "Spanish",
-          "level": "Professional"
+          "level": "Advanced"
         }
       ]
     },

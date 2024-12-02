@@ -58,14 +58,20 @@ const Contact = () => {
       }}
     >
       <Container maxWidth="lg">
-        <Typography variant="h2" align="center" gutterBottom sx={{ mb: 6 }}>
+        <Typography variant="h2" align="center" gutterBottom sx={{ mb: 4 }}>
           {t('contact.title')}
         </Typography>
         <Typography
-          variant="subtitle1"
+          variant="h6"
           align="center"
-          color="textSecondary"
-          sx={{ mb: 6 }}
+          color="text.secondary"
+          sx={{ 
+            mb: 6,
+            maxWidth: '800px',
+            mx: 'auto',
+            fontWeight: 'normal',
+            lineHeight: 1.5
+          }}
         >
           {t('contact.subtitle')}
         </Typography>
@@ -84,6 +90,7 @@ const Contact = () => {
                 data-netlify="true"
                 data-netlify-honeypot="bot-field"
                 onSubmit={handleSubmit}
+                noValidate
               >
                 {/* Hidden input for Netlify Forms */}
                 <input type="hidden" name="form-name" value="contact" />
@@ -97,7 +104,6 @@ const Contact = () => {
                 <Grid container spacing={3}>
                   <Grid item xs={12} sm={6}>
                     <TextField
-                      required
                       fullWidth
                       id="name"
                       name="name"
@@ -106,7 +112,6 @@ const Contact = () => {
                   </Grid>
                   <Grid item xs={12} sm={6}>
                     <TextField
-                      required
                       fullWidth
                       id="email"
                       name="email"
@@ -116,7 +121,6 @@ const Contact = () => {
                   </Grid>
                   <Grid item xs={12}>
                     <TextField
-                      required
                       fullWidth
                       id="subject"
                       name="subject"
@@ -125,7 +129,6 @@ const Contact = () => {
                   </Grid>
                   <Grid item xs={12}>
                     <TextField
-                      required
                       fullWidth
                       multiline
                       rows={4}

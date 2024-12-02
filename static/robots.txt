@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /404
+Disallow: /cv
+
+# Sitemap
+Sitemap: https://marialena-pietri.fr/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 10

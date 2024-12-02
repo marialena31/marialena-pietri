@@ -292,11 +292,11 @@ const CV = () => {
 
       <Box sx={{ mb: 4, display: 'flex', justifyContent: 'center', gap: 2 }}>
         <FormControl sx={{ minWidth: 120 }}>
-          <InputLabel id="language-select-label">Language</InputLabel>
+          <InputLabel id="language-select-label">{t('cv.languageSelector')}</InputLabel>
           <Select
             labelId="language-select-label"
             value={selectedLanguage}
-            label="Language"
+            label={t('cv.languageSelector')}
             onChange={handleLanguageChange}
           >
             <MenuItem value="en">English</MenuItem>
@@ -311,8 +311,9 @@ const CV = () => {
           startIcon={<PdfIcon />}
           onClick={generatePDF}
           disabled={isGenerating}
+          sx={{ minWidth: 200 }}
         >
-          {isGenerating ? t('cv.download.generating') : t('cv.download.button')}
+          {isGenerating ? t('cv.generatingButton') : t('cv.downloadButton')}
         </Button>
       </Box>
 
@@ -322,7 +323,7 @@ const CV = () => {
         onClose={() => setError(null)}
       >
         <Alert onClose={() => setError(null)} severity="error">
-          {t('cv.download.error')}
+          {error}
         </Alert>
       </Snackbar>
     </Container>

@@ -173,8 +173,23 @@ const Footer = () => {
                 sx={{
                   color: 'white',
                   textDecoration: 'none',
+                  position: 'relative',
+                  '&::after': {
+                    content: '""',
+                    position: 'absolute',
+                    width: '0',
+                    height: '2px',
+                    bottom: '0',
+                    left: '50%',
+                    background: 'white',
+                    transition: 'all 0.3s ease-in-out',
+                    transform: 'translateX(-50%)',
+                  },
                   '&:hover': {
-                    textDecoration: 'underline',
+                    backgroundColor: 'transparent',
+                    '&::after': {
+                      width: '80%',
+                    },
                   },
                 }}
               >
@@ -186,8 +201,23 @@ const Footer = () => {
                 sx={{
                   color: 'white',
                   textDecoration: 'none',
+                  position: 'relative',
+                  '&::after': {
+                    content: '""',
+                    position: 'absolute',
+                    width: '0',
+                    height: '2px',
+                    bottom: '0',
+                    left: '50%',
+                    background: 'white',
+                    transition: 'all 0.3s ease-in-out',
+                    transform: 'translateX(-50%)',
+                  },
                   '&:hover': {
-                    textDecoration: 'underline',
+                    backgroundColor: 'transparent',
+                    '&::after': {
+                      width: '80%',
+                    },
                   },
                 }}
               >
@@ -199,8 +229,23 @@ const Footer = () => {
                 sx={{
                   color: 'white',
                   textDecoration: 'none',
+                  position: 'relative',
+                  '&::after': {
+                    content: '""',
+                    position: 'absolute',
+                    width: '0',
+                    height: '2px',
+                    bottom: '0',
+                    left: '50%',
+                    background: 'white',
+                    transition: 'all 0.3s ease-in-out',
+                    transform: 'translateX(-50%)',
+                  },
                   '&:hover': {
-                    textDecoration: 'underline',
+                    backgroundColor: 'transparent',
+                    '&::after': {
+                      width: '80%',
+                    },
                   },
                 }}
               >
