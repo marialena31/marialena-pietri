@@ -7,49 +7,87 @@
     "skills": "Skills",
     "services": "Services",
     "portfolio": "Portfolio",
-    "contact": "Contact",
     "references": "References",
-    "bookMeeting": "Book a Meeting"
+    "contact": "Contact",
+    "bookMeeting": "Book a Meeting",
+    "downloadCV": "Download CV"
   },
   "hero": {
     "title": "Maria-Lena Pietri",
-    "subtitle": "Senior Magento Developer & E-commerce Consultant",
-    "experience": "Over 8 years of experience in Magento development and e-commerce solutions",
-    "description": "Specializing in custom Magento development, performance optimization, and e-commerce strategy",
+    "subtitle": "Senior Magento Expert & E-commerce Consultant",
+    "description": "Helping businesses scale their e-commerce operations with custom Magento solutions and strategic consulting.",
     "cta": "Book a Meeting",
+    "bookMeeting": "Schedule a Call",
     "downloadCV": "Download CV"
   },
   "about": {
-    "title": "About Me",
+    "title": "About",
     "whoAmI": {
-      "title": "Who I Am",
-      "content": "I'm a passionate Magento developer with extensive experience in building and optimizing e-commerce solutions. Based in France, I work with clients globally to create exceptional online shopping experiences."
+      "title": "Who Am I?",
+      "content": "I am a full-stack web developer passionate about creating innovative digital solutions. With experience in developing modern and scalable web applications, I specialize in both front-end and back-end technologies. My focus is on creating exceptional user experiences and clean, maintainable code."
     },
-    "expertise": {
-      "title": "My Expertise",
-      "content": "I specialize in Magento 2 development, custom module creation, performance optimization, and e-commerce consulting. My approach combines technical excellence with business understanding."
+    "contact": {
+      "title": "Contact",
+      "email": "contact@marialena-pietri.fr",
+      "phone": "+33 07 61 81 11 01",
+      "address": {
+        "line1": "30 allée de la Gâtine",
+        "line2": "31770 Colomiers",
+        "country": "France"
+      },
+      "linkedin": "linkedin.com/in/marialena-pietri"
     },
     "languages": {
       "title": "Languages",
       "list": [
         {
           "language": "French",
-          "level": "Native"
+          "level": "Native",
+          "proficiency": 100
         },
         {
           "language": "English",
-          "level": "Professional"
+          "level": "Advanced",
+          "proficiency": 80
         },
         {
           "language": "Spanish",
-          "level": "Professional"
+          "level": "Intermediate",
+          "proficiency": 70
         }
       ]
+    },
+    "expertise": {
+      "title": "My Expertise",
+      "content": "Specialized in <strong>Magento 2 development</strong>, <strong>custom module creation</strong>, and <strong>performance optimization</strong>.<br /><br />I provide expert guidance in <strong>e-commerce strategy</strong>, combining technical excellence with business understanding.<br /><br />My approach focuses on delivering <strong>scalable solutions</strong> that drive measurable business growth and exceptional user experiences."
     }
   },
   "skills": {
     "title": "Technical Skills",
-    "subtitle": "Expertise in Magento Development and Related Technologies"
+    "subtitle": "Expertise in Magento Development and Related Technologies",
+    "technical": [
+      {
+        "category": "E-commerce & CMS",
+        "items": [
+          "Magento 2 (Adobe Commerce)",
+          "Wordpress",
+          "WooCommerce",
+          "Shopify",
+          "Mirakl"
+        ]
+      },
+      {
+        "category": "Frontend",
+        "items": [
+          "ReactJS",
+          "TypeScript",
+          "JavaScript",
+          "HTML5",
+          "CSS3",
+          "SASS/LESS"
+        ]
+      }
+    ]
   },
   "services": {
     "title": "Expert Magento Services",
@@ -105,32 +143,44 @@
   },
   "portfolio": {
     "title": "Portfolio",
-    "subtitle": "Featured Magento Projects and E-commerce Solutions",
+    "subtitle": "Magento Projects and E-commerce Solutions",
     "viewProject": "View Project",
     "projects": {
       "chausson": {
         "title": "Chausson Matériaux",
-        "description": "Complete Magento 2 implementation for a leading building materials supplier, including B2B features and complex product catalog management."
+        "projet": "Creation of an omnichannel strategy and launch of the e-commerce platform for a construction materials leader, managing over 20,000 products.<br /><br />Implementation of a complete PIM system using Maps, streamlining the creation of automated catalogs and data flows for the website.",
+        "impact": "Reduction in catalog production time by 50-75% through automated workflows.<br /><br />Delivery of a high-performance e-commerce site with optimized navigation and product management.",
+        "realisations": "Led a team of 20 people between internal and external stakeholders.<br /><br />Seamless integration of PIM and ERP with the e-commerce platform."
       },
       "eram": {
         "title": "ERAM Group",
-        "description": "Multi-store e-commerce solution for a major fashion retail group, featuring advanced inventory management and personalized shopping experiences."
+        "projet": "Technical leadership of Magento sites for Eram, Mellow Yellow, and Bocage brands.<br /><br />Implementation of preventive, corrective, and evolutionary maintenance, including Magento core updates, custom module adaptation, and dependency monitoring.<br /><br />Conducted security pre-audit in case of suspected compromise, log analysis, and recommendations to improve platform security.",
+        "impact": "Enhanced platform stability and security through proactive updates.<br /><br />Improved customer experience with targeted performance optimizations.",
+        "realisations": "Implementation of Web Application Firewalls (WAF) for advanced security in collaboration with IT teams.<br /><br />Smooth management of CI/CD pipelines for multi-environment deployments."
       },
       "whisky": {
         "title": "La Maison du Whisky",
-        "description": "Sophisticated e-commerce platform for premium spirits, including age verification, complex shipping rules, and personalized recommendations."
+        "projet": "Technical leadership of the Magento 2 platform, ensuring robust functionality and high performance for this luxury spirits retailer.<br /><br />Focus on preventive maintenance, core update implementation, and adaptation of custom modules to latest Magento standards.",
+        "impact": "Strengthened site reliability and resilience to ensure excellent user experience, even during peak periods.<br /><br />Delivered optimized infrastructure for scalability and future growth.",
+        "realisations": "Deployment and configuration of advanced application firewalls (Fastly WAF) in collaboration with IT teams.<br /><br />Monitoring and updating dependencies while maintaining compatibility with custom code."
       },
       "legrand": {
         "title": "Legrand",
-        "description": "B2B e-commerce solution for a global electrical equipment manufacturer, featuring complex product configurations and real-time inventory."
+        "projet": "Design and development of the alpha version of a Magento 2 B2B platform for a global leader in electrical and digital building infrastructures.<br /><br />Creation of custom product displays and enhancement of cart functionalities adapted to professional buyers.",
+        "impact": "Built a scalable foundation for Legrand's B2B digital transformation.<br /><br />Improved product catalog management and user experience for professional clients.",
+        "realisations": "Customization of Magento to handle complex product and category hierarchies.<br /><br />Seamless integration between front-end and back-end systems."
       },
       "marjane": {
         "title": "Marjane Mall",
-        "description": "Large-scale marketplace solution for Morocco's leading retailer, supporting multiple vendors and advanced reporting capabilities."
+        "projet": "Management of Magento 2 integration and deployment of the Octopia marketplace for Morocco's leading retailer, Marjane.<br /><br />Organization and execution of the mobile application reversibility process, including deadline management, coordination of multiple teams, and delivery of final versions on Google Play and Apple Store.<br /><br />Delivery of a React Native hybrid mobile application supporting over 70,000 products with a roadmap to evolve to 1 million.",
+        "impact": "Launch of a scalable e-commerce and mobile platform designed for high-growth vendor and product management.<br /><br />Improved operational workflows through efficient team coordination and technical solutions.",
+        "realisations": "Planning and execution of a Magento upgrade from 2.4.2 to 2.4.5, optimizing site performance and security.<br /><br />Establishment of a new version deployment workflow, improving update frequency and stability."
       },
       "valrhona": {
         "title": "Valrhona",
-        "description": "Premium B2B/B2C platform for luxury chocolate manufacturer, featuring complex pricing, multi-warehouse management, and recipe management."
+        "projet": "Redesign of the Valrhona Selection B2B platform to enhance customer experience and integrate advanced marketplace features with Mirakl.<br /><br />Configuration of Salesforce API flows with custom authentication, enabling smoother customer interactions.<br /><br />Implementation of Single Sign-On (SSO) via custom SAML module to simplify enterprise client access.",
+        "impact": "Streamlined onboarding process for professional clients and improved platform efficiency.<br /><br />Enhanced security and usability for large-scale B2B transactions.",
+        "realisations": "Led a team of 7 developers, ensuring high code quality and timely delivery.<br /><br />Conducted thorough audits and testing to prepare the platform for high-traffic usage."
       }
     }
   },
@@ -323,5 +373,34 @@
       "title": "Data Security",
       "content": "Collected data is secured and protected against unauthorized access."
     }
-  }
+  },
+  "cv": {
+    "title": "Curriculum Vitae",
+    "downloadPrompt": "Download my CV in your preferred language",
+    "languageSelector": "Language",
+    "downloadButton": "Download CV",
+    "generatingButton": "Generating..."
+  },
+  "resume": {
+    "sections": {
+      "aboutMe": "About Me",
+      "experience": "Experience",
+      "contact": "Contact",
+      "skills": "Skills",
+      "languages": "Languages"
+    },
+    "skills": {
+      "title": "Skills",
+      "list": [
+        "E-commerce Development",
+        "FullStack Development",
+        "DevOps & Infra",
+        "Project Management",
+        "Cybersecurity",
+        "Performance Optimization"
+      ]
+    },
+    "downloadButton": "Download CV"
+  },
+  "language": "en"
 }

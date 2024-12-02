@@ -194,7 +194,8 @@ const Contact = () => {
       id="contact"
       sx={{
         py: 8,
-        backgroundColor: theme.palette.grey[100],
+        backgroundColor: theme.palette.grey[50],
+        borderTop: `1px solid ${theme.palette.grey[100]}`,
       }}
     >
       <Container maxWidth="md">

@@ -5,15 +5,15 @@ import {
   Container,
   Typography,
   Grid,
-  Card,
-  CardMedia,
-  useTheme,
+  Paper,
+  useTheme
 } from '@mui/material';
 
 interface Reference {
   name: string;
   logo: string;
   link?: string;
+  isCAC40: boolean;
 }
 
 const References = () => {
@@ -21,26 +21,26 @@ const References = () => {
   const theme = useTheme();
 
   const references: Reference[] = [
-    { name: 'Bonpoint', logo: '/images/references/bonpoint.png' },
-    { name: 'CAC 40', logo: '/images/references/cac-40.png' },
-    { name: 'Chausson Matériaux', logo: '/images/references/chausson-materiaux.png' },
-    { name: 'ERAM Group', logo: '/images/references/eram-group.png' },
-    { name: 'France Air', logo: '/images/references/france-air.png' },
-    { name: 'Hamilton', logo: '/images/references/hamilton.png' },
-    { name: 'La Maison du Whisky', logo: '/images/references/la-maison-du-whisky.png' },
-    { name: 'Ludilabel', logo: '/images/references/ludilabel.png' },
-    { name: 'Maisons du Monde', logo: '/images/references/maisons-du-monde.png' },
-    { name: 'Maps System', logo: '/images/references/maps-system.png' },
-    { name: 'Marjane Mall', logo: '/images/references/marjanemall.png' },
-    { name: 'Maurice Lacroix', logo: '/images/references/maurice-lacroix.png' },
-    { name: 'MountNPass', logo: '/images/references/mountnpass.png' },
-    { name: 'Nicoll', logo: '/images/references/nicoll.png' },
-    { name: 'Nutrixo', logo: '/images/references/nutrixo.png' },
-    { name: 'OpenClassrooms', logo: '/images/references/openclassrooms.png' },
-    { name: 'Planet Cards', logo: '/images/references/planet-cards.png' },
-    { name: 'Pro a Pro', logo: '/images/references/pro-a-pro.png' },
-    { name: 'Sopra Steria', logo: '/images/references/sopra-steria.png' },
-    { name: 'Valrhona', logo: '/images/references/valrhona.png' },
+    { name: 'Bonpoint', logo: '/images/references/bonpoint.png', isCAC40: false },
+    { name: 'CAC 40', logo: '/images/references/cac-40.png', isCAC40: true },
+    { name: 'Chausson Matériaux', logo: '/images/references/chausson-materiaux.png', isCAC40: false },
+    { name: 'ERAM Group', logo: '/images/references/eram-group.png', isCAC40: false },
+    { name: 'France Air', logo: '/images/references/france-air.png', isCAC40: false },
+    { name: 'Hamilton', logo: '/images/references/hamilton.png', isCAC40: false },
+    { name: 'La Maison du Whisky', logo: '/images/references/la-maison-du-whisky.png', isCAC40: false },
+    { name: 'Ludilabel', logo: '/images/references/ludilabel.png', isCAC40: false },
+    { name: 'Maisons du Monde', logo: '/images/references/maisons-du-monde.png', isCAC40: false },
+    { name: 'Maps System', logo: '/images/references/maps-system.png', isCAC40: false },
+    { name: 'Marjane Mall', logo: '/images/references/marjanemall.png', isCAC40: false },
+    { name: 'Maurice Lacroix', logo: '/images/references/maurice-lacroix.png', isCAC40: false },
+    { name: 'MountNPass', logo: '/images/references/mountnpass.png', isCAC40: false },
+    { name: 'Nicoll', logo: '/images/references/nicoll.png', isCAC40: false },
+    { name: 'Nutrixo', logo: '/images/references/nutrixo.png', isCAC40: false },
+    { name: 'OpenClassrooms', logo: '/images/references/openclassrooms.png', isCAC40: false },
+    { name: 'Planet Cards', logo: '/images/references/planet-cards.png', isCAC40: false },
+    { name: 'Pro a Pro', logo: '/images/references/pro-a-pro.png', isCAC40: false },
+    { name: 'Sopra Steria', logo: '/images/references/sopra-steria.png', isCAC40: false },
+    { name: 'Valrhona', logo: '/images/references/valrhona.png', isCAC40: false },
   ];
 
   return (
@@ -48,56 +48,74 @@ const References = () => {
       id="references"
       sx={{
         py: 8,
-        backgroundColor: theme.palette.grey[100],
+        backgroundColor: 'white'
       }}
     >
       <Container maxWidth="lg">
         <Typography
-          variant="h2"
+          variant="h3"
+          component="h2"
           align="center"
           gutterBottom
           sx={{ mb: 6 }}
         >
           {t('references.title')}
         </Typography>
-        <Typography
-          variant="subtitle1"
-          align="center"
-          color="textSecondary"
-          sx={{ mb: 6 }}
-        >
-          {t('references.subtitle')}
-        </Typography>
 
-        <Grid container spacing={4}>
+        <Grid container spacing={4} justifyContent="center">
           {references.map((reference, index) => (
             <Grid item xs={6} sm={4} md={3} key={index}>
-              <Card
-                elevation={1}
+              <Paper
+                elevation={3}
                 sx={{
+                  p: 3,
                   height: '100%',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  p: 2,
-                  transition: 'transform 0.2s',
-                  '&:hover': {
-                    transform: 'translateY(-5px)',
-                  },
+                  position: 'relative',
+                  overflow: 'hidden'
                 }}
               >
-                <CardMedia
+                <Box
                   component="img"
-                  image={reference.logo}
+                  src={reference.logo}
                   alt={reference.name}
                   sx={{
                     width: '100%',
                     height: 'auto',
+                    maxHeight: 100,
                     objectFit: 'contain',
-                    maxHeight: 80,
+                    filter: 'grayscale(100%)',
+                    opacity: 0.7,
+                    transition: 'all 0.3s ease-in-out',
+                    '&:hover': {
+                      filter: 'grayscale(0%)',
+                      opacity: 1
+                    }
                   }}
                 />
-              </Card>
+                {reference.isCAC40 && (
+                  <Typography
+                    sx={{
+                      position: 'absolute',
+                      top: '50%',
+                      left: '50%',
+                      transform: 'translate(-50%, -50%) rotate(-45deg)',
+                      color: 'rgba(0, 0, 0, 0.1)',
+                      fontSize: '1.2rem',
+                      fontWeight: 'bold',
+                      whiteSpace: 'nowrap',
+                      pointerEvents: 'none',
+                      width: '200%',
+                      textAlign: 'center',
+                      letterSpacing: '0.2em'
+                    }}
+                  >
+                    CONFIDENTIEL
+                  </Typography>
+                )}
+              </Paper>
             </Grid>
           ))}
         </Grid>

@@ -1,0 +1,16 @@
+[build]
+  command = "gatsby build"
+  publish = "public/"
+  functions = "functions/"
+
+[build.environment]
+  NODE_VERSION = "18.17.0"
+  NPM_VERSION = "9.6.7"
+
+[[plugins]]
+  package = "@netlify/plugin-gatsby"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

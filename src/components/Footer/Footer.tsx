@@ -149,7 +149,14 @@ const Footer = () => {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  sx={{ color: 'white' }}
+                  sx={{
+                    color: 'white',
+                    transition: 'all 0.3s ease-in-out',
+                    '&:hover': {
+                      color: 'primary.main',
+                      transform: 'translateY(-2px)',
+                    }
+                  }}
                 >
                   {link.icon}
                 </IconButton>
@@ -161,21 +168,81 @@ const Footer = () => {
               <Link
                 component="button"
                 onClick={() => handleModalOpen('legal')}
-                sx={{ color: 'white', textDecoration: 'none' }}
+                sx={{ 
+                  color: 'white', 
+                  textDecoration: 'none',
+                  position: 'relative',
+                  '&::after': {
+                    content: '""',
+                    position: 'absolute',
+                    width: '0',
+                    height: '2px',
+                    bottom: '-2px',
+                    left: '50%',
+                    background: 'white',
+                    transition: 'all 0.3s ease-in-out',
+                    transform: 'translateX(-50%)',
+                  },
+                  '&:hover': {
+                    '&::after': {
+                      width: '80%',
+                    },
+                  },
+                }}
               >
                 {t('footer.legal')}
               </Link>
               <Link
                 component="button"
                 onClick={() => handleModalOpen('terms')}
-                sx={{ color: 'white', textDecoration: 'none' }}
+                sx={{ 
+                  color: 'white', 
+                  textDecoration: 'none',
+                  position: 'relative',
+                  '&::after': {
+                    content: '""',
+                    position: 'absolute',
+                    width: '0',
+                    height: '2px',
+                    bottom: '-2px',
+                    left: '50%',
+                    background: 'white',
+                    transition: 'all 0.3s ease-in-out',
+                    transform: 'translateX(-50%)',
+                  },
+                  '&:hover': {
+                    '&::after': {
+                      width: '80%',
+                    },
+                  },
+                }}
               >
                 {t('footer.terms')}
               </Link>
               <Link
                 component="button"
                 onClick={() => handleModalOpen('privacy')}
-                sx={{ color: 'white', textDecoration: 'none' }}
+                sx={{ 
+                  color: 'white', 
+                  textDecoration: 'none',
+                  position: 'relative',
+                  '&::after': {
+                    content: '""',
+                    position: 'absolute',
+                    width: '0',
+                    height: '2px',
+                    bottom: '-2px',
+                    left: '50%',
+                    background: 'white',
+                    transition: 'all 0.3s ease-in-out',
+                    transform: 'translateX(-50%)',
+                  },
+                  '&:hover': {
+                    '&::after': {
+                      width: '80%',
+                    },
+                  },
+                }}
               >
                 {t('footer.privacy')}
               </Link>
@@ -206,7 +273,27 @@ const Footer = () => {
             <Link
               component="button"
               onClick={handleModalClose}
-              sx={{ color: 'primary.main', textDecoration: 'none' }}
+              sx={{
+                color: 'primary.main',
+                textDecoration: 'none',
+                position: 'relative',
+                '&::after': {
+                  content: '""',
+                  position: 'absolute',
+                  width: '0',
+                  height: '2px',
+                  bottom: '-2px',
+                  left: '50%',
+                  background: 'primary.main',
+                  transition: 'all 0.3s ease-in-out',
+                  transform: 'translateX(-50%)',
+                },
+                '&:hover': {
+                  '&::after': {
+                    width: '80%',
+                  },
+                },
+              }}
             >
               {t('common.close')}
             </Link>

@@ -7,42 +7,47 @@
     "skills": "Compétences",
     "services": "Services",
     "portfolio": "Portfolio",
-    "contact": "Contact",
     "references": "Références",
-    "bookMeeting": "Prendre RDV"
+    "contact": "Contact",
+    "bookMeeting": "Prendre RDV",
+    "downloadCV": "Télécharger CV"
   },
+  "language": "fr",
   "hero": {
     "title": "Maria-Lena Pietri",
-    "subtitle": "Développeuse Magento Senior & Consultante E-commerce",
-    "experience": "Plus de 8 ans d'expérience en développement Magento et solutions e-commerce",
-    "description": "Spécialisée dans le développement Magento sur mesure, l'optimisation des performances et la stratégie e-commerce",
+    "subtitle": "Experte Magento Senior & Consultante E-commerce",
+    "description": "Spécialisée en maintenance avancée, migrations Magento, et solutions sur mesure pour optimiser vos performances et sécuriser votre plateforme e-commerce.",
     "cta": "Prendre Rendez-vous",
+    "bookMeeting": "Réserver un créneau",
     "downloadCV": "Télécharger CV"
   },
   "about": {
     "title": "À Propos",
     "whoAmI": {
       "title": "Qui suis-je",
-      "content": "Je suis une développeuse Magento passionnée avec une vaste expérience dans la création et l'optimisation de solutions e-commerce. Basée en France, je travaille avec des clients du monde entier pour créer des expériences d'achat en ligne exceptionnelles."
+      "content": "Je suis une <strong>Tech Lead</strong> et <strong>Chef de Projet</strong> expérimentée avec plus de 15 ans d'expérience dans le développement web et e-commerce.<br /><br />Mon expertise couvre <strong>Magento</strong>, <strong>ReactJS</strong> et la <strong>Cybersécurité</strong>, avec un solide historique dans la direction de projets, le mentorat d'équipes et la livraison de solutions digitales évolutives.<br /><br />Avec une vision à 360° de la technologie, j'excelle dans les rôles techniques et fonctionnels pour stimuler la croissance des entreprises."
     },
     "expertise": {
       "title": "Mon Expertise",
-      "content": "Je suis spécialisée dans le développement Magento 2, la création de modules personnalisés, l'optimisation des performances et le conseil en e-commerce. Mon approche combine excellence technique et compréhension business."
+      "content": "Spécialisée dans le <strong>développement Magento 2</strong>, la <strong>création de modules personnalisés</strong> et <strong>l'optimisation des performances</strong>.<br /><br />Je fournis des conseils d'expert en <strong>stratégie e-commerce</strong>, alliant excellence technique et compréhension business.<br /><br />Mon approche se concentre sur la livraison de <strong>solutions évolutives</strong> qui stimulent la croissance mesurable des entreprises et offrent des expériences utilisateur exceptionnelles."
     },
     "languages": {
       "title": "Langues",
       "list": [
         {
           "language": "Français",
-          "level": "Langue maternelle"
+          "level": "Langue maternelle",
+          "proficiency": 100
         },
         {
           "language": "Anglais",
-          "level": "Professionnel"
+          "level": "Courant",
+          "proficiency": 80
         },
         {
           "language": "Espagnol",
-          "level": "Professionnel"
+          "level": "Intermédiaire",
+          "proficiency": 70
         }
       ]
     }
@@ -83,55 +88,60 @@
     "projects": {
       "chausson": {
         "title": "Chausson Matériaux",
-        "description": "Implémentation complète de Magento 2 pour un leader des matériaux de construction, incluant des fonctionnalités B2B et une gestion complexe du catalogue produits."
+        "projet": "Création d'une stratégie omnicanale et lancement de la plateforme e-commerce pour un leader des matériaux de construction, gérant plus de 20 000 produits.<br /><br />Mise en place d'un système PIM complet utilisant Maps, rationalisant la création de catalogues automatisés et de flux de données pour le site web.",
+        "impact": "Réduction du temps de production des catalogues de 50-75% grâce à des workflows automatisés.<br /><br />Livraison d'un site e-commerce haute performance avec une navigation et une gestion des produits optimisées.",
+        "realisations": "Direction d'une équipe de 20 personnes entre parties prenantes internes et externes.<br /><br />Intégration parfaite du PIM et de l'ERP avec la plateforme e-commerce."
       },
       "eram": {
         "title": "ERAM Group",
-        "description": "Solution e-commerce multi-boutiques pour un grand groupe de mode, avec gestion avancée des stocks et expériences d'achat personnalisées."
+        "projet": "Direction de l'évolution technique des sites Magento pour les marques Eram, Mellow Yellow et Bocage.<br /><br />Mise en place de la maintenance préventive, corrective et évolutive, incluant les mises à jour du core Magento, l'adaptation des modules personnalisés et le monitoring des dépendances.<br /><br />Réalisation d'un pré-audit de sécurité en cas de suspicion de compromission, analyse des logs et recommandations pour améliorer la sécurité de la plateforme.",
+        "impact": "Renforcement de la stabilité et de la sécurité de la plateforme grâce à des mises à jour proactives.<br /><br />Amélioration de l'expérience client avec des optimisations de performance ciblées.",
+        "realisations": "Implémentation de pare-feu applicatifs (WAF) pour une sécurité avancée en collaboration avec les équipes IT.<br /><br />Gestion fluide des pipelines CI/CD pour les déploiements multi-environnements."
       },
       "whisky": {
         "title": "La Maison du Whisky",
-        "description": "Plateforme e-commerce sophistiquée pour les spiritueux haut de gamme, incluant la vérification de l'âge, des règles d'expédition complexes et des recommandations personnalisées."
+        "projet": "Leadership technique de la plateforme Magento 2, assurant une fonctionnalité robuste et une haute performance pour ce détaillant de spiritueux de luxe.<br /><br />Focus sur la maintenance préventive, l'implémentation des mises à jour core et l'adaptation des modules personnalisés aux derniers standards Magento.",
+        "impact": "Renforcement de la fiabilité et de la résilience du site pour garantir une excellente expérience utilisateur, même pendant les périodes de pointe.<br /><br />Livraison d'une infrastructure optimisée pour la scalabilité et la croissance future.",
+        "realisations": "Déploiement et configuration de pare-feu applicatifs avancés (Fastly WAF) en collaboration avec les équipes IT.<br /><br />Surveillance et mise à jour des dépendances tout en maintenant la compatibilité avec le code personnalisé."
       },
       "legrand": {
         "title": "Legrand",
-        "description": "Solution e-commerce B2B pour un fabricant mondial d'équipements électriques, avec configurations produits complexes et inventaire en temps réel."
+        "projet": "Conception et développement de la version alpha d'une plateforme B2B Magento 2 pour un leader mondial des infrastructures électriques et numériques du bâtiment.<br /><br />Création d'affichages produits personnalisés et amélioration des fonctionnalités du panier adaptées aux acheteurs professionnels.",
+        "impact": "Construction d'une base évolutive pour la transformation digitale B2B de Legrand.<br /><br />Amélioration de la gestion du catalogue produits et de l'expérience utilisateur pour les clients professionnels.",
+        "realisations": "Personnalisation de Magento pour gérer des hiérarchies complexes de produits et de catégories.<br /><br />Intégration parfaite entre les systèmes front-end et back-end."
       },
       "marjane": {
         "title": "Marjane Mall",
-        "description": "Solution marketplace à grande échelle pour le premier détaillant marocain, supportant plusieurs vendeurs et des capacités de reporting avancées."
+        "projet": "Gestion de l'intégration Magento 2 et du déploiement de la marketplace Octopia pour le principal détaillant marocain, Marjane.<br /><br />Organisation et exécution du processus de réversibilité de l'application mobile, incluant la gestion des délais, la coordination de plusieurs équipes et la livraison des versions finales sur Google Play et l'Apple Store.<br /><br />Livraison d'une application mobile hybride React Native supportant plus de 70 000 produits avec une feuille de route pour évoluer vers 1 million.",
+        "impact": "Lancement d'une plateforme e-commerce et mobile évolutive conçue pour une gestion à forte croissance des vendeurs et des produits.<br /><br />Amélioration des flux de travail opérationnels grâce à une coordination efficace des équipes et des solutions techniques.",
+        "realisations": "Planification et exécution d'une mise à niveau de Magento 2.4.2 vers 2.4.5, optimisant les performances et la sécurité du site.<br /><br />Établissement d'un nouveau workflow de déploiement des versions, améliorant la fréquence et la stabilité des mises à jour."
       },
       "valrhona": {
         "title": "Valrhona",
-        "description": "Plateforme B2B/B2C premium pour un fabricant de chocolat de luxe, avec tarification complexe, gestion multi-entrepôts et gestion des recettes."
+        "projet": "Refonte de la plateforme B2B Valrhona Selection pour améliorer l'expérience client et intégrer des fonctionnalités avancées de marketplace avec Mirakl.<br /><br />Configuration des flux API Salesforce avec authentification personnalisée, permettant des interactions client plus fluides.<br /><br />Implémentation du Single Sign-On (SSO) via un module SAML personnalisé pour simplifier l'accès des clients entreprise.",
+        "impact": "Simplification du processus d'onboarding pour les clients professionnels et amélioration de l'efficacité de la plateforme.<br /><br />Renforcement de la sécurité et de l'utilisabilité pour les transactions B2B à grande échelle.",
+        "realisations": "Direction d'une équipe de 7 développeurs, assurant une haute qualité de code et une livraison dans les délais.<br /><br />Réalisation d'audits approfondis et de tests pour préparer la plateforme à une utilisation à fort trafic."
       }
     }
   },
   "skills": {
-    "title": "Compétences Techniques",
-    "subtitle": "Expertise en Développement Magento et Technologies Associées",
-    "list": [
-      {
-        "skill": "Magento",
-        "level": "Expert"
-      },
-      {
-        "skill": "Adobe Commerce",
-        "level": "Expert"
-      },
-      {
-        "skill": "Cybersécurité",
-        "level": "Avancé"
-      },
-      {
-        "skill": "Gestion de Projet",
-        "level": "Avancé"
-      },
-      {
-        "skill": "E-Commerce",
-        "level": "Expert"
-      }
-    ]
+    "title": "Compétences",
+    "technical": {
+      "category": "E-commerce & CMS",
+      "items": [
+        "Magento 2 (Adobe Commerce)",
+        "Wordpress",
+        "WooCommerce",
+        "Shopify",
+        "Mirakl"
+      ]
+    },
+    "ecommerce": {
+      "title": "E-commerce"
+    },
+    "soft": {
+      "title": "Soft Skills"
+    }
   },
   "references": {
     "title": "Ils m'ont fait confiance",
@@ -164,7 +174,15 @@
     ]
   },
   "contact": {
-    "title": "Me Contacter",
+    "title": "Contact",
+    "email": "contact@marialena-pietri.fr",
+    "phone": "+33 07 61 81 11 01",
+    "address": {
+      "line1": "30 allée de la Gâtine",
+      "line2": "31770 Colomiers",
+      "country": "France"
+    },
+    "linkedin": "linkedin.com/in/marialena-pietri",
     "description": "Intéressé(e) par une collaboration ? Discutons de votre projet !",
     "success": "Merci pour votre message ! Je vous répondrai bientôt.",
     "error": "Une erreur s'est produite lors de l'envoi de votre message. Veuillez réessayer.",
@@ -201,34 +219,25 @@
   },
   "legal": {
     "title": "Mentions Légales",
-    "sections": {
+    "content": {
       "identity": {
         "title": "Identité",
-        "content": "Maria-Lena Pietri\nDéveloppeur Magento & Consultante E-commerce\n30 Allée de la Gâtine\n31770 Colomiers, France\nSIRET: 48374376100056\nN° TVA: FR36483743761\nEmail: contact@marialena-pietri.fr"
+        "content": "Ce site est édité par Maria-Lena Pietri, entreprise individuelle."
       },
-      "publication": {
-        "title": "Direction de la Publication",
-        "content": "Directeur de la publication : Maria-Lena Pietri\nResponsable de la rédaction : Maria-Lena Pietri"
+      "contact": {
+        "title": "Contact",
+        "content": [
+          "Adresse : 30 allée de la Gâtine, 31770 Colomiers, France",
+          "Email : contact@marialena-pietri.fr",
+          "Téléphone : +33 07.61.81.11.01"
+        ]
       },
-      "hosting": {
-        "title": "Hébergement",
-        "content": "Ce site est hébergé par Netlify Inc.\n44 Montgomery Street, Suite 300\nSan Francisco, California 94104\nÉtats-Unis"
-      },
-      "cookies": {
-        "title": "Gestion des Cookies",
-        "content": "Ce site utilise des cookies techniques essentiels au fonctionnement du site. Ces cookies ne collectent aucune donnée personnelle. Conformément à la législation en vigueur, leur utilisation ne nécessite pas de consentement préalable."
-      },
-      "cnil": {
-        "title": "Protection des Données",
-        "content": "Conformément à la loi « Informatique et Libertés » du 6 janvier 1978 modifiée et au Règlement Général sur la Protection des Données (RGPD), vous disposez d'un droit d'accès, de rectification, de suppression et d'opposition aux données personnelles vous concernant. Pour exercer ces droits, contactez-nous à l'adresse : contact@marialena-pietri.fr"
-      },
-      "intellectual": {
-        "title": "Propriété Intellectuelle",
-        "content": "L'ensemble de ce site relève de la législation française et internationale sur le droit d'auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés. La reproduction de tout ou partie de ce site sur quelque support que ce soit est formellement interdite sauf autorisation expresse de Maria-Lena Pietri."
-      },
-      "credits": {
-        "title": "Crédits",
-        "content": "Conception et développement : Maria-Lena Pietri\nFramework : Gatsby/React\nBibliothèque UI : Material-UI\nIllustrations et logos : Droits réservés à leurs propriétaires respectifs"
+      "registration": {
+        "title": "Immatriculation",
+        "content": [
+          "SIRET : 948 089 446 00015",
+          "TVA : FR42948089446"
+        ]
       }
     }
   },
@@ -327,9 +336,302 @@
       "content": "Les données collectées sont sécurisées et protégées contre tout accès non autorisé."
     }
   },
+  "cv": {
+    "title": "Curriculum Vitæ",
+    "downloadPrompt": "Téléchargez mon CV dans la langue de votre choix",
+    "languageSelector": "Langue",
+    "downloadButton": "Télécharger le CV",
+    "generatingButton": "Génération en cours...",
+    "contact": {
+      "email": "pietri.marialena@gmail.com",
+      "phone": "+33 6 51 49 59 34",
+      "location": "Paris, France",
+      "linkedin": "linkedin.com/in/maria-lena-pietri",
+      "github": "github.com/MariaLenaPietri",
+      "website": "marialena-pietri.com"
+    },
+    "summary": "Experte Magento Senior & Consultante E-commerce avec plus de 8 ans d'expérience dans le développement et l'optimisation de solutions e-commerce. Spécialisée dans les migrations Magento, la maintenance avancée et la création de solutions sur mesure pour optimiser les performances et la sécurité des plateformes e-commerce. Certifiée Adobe Commerce, je combine expertise technique et vision stratégique pour accompagner les entreprises dans leur transformation digitale.",
+    "experience": [
+      {
+        "title": "Consultante E-commerce Senior",
+        "company": "Freelance",
+        "period": "2020 - Présent",
+        "location": "Paris, France",
+        "highlights": [
+          "Migration réussie de 5+ plateformes Magento 1 vers Magento 2 avec zéro perte de données",
+          "Optimisation des performances avec une amélioration moyenne de 40% du temps de chargement",
+          "Développement de modules personnalisés pour l'intégration ERP/CRM",
+          "Mise en place de solutions B2B complexes avec gestion multi-entreprises",
+          "Formation et accompagnement des équipes techniques (10+ développeurs formés)"
+        ],
+        "projects": [
+          {
+            "name": "Chausson Matériaux",
+            "description": "Migration et optimisation de la plateforme B2B",
+            "achievements": [
+              "Amélioration de 45% des performances",
+              "Intégration PIM complexe",
+              "Migration de 500k+ produits"
+            ]
+          },
+          {
+            "name": "Groupe ERAM",
+            "description": "Refonte complète de l'architecture e-commerce",
+            "achievements": [
+              "Réduction de 60% des coûts d'infrastructure",
+              "Mise en place d'une architecture headless",
+              "Optimisation du parcours client"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Lead Developer Magento",
+        "company": "Smile",
+        "period": "2016 - 2020",
+        "location": "Paris, France",
+        "highlights": [
+          "Direction technique de projets e-commerce majeurs (budgets 500k€+)",
+          "Mise en place de méthodologies Agile et de CI/CD",
+          "Développement d'architectures scalables pour le commerce B2B/B2C",
+          "Coordination d'équipes internationales (5-10 développeurs)",
+          "Audit et optimisation de performances de plateformes existantes"
+        ],
+        "projects": [
+          {
+            "name": "Marjane",
+            "description": "Plateforme e-commerce pour leader marocain de la distribution",
+            "achievements": [
+              "Architecture multi-sites/multi-langues",
+              "Intégration de systèmes de paiement locaux",
+              "Optimisation pour le marché africain"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Développeuse Magento Senior",
+        "company": "Antidot",
+        "period": "2014 - 2016",
+        "location": "Lyon, France",
+        "highlights": [
+          "Développement de solutions e-commerce personnalisées",
+          "Intégration de systèmes de recherche avancés",
+          "Optimisation des performances et de la sécurité",
+          "Formation des développeurs juniors"
+        ]
+      }
+    ],
+    "skills": {
+      "technical": [
+        {
+          "category": "E-commerce",
+          "items": [
+            "Magento 2 (Adobe Commerce)",
+            "Magento Cloud",
+            "Shopify Plus",
+            "Wordpress",
+            "WooCommerce"
+          ]
+        },
+        {
+          "category": "Développement",
+          "items": [
+            "PHP 7/8",
+            "JavaScript/TypeScript",
+            "React/Gatsby",
+            "ReactJS",
+            "GraphQL",
+            "REST API"
+          ]
+        },
+        {
+          "category": "Infrastructure",
+          "items": [
+            "Docker",
+            "Kubernetes",
+            "AWS",
+            "CI/CD",
+            "Nginx",
+            "Apache"
+          ]
+        },
+        {
+          "category": "Base de données & Cache",
+          "items": [
+            "MySQL",
+            "Redis",
+            "Elasticsearch",
+            "Varnish",
+            "MongoDB"
+          ]
+        }
+      ],
+      "soft": [
+        {
+          "category": "Leadership",
+          "items": [
+            "Direction technique",
+            "Gestion d'équipe",
+            "Mentorat",
+            "Formation"
+          ]
+        },
+        {
+          "category": "Gestion de projet",
+          "items": [
+            "Méthodologies Agiles",
+            "SCRUM",
+            "Planification stratégique",
+            "Budgétisation"
+          ]
+        },
+        {
+          "category": "Communication",
+          "items": [
+            "Présentation client",
+            "Documentation technique",
+            "Formation utilisateur",
+            "Communication interculturelle"
+          ]
+        }
+      ]
+    },
+    "certifications": [
+      {
+        "name": "Adobe Commerce Architect Master",
+        "issuer": "Adobe",
+        "year": "2023",
+        "description": "Plus haut niveau de certification Adobe Commerce"
+      },
+      {
+        "name": "Adobe Commerce Developer Expert",
+        "issuer": "Adobe",
+        "year": "2022",
+        "description": "Expertise en développement Adobe Commerce"
+      },
+      {
+        "name": "AWS Solutions Architect Associate",
+        "issuer": "Amazon Web Services",
+        "year": "2022",
+        "description": "Conception d'architectures cloud"
+      },
+      {
+        "name": "Professional Scrum Master I",
+        "issuer": "Scrum.org",
+        "year": "2021",
+        "description": "Gestion de projets Agile"
+      }
+    ],
+    "education": [
+      {
+        "degree": "Master en Ingénierie Informatique",
+        "school": "EPITA",
+        "location": "Paris, France",
+        "period": "2012 - 2014",
+        "highlights": [
+          "Spécialisation en Architecture Logicielle",
+          "Projet de fin d'études sur les architectures e-commerce"
+        ]
+      },
+      {
+        "degree": "Licence en Informatique",
+        "school": "Université Paris-Saclay",
+        "location": "Paris, France",
+        "period": "2009 - 2012",
+        "highlights": [
+          "Mention Très Bien",
+          "Spécialisation en Développement Web"
+        ]
+      }
+    ],
+    "languages": [
+      {
+        "name": "Français",
+        "level": "Langue maternelle",
+        "certification": "DALF C2",
+        "proficiency": 100
+      },
+      {
+        "name": "Anglais",
+        "level": "Courant",
+        "certification": "TOEIC 950/990",
+        "proficiency": 80
+      },
+      {
+        "name": "Espagnol",
+        "level": "Courant",
+        "certification": "DELE C1",
+        "proficiency": 70
+      }
+    ],
+    "achievements": [
+      {
+        "title": "Conférencière Meet Magento France 2023",
+        "description": "Présentation sur l'architecture headless dans l'e-commerce"
+      },
+      {
+        "title": "Contributrice Magento Open Source",
+        "description": "Contribution active à la communauté Magento"
+      },
+      {
+        "title": "Blog Technique",
+        "description": "Publication régulière d'articles sur l'e-commerce et Magento"
+      }
+    ],
+    "sections": {
+      "aboutMe": "À Propos",
+      "experience": "Expérience",
+      "contact": "Contact",
+      "skills": "Compétences",
+      "languages": "Langues"
+    },
+    "skills": {
+      "title": "Compétences",
+      "list": [
+        "Développement Web Full Stack",
+        "React.js / Next.js / Gatsby",
+        "Node.js / Express",
+        "TypeScript / JavaScript",
+        "Python / Django",
+        "SQL / PostgreSQL / MongoDB",
+        "AWS / Cloud Computing",
+        "Docker / Kubernetes",
+        "CI/CD / DevOps",
+        "Git / Version Control",
+        "Test Driven Development",
+        "Agile / Scrum",
+        "UI/UX Design",
+        "RESTful APIs",
+        "GraphQL"
+      ]
+    },
+    "downloadButton": "Télécharger CV"
+  },
   "404": {
     "title": "Page Non Trouvée",
     "description": "La page que vous recherchez n'existe pas ou a été déplacée.",
     "backHome": "Retour à l'Accueil"
+  },
+  "resume": {
+    "sections": {
+      "aboutMe": "À Propos",
+      "experience": "Expérience",
+      "contact": "Contact",
+      "skills": "Compétences",
+      "languages": "Langues"
+    },
+    "skills": {
+      "title": "Compétences",
+      "list": [
+        "Développement E-commerce",
+        "Développement Full Stack",
+        "DevOps & Infrastructure",
+        "Gestion de Projet",
+        "Cybersécurité",
+        "Optimisation de Performance"
+      ]
+    },
+    "downloadButton": "Télécharger CV"
   }
 }

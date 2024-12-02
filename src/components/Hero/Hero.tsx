@@ -13,18 +13,23 @@ import DownloadIcon from '@mui/icons-material/Download';
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 
 const Hero = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
   return (
     <Box
+      id="home"
       sx={{
         minHeight: '100vh',
         display: 'flex',
         alignItems: 'center',
+        pt: { xs: 12, md: 16 },
+        pb: 8,
         background: `linear-gradient(45deg, ${theme.palette.primary.dark}, ${theme.palette.primary.main})`,
         color: 'white',
+        position: 'relative',
+        overflow: 'hidden'
       }}
     >
       <Container maxWidth="lg">
@@ -91,11 +96,12 @@ const Hero = () => {
                   size="large"
                   color="inherit"
                   startIcon={<DownloadIcon />}
+                  href={`/cv?lang=${i18n.language}`}
                   sx={{
                     minWidth: 200,
                     borderColor: 'white',
                     '&:hover': {
-                      borderColor: 'white',
+                      borderColor: 'rgba(255, 255, 255, 0.8)',
                       backgroundColor: 'rgba(255, 255, 255, 0.1)',
                     },
                   }}

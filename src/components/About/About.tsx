@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import DOMPurify from 'dompurify';
 import {
   Box,
   Container,
@@ -10,22 +11,34 @@ import {
   useTheme,
 } from '@mui/material';
 
+interface Language {
+  language: string;
+  level: string;
+}
+
 const About = () => {
   const { t } = useTranslation();
   const theme = useTheme();
 
-  const languageSkills = [
-    { language: 'French', level: 100 },
-    { language: 'English', level: 90 },
-    { language: 'Spanish', level: 85 },
-  ];
+  const getLanguageLevel = (level: string): number => {
+    switch (level) {
+      case "Langue maternelle":
+        return 100;
+      case "Professionnel":
+        return 90;
+      default:
+        return 75;
+    }
+  };
+
+  const languages: Language[] = t('about.languages.list', { returnObjects: true });
 
   return (
     <Box
       id="about"
       sx={{
         py: 8,
-        backgroundColor: theme.palette.background.default,
+        backgroundColor: 'white'
       }}
     >
       <Container maxWidth="lg">
@@ -44,9 +57,11 @@ const About = () => {
               <Typography variant="h5" gutterBottom>
                 {t('about.whoAmI.title')}
               </Typography>
-              <Typography>
-                {t('about.whoAmI.content')}
-              </Typography>
+              <Typography 
+                dangerouslySetInnerHTML={{ 
+                  __html: DOMPurify.sanitize(t('about.whoAmI.content')) 
+                }}
+              />
             </Paper>
           </Grid>
 
@@ -55,9 +70,11 @@ const About = () => {
               <Typography variant="h5" gutterBottom>
                 {t('about.expertise.title')}
               </Typography>
-              <Typography>
-                {t('about.expertise.content')}
-              </Typography>
+              <Typography 
+                dangerouslySetInnerHTML={{ 
+                  __html: DOMPurify.sanitize(t('about.expertise.content')) 
+                }}
+              />
             </Paper>
           </Grid>
 
@@ -66,15 +83,15 @@ const About = () => {
               <Typography variant="h5" gutterBottom>
                 {t('about.languages.title')}
               </Typography>
-              {languageSkills.map((lang) => (
+              {languages.map((lang) => (
                 <Box key={lang.language} sx={{ mb: 2 }}>
                   <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1 }}>
                     <Typography>{lang.language}</Typography>
-                    <Typography>{lang.level}%</Typography>
+                    <Typography>{lang.level}</Typography>
                   </Box>
                   <LinearProgress
                     variant="determinate"
-                    value={lang.level}
+                    value={getLanguageLevel(lang.level)}
                     sx={{
                       height: 8,
                       borderRadius: 4,
