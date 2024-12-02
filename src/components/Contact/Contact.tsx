@@ -30,26 +30,23 @@ const Contact = () => {
     try {
       const form = event.currentTarget;
       const formData = new FormData(form);
-      const data = {
-        name: formData.get('name'),
-        email: formData.get('email'),
-        subject: formData.get('subject'),
-        message: formData.get('message'),
-      };
-
-      const response = await fetch('/.netlify/functions/handle-form', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      });
-
-      if (response.ok) {
-        setMessage({ type: 'success', text: t('contact.success') });
-        form.reset();
-      } else {
-        setMessage({ type: 'error', text: t('contact.error') });
-      }
+      
+      // Submit to Netlify's form handling
+      fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData as any).toString(),
+      })
+        .then(() => {
+          setMessage({ type: 'success', text: t('contact.success') });
+          form.reset();
+        })
+        .catch((error) => {
+          console.error('Form submission error:', error);
+          setMessage({ type: 'error', text: t('contact.error') });
+        });
     } catch (error) {
+      console.error('Form submission error:', error);
       setMessage({ type: 'error', text: t('contact.error') });
     } finally {
       setLoading(false);
@@ -120,39 +117,30 @@ const Contact = () => {
         </Typography>
         <Grid container spacing={4} justifyContent="center">
           <Grid item xs={12} md={8}>
-            <Paper
-              elevation={0}
+            <Paper 
+              elevation={3}
               sx={{
                 p: 4,
+                maxWidth: 800,
+                mx: 'auto',
                 backgroundColor: 'rgba(255, 255, 255, 0.05)',
                 backdropFilter: 'blur(10px)',
                 border: '1px solid rgba(255, 255, 255, 0.1)',
-                borderRadius: '16px',
-                position: 'relative',
-                overflow: 'hidden',
-                transition: 'all 0.3s ease',
-                '&::before': {
-                  content: '""',
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  right: 0,
-                  height: '4px',
-                  background: `linear-gradient(90deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
-                  opacity: 0.7,
-                },
-                '&:hover': {
-                  backgroundColor: 'rgba(255, 255, 255, 0.08)',
-                  border: `1px solid ${theme.palette.primary.main}40`,
-                  transform: 'translateY(-4px)',
-                  boxShadow: '0 16px 40px rgba(0,0,0,0.3)',
-                }
               }}
             >
-              <form
+              <form 
                 onSubmit={handleSubmit}
-                noValidate
+                name="contact"
+                method="POST"
+                data-netlify="true"
+                netlify-honeypot="bot-field"
               >
+                <input type="hidden" name="form-name" value="contact" />
+                <p hidden>
+                  <label>
+                    Don't fill this out if you're human: <input name="bot-field" />
+                  </label>
+                </p>
                 <Grid container spacing={3}>
                   <Grid item xs={12} sm={6}>
                     <TextField
