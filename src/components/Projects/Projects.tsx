@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import { useSanitize } from '../../hooks/useSanitize';
 import {
   Box,
   Container,
@@ -27,6 +28,7 @@ interface Project {
 const Projects = () => {
   const { t } = useTranslation();
   const theme = useTheme();
+  const sanitize = useSanitize();
 
   const projects: Project[] = [
     {
@@ -116,6 +118,7 @@ const Projects = () => {
                   height: '100%',
                   display: 'flex',
                   flexDirection: 'column',
+                  backgroundColor: 'white',
                   '&:hover': {
                     transform: 'translateY(-4px)',
                     transition: 'transform 0.3s ease-in-out',
@@ -140,7 +143,7 @@ const Projects = () => {
                   <Typography 
                     variant="body2" 
                     color="text.secondary"
-                    dangerouslySetInnerHTML={{ __html: project.projet }}
+                    dangerouslySetInnerHTML={{ __html: sanitize(project.projet) }}
                     paragraph
                   />
                   
@@ -152,7 +155,7 @@ const Projects = () => {
                   <Typography 
                     variant="body2" 
                     color="text.secondary"
-                    dangerouslySetInnerHTML={{ __html: project.impact }}
+                    dangerouslySetInnerHTML={{ __html: sanitize(project.impact) }}
                     paragraph
                   />
                   
@@ -164,7 +167,7 @@ const Projects = () => {
                   <Typography 
                     variant="body2" 
                     color="text.secondary"
-                    dangerouslySetInnerHTML={{ __html: project.realisations }}
+                    dangerouslySetInnerHTML={{ __html: sanitize(project.realisations) }}
                     paragraph
                   />
 

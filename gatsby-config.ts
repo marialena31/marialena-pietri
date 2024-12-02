@@ -1,22 +1,21 @@
 import type { GatsbyConfig } from "gatsby"
-import dotenv from 'dotenv'
+import dotenv from 'dotenv';
 
 // Load environment variables from .env
-dotenv.config()
+dotenv.config();
 
 const config: GatsbyConfig = {
   siteMetadata: {
     title: `Maria-Lena Pietri - Magento Developer`,
-    description: `Professional Magento developer with over 15 years of experience in e-commerce solutions`,
+    description: `Tech Lead and Project Manager with over 15 years of experience in web development and e-commerce.`,
     author: `Maria-Lena Pietri`,
-    siteUrl: `https://your-domain.com`,
+    siteUrl: `https://www.marialena-pietri.com`,
   },
   graphqlTypegen: true,
   plugins: [
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {

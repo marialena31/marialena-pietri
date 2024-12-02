@@ -92,6 +92,7 @@ const Skills = () => {
                 sx={{
                   p: 3,
                   height: '100%',
+                  backgroundColor: 'white',
                   transition: 'transform 0.2s',
                   '&:hover': {
                     transform: 'translateY(-5px)',
@@ -137,13 +138,6 @@ const Skills = () => {
                             }}
                           >
                             {skill.name}
-                          </Typography>
-                          <Typography 
-                            variant="body2" 
-                            color="textSecondary"
-                            sx={{ mt: 0.5 }}
-                          >
-                            {skill.description}
                           </Typography>
                         </Box>
                       </Box>

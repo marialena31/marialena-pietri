@@ -74,26 +74,22 @@ const References = () => {
                   alignItems: 'center',
                   justifyContent: 'center',
                   position: 'relative',
-                  overflow: 'hidden'
+                  overflow: 'hidden',
+                  backgroundColor: 'white'
                 }}
               >
                 <Box
                   component="img"
                   src={reference.logo}
-                  alt={reference.name}
+                  alt={`${reference.name} ${reference.isCAC40 ? t('references.cac40Member') : ''}`}
+                  loading="lazy"
                   sx={{
                     width: '100%',
                     height: 'auto',
                     maxHeight: 100,
                     objectFit: 'contain',
-                    filter: 'grayscale(100%)',
-                    opacity: 0.7,
-                    transition: 'all 0.3s ease-in-out',
-                    '&:hover': {
-                      filter: 'grayscale(0%)',
-                      opacity: 1
-                    }
                   }}
+                  role="img"
                 />
                 {reference.isCAC40 && (
                   <Typography

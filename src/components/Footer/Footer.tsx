@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useSanitize } from '../../hooks/useSanitize';
 import {
   Box,
   Container,
@@ -16,6 +17,7 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 const Footer = () => {
   const { t } = useTranslation();
   const currentYear = new Date().getFullYear();
+  const sanitize = useSanitize();
 
   const [modalContent, setModalContent] = useState<{
     title: string;
@@ -168,25 +170,11 @@ const Footer = () => {
               <Link
                 component="button"
                 onClick={() => handleModalOpen('legal')}
-                sx={{ 
-                  color: 'white', 
+                sx={{
+                  color: 'white',
                   textDecoration: 'none',
-                  position: 'relative',
-                  '&::after': {
-                    content: '""',
-                    position: 'absolute',
-                    width: '0',
-                    height: '2px',
-                    bottom: '-2px',
-                    left: '50%',
-                    background: 'white',
-                    transition: 'all 0.3s ease-in-out',
-                    transform: 'translateX(-50%)',
-                  },
                   '&:hover': {
-                    '&::after': {
-                      width: '80%',
-                    },
+                    textDecoration: 'underline',
                   },
                 }}
               >
@@ -195,25 +183,11 @@ const Footer = () => {
               <Link
                 component="button"
                 onClick={() => handleModalOpen('terms')}
-                sx={{ 
-                  color: 'white', 
+                sx={{
+                  color: 'white',
                   textDecoration: 'none',
-                  position: 'relative',
-                  '&::after': {
-                    content: '""',
-                    position: 'absolute',
-                    width: '0',
-                    height: '2px',
-                    bottom: '-2px',
-                    left: '50%',
-                    background: 'white',
-                    transition: 'all 0.3s ease-in-out',
-                    transform: 'translateX(-50%)',
-                  },
                   '&:hover': {
-                    '&::after': {
-                      width: '80%',
-                    },
+                    textDecoration: 'underline',
                   },
                 }}
               >
@@ -222,25 +196,11 @@ const Footer = () => {
               <Link
                 component="button"
                 onClick={() => handleModalOpen('privacy')}
-                sx={{ 
-                  color: 'white', 
+                sx={{
+                  color: 'white',
                   textDecoration: 'none',
-                  position: 'relative',
-                  '&::after': {
-                    content: '""',
-                    position: 'absolute',
-                    width: '0',
-                    height: '2px',
-                    bottom: '-2px',
-                    left: '50%',
-                    background: 'white',
-                    transition: 'all 0.3s ease-in-out',
-                    transform: 'translateX(-50%)',
-                  },
                   '&:hover': {
-                    '&::after': {
-                      width: '80%',
-                    },
+                    textDecoration: 'underline',
                   },
                 }}
               >
@@ -266,9 +226,16 @@ const Footer = () => {
           <Typography id="modal-title" variant="h6" component="h2" gutterBottom>
             {modalContent.title}
           </Typography>
-          <Typography id="modal-description" sx={{ whiteSpace: 'pre-line' }}>
-            {modalContent.content}
-          </Typography>
+          <Typography
+            variant="body1"
+            sx={{
+              whiteSpace: 'pre-wrap',
+              fontSize: '0.875rem',
+            }}
+            dangerouslySetInnerHTML={{
+              __html: sanitize(modalContent.content.replace(/\n/g, '<br />'))
+            }}
+          />
           <Box sx={{ mt: 2, display: 'flex', justifyContent: 'flex-end' }}>
             <Link
               component="button"
@@ -276,22 +243,8 @@ const Footer = () => {
               sx={{
                 color: 'primary.main',
                 textDecoration: 'none',
-                position: 'relative',
-                '&::after': {
-                  content: '""',
-                  position: 'absolute',
-                  width: '0',
-                  height: '2px',
-                  bottom: '-2px',
-                  left: '50%',
-                  background: 'primary.main',
-                  transition: 'all 0.3s ease-in-out',
-                  transform: 'translateX(-50%)',
-                },
                 '&:hover': {
-                  '&::after': {
-                    width: '80%',
-                  },
+                  textDecoration: 'underline',
                 },
               }}
             >

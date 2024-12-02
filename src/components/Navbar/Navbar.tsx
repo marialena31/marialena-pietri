@@ -79,8 +79,19 @@ const Navbar = () => {
           button 
           key={item.href}
           onClick={() => scrollToSection(item.href)}
+          onKeyDown={(e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              scrollToSection(item.href);
+            }
+          }}
+          role="menuitem"
+          tabIndex={0}
+          aria-label={item.label}
         >
-          <ListItemText primary={item.label} sx={{ color: isScrolled ? 'text.primary' : 'white' }} />
+          <ListItemText 
+            primary={item.label} 
+            sx={{ color: isScrolled ? 'text.primary' : 'white' }} 
+          />
         </ListItem>
       ))}
     </List>

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import DOMPurify from 'dompurify';
+import { useSanitize } from '../../hooks/useSanitize';
 import {
   Box,
   Container,
@@ -19,6 +19,7 @@ interface Language {
 const About = () => {
   const { t } = useTranslation();
   const theme = useTheme();
+  const sanitize = useSanitize();
 
   const getLanguageLevel = (level: string): number => {
     switch (level) {
@@ -60,7 +61,7 @@ const About = () => {
               </Typography>
               <Typography 
                 dangerouslySetInnerHTML={{ 
-                  __html: DOMPurify.sanitize(t('about.whoAmI.content')) 
+                  __html: sanitize(t('about.whoAmI.content')) 
                 }}
               />
             </Paper>
@@ -73,22 +74,24 @@ const About = () => {
               </Typography>
               <Typography 
                 dangerouslySetInnerHTML={{ 
-                  __html: DOMPurify.sanitize(t('about.expertise.content')) 
+                  __html: sanitize(t('about.expertise.content')) 
                 }}
               />
             </Paper>
           </Grid>
 
           <Grid item xs={12} md={4}>
-            <Paper elevation={3} sx={{ p: 3, height: '100%' }}>
+            <Box sx={{ mt: 4 }}>
               <Typography variant="h5" gutterBottom>
                 {t('about.languages.title')}
               </Typography>
-              {languagesArray.map((lang) => (
-                <Box key={lang.language} sx={{ mb: 2 }}>
+              {languagesArray.map((lang: any, index: number) => (
+                <Box key={index} sx={{ mb: 2 }}>
                   <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1 }}>
-                    <Typography>{lang.language}</Typography>
-                    <Typography>{lang.level}</Typography>
+                    <Typography variant="body1">{lang.language}</Typography>
+                    <Typography variant="body2" color="textSecondary">
+                      {lang.level}
+                    </Typography>
                   </Box>
                   <LinearProgress
                     variant="determinate"
@@ -99,12 +102,13 @@ const About = () => {
                       backgroundColor: theme.palette.grey[200],
                       '& .MuiLinearProgress-bar': {
                         borderRadius: 4,
+                        backgroundColor: theme.palette.primary.main,
                       },
                     }}
                   />
                 </Box>
               ))}
-            </Paper>
+            </Box>
           </Grid>
         </Grid>
       </Container>

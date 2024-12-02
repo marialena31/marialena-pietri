@@ -23,40 +23,52 @@
   "about": {
     "title": "Sobre Mí",
     "whoAmI": {
-      "title": "¿Quién soy?",
-      "content": "Soy una desarrolladora web full-stack apasionada por crear soluciones digitales innovadoras. Con experiencia en el desarrollo de aplicaciones web modernas y escalables, me especializo en tecnologías front-end y back-end. Mi enfoque se centra en la creación de experiencias de usuario excepcionales y código limpio y mantenible."
+      "title": "Quién soy",
+      "content": "Soy una <strong>Tech Lead</strong> y <strong>Project Manager</strong> con más de 15 años de experiencia en desarrollo web y comercio electrónico.<br /><br />Mi experiencia abarca <strong>Magento</strong>, <strong>ReactJS</strong> y <strong>Ciberseguridad</strong>, con un sólido historial en la dirección de proyectos, mentoría de equipos y entrega de soluciones digitales escalables.<br /><br />Con una visión 360° de la tecnología, destaco en roles técnicos y funcionales para impulsar el crecimiento empresarial."
+    },
+    "expertise": {
+      "title": "Experiencia",
+      "content": "Especializada en <strong>Magento 2</strong> y <strong>Adobe Commerce Cloud</strong>, ofrezco soluciones completas para proyectos de comercio electrónico B2B y B2C.<br /><br />Mi experiencia técnica incluye desarrollo front-end y back-end, optimización de rendimiento, seguridad e integración de sistemas de terceros.<br /><br />También ofrezco servicios de consultoría en arquitectura técnica y estrategia digital."
     },
     "languages": {
       "title": "Idiomas",
       "list": [
         {
           "language": "Francés",
-          "level": "Nativo",
-          "proficiency": 100
+          "level": "Nativo"
         },
         {
           "language": "Inglés",
-          "level": "Avanzado",
-          "proficiency": 90
+          "level": "Avanzado"
         },
         {
           "language": "Español",
-          "level": "Profesional",
-          "proficiency": 75
+          "level": "Profesional"
         }
       ]
     }
   },
   "contact": {
       "title": "Contacto",
-      "email": "contact@marialena-pietri.fr",
-      "phone": "+33 07 61 81 11 01",
-      "address": {
-        "line1": "30 allée de la Gâtine",
-        "line2": "31770 Colomiers",
-        "country": "Francia"
+      "description": "No dudes en contactarme para cualquier pregunta u oportunidad.",
+      "success": "¡Mensaje enviado con éxito! Te responderé pronto.",
+      "form": {
+        "name": "Nombre",
+        "email": "Email",
+        "subject": "Asunto",
+        "message": "Mensaje",
+        "send": "Enviar",
+        "sending": "Enviando...",
+        "error": "Se produjo un error. Por favor, inténtalo de nuevo más tarde.",
+        "characters": "caracteres"
       },
-      "linkedin": "linkedin.com/in/marialena-pietri"
+      "validation": {
+        "nameRequired": "Por favor, introduce tu nombre",
+        "emailRequired": "Por favor, introduce tu email",
+        "emailInvalid": "Por favor, introduce una dirección de email válida",
+        "subjectRequired": "Por favor, introduce un asunto",
+        "messageRequired": "Por favor, introduce un mensaje"
+      }
     },
     "expertise": {
       "title": "Mi Experiencia",
@@ -207,39 +219,6 @@
       }
     ]
   },
-  "contact": {
-    "title": "Contacto",
-    "description": "No dudes en contactarme para cualquier pregunta u oportunidad.",
-    "success": "¡Mensaje enviado con éxito! Te responderé pronto.",
-    "error": "Ocurrió un error. Por favor, inténtalo de nuevo más tarde.",
-    "recaptchaError": "No se pudo verificar que eres humano. Por favor, inténtalo de nuevo.",
-    "form": {
-      "name": "Nombre",
-      "email": "Email",
-      "subject": "Asunto",
-      "message": "Mensaje",
-      "send": "Enviar Mensaje",
-      "sending": "Enviando...",
-      "characters": "caracteres"
-    },
-    "validation": {
-      "nameRequired": "Por favor, introduce tu nombre",
-      "emailRequired": "Por favor, introduce tu email",
-      "emailInvalid": "Por favor, introduce un email válido",
-      "subjectRequired": "Por favor, introduce un asunto",
-      "messageRequired": "Por favor, introduce un mensaje"
-    }
-  },
-  "references": {
-    "title": "Respaldado por Marcas Líderes",
-    "subtitle": "Un historial de entrega de soluciones de e-commerce excepcionales"
-  },
-  "cta": {
-    "title": "¿Listo para Transformar su Negocio de E-Commerce?",
-    "description": "Hablemos de su proyecto y encontremos la solución perfecta.",
-    "email": "Envíeme un correo",
-    "call": "Llámeme"
-  },
   "terms": {
     "title": "Términos y Condiciones de Venta",
     "preamble": {
@@ -376,11 +355,68 @@
     "copyright": "Maria-Lena Pietri. Todos los derechos reservados."
   },
   "cv": {
-    "title": "Curriculum Vitae",
-    "downloadPrompt": "Descarga mi CV",
-    "languageSelector": "Idioma",
-    "downloadButton": "Descargar CV",
-    "generatingButton": "Generando..."
+    "title": "Mi CV",
+    "description": "Descarga mi CV para conocer más sobre mi experiencia y habilidades.",
+    "download": {
+      "button": "Descargar CV",
+      "generating": "Generando PDF...",
+      "error": "Error al generar el PDF. Por favor, inténtalo de nuevo."
+    },
+    "sections": {
+      "education": {
+        "title": "Educación",
+        "items": [
+          {
+            "degree": "Máster en Informática",
+            "school": "Universidad Paul Sabatier",
+            "location": "Toulouse, Francia",
+            "year": "2019-2021",
+            "description": "Especialización en Ingeniería de Software y Sistemas Distribuidos"
+          },
+          {
+            "degree": "Grado en Informática",
+            "school": "Universidad Paul Sabatier",
+            "location": "Toulouse, Francia",
+            "year": "2016-2019",
+            "description": "Enfoque en Programación y Desarrollo de Software"
+          }
+        ]
+      },
+      "experience": {
+        "title": "Experiencia Profesional",
+        "items": [
+          {
+            "position": "Desarrolladora Senior de Magento",
+            "company": "Freelance",
+            "location": "Remoto",
+            "period": "2021-Presente",
+            "description": "Especializada en desarrollo Magento 2 y soluciones de comercio electrónico"
+          },
+          {
+            "position": "Desarrolladora Full Stack",
+            "company": "Agencia Digital",
+            "location": "Toulouse, Francia",
+            "period": "2019-2021",
+            "description": "Desarrollo y mantenimiento de aplicaciones web usando tecnologías modernas"
+          }
+        ]
+      },
+      "skills": {
+        "title": "Habilidades Técnicas",
+        "categories": {
+          "languages": "Lenguajes de Programación",
+          "frameworks": "Frameworks y Bibliotecas",
+          "tools": "Herramientas y Tecnologías",
+          "databases": "Bases de Datos"
+        },
+        "items": {
+          "languages": ["PHP", "JavaScript", "TypeScript", "Python", "Java"],
+          "frameworks": ["Magento 2", "React", "Node.js", "Express", "Laravel"],
+          "tools": ["Git", "Docker", "AWS", "Jenkins", "Webpack"],
+          "databases": ["MySQL", "MongoDB", "PostgreSQL", "Redis"]
+        }
+      }
+    }
   },
   "404": {
     "title": "Página No Encontrada",
@@ -411,18 +447,15 @@
       "list": [
         {
           "language": "Francés",
-          "level": "Nativo",
-          "proficiency": 100
+          "level": "Nativo"
         },
         {
           "language": "Inglés",
-          "level": "Avanzado",
-          "proficiency": 90
+          "level": "Avanzado"
         },
         {
           "language": "Español",
-          "level": "Profesional",
-          "proficiency": 75
+          "level": "Profesional"
         }
       ]
     },

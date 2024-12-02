@@ -21,47 +21,76 @@
     "downloadCV": "Download CV"
   },
   "about": {
-    "title": "About",
+    "title": "About Me",
     "whoAmI": {
-      "title": "Who Am I?",
-      "content": "I am a full-stack web developer passionate about creating innovative digital solutions. With experience in developing modern and scalable web applications, I specialize in both front-end and back-end technologies. My focus is on creating exceptional user experiences and clean, maintainable code."
-    }
-  },
-  "contact": {
-      "title": "Contact",
-      "email": "contact@marialena-pietri.fr",
-      "phone": "+33 07 61 81 11 01",
-      "address": {
-        "line1": "30 allée de la Gâtine",
-        "line2": "31770 Colomiers",
-        "country": "France"
-      },
-      "linkedin": "linkedin.com/in/marialena-pietri"
+      "title": "Who I Am",
+      "content": "I am an experienced <strong>Tech Lead</strong> and <strong>Project Manager</strong> with over 15 years of experience in web development and e-commerce.<br /><br />My expertise spans <strong>Magento</strong>, <strong>ReactJS</strong>, and <strong>Cybersecurity</strong>, with a strong track record in project leadership, team mentoring, and delivering scalable digital solutions.<br /><br />With a 360° view of technology, I excel in both technical and functional roles to drive business growth."
+    },
+    "expertise": {
+      "title": "Expertise",
+      "content": "Specialized in <strong>Magento 2</strong> and <strong>Adobe Commerce Cloud</strong>, I provide comprehensive solutions for B2B and B2C e-commerce projects.<br /><br />My technical expertise includes front-end and back-end development, performance optimization, security, and third-party system integration.<br /><br />I also offer consulting services in technical architecture and digital strategy."
     },
     "languages": {
       "title": "Languages",
       "list": [
         {
           "language": "French",
-          "level": "Native",
-          "proficiency": 100
+          "level": "Native"
         },
         {
           "language": "English",
-          "level": "Advanced",
-          "proficiency": 80
+          "level": "Advanced"
         },
         {
           "language": "Spanish",
-          "level": "Intermediate",
-          "proficiency": 70
+          "level": "Professional"
         }
       ]
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "description": "Feel free to reach out to me for any questions or opportunities.",
+    "success": "Message sent successfully! I'll get back to you soon.",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "error": "An error occurred. Please try again later.",
+      "characters": "characters"
     },
-    "expertise": {
-      "title": "My Expertise",
-      "content": "Specialized in <strong>Magento 2 development</strong>, <strong>custom module creation</strong>, and <strong>performance optimization</strong>.<br /><br />I provide expert guidance in <strong>e-commerce strategy</strong>, combining technical excellence with business understanding.<br /><br />My approach focuses on delivering <strong>scalable solutions</strong> that drive measurable business growth and exceptional user experiences."
-    },
+    "validation": {
+      "nameRequired": "Please enter your name",
+      "emailRequired": "Please enter your email",
+      "emailInvalid": "Please enter a valid email address",
+      "subjectRequired": "Please enter a subject",
+      "messageRequired": "Please enter a message"
+    }
+  },
+  "languages": {
+    "title": "Languages",
+    "list": [
+      {
+        "language": "French",
+        "level": "Native"
+      },
+      {
+        "language": "English",
+        "level": "Advanced"
+      },
+      {
+        "language": "Spanish",
+        "level": "Professional"
+      }
+    ]
+  },
+  "expertise": {
+    "title": "My Expertise",
+    "content": "Specialized in <strong>Magento 2 development</strong>, <strong>custom module creation</strong>, and <strong>performance optimization</strong>.<br /><br />I provide expert guidance in <strong>e-commerce strategy</strong>, combining technical excellence with business understanding.<br /><br />My approach focuses on delivering <strong>scalable solutions</strong> that drive measurable business growth and exceptional user experiences."
+  },
   "skills": {
     "title": "Technical Skills",
     "subtitle": "Expertise in Magento Development and Related Technologies",
@@ -211,8 +240,6 @@
     "title": "Contact",
     "description": "Feel free to reach out to me for any questions or opportunities.",
     "success": "Message sent successfully! I'll get back to you soon.",
-    "error": "An error occurred. Please try again later.",
-    "recaptchaError": "Could not verify that you are human. Please try again.",
     "form": {
       "name": "Name",
       "email": "Email",
@@ -220,6 +247,7 @@
       "message": "Message",
       "send": "Send Message",
       "sending": "Sending...",
+      "error": "An error occurred. Please try again later.",
       "characters": "characters"
     },
     "validation": {
@@ -376,15 +404,34 @@
   },
   "cv": {
     "title": "Curriculum Vitae",
+    "description": "Here you can download my CV to learn more about my professional experience and skills",
     "downloadPrompt": "Download my CV",
     "languageSelector": "Language",
     "downloadButton": "Download CV",
-    "generatingButton": "Generating..."
-  },
-  "404": {
-    "title": "Page Not Found",
-    "description": "The page you're looking for doesn't exist or has been moved.",
-    "backHome": "Back to Home"
+    "generatingButton": "Generating...",
+    "about": {
+      "whoAmI": {
+        "content": "I am a passionate Full Stack Developer with expertise in Magento 2 development. With a strong foundation in both front-end and back-end technologies, I specialize in creating robust e-commerce solutions."
+      }
+    },
+    "contact": {
+      "email": "pietri.marialena@gmail.com",
+      "phone": "+33 6 59 87 61 28",
+      "address": {
+        "line1": "6 rue Léon Jouhaux",
+        "line2": "75010 Paris",
+        "country": "France"
+      },
+      "linkedin": "linkedin.com/in/maria-lena-pietri"
+    },
+    "sections": {
+      "contact": "Contact Information",
+      "skills": "Technical Skills",
+      "languages": "Languages",
+      "aboutMe": "About Me",
+      "experience": "Professional Experience",
+      "education": "Education"
+    }
   },
   "resume": {
     "sections": {
@@ -410,18 +457,15 @@
       "list": [
         {
           "language": "French",
-          "level": "Native",
-          "proficiency": 100
+          "level": "Native"
         },
         {
           "language": "English",
-          "level": "Advanced",
-          "proficiency": 90
+          "level": "Advanced"
         },
         {
           "language": "Spanish",
-          "level": "Professional",
-          "proficiency": 75
+          "level": "Professional"
         }
       ]
     },

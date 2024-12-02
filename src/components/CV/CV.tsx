@@ -6,7 +6,6 @@ import {
   Container,
   Typography,
   Button,
-  CircularProgress,
   Select,
   MenuItem,
   FormControl,
@@ -55,19 +54,22 @@ const CV = () => {
 
       // Check if we have all required translations
       const requiredTranslations = [
-        'hero.title',
-        'hero.subtitle',
-        'resume.sections.contact',
-        'resume.sections.skills',
-        'resume.sections.languages',
-        'resume.sections.aboutMe',
-        'about.whoAmI.content',
-        'contact.email',
-        'contact.phone',
-        'contact.address.line1',
-        'contact.address.line2',
-        'contact.address.country',
-        'contact.linkedin'
+        'cv.title',
+        'cv.description',
+        'cv.download.generating',
+        'cv.download.button',
+        'cv.download.error',
+        'cv.sections.contact',
+        'cv.sections.skills',
+        'cv.sections.languages',
+        'cv.sections.aboutMe',
+        'cv.about.whoAmI.content',
+        'cv.contact.email',
+        'cv.contact.phone',
+        'cv.contact.address.line1',
+        'cv.contact.address.line2',
+        'cv.contact.address.country',
+        'cv.contact.linkedin'
       ];
 
       const missingTranslations = requiredTranslations.filter(key => !t(key));
@@ -167,178 +169,111 @@ const CV = () => {
         console.warn('Could not load profile image:', error);
       }
 
-      // Name and title (centered in sidebar, adjusted spacing)
+      // Name and title
       doc.setTextColor(colors.white);
       doc.setFont('helvetica', 'bold');
       doc.setFontSize(18);
       
-      const name = t('hero.title');
-      const nameWidth = doc.getTextWidth(name);
-      doc.text(name, 35 - (nameWidth/2), 80); // Moved down slightly
+      const name = t('cv.title');
+      const nameWidth = (doc.getStringUnitWidth(name) * 18) / doc.internal.scaleFactor;
+      const nameX = 35 - (nameWidth / 2);
+      doc.text(name, nameX, 70);
 
-      doc.setFontSize(12);
-      doc.setFont('helvetica', 'normal');
-      const titleLines = doc.splitTextToSize(t('hero.subtitle'), 60);
-      titleLines.forEach((line: string, index: number) => {
-        const lineWidth = doc.getTextWidth(line);
-        doc.text(line, 35 - (lineWidth/2), 87 + (index * 5));
-      });
-
-      // Contact section (without icons)
       doc.setFontSize(14);
-      doc.setFont('helvetica', 'bold');
-      doc.text(t('resume.sections.contact'), 10, 110);
+      const title = t('cv.description');
+      const titleWidth = (doc.getStringUnitWidth(title) * 14) / doc.internal.scaleFactor;
+      const titleX = 35 - (titleWidth / 2);
+      doc.text(title, titleX, 80);
 
-      const email = t('contact.email', 'contact@marialena-pietri.fr');
-      const phone = t('contact.phone', '+33 07 61 81 11 01');
-      const addressLine1 = t('contact.address.line1', '30 allée de la Gâtine');
-      const addressLine2 = t('contact.address.line2', '31770 Colomiers');
-      const country = t('contact.address.country', 'France');
-      const linkedin = t('contact.linkedin', 'linkedin.com/in/marialena-pietri');
-
-      const contactInfo = [
-        email,
-        phone,
-        addressLine1,
-        `${addressLine2}, ${country}`,
-        linkedin
-      ];
-
-      doc.setFontSize(8);
-      contactInfo.forEach((info, index) => {
-        const y = 120 + (index * 6);
-        doc.text(info, 10, y);
-      });
-
-      // Skills section (without bullet points)
-      doc.setFontSize(14);
-      doc.setFont('helvetica', 'bold');
-      doc.text(t('resume.sections.skills'), 10, 160);
-
-      // Get translated skills and ensure it's an array
-      const skillsList = t('resume.skills.list', { returnObjects: true });
-      const skills = Array.isArray(skillsList) ? skillsList : [];
-      let skillsY = 170;
-
-      doc.setFontSize(8);
-      skills.forEach((skill, index) => {
-        const y = skillsY + (index * 6);
-        doc.text(skill, 10, y);
-      });
-
-      // Languages with modern progress bars
-      doc.setFont('helvetica', 'bold');
-      doc.text(t('resume.sections.languages'), 10, pageHeight - 40);
-
-      const languages = t('resume.languages.list', { returnObjects: true });
-      const languagesArray = Array.isArray(languages) ? languages : [];
-      let langY = pageHeight - 30;
-
-      languagesArray.forEach((lang: any) => {
-        if (!lang || typeof lang !== 'object') return;
-        
-        doc.setFontSize(8);
-        doc.text(lang.language || '', 10, langY);
-
-        // Modern progress bar
-        const barWidth = 50;
-        const barHeight = 3;
-        
-        // Background
-        doc.setFillColor('#E0E0E0');
-        doc.roundedRect(10, langY + 2, barWidth, barHeight, 1, 1, 'F');
-        
-        // Progress based on proficiency value
-        const progress = (lang.proficiency || 0) / 100;
-        
-        doc.setFillColor(colors.white);
-        doc.roundedRect(10, langY + 2, barWidth * progress, barHeight, 1, 1, 'F');
-
-        langY += 10;
-      });
-
-      // About Me section
-      doc.setTextColor(colors.text);
-      doc.setFont('helvetica', 'bold');
-      doc.setFontSize(16);
-      doc.text(t('resume.sections.aboutMe'), 80, 25);
-
+      // Contact information in sidebar
       doc.setFontSize(10);
       doc.setFont('helvetica', 'normal');
-      const aboutText = t('about.whoAmI.content')
-        .replace(/<\/?[^>]+(>|$)/g, '')
-        .split('.')
-        .filter(sentence => sentence.trim())
-        .map(sentence => sentence.trim() + '.');
-      
-      let aboutY = 35;
-      aboutText.forEach((sentence, index) => {
-        const lines = doc.splitTextToSize(sentence, pageWidth - 100);
-        doc.text(lines, 80, aboutY);
-        aboutY += lines.length * 4 + 2;
-      });
-
-      // Add extra space after About section
-      aboutY += 10;
-
-      // Experience section with increased spacing
-      doc.setFont('helvetica', 'bold');
-      doc.setFontSize(16);
-      doc.text(t('resume.sections.experience'), 80, aboutY + 5);
-
-      let yPos = aboutY + 15;
-      
-      const projects = [
-        { key: 'eram', period: '2024' },
-        { key: 'whisky', period: '2024' },
-        { key: 'marjane', period: '2023' },
-        { key: 'valrhona', period: '2018' },
-        { key: 'legrand', period: '2016 - 2019' },
-        { key: 'chausson', period: '2010 - 2014' }
+      const contactInfo = [
+        { label: t('cv.sections.contact'), value: '' },
+        { label: t('cv.contact.email'), value: 'pietri.marialena@gmail.com' },
+        { label: t('cv.contact.phone'), value: '+33 6 59 87 61 28' },
+        { label: t('cv.contact.address.line1'), value: '6 rue Léon Jouhaux' },
+        { label: t('cv.contact.address.line2'), value: '75010 Paris' },
+        { label: t('cv.contact.address.country'), value: 'France' },
+        { label: t('cv.contact.linkedin'), value: 'linkedin.com/in/maria-lena-pietri/' }
       ];
 
-      projects.forEach((project) => {
-        // Timeline dot
-        doc.setFillColor(colors.primary);
-        doc.circle(75, yPos - 1, 1, 'F');
-        
-        // Vertical timeline line
-        if (yPos < pageHeight - 30) {
-          doc.setDrawColor(colors.primary);
-          doc.setLineWidth(0.5);
-          doc.line(75, yPos + 2, 75, yPos + 15); // Extended line
+      let yPos = 100;
+      contactInfo.forEach((item, index) => {
+        if (index === 0) {
+          doc.setFont('helvetica', 'bold');
+        } else {
+          doc.setFont('helvetica', 'normal');
         }
-
-        // Company and role
-        doc.setFont('helvetica', 'bold');
-        doc.setFontSize(11);
-        doc.text(t(`portfolio.projects.${project.key}.title`), 80, yPos);
-        
-        // Period
-        doc.setFont('helvetica', 'normal');
-        doc.setFontSize(9);
-        doc.setTextColor(colors.secondary);
-        const periodWidth = doc.getTextWidth(project.period);
-        doc.text(project.period, pageWidth - 20 - periodWidth, yPos);
-
-        // Description
-        doc.setTextColor(colors.text);
-        const description = doc.splitTextToSize(
-          t(`portfolio.projects.${project.key}.projet`).replace(/<\/?[^>]+(>|$)/g, ''),
-          pageWidth - 100
-        );
-        doc.text(description, 80, yPos + 5);
-
-        yPos += Math.max(20, description.length * 4 + 10); // Increased spacing between experiences
+        doc.text(item.label, 10, yPos);
+        if (item.value) {
+          yPos += 5;
+          doc.text(item.value, 10, yPos);
+          yPos += 10;
+        } else {
+          yPos += 8;
+        }
       });
 
+      // Skills section in sidebar
+      yPos += 10;
+      doc.setFont('helvetica', 'bold');
+      doc.text(t('cv.sections.skills'), 10, yPos);
+      yPos += 8;
+      doc.setFont('helvetica', 'normal');
+
+      const skills = [
+        'Magento 2.x',
+        'Adobe Commerce Cloud',
+        'PHP',
+        'JavaScript',
+        'React',
+        'Git',
+        'Docker',
+        'AWS'
+      ];
+
+      skills.forEach(skill => {
+        doc.text('• ' + skill, 10, yPos);
+        yPos += 6;
+      });
+
+      // Languages section in sidebar
+      yPos += 10;
+      doc.setFont('helvetica', 'bold');
+      doc.text(t('cv.sections.languages'), 10, yPos);
+      yPos += 8;
+      doc.setFont('helvetica', 'normal');
+
+      const languages = [
+        { lang: 'Français', level: 'Natif' },
+        { lang: 'English', level: 'Professional' },
+        { lang: 'Español', level: 'Intermedio' }
+      ];
+
+      languages.forEach(lang => {
+        doc.text(`${lang.lang} - ${lang.level}`, 10, yPos);
+        yPos += 6;
+      });
+
+      // About Me section in main content
+      doc.setTextColor(colors.text);
+      doc.setFont('helvetica', 'bold');
+      doc.setFontSize(14);
+      doc.text(t('cv.sections.aboutMe'), 80, 70);
+
+      doc.setFont('helvetica', 'normal');
+      doc.setFontSize(10);
+      const aboutMe = t('cv.about.whoAmI.content');
+      const splitAboutMe = doc.splitTextToSize(aboutMe, pageWidth - 90);
+      doc.text(splitAboutMe, 80, 80);
+
       // Save the PDF
-      const currentDate = new Date();
-      const formattedDate = `${currentDate.getFullYear()}${String(currentDate.getMonth() + 1).padStart(2, '0')}${String(currentDate.getDate()).padStart(2, '0')}`;
-      doc.save(`CV_Maria-Lena_Pietri_${selectedLanguage}_${formattedDate}.pdf`);
-    } catch (error) {
-      console.error('Error generating PDF:', error);
-      setError(error instanceof Error ? error.message : 'Error generating PDF');
+      doc.save(`CV_Maria-Lena_Pietri_${selectedLanguage.toUpperCase()}.pdf`);
+      setError(null);
+    } catch (err) {
+      console.error('Error generating PDF:', err);
+      setError(err instanceof Error ? err.message : 'Error generating PDF');
     } finally {
       setIsGenerating(false);
     }
@@ -346,82 +281,48 @@ const CV = () => {
 
   return (
     <Container maxWidth="md" sx={{ py: 8 }}>
-      <Box sx={{ 
-        textAlign: 'center', 
-        mb: 6,
-        backgroundColor: 'background.paper',
-        borderRadius: 2,
-        p: 4,
-        boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
-      }}>
-        <Typography 
-          variant="h4" 
-          component="h1" 
-          gutterBottom
-          sx={{ 
-            fontWeight: 700,
-            mb: 3,
-          }}
-        >
+      <Box sx={{ mb: 4, textAlign: 'center' }}>
+        <Typography variant="h2" component="h1" gutterBottom>
           {t('cv.title')}
         </Typography>
-
-        <Box sx={{ 
-          display: 'flex', 
-          gap: 3, 
-          justifyContent: 'center', 
-          alignItems: 'center',
-          flexWrap: 'wrap'
-        }}>
-          <FormControl sx={{ minWidth: 200 }}>
-            <InputLabel id="language-select-label">{t('cv.languageSelector')}</InputLabel>
-            <Select
-              labelId="language-select-label"
-              value={selectedLanguage}
-              label={t('cv.languageSelector')}
-              onChange={handleLanguageChange}
-            >
-              <MenuItem value="en">English</MenuItem>
-              <MenuItem value="fr">Français</MenuItem>
-              <MenuItem value="es">Español</MenuItem>
-            </Select>
-          </FormControl>
-          
-          <Button
-            variant="contained"
-            color="primary"
-            size="large"
-            onClick={generatePDF}
-            disabled={isGenerating}
-            startIcon={isGenerating ? <CircularProgress size={20} /> : <PdfIcon />}
-            sx={{
-              borderRadius: 2,
-              px: 4,
-              py: 1.5,
-              textTransform: 'none',
-              fontWeight: 600,
-              letterSpacing: 0.5,
-              background: `linear-gradient(45deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
-              boxShadow: '0 4px 15px rgba(0,0,0,0.15)',
-              transition: 'all 0.2s',
-              '&:hover': {
-                boxShadow: '0 6px 20px rgba(0,0,0,0.2)',
-                transform: 'translateY(-1px)',
-              }
-            }}
-          >
-            {isGenerating ? t('cv.generatingButton') : t('cv.downloadButton')}
-          </Button>
-        </Box>
+        <Typography variant="h6" color="text.secondary" paragraph>
+          {t('cv.description')}
+        </Typography>
       </Box>
-      <Snackbar 
-        open={!!error} 
-        autoHideDuration={6000} 
+
+      <Box sx={{ mb: 4, display: 'flex', justifyContent: 'center', gap: 2 }}>
+        <FormControl sx={{ minWidth: 120 }}>
+          <InputLabel id="language-select-label">Language</InputLabel>
+          <Select
+            labelId="language-select-label"
+            value={selectedLanguage}
+            label="Language"
+            onChange={handleLanguageChange}
+          >
+            <MenuItem value="en">English</MenuItem>
+            <MenuItem value="fr">Français</MenuItem>
+            <MenuItem value="es">Español</MenuItem>
+          </Select>
+        </FormControl>
+
+        <Button
+          variant="contained"
+          color="primary"
+          startIcon={<PdfIcon />}
+          onClick={generatePDF}
+          disabled={isGenerating}
+        >
+          {isGenerating ? t('cv.download.generating') : t('cv.download.button')}
+        </Button>
+      </Box>
+
+      <Snackbar
+        open={error !== null}
+        autoHideDuration={6000}
         onClose={() => setError(null)}
-        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
       >
-        <Alert onClose={() => setError(null)} severity="error" sx={{ width: '100%' }}>
-          {error}
+        <Alert onClose={() => setError(null)} severity="error">
+          {t('cv.download.error')}
         </Alert>
       </Snackbar>
     </Container>
