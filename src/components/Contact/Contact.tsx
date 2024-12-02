@@ -30,21 +30,25 @@ const Contact = () => {
     try {
       const form = event.currentTarget;
       const formData = new FormData(form);
-      
-      // Submit to Netlify's form handling
-      fetch("/", {
+
+      // Encode the form data for Netlify
+      const encodedData = new URLSearchParams();
+      formData.forEach((value, key) => {
+        encodedData.append(key, value as string);
+      });
+
+      const response = await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData as any).toString(),
-      })
-        .then(() => {
-          setMessage({ type: 'success', text: t('contact.success') });
-          form.reset();
-        })
-        .catch((error) => {
-          console.error('Form submission error:', error);
-          setMessage({ type: 'error', text: t('contact.error') });
-        });
+        body: encodedData.toString(),
+      });
+
+      if (response.ok) {
+        setMessage({ type: 'success', text: t('contact.success') });
+        form.reset();
+      } else {
+        throw new Error('Form submission failed');
+      }
     } catch (error) {
       console.error('Form submission error:', error);
       setMessage({ type: 'error', text: t('contact.error') });
@@ -128,19 +132,19 @@ const Contact = () => {
                 border: '1px solid rgba(255, 255, 255, 0.1)',
               }}
             >
-              <form 
-                onSubmit={handleSubmit}
+              <form
                 name="contact"
                 method="POST"
                 data-netlify="true"
                 netlify-honeypot="bot-field"
+                onSubmit={handleSubmit}
               >
                 <input type="hidden" name="form-name" value="contact" />
-                <p hidden>
+                <div hidden>
                   <label>
                     Don't fill this out if you're human: <input name="bot-field" />
                   </label>
-                </p>
+                </div>
                 <Grid container spacing={3}>
                   <Grid item xs={12} sm={6}>
                     <TextField
