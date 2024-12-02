@@ -12,6 +12,8 @@ import {
   FormControl,
   InputLabel,
   useTheme,
+  Snackbar,
+  Alert,
 } from '@mui/material';
 import { PictureAsPdf as PdfIcon } from '@mui/icons-material';
 import jsPDF from 'jspdf';
@@ -21,6 +23,7 @@ const CV = () => {
   const { t } = useTranslation();
   const [isGenerating, setIsGenerating] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState(i18n.language || 'fr');
+  const [error, setError] = useState<string | null>(null);
   const theme = useTheme();
 
   useEffect(() => {
@@ -47,6 +50,31 @@ const CV = () => {
     setIsGenerating(true);
 
     try {
+      // Ensure language is fully loaded before generating PDF
+      await i18n.changeLanguage(selectedLanguage);
+
+      // Check if we have all required translations
+      const requiredTranslations = [
+        'hero.title',
+        'hero.subtitle',
+        'resume.sections.contact',
+        'resume.sections.skills',
+        'resume.sections.languages',
+        'resume.sections.aboutMe',
+        'about.whoAmI.content',
+        'contact.email',
+        'contact.phone',
+        'contact.address.line1',
+        'contact.address.line2',
+        'contact.address.country',
+        'contact.linkedin'
+      ];
+
+      const missingTranslations = requiredTranslations.filter(key => !t(key));
+      if (missingTranslations.length > 0) {
+        throw new Error(`Missing translations: ${missingTranslations.join(', ')}`);
+      }
+      
       const doc = new jsPDF({
         orientation: 'portrait',
         unit: 'mm',
@@ -161,12 +189,19 @@ const CV = () => {
       doc.setFont('helvetica', 'bold');
       doc.text(t('resume.sections.contact'), 10, 110);
 
+      const email = t('contact.email', 'contact@marialena-pietri.fr');
+      const phone = t('contact.phone', '+33 07 61 81 11 01');
+      const addressLine1 = t('contact.address.line1', '30 allée de la Gâtine');
+      const addressLine2 = t('contact.address.line2', '31770 Colomiers');
+      const country = t('contact.address.country', 'France');
+      const linkedin = t('contact.linkedin', 'linkedin.com/in/marialena-pietri');
+
       const contactInfo = [
-        t('contact.email'),
-        t('contact.phone'),
-        t('contact.address.line1'),
-        t('contact.address.line2') + ', ' + t('contact.address.country'),
-        t('contact.linkedin')
+        email,
+        phone,
+        addressLine1,
+        `${addressLine2}, ${country}`,
+        linkedin
       ];
 
       doc.setFontSize(8);
@@ -192,16 +227,18 @@ const CV = () => {
       });
 
       // Languages with modern progress bars
-      doc.setFontSize(14);
       doc.setFont('helvetica', 'bold');
       doc.text(t('resume.sections.languages'), 10, pageHeight - 40);
 
-      const languages = t('about.languages.list', { returnObjects: true }) as any[];
+      const languages = t('resume.languages.list', { returnObjects: true });
+      const languagesArray = Array.isArray(languages) ? languages : [];
       let langY = pageHeight - 30;
 
-      languages?.forEach((lang: any) => {
+      languagesArray.forEach((lang: any) => {
+        if (!lang || typeof lang !== 'object') return;
+        
         doc.setFontSize(8);
-        doc.text(lang.language, 10, langY);
+        doc.text(lang.language || '', 10, langY);
 
         // Modern progress bar
         const barWidth = 50;
@@ -301,6 +338,7 @@ const CV = () => {
       doc.save(`CV_Maria-Lena_Pietri_${selectedLanguage}_${formattedDate}.pdf`);
     } catch (error) {
       console.error('Error generating PDF:', error);
+      setError(error instanceof Error ? error.message : 'Error generating PDF');
     } finally {
       setIsGenerating(false);
     }
@@ -376,6 +414,16 @@ const CV = () => {
           </Button>
         </Box>
       </Box>
+      <Snackbar 
+        open={!!error} 
+        autoHideDuration={6000} 
+        onClose={() => setError(null)}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+      >
+        <Alert onClose={() => setError(null)} severity="error" sx={{ width: '100%' }}>
+          {error}
+        </Alert>
+      </Snackbar>
     </Container>
   );
 };

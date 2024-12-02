@@ -25,8 +25,9 @@
     "whoAmI": {
       "title": "Who Am I?",
       "content": "I am a full-stack web developer passionate about creating innovative digital solutions. With experience in developing modern and scalable web applications, I specialize in both front-end and back-end technologies. My focus is on creating exceptional user experiences and clean, maintainable code."
-    },
-    "contact": {
+    }
+  },
+  "contact": {
       "title": "Contact",
       "email": "contact@marialena-pietri.fr",
       "phone": "+33 07 61 81 11 01",
@@ -60,8 +61,7 @@
     "expertise": {
       "title": "My Expertise",
       "content": "Specialized in <strong>Magento 2 development</strong>, <strong>custom module creation</strong>, and <strong>performance optimization</strong>.<br /><br />I provide expert guidance in <strong>e-commerce strategy</strong>, combining technical excellence with business understanding.<br /><br />My approach focuses on delivering <strong>scalable solutions</strong> that drive measurable business growth and exceptional user experiences."
-    }
-  },
+    },
   "skills": {
     "title": "Technical Skills",
     "subtitle": "Expertise in Magento Development and Related Technologies",
@@ -376,10 +376,15 @@
   },
   "cv": {
     "title": "Curriculum Vitae",
-    "downloadPrompt": "Download my CV in your preferred language",
+    "downloadPrompt": "Download my CV",
     "languageSelector": "Language",
     "downloadButton": "Download CV",
     "generatingButton": "Generating..."
+  },
+  "404": {
+    "title": "Page Not Found",
+    "description": "The page you're looking for doesn't exist or has been moved.",
+    "backHome": "Back to Home"
   },
   "resume": {
     "sections": {
@@ -398,6 +403,26 @@
         "Project Management",
         "Cybersecurity",
         "Performance Optimization"
+      ]
+    },
+    "languages": {
+      "title": "Languages",
+      "list": [
+        {
+          "language": "French",
+          "level": "Native",
+          "proficiency": 100
+        },
+        {
+          "language": "English",
+          "level": "Advanced",
+          "proficiency": 90
+        },
+        {
+          "language": "Spanish",
+          "level": "Professional",
+          "proficiency": 75
+        }
       ]
     },
     "downloadButton": "Download CV"

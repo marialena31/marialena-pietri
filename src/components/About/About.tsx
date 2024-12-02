@@ -31,7 +31,8 @@ const About = () => {
     }
   };
 
-  const languages: Language[] = t('about.languages.list', { returnObjects: true });
+  const languages = t('about.languages.list', { returnObjects: true });
+  const languagesArray = Array.isArray(languages) ? languages : [];
 
   return (
     <Box
@@ -83,7 +84,7 @@ const About = () => {
               <Typography variant="h5" gutterBottom>
                 {t('about.languages.title')}
               </Typography>
-              {languages.map((lang) => (
+              {languagesArray.map((lang) => (
                 <Box key={lang.language} sx={{ mb: 2 }}>
                   <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1 }}>
                     <Typography>{lang.language}</Typography>

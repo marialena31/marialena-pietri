@@ -9,15 +9,15 @@
     "portfolio": "Portafolio",
     "references": "Referencias",
     "contact": "Contacto",
-    "bookMeeting": "Agendar Cita",
+    "bookMeeting": "Agendar cita",
     "downloadCV": "Descargar CV"
   },
   "hero": {
     "title": "Maria-Lena Pietri",
-    "subtitle": "Experta Senior en Magento & Consultora E-commerce",
-    "description": "Especializada en mantenimiento avanzado, migraciones Magento y soluciones personalizadas para optimizar tu rendimiento y asegurar tu plataforma e-commerce.",
-    "cta": "Agendar una Reunión",
-    "bookMeeting": "Programar Llamada",
+    "subtitle": "Experta Senior en Magento y Consultora E-commerce",
+    "description": "Especializada en mantenimiento avanzado, migraciones Magento y soluciones personalizadas para optimizar su rendimiento y asegurar su plataforma de comercio electrónico.",
+    "cta": "Agendar una cita",
+    "bookMeeting": "Reservar un espacio",
     "downloadCV": "Descargar CV"
   },
   "about": {
@@ -25,21 +25,6 @@
     "whoAmI": {
       "title": "¿Quién soy?",
       "content": "Soy una desarrolladora web full-stack apasionada por crear soluciones digitales innovadoras. Con experiencia en el desarrollo de aplicaciones web modernas y escalables, me especializo en tecnologías front-end y back-end. Mi enfoque se centra en la creación de experiencias de usuario excepcionales y código limpio y mantenible."
-    },
-    "expertise": {
-      "title": "Mi Experiencia",
-      "content": "Especializada en <strong>desarrollo Magento 2</strong>, <strong>creación de módulos personalizados</strong> y <strong>optimización de rendimiento</strong>.<br /><br />Proporciono asesoramiento experto en <strong>estrategia de comercio electrónico</strong>, combinando excelencia técnica con comprensión empresarial.<br /><br />Mi enfoque se centra en entregar <strong>soluciones escalables</strong> que impulsan el crecimiento empresarial medible y experiencias de usuario excepcionales."
-    },
-    "contact": {
-      "title": "Contacto",
-      "email": "contact@marialena-pietri.fr",
-      "phone": "+33 07 61 81 11 01",
-      "address": {
-        "line1": "30 allée de la Gâtine",
-        "line2": "31770 Colomiers",
-        "country": "Francia"
-      },
-      "linkedin": "linkedin.com/in/marialena-pietri"
     },
     "languages": {
       "title": "Idiomas",
@@ -52,16 +37,31 @@
         {
           "language": "Inglés",
           "level": "Avanzado",
-          "proficiency": 80
+          "proficiency": 90
         },
         {
           "language": "Español",
-          "level": "Intermedio",
-          "proficiency": 70
+          "level": "Profesional",
+          "proficiency": 75
         }
       ]
     }
   },
+  "contact": {
+      "title": "Contacto",
+      "email": "contact@marialena-pietri.fr",
+      "phone": "+33 07 61 81 11 01",
+      "address": {
+        "line1": "30 allée de la Gâtine",
+        "line2": "31770 Colomiers",
+        "country": "Francia"
+      },
+      "linkedin": "linkedin.com/in/marialena-pietri"
+    },
+    "expertise": {
+      "title": "Mi Experiencia",
+      "content": "Especializada en <strong>desarrollo Magento 2</strong>, <strong>creación de módulos personalizados</strong> y <strong>optimización de rendimiento</strong>.<br /><br />Proporciono asesoramiento experto en <strong>estrategia de comercio electrónico</strong>, combinando excelencia técnica con comprensión empresarial.<br /><br />Mi enfoque se centra en entregar <strong>soluciones escalables</strong> que impulsan el crecimiento empresarial medible y experiencias de usuario excepcionales."
+    },
   "skills": {
     "title": "Habilidades Técnicas",
     "subtitle": "Experiencia en Desarrollo Magento y Tecnologías Relacionadas",
@@ -375,17 +375,17 @@
     "privacy": "Política de Privacidad",
     "copyright": "Maria-Lena Pietri. Todos los derechos reservados."
   },
+  "cv": {
+    "title": "Curriculum Vitae",
+    "downloadPrompt": "Descarga mi CV",
+    "languageSelector": "Idioma",
+    "downloadButton": "Descargar CV",
+    "generatingButton": "Generando..."
+  },
   "404": {
     "title": "Página No Encontrada",
     "description": "La página que estás buscando puede haber sido eliminada, renombrada o está temporalmente no disponible.",
     "backHome": "Volver al Inicio"
-  },
-  "cv": {
-    "title": "Currículum Vitae",
-    "downloadPrompt": "Descarga mi CV en el idioma de tu preferencia",
-    "languageSelector": "Idioma",
-    "downloadButton": "Descargar CV",
-    "generatingButton": "Generando..."
   },
   "resume": {
     "sections": {
@@ -404,6 +404,26 @@
         "Gestión de Proyectos",
         "Ciberseguridad",
         "Optimización de Rendimiento"
+      ]
+    },
+    "languages": {
+      "title": "Idiomas",
+      "list": [
+        {
+          "language": "Francés",
+          "level": "Nativo",
+          "proficiency": 100
+        },
+        {
+          "language": "Inglés",
+          "level": "Avanzado",
+          "proficiency": 90
+        },
+        {
+          "language": "Español",
+          "level": "Profesional",
+          "proficiency": 75
+        }
       ]
     },
     "downloadButton": "Descargar CV"
