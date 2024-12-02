@@ -1,0 +1,50 @@
+{
+  "title": "Habilidades",
+  "subtitle": "Experiencia Técnica",
+  "categories": {
+    "frontend": {
+      "title": "Desarrollo Frontend",
+      "skills": [
+        "HTML5/CSS3",
+        "JavaScript/TypeScript",
+        "React",
+        "Vue.js",
+        "Diseño Responsivo",
+        "PWA"
+      ]
+    },
+    "backend": {
+      "title": "Desarrollo Backend",
+      "skills": [
+        "PHP",
+        "Node.js",
+        "Python",
+        "APIs REST",
+        "GraphQL",
+        "MySQL/PostgreSQL"
+      ]
+    },
+    "ecommerce": {
+      "title": "E-commerce",
+      "skills": [
+        "Magento 1/2",
+        "Adobe Commerce Cloud",
+        "Pasarelas de Pago",
+        "Integración ERP",
+        "Sistemas PIM",
+        "Soluciones B2B"
+      ]
+    },
+    "devops": {
+      "title": "DevOps y Herramientas",
+      "skills": [
+        "Git",
+        "Docker",
+        "CI/CD",
+        "AWS",
+        "Linux",
+        "Optimización de Rendimiento"
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "title": "Contact Me",
+  "subtitle": "Let's Work Together",
+  "form": {
+    "name": {
+      "label": "Name",
+      "placeholder": "Your name",
+      "required": "Name is required",
+      "minLength": "Name must be at least 2 characters"
+    },
+    "email": {
+      "label": "Email",
+      "placeholder": "your.email@example.com",
+      "required": "Email is required",
+      "invalid": "Please enter a valid email address"
+    },
+    "message": {
+      "label": "Message",
+      "placeholder": "Your message",
+      "required": "Message is required",
+      "minLength": "Message must be at least 10 characters"
+    },
+    "submit": "Send Message"
+  },
+  "success": {
+    "title": "Thank You!",
+    "message": "Your message has been sent successfully. I'll get back to you soon."
+  },
+  "error": {
+    "title": "Error",
+    "message": "There was an error sending your message. Please try again later."
+  }
+}

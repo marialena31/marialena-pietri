@@ -1,0 +1,30 @@
+{
+  "title": "Services",
+  "subtitle": "Ce que je peux vous apporter",
+  "items": [
+    {
+      "title": "Développement Magento",
+      "description": "Création et maintenance de sites e-commerce Magento performants, sécurisés et évolutifs. Expertise approfondie dans le développement de modules personnalisés et l'optimisation des performances."
+    },
+    {
+      "title": "Leadership Technique",
+      "description": "Direction d'équipes techniques, définition d'architecture, mise en place de bonnes pratiques et mentoring. Gestion de projets complexes et coordination avec les parties prenantes."
+    },
+    {
+      "title": "Solutions B2B/B2C",
+      "description": "Développement de plateformes e-commerce B2B et B2C sur mesure. Intégration de systèmes complexes, gestion de catalogues étendus et personnalisation avancée."
+    },
+    {
+      "title": "Optimisation des Performances",
+      "description": "Analyse et amélioration des performances des sites e-commerce. Optimisation du temps de chargement, de la gestion du cache et des ressources serveur."
+    },
+    {
+      "title": "Intégration & API",
+      "description": "Création d'APIs robustes et intégration avec des systèmes tiers (ERP, PIM, CRM). Développement de solutions d'intégration sur mesure pour des besoins spécifiques."
+    },
+    {
+      "title": "Sécurité & Maintenance",
+      "description": "Audit de sécurité, mise en place de bonnes pratiques, maintenance préventive et corrective. Gestion des mises à jour et des correctifs de sécurité. Détection et correction des vulnérabilités, sauvegarde et restauration des données."
+    }
+  ]
+}

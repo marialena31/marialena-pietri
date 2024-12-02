@@ -1,0 +1,18 @@
+{
+  "menu": {
+    "home": "Accueil",
+    "about": "À Propos",
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "references": "Références",
+    "skills": "Compétences",
+    "contact": "Contact",
+    "cv": "CV"
+  },
+  "language": {
+    "select": "Choisir la Langue",
+    "en": "Anglais",
+    "fr": "Français",
+    "es": "Espagnol"
+  }
+}

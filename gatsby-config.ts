@@ -20,8 +20,6 @@ const config: GatsbyConfig = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sitemap`,
-    `gatsby-plugin-robots-txt`,
-    `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -41,6 +39,20 @@ const config: GatsbyConfig = {
       resolve: 'gatsby-plugin-html-attributes',
       options: {
         lang: 'fr'
+      }
+    },
+    {
+      resolve: 'gatsby-plugin-robots-txt',
+      options: {
+        host: 'https://marialena-pietri.fr',
+        sitemap: 'https://marialena-pietri.fr/sitemap/sitemap-index.xml',
+        policy: [{ userAgent: '*', allow: '/' }],
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-env-variables',
+      options: {
+        allowList: ['MAILGUN_API_KEY', 'MAILGUN_DOMAIN', 'MAILGUN_URL', 'TO_EMAIL_ADDRESS']
       }
     },
     {

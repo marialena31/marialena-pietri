@@ -7,43 +7,24 @@ import {
   Grid,
   Card,
   CardContent,
-  CardHeader,
+  useTheme,
 } from '@mui/material';
 
-interface Service {
+// Import translations
+import './i18n/en.json';
+import './i18n/es.json';
+import './i18n/fr.json';
+
+interface ServiceItem {
   title: string;
   description: string;
 }
 
 const Services = () => {
-  const { t } = useTranslation();
-
-  const services: Service[] = [
-    {
-      title: t('services.maintenance.title'),
-      description: t('services.maintenance.description'),
-    },
-    {
-      title: t('services.development.title'),
-      description: t('services.development.description'),
-    },
-    {
-      title: t('services.migration.title'),
-      description: t('services.migration.description'),
-    },
-    {
-      title: t('services.security.title'),
-      description: t('services.security.description'),
-    },
-    {
-      title: t('services.management.title'),
-      description: t('services.management.description'),
-    },
-    {
-      title: t('services.performance.title'),
-      description: t('services.performance.description'),
-    },
-  ];
+  const { t } = useTranslation('services');
+  const theme = useTheme();
+  const services = t('items', { returnObjects: true }) as ServiceItem[];
+  const servicesList = Array.isArray(services) ? services : [];
 
   return (
     <Box
@@ -51,55 +32,167 @@ const Services = () => {
       component="section"
       sx={{
         py: 8,
-        backgroundColor: 'white'
+        backgroundColor: 'rgba(18, 18, 18, 0.95)',
+        color: 'white',
+        position: 'relative',
+        '&::before': {
+          content: '""',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          background: `radial-gradient(circle at 20% 20%, ${theme.palette.primary.dark}15 0%, transparent 60%),
+                      radial-gradient(circle at 80% 80%, ${theme.palette.secondary.dark}15 0%, transparent 60%)`,
+          opacity: 0.6,
+          pointerEvents: 'none',
+        }
       }}
     >
-      <Container>
+      <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
         <Typography
           variant="h2"
-          component="h2"
           align="center"
           gutterBottom
-          sx={{ mb: 2 }}
+          sx={{ 
+            mb: 6,
+            color: 'white',
+            fontWeight: 600,
+            position: 'relative',
+            '&::after': {
+              content: '""',
+              position: 'absolute',
+              bottom: '-10px',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              width: '60px',
+              height: '4px',
+              background: `linear-gradient(90deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
+              borderRadius: '2px',
+            }
+          }}
         >
-          {t('services.title')}
+          {t('title')}
         </Typography>
-        
         <Typography
-          variant="h5"
-          component="p"
+          variant="subtitle1"
           align="center"
-          color="text.secondary"
-          sx={{ mb: 6 }}
+          sx={{ 
+            mb: 6, 
+            color: 'rgba(255, 255, 255, 0.7)',
+            maxWidth: '800px',
+            margin: '0 auto',
+            fontSize: '1.1rem',
+            lineHeight: 1.6,
+          }}
         >
-          {t('services.subtitle')}
+          {t('subtitle')}
         </Typography>
 
         <Grid container spacing={4}>
-          {services.map((service, index) => (
-            <Grid item xs={12} md={4} key={index}>
-              <Card 
-                sx={{ 
+          {servicesList.map((service, index) => (
+            <Grid item xs={12} sm={6} md={4} key={index}>
+              <Card
+                elevation={0}
+                sx={{
                   height: '100%',
                   display: 'flex',
                   flexDirection: 'column',
-                  '&:hover': {
-                    transform: 'translateY(-5px)',
-                    transition: 'transform 0.3s ease-in-out',
+                  backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                  border: '1px solid rgba(255, 255, 255, 0.1)',
+                  borderRadius: '16px',
+                  backdropFilter: 'blur(10px)',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                  '&:before': {
+                    content: '""',
+                    position: 'absolute',
+                    top: 0,
+                    left: 0,
+                    right: 0,
+                    height: '4px',
+                    background: `linear-gradient(90deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
+                    opacity: 0.7,
+                    transition: 'opacity 0.3s ease',
                   },
+                  '&:after': {
+                    content: '""',
+                    position: 'absolute',
+                    top: '50%',
+                    left: '50%',
+                    width: '120%',
+                    height: '120%',
+                    background: `radial-gradient(circle, ${theme.palette.primary.main}20 0%, transparent 70%)`,
+                    transform: 'translate(-50%, -50%)',
+                    opacity: 0,
+                    transition: 'opacity 0.3s ease',
+                  },
+                  '&:hover': {
+                    transform: 'translateY(-8px)',
+                    boxShadow: '0 16px 40px rgba(0,0,0,0.3)',
+                    backgroundColor: 'rgba(255, 255, 255, 0.08)',
+                    border: `1px solid ${theme.palette.primary.main}40`,
+                    '&:before': {
+                      opacity: 1,
+                    },
+                    '&:after': {
+                      opacity: 1,
+                    }
+                  }
                 }}
-                elevation={2}
               >
-                <CardHeader
-                  title={service.title}
-                  titleTypographyProps={{ 
-                    align: 'center', 
-                    variant: 'h5',
-                    gutterBottom: true 
+                <CardContent 
+                  sx={{ 
+                    flexGrow: 1,
+                    p: 4,
+                    position: 'relative',
+                    zIndex: 1,
+                    '&:last-child': { pb: 4 }
                   }}
-                />
-                <CardContent sx={{ flexGrow: 1 }}>
-                  <Typography variant="body1" color="text.secondary" align="center">
+                >
+                  <Typography 
+                    gutterBottom 
+                    variant="h5" 
+                    component="h3"
+                    align="center"
+                    sx={{ 
+                      color: 'white',
+                      fontWeight: 600,
+                      mb: 3,
+                      background: `linear-gradient(135deg, ${theme.palette.primary.light}, ${theme.palette.secondary.light})`,
+                      backgroundClip: 'text',
+                      WebkitBackgroundClip: 'text',
+                      color: 'transparent',
+                      position: 'relative',
+                      '&::after': {
+                        content: '""',
+                        position: 'absolute',
+                        bottom: '-8px',
+                        left: '50%',
+                        transform: 'translateX(-50%)',
+                        width: '40px',
+                        height: '2px',
+                        background: `linear-gradient(90deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
+                        borderRadius: '1px',
+                        opacity: 0.7,
+                      }
+                    }}
+                  >
+                    {service.title}
+                  </Typography>
+                  <Typography
+                    variant="body1"
+                    align="center"
+                    sx={{ 
+                      color: 'rgba(255, 255, 255, 0.8)',
+                      lineHeight: 1.8,
+                      letterSpacing: '0.3px',
+                      fontSize: '1rem',
+                      position: 'relative',
+                      zIndex: 1,
+                    }}
+                  >
                     {service.description}
                   </Typography>
                 </CardContent>

@@ -1,0 +1,30 @@
+{
+  "title": "References",
+  "subtitle": "Renowned Brands I've Had the Pleasure to Work With",
+  "list": [
+    {
+      "reference": "Chausson Matériaux",
+      "description": "Creation of a cross-channel strategy and launch of the e-commerce platform for a building materials leader."
+    },
+    {
+      "reference": "Valrhona",
+      "description": "Redesign of the Valrhona Selection B2B platform with Mirakl marketplace and Salesforce API integration."
+    },
+    {
+      "reference": "Legrand",
+      "description": "Design and development of the alpha version of a Magento 2 B2B platform."
+    },
+    {
+      "reference": "La Maison du Whisky",
+      "description": "Technical leadership of the Magento 2 platform, focus on performance and security."
+    },
+    {
+      "reference": "Eram Group",
+      "description": "Technical evolution of Magento sites for Eram, Mellow Yellow, and Bocage."
+    },
+    {
+      "reference": "Marjane Mall",
+      "description": "Management of Magento 2 integration and deployment of the Octopia marketplace."
+    }
+  ]
+}

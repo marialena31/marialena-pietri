@@ -9,13 +9,15 @@ import {
   IconButton,
   Modal,
   Typography,
+  useTheme,
 } from '@mui/material';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 
 const Footer = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('footer');
+  const theme = useTheme();
   const currentYear = new Date().getFullYear();
   const sanitize = useSanitize();
 
@@ -33,17 +35,17 @@ const Footer = () => {
     {
       icon: <LinkedInIcon />,
       href: 'https://www.linkedin.com/in/maria-lena-pietri/',
-      label: 'LinkedIn',
+      label: t('social.linkedin'),
     },
     {
       icon: <FacebookIcon />,
       href: 'https://www.facebook.com/marialena.pietri.consultante',
-      label: 'Facebook',
+      label: t('social.facebook'),
     },
     {
       icon: <TwitterIcon />,
       href: 'https://x.com/mlpietri',
-      label: 'Twitter',
+      label: t('social.twitter'),
     },
   ];
 
@@ -124,139 +126,159 @@ const Footer = () => {
     left: '50%',
     transform: 'translate(-50%, -50%)',
     width: { xs: '90%', sm: '80%', md: '60%' },
-    bgcolor: 'background.paper',
-    boxShadow: 24,
+    bgcolor: 'rgba(18, 18, 18, 0.95)',
+    color: 'white',
+    border: '1px solid rgba(255, 255, 255, 0.1)',
+    borderRadius: '10px',
+    boxShadow: '0 8px 32px 0 rgba(0, 0, 0, 0.37)',
+    backdropFilter: 'blur(8px)',
     p: 4,
     maxHeight: '90vh',
     overflow: 'auto',
+    '&::-webkit-scrollbar': {
+      width: '8px',
+    },
+    '&::-webkit-scrollbar-track': {
+      background: 'rgba(255, 255, 255, 0.1)',
+      borderRadius: '4px',
+    },
+    '&::-webkit-scrollbar-thumb': {
+      background: 'rgba(255, 255, 255, 0.3)',
+      borderRadius: '4px',
+      '&:hover': {
+        background: 'rgba(255, 255, 255, 0.4)',
+      },
+    },
   };
 
   return (
     <Box
       component="footer"
       sx={{
-        bgcolor: '#000',
+        py: 6,
+        backgroundColor: 'rgba(18, 18, 18, 0.95)',
         color: 'white',
-        py: 3,
-        mt: 'auto',
+        position: 'relative',
+        backdropFilter: 'blur(8px)',
+        '&::before': {
+          content: '""',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          height: '2px',
+          background: `linear-gradient(90deg, ${theme.palette.primary.main}00 0%, ${theme.palette.primary.main}40 50%, ${theme.palette.primary.main}00 100%)`,
+        },
+        '&::after': {
+          content: '""',
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          background: `radial-gradient(circle at 20% 20%, ${theme.palette.primary.dark}15 0%, transparent 60%),
+                      radial-gradient(circle at 80% 80%, ${theme.palette.secondary.dark}15 0%, transparent 60%)`,
+          opacity: 0.4,
+          pointerEvents: 'none',
+        }
       }}
     >
-      <Container maxWidth="lg">
-        <Grid container spacing={2} alignItems="center" justifyContent="space-between">
-          <Grid item>
-            <Box sx={{ display: 'flex', gap: 1 }}>
-              {socialLinks.map((link) => (
+      <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
+        <Grid container spacing={4}>
+          <Grid item xs={12} sm={6}>
+            <Typography 
+              variant="body2" 
+              sx={{ 
+                color: 'rgba(255, 255, 255, 0.7)',
+                fontWeight: 300,
+                transition: 'color 0.3s ease',
+                '&:hover': {
+                  color: 'rgba(255, 255, 255, 0.9)',
+                }
+              }}
+            >
+              {t('copyright')}
+            </Typography>
+          </Grid>
+          <Grid item xs={12} sm={6}>
+            <Box sx={{ 
+              display: 'flex', 
+              justifyContent: { xs: 'center', sm: 'flex-end' }, 
+              gap: 3,
+              alignItems: 'center'
+            }}>
+              {socialLinks.map((link, index) => (
                 <IconButton
-                  key={link.label}
+                  key={index}
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
+                  aria-label={link.label}
                   sx={{
-                    color: 'white',
-                    transition: 'all 0.3s ease-in-out',
+                    color: 'rgba(255, 255, 255, 0.7)',
+                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                    padding: '8px',
                     '&:hover': {
-                      color: 'primary.main',
+                      color: theme.palette.primary.main,
                       transform: 'translateY(-2px)',
+                      backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                    },
+                    '& svg': {
+                      fontSize: '1.5rem',
                     }
                   }}
                 >
                   {link.icon}
                 </IconButton>
               ))}
+              <Box sx={{ 
+                display: 'flex', 
+                gap: 2,
+                '& > button': {
+                  color: 'rgba(255, 255, 255, 0.7)',
+                  textDecoration: 'none',
+                  position: 'relative',
+                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                  fontSize: '0.875rem',
+                  fontWeight: 300,
+                  background: 'none',
+                  border: 'none',
+                  cursor: 'pointer',
+                  padding: '4px 12px',
+                  borderRadius: '8px',
+                  '&::after': {
+                    content: '""',
+                    position: 'absolute',
+                    width: '0',
+                    height: '2px',
+                    bottom: '-2px',
+                    left: '50%',
+                    background: `linear-gradient(90deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
+                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                    transform: 'translateX(-50%)',
+                    opacity: 0,
+                  },
+                  '&:hover': {
+                    color: 'white',
+                    backgroundColor: 'rgba(255, 255, 255, 0.05)',
+                    '&::after': {
+                      width: '80%',
+                      opacity: 1,
+                    },
+                  },
+                }
+              }}>
+                <button onClick={() => handleModalOpen('legal')}>
+                  {t('links.legal')}
+                </button>
+                <button onClick={() => handleModalOpen('terms')}>
+                  {t('links.terms')}
+                </button>
+                <button onClick={() => handleModalOpen('privacy')}>
+                  {t('links.privacy')}
+                </button>
+              </Box>
             </Box>
-          </Grid>
-          <Grid item>
-            <Box sx={{ display: 'flex', gap: 2 }}>
-              <Link
-                component="button"
-                onClick={() => handleModalOpen('legal')}
-                sx={{
-                  color: 'white',
-                  textDecoration: 'none',
-                  position: 'relative',
-                  '&::after': {
-                    content: '""',
-                    position: 'absolute',
-                    width: '0',
-                    height: '2px',
-                    bottom: '0',
-                    left: '50%',
-                    background: 'white',
-                    transition: 'all 0.3s ease-in-out',
-                    transform: 'translateX(-50%)',
-                  },
-                  '&:hover': {
-                    backgroundColor: 'transparent',
-                    '&::after': {
-                      width: '80%',
-                    },
-                  },
-                }}
-              >
-                {t('footer.legal')}
-              </Link>
-              <Link
-                component="button"
-                onClick={() => handleModalOpen('terms')}
-                sx={{
-                  color: 'white',
-                  textDecoration: 'none',
-                  position: 'relative',
-                  '&::after': {
-                    content: '""',
-                    position: 'absolute',
-                    width: '0',
-                    height: '2px',
-                    bottom: '0',
-                    left: '50%',
-                    background: 'white',
-                    transition: 'all 0.3s ease-in-out',
-                    transform: 'translateX(-50%)',
-                  },
-                  '&:hover': {
-                    backgroundColor: 'transparent',
-                    '&::after': {
-                      width: '80%',
-                    },
-                  },
-                }}
-              >
-                {t('footer.terms')}
-              </Link>
-              <Link
-                component="button"
-                onClick={() => handleModalOpen('privacy')}
-                sx={{
-                  color: 'white',
-                  textDecoration: 'none',
-                  position: 'relative',
-                  '&::after': {
-                    content: '""',
-                    position: 'absolute',
-                    width: '0',
-                    height: '2px',
-                    bottom: '0',
-                    left: '50%',
-                    background: 'white',
-                    transition: 'all 0.3s ease-in-out',
-                    transform: 'translateX(-50%)',
-                  },
-                  '&:hover': {
-                    backgroundColor: 'transparent',
-                    '&::after': {
-                      width: '80%',
-                    },
-                  },
-                }}
-              >
-                {t('footer.privacy')}
-              </Link>
-            </Box>
-          </Grid>
-          <Grid item>
-            <Typography variant="body2" color="white">
-              {t('footer.copyright')} {currentYear}
-            </Typography>
           </Grid>
         </Grid>
       </Container>
@@ -266,35 +288,89 @@ const Footer = () => {
         onClose={handleModalClose}
         aria-labelledby="modal-title"
         aria-describedby="modal-description"
+        sx={{
+          backdropFilter: 'blur(8px)',
+          backgroundColor: 'rgba(0, 0, 0, 0.8)',
+        }}
       >
-        <Box sx={modalStyle}>
-          <Typography id="modal-title" variant="h6" component="h2" gutterBottom>
+        <Box sx={{
+          ...modalStyle,
+          '&::before': {
+            content: '""',
+            position: 'absolute',
+            top: 0,
+            left: 0,
+            right: 0,
+            height: '4px',
+            background: `linear-gradient(90deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
+            borderTopLeftRadius: '10px',
+            borderTopRightRadius: '10px',
+          }
+        }}>
+          <Typography
+            id="modal-title"
+            variant="h5"
+            component="h2"
+            sx={{
+              mb: 3,
+              background: `linear-gradient(135deg, ${theme.palette.primary.light}, ${theme.palette.secondary.light})`,
+              backgroundClip: 'text',
+              WebkitBackgroundClip: 'text',
+              color: 'transparent',
+              fontWeight: 600,
+              borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
+              pb: 2
+            }}
+          >
             {modalContent.title}
           </Typography>
           <Typography
-            variant="body1"
+            id="modal-description"
             sx={{
               whiteSpace: 'pre-wrap',
-              fontSize: '0.875rem',
+              color: 'rgba(255, 255, 255, 0.7)',
+              fontSize: '0.95rem',
+              lineHeight: 1.8,
+              letterSpacing: '0.3px',
+              '& strong': {
+                color: theme.palette.primary.light,
+                fontWeight: 500
+              }
             }}
-            dangerouslySetInnerHTML={{
-              __html: sanitize(modalContent.content.replace(/\n/g, '<br />'))
-            }}
-          />
-          <Box sx={{ mt: 2, display: 'flex', justifyContent: 'flex-end' }}>
-            <Link
-              component="button"
+          >
+            {sanitize(modalContent.content)}
+          </Typography>
+          <Box sx={{ 
+            mt: 4, 
+            display: 'flex', 
+            justifyContent: 'flex-end' 
+          }}>
+            <button
               onClick={handleModalClose}
-              sx={{
-                color: 'primary.main',
-                textDecoration: 'none',
-                '&:hover': {
-                  textDecoration: 'underline',
-                },
+              style={{
+                background: `linear-gradient(135deg, ${theme.palette.primary.main}40, ${theme.palette.secondary.main}40)`,
+                border: `1px solid ${theme.palette.primary.main}40`,
+                color: 'white',
+                padding: '10px 24px',
+                borderRadius: '8px',
+                cursor: 'pointer',
+                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                fontSize: '0.875rem',
+                fontWeight: 500,
+              }}
+              onMouseOver={(e) => {
+                e.currentTarget.style.background = `linear-gradient(135deg, ${theme.palette.primary.main}60, ${theme.palette.secondary.main}60)`;
+                e.currentTarget.style.transform = 'translateY(-2px)';
+                e.currentTarget.style.boxShadow = `0 8px 20px ${theme.palette.primary.main}20`;
+              }}
+              onMouseOut={(e) => {
+                e.currentTarget.style.background = `linear-gradient(135deg, ${theme.palette.primary.main}40, ${theme.palette.secondary.main}40)`;
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.boxShadow = 'none';
               }}
             >
               {t('common.close')}
-            </Link>
+            </button>
           </Box>
         </Box>
       </Modal>

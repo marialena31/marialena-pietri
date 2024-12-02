@@ -9,16 +9,15 @@
     "portfolio": "Portfolio",
     "references": "Références",
     "contact": "Contact",
-    "bookMeeting": "Prendre RDV",
+    "bookMeeting": "Réserver un RDV",
     "downloadCV": "Télécharger CV"
   },
-  "language": "fr",
   "hero": {
     "title": "Maria-Lena Pietri",
     "subtitle": "Experte Magento Senior & Consultante E-commerce",
-    "description": "Spécialisée en maintenance avancée, migrations Magento, et solutions sur mesure pour optimiser vos performances et sécuriser votre plateforme e-commerce.",
-    "cta": "Prendre Rendez-vous",
-    "bookMeeting": "Réserver un créneau",
+    "description": "J'aide les entreprises à développer leurs opérations e-commerce avec des solutions Magento personnalisées et du conseil stratégique.",
+    "cta": "Réserver un RDV",
+    "bookMeeting": "Planifier un appel",
     "downloadCV": "Télécharger CV"
   },
   "about": {
@@ -29,14 +28,14 @@
     },
     "expertise": {
       "title": "Expertise",
-      "content": "Spécialisée en <strong>Magento 2</strong> et <strong>Adobe Commerce Cloud</strong>, j'offre des solutions complètes pour les projets e-commerce B2B et B2C.<br /><br />Mon expertise technique comprend le développement front-end et back-end, l'optimisation des performances, la sécurité, et l'intégration de systèmes tiers.<br /><br />Je propose également des services de conseil en architecture technique et stratégie digitale."
+      "content": "Spécialisée en <strong>Magento 2</strong> et <strong>Adobe Commerce Cloud</strong>, je propose des solutions complètes pour les projets e-commerce B2B et B2C.<br /><br />Mon expertise technique couvre le développement front-end et back-end, l'optimisation des performances, la sécurité et l'intégration de systèmes tiers.<br /><br />Je propose également des services de conseil en architecture technique et stratégie digitale."
     },
     "languages": {
       "title": "Langues",
       "list": [
         {
           "language": "Français",
-          "level": "Langue maternelle"
+          "level": "Natif"
         },
         {
           "language": "Anglais",
@@ -55,15 +54,13 @@
     "description": "N'hésitez pas à me contacter pour toute question ou opportunité.",
     "success": "Message envoyé avec succès ! Je vous répondrai bientôt.",
     "error": "Une erreur s'est produite. Veuillez réessayer plus tard.",
-    "recaptchaError": "Impossible de vérifier que vous êtes humain. Veuillez réessayer.",
     "form": {
       "name": "Nom",
       "email": "Email",
       "subject": "Sujet",
       "message": "Message",
       "send": "Envoyer",
-      "sending": "Envoi en cours...",
-      "characters": "caractères"
+      "sending": "Envoi en cours..."
     },
     "validation": {
       "nameRequired": "Veuillez saisir votre nom",
@@ -73,54 +70,86 @@
       "messageRequired": "Veuillez saisir un message"
     }
   },
-  "languages": {
-    "title": "Langues",
-    "list": [
+  "skills": {
+    "title": "Compétences Techniques",
+    "subtitle": "Expertise en Développement Magento et Technologies Associées",
+    "technical": [
       {
-        "language": "Français",
-        "level": "Langue maternelle"
+        "category": "E-commerce & CMS",
+        "items": [
+          "Magento 2 (Adobe Commerce)",
+          "Magento 1",
+          "Shopify",
+          "WordPress"
+        ]
       },
       {
-        "language": "Anglais",
-        "level": "Professionnel"
+        "category": "Langages de Programmation",
+        "items": [
+          "PHP",
+          "JavaScript/TypeScript",
+          "HTML5",
+          "CSS3/SASS",
+          "SQL"
+        ]
       },
       {
-        "language": "Espagnol",
-        "level": "Avancé"
+        "category": "Frameworks & Bibliothèques",
+        "items": [
+          "Symfony",
+          "React",
+          "Vue.js",
+          "jQuery",
+          "Bootstrap",
+          "Material-UI"
+        ]
+      },
+      {
+        "category": "DevOps & Outils",
+        "items": [
+          "Git",
+          "Docker",
+          "Jenkins",
+          "AWS",
+          "Linux",
+          "Nginx/Apache"
+        ]
       }
     ]
   },
-  "expertise": {
-    "title": "Mon Expertise",
-    "content": "Spécialisée dans le <strong>développement Magento 2</strong>, la <strong>création de modules personnalisés</strong> et <strong>l'optimisation des performances</strong>.<br /><br />Je fournis des conseils d'expert en <strong>stratégie e-commerce</strong>, alliant excellence technique et compréhension business.<br /><br />Mon approche se concentre sur la livraison de <strong>solutions évolutives</strong> qui stimulent la croissance mesurable des entreprises et offrent des expériences utilisateur exceptionnelles."
-  },
   "services": {
-    "title": "Mes Services",
-    "subtitle": "Des solutions sur mesure pour votre succès e-commerce",
-    "cta": "En savoir plus",
+    "title": "Services Magento Expert",
+    "subtitle": "Solutions complètes pour votre succès e-commerce",
+    "cta": "Discuter de votre projet",
     "maintenance": {
-      "title": "Maintenance & Support Magento",
-      "description": "Mises à jour régulières, optimisation des performances et support technique pour maintenir votre plateforme e-commerce."
+      "title": "Maintenance & Support",
+      "items": [
+        "Maintenance préventive",
+        "Correction de bugs",
+        "Mises à jour de sécurité",
+        "Optimisation des performances",
+        "Support technique dédié"
+      ]
     },
     "development": {
-      "title": "Développement Sur Mesure",
-      "description": "Solutions personnalisées, développement de modules et correction de bugs pour répondre à vos besoins spécifiques."
+      "title": "Développement",
+      "items": [
+        "Modules personnalisés",
+        "Intégrations API",
+        "Migration Magento",
+        "Optimisation B2B",
+        "Thèmes sur mesure"
+      ]
     },
-    "migration": {
-      "title": "Mises à Niveau & Migrations",
-      "description": "Transitions en douceur des anciennes versions Magento vers les plus récentes ou migrations de Magento 1 vers Magento 2."
-    },
-    "security": {
-      "title": "Cybersécurité",
-      "description": "Évaluations complètes de sécurité, analyses de vulnérabilités et veille sur les menaces pour protéger votre entreprise."
-    },
-    "management": {
-      "title": "Gestion de Projet",
-      "description": "Gestion experte de projet utilisant les méthodologies Agile/SCRUM, leadership d'équipe et livraison de bout en bout."
-    },
-    "performance": {
-      "title": "Optimisation des Performances",
-      "description": "Optimisation de la vitesse, mise en place du cache et configuration serveur pour des performances optimales."
+    "consulting": {
+      "title": "Conseil",
+      "items": [
+        "Architecture technique",
+        "Audit de performance",
+        "Stratégie e-commerce",
+        "Sécurité & Conformité",
+        "Formation des équipes"
+      ]
     }
   },
   "portfolio": {
@@ -166,19 +195,6 @@
       }
     }
   },
-  "skills": {
-    "title": "Compétences Techniques",
-    "subtitle": "Expertise en développement Magento et technologies associées",
-    "technical": {
-      "title": "Compétences Techniques"
-    },
-    "ecommerce": {
-      "title": "E-commerce"
-    },
-    "soft": {
-      "title": "Soft Skills"
-    }
-  },
   "references": {
     "title": "Ils m'ont fait confiance",
     "subtitle": "Des marques de renom avec lesquelles j'ai eu le plaisir de collaborer",
@@ -209,272 +225,81 @@
       }
     ]
   },
-  "contact": {
-    "title": "Me Contacter",
-    "description": "Intéressé(e) par une collaboration ? Discutons de votre projet !",
-    "success": "Message envoyé avec succès ! Je vous répondrai bientôt.",
-    "error": "Une erreur s'est produite. Veuillez réessayer plus tard.",
-    "recaptchaError": "Impossible de vérifier que vous êtes humain. Veuillez réessayer.",
-    "form": {
-      "name": "Nom",
-      "email": "Email",
-      "subject": "Sujet",
-      "message": "Message",
-      "send": "Envoyer",
-      "sending": "Envoi en cours...",
-      "characters": "caractères"
-    },
-    "validation": {
-      "nameRequired": "Veuillez saisir votre nom",
-      "emailRequired": "Veuillez saisir votre email",
-      "emailInvalid": "Veuillez saisir une adresse email valide",
-      "subjectRequired": "Veuillez saisir un sujet",
-      "messageRequired": "Veuillez saisir un message"
-    }
-  },
-  "cta": {
-    "title": "Prêt à Transformer Votre Business E-Commerce ?",
-    "description": "Discutons de votre projet et trouvons la solution parfaite.",
-    "email": "Contactez-moi",
-    "call": "Appelez-moi"
-  },
-  "footer": {
-    "followMe": "Me suivre",
-    "legal": "Mentions Légales",
-    "terms": "Conditions Générales",
-    "privacy": "Politique de Confidentialité",
-    "copyright": " Maria-Lena Pietri. Tous droits réservés."
-  },
-  "legal": {
-    "title": "Mentions Légales",
-    "sections": {
-      "identity": {
-        "title": "Identité",
-        "content": "Maria-Lena Pietri\nDéveloppeur Magento & Consultante E-commerce\n30 Allée de la Gâtine\n31770 Colomiers, France\nSIRET: 48374376100056\nN° TVA: FR36483743761\nEmail: contact@marialena-pietri.fr"
+  "testimonials": {
+    "title": "Témoignages",
+    "items": [
+      {
+        "name": "Thomas Durand",
+        "position": "Directeur E-commerce, Chausson Matériaux",
+        "content": "Maria-Lena a joué un rôle crucial dans la transformation digitale de notre entreprise. Sa compréhension approfondie de Magento et sa capacité à proposer des solutions innovantes ont grandement contribué au succès de notre projet e-commerce."
       },
-      "publication": {
-        "title": "Direction de la Publication",
-        "content": "Directeur de la publication : Maria-Lena Pietri\nResponsable de la rédaction : Maria-Lena Pietri"
+      {
+        "name": "Sophie Martin",
+        "position": "Chef de Projet Digital, Valrhona",
+        "content": "Travailler avec Maria-Lena a été une excellente expérience. Son expertise technique et sa gestion efficace du projet ont conduit à une refonte réussie de notre plateforme B2B. Je la recommande vivement pour tout projet Magento complexe."
       },
-      "hosting": {
-        "title": "Hébergement",
-        "content": "Ce site est hébergé par Netlify Inc.\n44 Montgomery Street, Suite 300\nSan Francisco, California 94104\nÉtats-Unis"
-      },
-      "cookies": {
-        "title": "Gestion des Cookies",
-        "content": "Ce site utilise des cookies techniques essentiels au fonctionnement du site. Ces cookies ne collectent aucune donnée personnelle. Conformément à la législation en vigueur, leur utilisation ne nécessite pas de consentement préalable."
-      },
-      "cnil": {
-        "title": "Protection des Données",
-        "content": "Conformément à la loi « Informatique et Libertés » du 6 janvier 1978 modifiée et au Règlement Général sur la Protection des Données (RGPD), vous disposez d'un droit d'accès, de rectification, de suppression et d'opposition aux données personnelles vous concernant. Pour exercer ces droits, contactez-nous à l'adresse : contact@marialena-pietri.fr"
-      },
-      "intellectual": {
-        "title": "Propriété Intellectuelle",
-        "content": "L'ensemble de ce site relève de la législation française et internationale sur le droit d'auteur et la propriété intellectuelle. Tous les droits de reproduction sont réservés. La reproduction de tout ou partie de ce site sur quelque support que ce soit est formellement interdite sauf autorisation expresse de Maria-Lena Pietri."
-      },
-      "credits": {
-        "title": "Crédits",
-        "content": "Conception et développement : Maria-Lena Pietri\nFramework : Gatsby/React\nBibliothèque UI : Material-UI\nIllustrations et logos : Droits réservés à leurs propriétaires respectifs"
+      {
+        "name": "Laurent Dubois",
+        "position": "CTO, Digital Web Agency",
+        "content": "Maria-Lena est une développeuse Magento exceptionnelle. Sa capacité à résoudre des problèmes complexes et à livrer des solutions de haute qualité en fait un atout précieux pour tout projet e-commerce."
       }
-    }
+    ]
   },
   "terms": {
-    "title": "Conditions Générales de Vente (CGV)",
+    "title": "Conditions Générales de Vente",
     "preamble": {
       "title": "Préambule",
-      "content": "Les présentes conditions générales de vente (CGV) s'appliquent à toutes les prestations réalisées par Maria-Lena Pietri, freelance spécialisée en maintenance de sites Magento, e-commerce, et développement web, pour une clientèle exclusivement professionnelle."
+      "content": "Les présentes conditions de vente s'appliquent à l'ensemble des prestations fournies par Maria-Lena Pietri, freelance spécialisée dans la maintenance de sites Magento, l'e-commerce et le développement web, pour des clients professionnels exclusivement."
     },
-    "provider": {
-      "title": "Identité de la prestataire",
-      "name": "Nom : Maria-Lena Pietri",
-      "address": "Adresse : 30 Allée de la Gâtine, 31770 Colomiers, France",
-      "siret": "48374376100056",
-      "email": "Email : contact@marialena-pietri.fr",
-      "vat": "Numéro TVA intracommunautaire : FR36483743761"
+    "definitions": {
+      "title": "Définitions",
+      "content": "Le terme 'Prestataire' désigne Maria-Lena Pietri, freelance.<br />Le terme 'Client' désigne toute personne morale ou physique agissant dans le cadre de son activité professionnelle."
     },
     "services": {
-      "title": "Prestations proposées",
-      "list": [
-        "Maintenance corrective et évolutive des sites Magento",
-        "Mises à jour des versions et des modules Magento",
-        "Migration de sites Magento vers d'autres plateformes",
-        "Renforcement de la sécurité (audits, correctifs, surveillance)",
-        "Assistance et dépannage en cas de cyberattaques"
-      ]
+      "title": "Services",
+      "content": "Les services proposés comprennent :<br />- Développement et maintenance de sites e-commerce Magento<br />- Conseil en stratégie digitale<br />- Intégration de solutions techniques<br />- Formation et support"
     },
-    "pricing": {
-      "title": "Tarifs",
-      "content": "Les tarifs des prestations sont indiqués en euros, hors taxes (HT)."
+    "prices": {
+      "title": "Prix",
+      "content": "Les prix sont établis sur la base d'un devis personnalisé. Ils sont exprimés en euros et soumis à la TVA applicable."
     },
     "payment": {
-      "title": "Modalités de paiement",
-      "methods": [
-        "Paiement : 50 % à la commande et 50 % à la livraison pour les prestations ponctuelles. Pour les forfaits, le paiement est mensuel ou annuel selon l'accord conclu.",
-        "Modes de paiement acceptés : Virement bancaire et carte bancaire."
-      ]
+      "title": "Conditions de Paiement",
+      "content": "Le paiement s'effectue selon les conditions suivantes :<br />- 30% à la commande<br />- 40% en cours de développement<br />- 30% à la livraison"
     },
-    "execution": {
-      "title": "Délais et conditions d'exécution",
-      "content": "Les délais d'exécution sont mentionnés dans le devis et varient en fonction de la complexité de la prestation. Toute modification ou demande supplémentaire pendant l'exécution fera l'objet d'un avenant au devis initial."
+    "delivery": {
+      "title": "Délais et Livraison",
+      "content": "Les délais de livraison sont indiqués dans le devis et commencent à courir à réception de l'acompte."
     },
-    "withdrawal": {
-      "title": "Absence de droit de rétractation",
-      "content": "Conformément à l'article L.221-3 du Code de la consommation, les présentes prestations s'adressant exclusivement à des professionnels, aucun droit de rétractation ne s'applique."
+    "intellectual": {
+      "title": "Propriété Intellectuelle",
+      "content": "Le transfert des droits de propriété intellectuelle s'effectue au paiement complet des prestations."
+    },
+    "confidentiality": {
+      "title": "Confidentialité",
+      "content": "Les parties s'engagent à maintenir la confidentialité des informations échangées dans le cadre des prestations."
     },
     "liability": {
       "title": "Responsabilité",
-      "list": [
-        "De mauvaises configurations ou interventions par des tiers non autorisés.",
-        "De force majeure (pannes, cyberattaques indépendantes)."
-      ]
+      "content": "La responsabilité du Prestataire est limitée au montant des prestations réalisées."
     },
-    "property": {
-      "title": "Propriété des livrables",
-      "content": "Les livrables (codes, analyses, rapports) restent la propriété de la prestataire jusqu'au paiement intégral des prestations convenues."
+    "termination": {
+      "title": "Résiliation",
+      "content": "Toute résiliation doit être notifiée par écrit avec un préavis de 30 jours."
     },
-    "disputes": {
-      "title": "Réclamations et litiges",
-      "content": "En cas de litige, les parties s'efforceront de trouver une solution amiable. À défaut, le litige sera soumis aux juridictions compétentes de Toulouse."
-    }
-  },
-  "privacy": {
-    "title": "Politique de Confidentialité",
-    "collection": {
-      "title": "Collecte et utilisation des données personnelles",
-      "description": "Ce site collecte uniquement les données personnelles transmises via le formulaire de contact (nom, email, téléphone, message). Ces données sont utilisées exclusivement pour :",
-      "purposes": [
-        "Répondre aux demandes des utilisateurs.",
-        "Communiquer sur des prestations ou devis professionnels."
-      ]
-    },
-    "legal_basis": {
-      "title": "Base légale",
-      "content": "Le traitement des données repose sur l'intérêt légitime de répondre aux demandes de prospects ou clients professionnels."
-    },
-    "retention": {
-      "title": "Durée de conservation",
-      "content": "Les données sont conservées pour une durée maximale de 3 ans après le dernier contact."
-    },
-    "sharing": {
-      "title": "Partage des données",
-      "content": "Aucune donnée personnelle collectée via ce site n'est partagée avec des tiers, sauf obligation légale."
-    },
-    "rights": {
-      "title": "Droits des utilisateurs",
-      "list": [
-        "Accès aux données personnelles les concernant.",
-        "Rectification ou suppression des données.",
-        "Opposition au traitement des données pour des motifs légitimes."
-      ],
-      "contact": "Pour exercer ces droits, contactez : contact@marialena-pietri.fr."
-    },
-    "security": {
-      "title": "Sécurité des données",
-      "content": "Les données collectées sont sécurisées et protégées contre tout accès non autorisé."
+    "law": {
+      "title": "Droit Applicable",
+      "content": "Les présentes conditions sont soumises au droit français."
     }
   },
   "cv": {
     "title": "Curriculum Vitae",
-    "description": "Téléchargez mon CV pour en savoir plus sur mon expérience professionnelle et mes compétences",
+    "description": "Ici vous pouvez télécharger mon CV pour en savoir plus sur mon expérience professionnelle et mes compétences",
     "download": {
-      "button": "Télécharger le CV",
-      "generating": "Génération en cours...",
-      "error": "Une erreur est survenue lors de la génération du CV"
-    },
-    "sections": {
-      "contact": "Informations de Contact",
-      "skills": "Compétences Techniques",
-      "languages": "Langues",
-      "aboutMe": "À Propos",
-      "experience": "Expérience Professionnelle",
-      "education": "Formation"
-    },
-    "about": {
-      "whoAmI": {
-        "title": "Qui suis-je ?",
-        "content": "Je suis une développeuse Full Stack passionnée, spécialisée dans le développement Magento 2. Avec une solide expertise en technologies front-end et back-end, je me spécialise dans la création de solutions e-commerce robustes."
-      }
-    },
-    "contact": {
-      "email": "pietri.marialena@gmail.com",
-      "phone": "+33 6 59 87 61 28",
-      "address": {
-        "line1": "6 rue Léon Jouhaux",
-        "line2": "75010 Paris",
-        "country": "France"
-      },
-      "linkedin": "linkedin.com/in/maria-lena-pietri"
-    },
-    "skills": {
-      "title": "Compétences Techniques",
-      "list": [
-        "Développement E-commerce",
-        "Développement FullStack",
-        "DevOps & Infrastructure",
-        "Gestion de Projet",
-        "Cybersécurité",
-        "Optimisation des Performances"
-      ]
-    },
-    "languages": {
-      "title": "Langues",
-      "list": [
-        {
-          "language": "Français",
-          "level": "Langue maternelle"
-        },
-        {
-          "language": "Anglais",
-          "level": "Professionnel"
-        },
-        {
-          "language": "Espagnol",
-          "level": "Avancé"
-        }
-      ]
+      "button": "Télécharger CV",
+      "title": "CV Maria-Lena Pietri",
+      "description": "CV au format PDF"
     }
   },
-  "404": {
-    "title": "Page Non Trouvée",
-    "description": "La page que vous recherchez n'existe pas ou a été déplacée.",
-    "backHome": "Retour à l'Accueil"
-  },
-  "resume": {
-    "sections": {
-      "aboutMe": "À Propos",
-      "experience": "Expérience",
-      "contact": "Contact",
-      "skills": "Compétences",
-      "languages": "Langues"
-    },
-    "languages": {
-      "title": "Langues",
-      "list": [
-        {
-          "language": "Français",
-          "level": "Langue maternelle"
-        },
-        {
-          "language": "Anglais",
-          "level": "Professionnel"
-        },
-        {
-          "language": "Espagnol",
-          "level": "Avancé"
-        }
-      ]
-    },
-    "skills": {
-      "title": "Compétences",
-      "list": [
-        "Développement E-commerce",
-        "Développement Full Stack",
-        "DevOps & Infrastructure",
-        "Gestion de Projet",
-        "Cybersécurité",
-        "Optimisation de Performance"
-      ]
-    },
-    "downloadButton": "Télécharger CV"
-  }
+  "language": "fr"
 }

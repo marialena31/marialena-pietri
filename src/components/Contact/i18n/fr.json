@@ -1,0 +1,33 @@
+{
+  "title": "Contact",
+  "subtitle": "Travaillons Ensemble",
+  "form": {
+    "name": {
+      "label": "Nom",
+      "placeholder": "Votre nom",
+      "required": "Le nom est requis",
+      "minLength": "Le nom doit contenir au moins 2 caractères"
+    },
+    "email": {
+      "label": "Email",
+      "placeholder": "votre.email@exemple.com",
+      "required": "L'email est requis",
+      "invalid": "Veuillez entrer une adresse email valide"
+    },
+    "message": {
+      "label": "Message",
+      "placeholder": "Votre message",
+      "required": "Le message est requis",
+      "minLength": "Le message doit contenir au moins 10 caractères"
+    },
+    "submit": "Envoyer le Message"
+  },
+  "success": {
+    "title": "Merci !",
+    "message": "Votre message a été envoyé avec succès. Je vous répondrai bientôt."
+  },
+  "error": {
+    "title": "Erreur",
+    "message": "Une erreur s'est produite lors de l'envoi de votre message. Veuillez réessayer plus tard."
+  }
+}

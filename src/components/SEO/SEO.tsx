@@ -1,5 +1,4 @@
 import React from 'react';
-import { Helmet } from 'react-helmet';
 import { useTranslation } from 'react-i18next';
 import { useLocation } from '@reach/router';
 import { useStaticQuery, graphql } from 'gatsby';
@@ -39,7 +38,7 @@ const SEO = ({ title, description, image, article = false }: SEOProps) => {
   const seo = {
     title: title || defaultTitle,
     description: description || defaultDescription,
-    image: image || `${siteUrl}/images/profile.jpg`,
+    image: image || `${siteUrl}/images/profile.webp`,
     url: `${siteUrl}${pathname}`,
   };
 
@@ -49,8 +48,9 @@ const SEO = ({ title, description, image, article = false }: SEOProps) => {
   }));
 
   return (
-    <Helmet title={seo.title}>
+    <>
       <html lang={i18n.language} />
+      <title>{seo.title}</title>
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
       <meta name="author" content={author} />
@@ -84,7 +84,7 @@ const SEO = ({ title, description, image, article = false }: SEOProps) => {
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta name="theme-color" content="#4A90E2" />
       <meta name="keywords" content="Magento Developer, E-commerce Expert, Tech Lead, Project Manager, Web Development, Full Stack Developer, Adobe Commerce" />
-    </Helmet>
+    </>
   );
 };
 

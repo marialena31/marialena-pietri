@@ -1,0 +1,65 @@
+{
+  "title": "À Propos",
+  "subtitle": "Parcours Professionnel",
+  "description": "Je suis un Développeur Full Stack et Lead Technique expérimenté avec plus de dix ans d'expérience dans le développement e-commerce. Mon expertise se concentre sur les plateformes Magento, où j'ai dirigé avec succès de nombreux projets d'envergure pour des marques majeures.",
+  "highlights": {
+    "title": "Points Clés",
+    "items": [
+      "Plus de 10 ans d'expérience en développement e-commerce",
+      "Expert des plateformes Magento 1 & 2",
+      "Solide expérience en leadership technique",
+      "Historique prouvé avec des marques majeures",
+      "Spécialisé dans les solutions B2B/B2C complexes"
+    ]
+  },
+  "experience": {
+    "title": "Expérience Professionnelle",
+    "description": "Tout au long de ma carrière, j'ai eu l'opportunité de travailler avec des marques leaders dans divers secteurs, de la vente au détail de luxe aux matériaux de construction. Mon objectif a toujours été de fournir des solutions évolutives de haute qualité qui stimulent la croissance des entreprises."
+  },
+  "languages": {
+    "title": "Langues",
+    "list": [
+      {
+        "language": "Français",
+        "level": "Langue maternelle"
+      },
+      {
+        "language": "Anglais",
+        "level": "Professionnel"
+      },
+      {
+        "language": "Espagnol",
+        "level": "Avancé"
+      }
+    ]
+  },
+  "skills": {
+    "title": "Compétences Techniques",
+    "list": [
+      {
+        "name": "Magento 2",
+        "level": 95
+      },
+      {
+        "name": "Magento 1",
+        "level": 90
+      },
+      {
+        "name": "PHP",
+        "level": 90
+      },
+      {
+        "name": "JavaScript",
+        "level": 85
+      },
+      {
+        "name": "React",
+        "level": 80
+      },
+      {
+        "name": "Node.js",
+        "level": 75
+      }
+    ]
+  }
+}

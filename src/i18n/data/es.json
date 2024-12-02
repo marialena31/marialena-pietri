@@ -9,15 +9,15 @@
     "portfolio": "Portafolio",
     "references": "Referencias",
     "contact": "Contacto",
-    "bookMeeting": "Agendar cita",
+    "bookMeeting": "Agendar Reunión",
     "downloadCV": "Descargar CV"
   },
   "hero": {
     "title": "Maria-Lena Pietri",
-    "subtitle": "Experta Senior en Magento y Consultora E-commerce",
-    "description": "Especializada en mantenimiento avanzado, migraciones Magento y soluciones personalizadas para optimizar su rendimiento y asegurar su plataforma de comercio electrónico.",
-    "cta": "Agendar una cita",
-    "bookMeeting": "Reservar un espacio",
+    "subtitle": "Experta Senior en Magento & Consultora E-commerce",
+    "description": "Ayudo a las empresas a escalar sus operaciones de comercio electrónico con soluciones Magento personalizadas y consultoría estratégica.",
+    "cta": "Agendar Reunión",
+    "bookMeeting": "Programar una Llamada",
     "downloadCV": "Descargar CV"
   },
   "about": {
@@ -28,7 +28,7 @@
     },
     "expertise": {
       "title": "Experiencia",
-      "content": "Especializada en <strong>Magento 2</strong> y <strong>Adobe Commerce Cloud</strong>, ofrezco soluciones completas para proyectos de comercio electrónico B2B y B2C.<br /><br />Mi experiencia técnica incluye desarrollo front-end y back-end, optimización de rendimiento, seguridad e integración de sistemas de terceros.<br /><br />También ofrezco servicios de consultoría en arquitectura técnica y estrategia digital."
+      "content": "Especializada en <strong>Magento 2</strong> y <strong>Adobe Commerce Cloud</strong>, ofrezco soluciones completas para proyectos de comercio electrónico B2B y B2C.<br /><br />Mi experiencia técnica abarca desarrollo front-end y back-end, optimización de rendimiento, seguridad e integración de sistemas de terceros.<br /><br />También ofrezco servicios de consultoría en arquitectura técnica y estrategia digital."
     },
     "languages": {
       "title": "Idiomas",
@@ -49,415 +49,184 @@
     }
   },
   "contact": {
-      "title": "Contacto",
-      "subtitle": "¿Interesado en colaborar? ¡Hablemos de tu proyecto!",
-      "description": "No dudes en contactarme para cualquier pregunta u oportunidad.",
-      "success": "¡Mensaje enviado con éxito! Te responderé pronto.",
-      "form": {
-        "name": "Nombre",
-        "email": "Email",
-        "subject": "Asunto",
-        "message": "Mensaje",
-        "send": "Enviar",
-        "sending": "Enviando...",
-        "error": "Se produjo un error. Por favor, inténtalo de nuevo más tarde.",
-        "characters": "caracteres"
-      },
-      "validation": {
-        "nameRequired": "Por favor, introduce tu nombre",
-        "emailRequired": "Por favor, introduce tu email",
-        "emailInvalid": "Por favor, introduce una dirección de email válida",
-        "subjectRequired": "Por favor, introduce un asunto",
-        "messageRequired": "Por favor, introduce un mensaje"
-      }
+    "title": "Contacto",
+    "subtitle": "¿Interesado en colaborar? ¡Hablemos de tu proyecto!",
+    "description": "No dudes en contactarme para cualquier pregunta u oportunidad.",
+    "success": "¡Mensaje enviado con éxito! Me pondré en contacto contigo pronto.",
+    "error": "Ocurrió un error. Por favor, inténtalo de nuevo más tarde.",
+    "form": {
+      "name": "Nombre",
+      "email": "Email",
+      "subject": "Asunto",
+      "message": "Mensaje",
+      "send": "Enviar Mensaje",
+      "sending": "Enviando..."
     },
-    "expertise": {
-      "title": "Mi Experiencia",
-      "content": "Especializada en <strong>desarrollo Magento 2</strong>, <strong>creación de módulos personalizados</strong> y <strong>optimización de rendimiento</strong>.<br /><br />Proporciono asesoramiento experto en <strong>estrategia de comercio electrónico</strong>, combinando excelencia técnica con comprensión empresarial.<br /><br />Mi enfoque se centra en entregar <strong>soluciones escalables</strong> que impulsan el crecimiento empresarial medible y experiencias de usuario excepcionales."
-    },
+    "validation": {
+      "nameRequired": "Por favor, ingresa tu nombre",
+      "emailRequired": "Por favor, ingresa tu email",
+      "emailInvalid": "Por favor, ingresa un email válido",
+      "subjectRequired": "Por favor, ingresa un asunto",
+      "messageRequired": "Por favor, ingresa un mensaje"
+    }
+  },
   "skills": {
     "title": "Habilidades Técnicas",
-    "subtitle": "Experiencia en desarrollo Magento y tecnologías relacionadas",
+    "subtitle": "Experiencia en Desarrollo Magento y Tecnologías Relacionadas",
     "technical": [
       {
         "category": "E-commerce & CMS",
         "items": [
           "Magento 2 (Adobe Commerce)",
-          "Wordpress",
-          "WooCommerce",
+          "Magento 1",
           "Shopify",
-          "Mirakl"
+          "WordPress"
         ]
       },
       {
-        "category": "Frontend",
+        "category": "Lenguajes de Programación",
         "items": [
-          "ReactJS",
-          "TypeScript",
-          "JavaScript",
+          "PHP",
+          "JavaScript/TypeScript",
           "HTML5",
-          "CSS3",
-          "SASS/LESS"
+          "CSS3/SASS",
+          "SQL"
+        ]
+      },
+      {
+        "category": "Frameworks & Librerías",
+        "items": [
+          "Symfony",
+          "React",
+          "Vue.js",
+          "jQuery",
+          "Bootstrap",
+          "Material-UI"
+        ]
+      },
+      {
+        "category": "DevOps & Herramientas",
+        "items": [
+          "Git",
+          "Docker",
+          "Jenkins",
+          "AWS",
+          "Linux",
+          "Nginx/Apache"
         ]
       }
     ]
   },
   "services": {
-    "title": "Servicios Magento Expertos",
-    "subtitle": "Soluciones integrales para el éxito de su comercio electrónico",
-    "cta": "Discuta su proyecto",
+    "title": "Servicios Expertos Magento",
+    "subtitle": "Soluciones completas para tu éxito en e-commerce",
+    "cta": "Discutir tu Proyecto",
     "maintenance": {
-      "title": "Mantenimiento de Magento",
-      "description": "Mantenga su plataforma de comercio electrónico funcionando sin problemas con servicios profesionales de mantenimiento y soporte.",
-      "features": [
-        "Parches de seguridad y actualizaciones regulares"
+      "title": "Mantenimiento & Soporte",
+      "items": [
+        "Mantenimiento preventivo",
+        "Corrección de errores",
+        "Actualizaciones de seguridad",
+        "Optimización de rendimiento",
+        "Soporte técnico dedicado"
       ]
     },
     "development": {
-      "title": "Desarrollo Magento",
-      "description": "Soluciones de comercio electrónico personalizadas adaptadas a las necesidades de tu negocio.",
-      "features": [
-        "Diseño responsivo",
-        "Optimización de rendimiento"
+      "title": "Desarrollo",
+      "items": [
+        "Módulos personalizados",
+        "Integraciones API",
+        "Migración Magento",
+        "Optimización B2B",
+        "Temas personalizados"
       ]
     },
-    "migration": {
-      "title": "Migración de Plataforma",
-      "description": "Migración sin problemas a Magento/Adobe Commerce.",
-      "features": [
-        "Transferencia de datos",
-        "Tiempo de inactividad mínimo"
+    "consulting": {
+      "title": "Consultoría",
+      "items": [
+        "Arquitectura técnica",
+        "Auditoría de rendimiento",
+        "Estrategia e-commerce",
+        "Seguridad & Conformidad",
+        "Formación de equipos"
       ]
-    },
-    "security": {
-      "title": "Endurecimiento de Seguridad",
-      "description": "Soluciones de seguridad integrales para proteger tu plataforma de comercio electrónico.",
-      "features": [
-        "Evaluación de vulnerabilidades",
-        "Pruebas de penetración"
-      ]
-    },
-    "management": {
-      "title": "Gestión de Proyectos",
-      "description": "Gestión de proyectos de principio a fin para tus iniciativas de comercio electrónico.",
-      "features": [
-        "Metodología ágil",
-        "Actualizaciones regulares de progreso"
-      ]
-    },
-    "performance": {
-      "title": "Optimización de Rendimiento",
-      "description": "Mejora la velocidad, escalabilidad y experiencia de usuario de tu tienda.",
-      "features": [
-        "Estrategias de caché",
-        "Optimización de código"
-      ]
-    }
-  },
-  "portfolio": {
-    "title": "Portafolio",
-    "subtitle": "Proyectos Magento y Soluciones E-commerce",
-    "viewProject": "Ver Proyecto",
-    "projects": {
-      "chausson": {
-        "title": "Chausson Matériaux",
-        "projet": "Creación de una estrategia omnicanal y lanzamiento de la plataforma e-commerce para un líder en materiales de construcción, gestionando más de 20.000 productos.<br /><br />Implementación de un sistema PIM completo utilizando Maps, optimizando la creación de catálogos automatizados y flujos de datos para el sitio web.",
-        "impact": "Reducción del tiempo de producción de catálogos en un 50-75% a través de flujos de trabajo automatizados.<br /><br />Entrega de un sitio e-commerce de alto rendimiento con navegación y gestión de productos optimizados.",
-        "realisations": "Dirección de un equipo de 20 personas entre partes interesadas internas y externas.<br /><br />Integración perfecta del PIM y ERP con la plataforma e-commerce."
-      },
-      "eram": {
-        "title": "ERAM Group",
-        "projet": "Liderazgo técnico de los sitios Magento para las marcas Eram, Mellow Yellow y Bocage.<br /><br />Implementación de mantenimiento preventivo, correctivo y evolutivo, incluyendo actualizaciones del core de Magento, adaptación de módulos personalizados y monitoreo de dependencias.<br /><br />Realización de pre-auditoría de seguridad en caso de sospecha de compromiso, análisis de logs y recomendaciones para mejorar la seguridad de la plataforma.",
-        "impact": "Fortalecimiento de la estabilidad y seguridad de la plataforma a través de actualizaciones proactivas.<br /><br />Mejora de la experiencia del cliente con optimizaciones de rendimiento específicas.",
-        "realisations": "Implementación de firewalls de aplicaciones web (WAF) para seguridad avanzada en colaboración con equipos de TI.<br /><br />Gestión fluida de pipelines CI/CD para despliegues multi-entorno."
-      },
-      "whisky": {
-        "title": "La Maison du Whisky",
-        "projet": "Liderazgo técnico de la plataforma Magento 2, asegurando una funcionalidad robusta y alto rendimiento para este minorista de licores de lujo.<br /><br />Enfoque en mantenimiento preventivo, implementación de actualizaciones core y adaptación de módulos personalizados a los últimos estándares de Magento.",
-        "impact": "Fortalecimiento de la fiabilidad y resiliencia del sitio para garantizar una excelente experiencia de usuario, incluso durante períodos pico.<br /><br />Entrega de una infraestructura optimizada para escalabilidad y crecimiento futuro.",
-        "realisations": "Despliegue y configuración de firewalls de aplicaciones avanzados (Fastly WAF) en colaboración con equipos de TI.<br /><br />Monitoreo y actualización de dependencias manteniendo la compatibilidad con código personalizado."
-      },
-      "legrand": {
-        "title": "Legrand",
-        "projet": "Diseño y desarrollo de la versión alfa de una plataforma B2B Magento 2 para un líder mundial en infraestructuras eléctricas y digitales de edificios.<br /><br />Creación de visualizaciones de productos personalizadas y mejora de funcionalidades del carrito adaptadas a compradores profesionales.",
-        "impact": "Construcción de una base escalable para la transformación digital B2B de Legrand.<br /><br />Mejora en la gestión del catálogo de productos y experiencia de usuario para clientes profesionales.",
-        "realisations": "Personalización de Magento para manejar jerarquías complejas de productos y categorías.<br /><br />Integración perfecta entre sistemas front-end y back-end."
-      },
-      "marjane": {
-        "title": "Marjane Mall",
-        "projet": "Gestión de la integración de Magento 2 y despliegue del marketplace Octopia para el principal minorista de Marruecos, Marjane.<br /><br />Organización y ejecución del proceso de reversibilidad de la aplicación móvil, incluyendo gestión de plazos, coordinación de múltiples equipos y entrega de versiones finales en Google Play y Apple Store.<br /><br />Entrega de una aplicación móvil híbrida React Native que soporta más de 70.000 productos con una hoja de ruta para evolucionar a 1 millón.",
-        "impact": "Lanzamiento de una plataforma e-commerce y móvil escalable diseñada para una gestión de alto crecimiento de vendedores y productos.<br /><br />Mejora de los flujos de trabajo operativos a través de una coordinación eficiente de equipos y soluciones técnicas.",
-        "realisations": "Planificación y ejecución de una actualización de Magento de 2.4.2 a 2.4.5, optimizando el rendimiento y la seguridad del sitio.<br /><br />Establecimiento de un nuevo flujo de trabajo de despliegue de versiones, mejorando la frecuencia y estabilidad de las actualizaciones."
-      },
-      "valrhona": {
-        "title": "Valrhona",
-        "projet": "Rediseño de la plataforma B2B Valrhona Selection para mejorar la experiencia del cliente e integrar funcionalidades avanzadas de marketplace con Mirakl.<br /><br />Configuración de flujos API de Salesforce con autenticación personalizada, permitiendo interacciones más fluidas con el cliente.<br /><br />Implementación de Single Sign-On (SSO) a través de módulo SAML personalizado para simplificar el acceso de clientes empresariales.",
-        "impact": "Simplificación del proceso de incorporación para clientes profesionales y mejora de la eficiencia de la plataforma.<br /><br />Fortalecimiento de la seguridad y usabilidad para transacciones B2B a gran escala.",
-        "realisations": "Dirección de un equipo de 7 desarrolladores, asegurando alta calidad de código y entrega puntual.<br /><br />Realización de auditorías exhaustivas y pruebas para preparar la plataforma para uso de alto tráfico."
-      }
     }
   },
   "testimonials": {
     "title": "Testimonios",
     "items": [
       {
-        "quote": "Maria-Lena ha sido un recurso increíble para nuestro equipo. Su profundo conocimiento de Magento y enfoque profesional han mejorado enormemente nuestra plataforma de comercio electrónico.",
-        "author": "Juan García",
-        "company": "E-Commerce Plus",
-        "role": "Director Técnico"
+        "name": "Thomas Durand",
+        "position": "Director de E-commerce, Chausson Matériaux",
+        "content": "Maria-Lena jugó un papel crucial en la transformación digital de nuestra empresa. Su profundo conocimiento de Magento y su capacidad para proponer soluciones innovadoras contribuyeron enormemente al éxito de nuestro proyecto de comercio electrónico."
       },
       {
-        "quote": "Experiencia técnica excepcional combinada con una excelente comprensión de las necesidades comerciales. Maria-Lena superó todas nuestras expectativas.",
-        "author": "Sofia Martínez",
-        "company": "Digital Solutions",
-        "role": "Gerente de Proyecto"
+        "name": "Sophie Martin",
+        "position": "Gerente de Proyecto Digital, Valrhona",
+        "content": "Trabajar con Maria-Lena ha sido una excelente experiencia. Su experiencia técnica y gestión eficiente del proyecto llevaron a un rediseño exitoso de nuestra plataforma B2B. La recomiendo encarecidamente para cualquier proyecto complejo de Magento."
       },
       {
-        "quote": "Gracias a su experiencia en seguridad, nuestro sitio es ahora más eficiente y seguro que nunca. Un verdadero plus para nuestro negocio.",
-        "author": "Pedro Lorenzo",
-        "company": "Secure Shop",
-        "role": "CEO"
+        "name": "Laurent Dubois",
+        "position": "CTO, Digital Web Agency",
+        "content": "Maria-Lena es una desarrolladora Magento excepcional. Su capacidad para resolver problemas complejos y entregar soluciones de alta calidad la convierte en un activo valioso para cualquier proyecto de comercio electrónico."
       }
     ]
   },
   "terms": {
-    "title": "Términos y Condiciones de Venta",
+    "title": "Términos de Venta",
     "preamble": {
       "title": "Preámbulo",
-      "content": "Los presentes términos y condiciones de venta se aplican a todos los servicios prestados por Maria-Lena Pietri, freelance especializada en mantenimiento de sitios Magento, e-commerce y desarrollo web, para una clientela exclusivamente profesional."
+      "content": "Estos términos de venta se aplican a todos los servicios proporcionados por Maria-Lena Pietri, freelancer especializada en mantenimiento de sitios web Magento, comercio electrónico y desarrollo web, exclusivamente para clientes profesionales."
     },
-    "provider": {
-      "title": "Información del Proveedor",
-      "name": "Maria-Lena Pietri",
-      "address": "31000 Toulouse, Francia",
-      "siret": "123 456 789 00000",
-      "email": "contact@marialena-pietri.fr",
-      "vat": "Número de IVA: FR 12 345678900"
+    "definitions": {
+      "title": "Definiciones",
+      "content": "El término 'Proveedor' se refiere a Maria-Lena Pietri, freelancer.<br />El término 'Cliente' se refiere a cualquier persona física o jurídica que actúe en su capacidad profesional."
     },
     "services": {
-      "title": "Servicios Ofrecidos",
-      "list": [
-        "Desarrollo y mantenimiento de sitios Magento/Adobe Commerce",
-        "Optimización de rendimiento y seguridad",
-        "Consultoría e-commerce",
-        "Gestión de proyectos técnicos",
-        "Migración y actualización de plataformas"
-      ]
+      "title": "Servicios",
+      "content": "Los servicios ofrecidos incluyen:<br />- Desarrollo y mantenimiento de sitios web de comercio electrónico Magento<br />- Consultoría en estrategia digital<br />- Integración de soluciones técnicas<br />- Formación y soporte"
     },
-    "pricing": {
-      "title": "Precios y Facturación",
-      "content": "Los precios se establecen según la complejidad y duración del proyecto. Se proporciona un presupuesto detallado antes de comenzar cualquier trabajo."
+    "prices": {
+      "title": "Precios",
+      "content": "Los precios se establecen en base a un presupuesto personalizado. Se expresan en euros y están sujetos al IVA aplicable."
     },
     "payment": {
       "title": "Condiciones de Pago",
-      "methods": [
-        "Pago: 50% al realizar el pedido y 50% a la entrega para servicios puntuales. Para paquetes de servicios, el pago es mensual o anual según el acuerdo establecido.",
-        "Métodos de pago aceptados: Transferencia bancaria y tarjeta de crédito."
-      ]
+      "content": "El pago se realiza bajo las siguientes condiciones:<br />- 30% al realizar el pedido<br />- 40% durante el desarrollo<br />- 30% a la entrega"
     },
-    "execution": {
-      "title": "Plazos y Condiciones de Ejecución",
-      "content": "Los plazos de ejecución se especifican en el presupuesto y varían según la complejidad del servicio. Cualquier modificación o solicitud adicional durante la ejecución será objeto de una enmienda al presupuesto inicial."
+    "delivery": {
+      "title": "Plazos y Entrega",
+      "content": "Los plazos de entrega se indican en el presupuesto y comienzan a partir de la recepción del depósito."
     },
-    "withdrawal": {
-      "title": "Ausencia de Derecho de Desistimiento",
-      "content": "Dado que estos servicios están dirigidos exclusivamente a profesionales, no se aplica ningún derecho de desistimiento."
+    "intellectual": {
+      "title": "Propiedad Intelectual",
+      "content": "La transferencia de derechos de propiedad intelectual se produce al completar el pago de los servicios."
+    },
+    "confidentiality": {
+      "title": "Confidencialidad",
+      "content": "Las partes acuerdan mantener la confidencialidad de la información intercambiada durante los servicios."
     },
     "liability": {
       "title": "Responsabilidad",
-      "list": [
-        "Configuraciones incorrectas o intervenciones por terceros no autorizados.",
-        "Fuerza mayor (fallos, ciberataques independientes)."
-      ]
+      "content": "La responsabilidad del Proveedor está limitada al monto de los servicios realizados."
     },
-    "property": {
-      "title": "Propiedad de los Entregables",
-      "content": "Los entregables (códigos, análisis, informes) siguen siendo propiedad del proveedor de servicios hasta el pago completo de los servicios acordados."
+    "termination": {
+      "title": "Terminación",
+      "content": "Cualquier terminación debe ser notificada por escrito con 30 días de anticipación."
     },
-    "disputes": {
-      "title": "Reclamaciones y Disputas",
-      "content": "En caso de disputa, las partes intentarán encontrar una solución amistosa. En su defecto, la disputa se someterá a los tribunales competentes de Toulouse."
+    "law": {
+      "title": "Ley Aplicable",
+      "content": "Estos términos están sujetos a la ley francesa."
     }
-  },
-  "privacy": {
-    "title": "Política de Privacidad",
-    "collection": {
-      "title": "Recopilación y Uso de Datos Personales",
-      "description": "Este sitio web recopila únicamente los datos personales transmitidos a través del formulario de contacto (nombre, correo electrónico, teléfono, mensaje). Estos datos se utilizan exclusivamente para:",
-      "purposes": [
-        "Responder a las solicitudes de los usuarios.",
-        "Comunicar sobre servicios o presupuestos profesionales."
-      ]
-    },
-    "legal_basis": {
-      "title": "Base Legal",
-      "content": "El tratamiento de datos se basa en el interés legítimo de responder a las solicitudes de prospectos o clientes profesionales."
-    },
-    "retention": {
-      "title": "Período de Conservación",
-      "content": "Los datos se conservan durante un período máximo de 3 años después del último contacto."
-    },
-    "sharing": {
-      "title": "Compartir Datos",
-      "content": "Ningún dato personal recopilado a través de este sitio se comparte con terceros, excepto por obligación legal."
-    },
-    "rights": {
-      "title": "Derechos de los Usuarios",
-      "list": [
-        "Acceso a los datos personales que les conciernen.",
-        "Rectificación o eliminación de datos.",
-        "Oposición al tratamiento de datos por motivos legítimos."
-      ],
-      "contact": "Para ejercer estos derechos, contacte a: contact@marialena-pietri.fr."
-    },
-    "security": {
-      "title": "Seguridad de los Datos",
-      "content": "Los datos recopilados están protegidos y asegurados contra cualquier acceso no autorizado."
-    }
-  },
-  "legal": {
-    "title": "Aviso Legal",
-    "sections": {
-      "identity": {
-        "title": "Identidad",
-        "content": "Maria-Lena Pietri\nDesarrolladora Magento y Consultora de E-commerce\n30 Allée de la Gâtine\n31770 Colomiers, Francia\nSIRET: 48374376100056\nNúmero de IVA: FR36483743761\nEmail: contact@marialena-pietri.fr"
-      },
-      "publication": {
-        "title": "Dirección de Publicación",
-        "content": "Director de publicación: Maria-Lena Pietri\nResponsable editorial: Maria-Lena Pietri"
-      },
-      "hosting": {
-        "title": "Alojamiento",
-        "content": "Este sitio web está alojado por Netlify Inc.\n44 Montgomery Street, Suite 300\nSan Francisco, California 94104\nEstados Unidos"
-      },
-      "cookies": {
-        "title": "Gestión de Cookies",
-        "content": "Este sitio utiliza cookies técnicas que son esenciales para el funcionamiento del sitio web. Estas cookies no recopilan ningún dato personal. De acuerdo con la legislación vigente, su uso no requiere consentimiento previo."
-      },
-      "cnil": {
-        "title": "Protección de Datos",
-        "content": "De conformidad con la Ley francesa de Protección de Datos del 6 de enero de 1978 (modificada) y el Reglamento General de Protección de Datos (RGPD), usted tiene derecho a acceder, rectificar, eliminar y oponerse al tratamiento de sus datos personales. Para ejercer estos derechos, contáctenos en: contact@marialena-pietri.fr"
-      },
-      "intellectual": {
-        "title": "Propiedad Intelectual",
-        "content": "Todo este sitio web está sujeto a la legislación francesa e internacional sobre derechos de autor y propiedad intelectual. Todos los derechos de reproducción están reservados. La reproducción de todo o parte de este sitio en cualquier medio está estrictamente prohibida sin la autorización expresa de Maria-Lena Pietri."
-      },
-      "credits": {
-        "title": "Créditos",
-        "content": "Diseño y desarrollo: Maria-Lena Pietri\nFramework: Gatsby/React\nBiblioteca UI: Material-UI\nIlustraciones y logotipos: Derechos reservados a sus respectivos propietarios"
-      }
-    }
-  },
-  "footer": {
-    "followMe": "Sígueme",
-    "legal": "Aviso Legal",
-    "terms": "Términos de Servicio",
-    "privacy": "Política de Privacidad",
-    "copyright": "Maria-Lena Pietri. Todos los derechos reservados."
   },
   "cv": {
     "title": "Curriculum Vitae",
-    "description": "Descarga mi CV para conocer más sobre mi experiencia profesional y habilidades",
+    "description": "Aquí puedes descargar mi CV para conocer más sobre mi experiencia profesional y habilidades",
     "download": {
       "button": "Descargar CV",
-      "generating": "Generando...",
-      "error": "Ocurrió un error al generar el CV"
-    },
-    "sections": {
-      "contact": "Información de Contacto",
-      "skills": "Habilidades Técnicas",
-      "languages": "Idiomas",
-      "aboutMe": "Sobre Mí",
-      "experience": "Experiencia Profesional",
-      "education": "Formación"
-    },
-    "about": {
-      "whoAmI": {
-        "title": "¿Quién Soy?",
-        "content": "Soy una desarrolladora Full Stack apasionada, especializada en desarrollo Magento 2. Con una sólida base en tecnologías front-end y back-end, me especializo en crear soluciones robustas de comercio electrónico."
-      }
-    },
-    "contact": {
-      "email": "pietri.marialena@gmail.com",
-      "phone": "+33 6 59 87 61 28",
-      "address": {
-        "line1": "6 rue Léon Jouhaux",
-        "line2": "75010 Paris",
-        "country": "Francia"
-      },
-      "linkedin": "linkedin.com/in/maria-lena-pietri"
-    },
-    "skills": {
-      "title": "Habilidades Técnicas",
-      "list": [
-        "Desarrollo E-commerce",
-        "Desarrollo FullStack",
-        "DevOps & Infraestructura",
-        "Gestión de Proyectos",
-        "Ciberseguridad",
-        "Optimización de Rendimiento"
-      ]
-    },
-    "languages": {
-      "title": "Idiomas",
-      "list": [
-        {
-          "language": "Francés",
-          "level": "Nativo"
-        },
-        {
-          "language": "Inglés",
-          "level": "Profesional"
-        },
-        {
-          "language": "Español",
-          "level": "Avanzado"
-        }
-      ]
+      "title": "CV Maria-Lena Pietri",
+      "description": "CV en formato PDF"
     }
-  },
-  "404": {
-    "title": "Página No Encontrada",
-    "description": "La página que estás buscando puede haber sido eliminada, renombrada o está temporalmente no disponible.",
-    "backHome": "Volver al Inicio"
-  },
-  "resume": {
-    "sections": {
-      "aboutMe": "Sobre Mí",
-      "experience": "Experiencia",
-      "contact": "Contacto",
-      "skills": "Habilidades",
-      "languages": "Idiomas"
-    },
-    "skills": {
-      "title": "Habilidades",
-      "list": [
-        "Desarrollo E-commerce",
-        "Desarrollo Full Stack",
-        "DevOps & Infraestructura",
-        "Gestión de Proyectos",
-        "Ciberseguridad",
-        "Optimización de Rendimiento"
-      ]
-    },
-    "languages": {
-      "title": "Idiomas",
-      "list": [
-        {
-          "language": "Francés",
-          "level": "Nativo"
-        },
-        {
-          "language": "Inglés",
-          "level": "Profesional"
-        },
-        {
-          "language": "Español",
-          "level": "Avanzado"
-        }
-      ]
-    },
-    "downloadButton": "Descargar CV"
   },
   "language": "es"
 }

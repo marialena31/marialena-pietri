@@ -1,0 +1,50 @@
+{
+  "title": "Skills",
+  "subtitle": "Technical Expertise",
+  "categories": {
+    "frontend": {
+      "title": "Frontend Development",
+      "skills": [
+        "HTML5/CSS3",
+        "JavaScript/TypeScript",
+        "React",
+        "Vue.js",
+        "Responsive Design",
+        "PWA"
+      ]
+    },
+    "backend": {
+      "title": "Backend Development",
+      "skills": [
+        "PHP",
+        "Node.js",
+        "Python",
+        "REST APIs",
+        "GraphQL",
+        "MySQL/PostgreSQL"
+      ]
+    },
+    "ecommerce": {
+      "title": "E-commerce",
+      "skills": [
+        "Magento 1/2",
+        "Adobe Commerce Cloud",
+        "Payment Gateways",
+        "ERP Integration",
+        "PIM Systems",
+        "B2B Solutions"
+      ]
+    },
+    "devops": {
+      "title": "DevOps & Tools",
+      "skills": [
+        "Git",
+        "Docker",
+        "CI/CD",
+        "AWS",
+        "Linux",
+        "Performance Optimization"
+      ]
+    }
+  }
+}
