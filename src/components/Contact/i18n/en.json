@@ -1,6 +1,6 @@
 {
   "title": "Contact Me",
-  "description": "Feel free to reach out to me for any inquiries or collaborations.",
+  "subtitle": "Feel free to reach out to me for any inquiries or collaborations.",
   "form": {
     "name": {
       "label": "Name",

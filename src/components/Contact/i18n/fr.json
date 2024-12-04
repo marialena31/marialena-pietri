@@ -1,6 +1,6 @@
 {
   "title": "Contact",
-  "subtitle": "Travaillons Ensemble",
+  "subtitle": "N'hésitez pas à me contacter pour toute demande ou collaboration.",
   "form": {
     "name": {
       "label": "Nom",
@@ -18,7 +18,7 @@
       "label": "Sujet",
       "placeholder": "Sujet",
       "required": "Le sujet est requis",
-      "minLength": "Le sujet doit contenir au moins 5 caractères"
+      "minLength": "Le sujet doit contenir au moins 2 caractères"
     },
     "message": {
       "label": "Message",

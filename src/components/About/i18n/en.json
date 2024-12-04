@@ -1,5 +1,4 @@
 {
-  "about": {
     "title": "About Me",
     "subtitle": "Who am I?",
     "whoAmI": {
@@ -27,5 +26,4 @@
         "level2": "B1/B2"
       }
     ]
-  }
 }

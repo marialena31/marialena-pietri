@@ -1,44 +1,44 @@
 {
   "copyright": " 2024 Maria-Lena Pietri. Todos los derechos reservados.",
+  "common": {
+    "close": "Cerrar"
+  },
   "items": [
     {
+      "title": "Aviso Legal",
+      "link": "#legal"
+    },
+    {
       "title": "Política de Privacidad",
-      "link": "/privacy"
+      "link": "#privacy"
     },
     {
       "title": "Términos de Servicio",
-      "link": "/terms"
-    },
-    {
-      "title": "Aviso Legal",
-      "link": "/legal"
+      "link": "#terms"
     }
   ],
   "social": [
     {
       "title": "LinkedIn",
-      "link": "https://linkedin.com/in/maria-lena-pietri",
+      "link": "https://linkedin.com/in/marialetta",
       "icon": "linkedin"
     },
     {
       "title": "GitHub",
-      "link": "https://github.com/maria-lena-pietri",
+      "link": "https://github.com/marialetta",
       "icon": "github"
     },
     {
       "title": "Twitter",
-      "link": "https://twitter.com/maria-lena-pietri",
+      "link": "https://twitter.com/marialetta",
       "icon": "twitter"
     },
     {
       "title": "Facebook",
-      "link": "https://facebook.com/maria-lena-pietri",
+      "link": "https://facebook.com/marialetta",
       "icon": "facebook"
     }
   ],
-  "common": {
-    "close": "Cerrar"
-  },
   "legal": {
     "title": "Aviso Legal",
     "sections": {
@@ -47,7 +47,7 @@
         "content": "Este sitio web es propiedad y está operado por Maria-Lena Pietri, consultora independiente con sede en Francia."
       },
       "publication": {
-        "title": "Directora de Publicación",
+        "title": "Director de Publicación",
         "content": "Maria-Lena Pietri es la directora de publicación de este sitio web."
       },
       "hosting": {
@@ -56,120 +56,75 @@
       },
       "cookies": {
         "title": "Cookies",
-        "content": "Este sitio web utiliza cookies esenciales para garantizar su correcto funcionamiento. Al continuar utilizando este sitio, acepta el uso de estas cookies."
-      },
-      "cnil": {
-        "title": "Declaración CNIL",
-        "content": "De acuerdo con la Ley Francesa de Protección de Datos, tiene derecho a acceder, modificar, rectificar y eliminar los datos que le conciernen (Art. 34 de la ley 'Informatique et Libertés')."
+        "content": "Este sitio utiliza cookies esenciales para garantizar su correcto funcionamiento. Al continuar utilizando este sitio, acepta el uso de estas cookies."
       },
       "intellectual": {
         "title": "Propiedad Intelectual",
         "content": "Todo el contenido de este sitio web (textos, imágenes, logotipos, etc.) está protegido por derechos de propiedad intelectual. Cualquier reproducción, incluso parcial, está prohibida sin autorización previa."
+      }
+    }
+  },
+  "privacy": {
+    "title": "Política de Privacidad",
+    "sections": {
+      "collection": {
+        "title": "Recopilación de Datos",
+        "content": "Recopilamos y procesamos datos personales para los siguientes fines:",
+        "list": [
+          "Para proporcionar nuestros servicios de consultoría",
+          "Para comunicarnos con usted sobre nuestros servicios",
+          "Para mejorar nuestro sitio web y servicios",
+          "Para cumplir con las obligaciones legales"
+        ]
       },
-      "credits": {
-        "title": "Créditos",
-        "content": "Diseño y desarrollo web: Maria-Lena Pietri"
+      "rights": {
+        "title": "Sus Derechos",
+        "content": "Bajo el RGPD, tiene varios derechos con respecto a sus datos personales:",
+        "list": [
+          "Derecho de acceso a sus datos personales",
+          "Derecho a rectificar datos inexactos",
+          "Derecho de supresión ('derecho al olvido')",
+          "Derecho a la limitación del tratamiento",
+          "Derecho a la portabilidad de los datos",
+          "Derecho de oposición al tratamiento"
+        ]
+      },
+      "security": {
+        "title": "Seguridad de Datos",
+        "content": "Implementamos medidas técnicas y organizativas apropiadas para proteger sus datos personales contra el acceso, la modificación, la divulgación o la destrucción no autorizados."
+      },
+      "contact": {
+        "title": "Información de Contacto",
+        "content": "Para cualquier consulta relacionada con la privacidad, contáctenos en privacy@marialena-pietri.fr"
       }
     }
   },
   "terms": {
     "title": "Términos de Servicio",
-    "preamble": {
-      "title": "Preámbulo",
-      "content": "Estos Términos de Servicio rigen el uso de los servicios de consultoría proporcionados por Maria-Lena Pietri."
-    },
-    "provider": {
-      "title": "Proveedor de Servicios",
-      "name": "Maria-Lena Pietri",
-      "address": "París, Francia",
-      "email": "contact@marialena-pietri.fr"
-    },
-    "services": {
-      "title": "Servicios Proporcionados",
-      "list": [
-        "Consultoría en Estrategia Empresarial",
-        "Transformación Digital",
-        "Gestión de Proyectos",
-        "Implementación de Tecnología",
-        "Formación y Talleres"
-      ]
-    },
-    "pricing": {
-      "title": "Precios",
-      "content": "Los precios se establecen por proyecto y se comunican mediante un presupuesto detallado. Todos los precios están en Euros y no incluyen IVA."
-    },
-    "payment": {
-      "title": "Condiciones de Pago",
-      "methods": [
-        "Transferencia Bancaria",
-        "Tarjeta de Crédito",
-        "PayPal"
-      ]
-    },
-    "execution": {
-      "title": "Ejecución del Servicio",
-      "content": "Los servicios se prestan según el alcance y el calendario definidos en el acuerdo de servicio."
-    },
-    "withdrawal": {
-      "title": "Derecho de Desistimiento",
-      "content": "Los clientes profesionales no se benefician del derecho de desistimiento para los servicios prestados."
-    },
-    "liability": {
-      "title": "Responsabilidad",
-      "list": [
-        "El proveedor de servicios está sujeto a una obligación de medios",
-        "El cliente sigue siendo responsable de sus decisiones comerciales",
-        "Los eventos de fuerza mayor excluyen la responsabilidad"
-      ]
-    },
-    "property": {
-      "title": "Propiedad Intelectual",
-      "content": "Todos los entregables siguen siendo propiedad intelectual de Maria-Lena Pietri hasta que se reciba el pago completo."
-    },
-    "disputes": {
-      "title": "Disputas",
-      "content": "Cualquier disputa estará sujeta a la ley francesa y a la jurisdicción de los tribunales de París."
-    }
-  },
-  "privacy": {
-    "title": "Política de Privacidad",
-    "collection": {
-      "title": "Recopilación de Datos",
-      "description": "Recopilamos y procesamos datos personales para los siguientes fines:",
-      "purposes": [
-        "Para proporcionar nuestros servicios de consultoría",
-        "Para comunicarnos con usted sobre nuestros servicios",
-        "Para mejorar nuestro sitio web y servicios",
-        "Para cumplir con las obligaciones legales"
-      ]
-    },
-    "legal_basis": {
-      "title": "Base Legal",
-      "content": "Procesamos sus datos basándonos en su consentimiento, necesidad contractual y nuestros intereses legítimos."
-    },
-    "retention": {
-      "title": "Retención de Datos",
-      "content": "Conservamos sus datos personales solo durante el tiempo necesario para cumplir con los fines para los que fueron recopilados."
-    },
-    "sharing": {
-      "title": "Compartir Datos",
-      "content": "No vendemos sus datos personales. Solo los compartimos con proveedores de servicios que nos ayudan a operar nuestro sitio web y proporcionar nuestros servicios."
-    },
-    "rights": {
-      "title": "Sus Derechos",
-      "list": [
-        "Derecho a acceder a sus datos personales",
-        "Derecho a rectificar datos inexactos",
-        "Derecho de supresión ('derecho al olvido')",
-        "Derecho a la limitación del tratamiento",
-        "Derecho a la portabilidad de los datos",
-        "Derecho a oponerse al tratamiento"
-      ],
-      "contact": "Para ejercer estos derechos, contáctenos en privacy@marialena-pietri.fr"
-    },
-    "security": {
-      "title": "Medidas de Seguridad",
-      "content": "Implementamos medidas técnicas y organizativas apropiadas para proteger sus datos personales contra el acceso o la divulgación no autorizados."
+    "sections": {
+      "acceptance": {
+        "title": "Aceptación de Términos",
+        "content": "Al acceder y utilizar este sitio web, acepta y se compromete a cumplir estos Términos de Servicio."
+      },
+      "services": {
+        "title": "Servicios",
+        "content": "Proporcionamos servicios de consultoría en:",
+        "list": [
+          "Estrategia Empresarial",
+          "Transformación Digital",
+          "Gestión de Proyectos",
+          "Implementación Tecnológica",
+          "Formación y Talleres"
+        ]
+      },
+      "liability": {
+        "title": "Limitación de Responsabilidad",
+        "content": "Nos esforzamos por proporcionar información precisa y confiable, pero no ofrecemos garantías sobre la integridad, confiabilidad o precisión de esta información."
+      },
+      "changes": {
+        "title": "Cambios en los Términos",
+        "content": "Nos reservamos el derecho de modificar estos términos en cualquier momento. El uso continuado del sitio después de los cambios constituye la aceptación de los términos modificados."
+      }
     }
   }
 }

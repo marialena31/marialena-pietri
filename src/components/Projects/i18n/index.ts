@@ -9,12 +9,4 @@ i18n.addResourceBundle('en', 'projects', en, true, true);
 i18n.addResourceBundle('fr', 'projects', fr, true, true);
 i18n.addResourceBundle('es', 'projects', es, true, true);
 
-// Set French as fallback language for missing translations
-i18n.services.resourceStore.options = {
-  ...i18n.services.resourceStore.options,
-  fallbackLng: 'fr',
-  ns: ['projects'],
-  defaultNS: 'projects'
-};
-
 export default i18n;

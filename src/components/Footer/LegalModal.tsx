@@ -26,7 +26,7 @@ interface LegalModalProps {
 }
 
 const LegalModal: React.FC<LegalModalProps> = ({ open, onClose, type }) => {
-  const { t } = useTranslation('footer');
+  const { t, i18n } = useTranslation('footer');
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
 
