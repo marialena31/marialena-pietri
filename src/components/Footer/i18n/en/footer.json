@@ -1,0 +1,76 @@
+{
+  "copyright": "2023 Maria Leal. All rights reserved.",
+  "common": {
+    "close": "Close"
+  },
+  "items": [
+    {
+      "title": "Legal Notice",
+      "link": "#legal"
+    },
+    {
+      "title": "Privacy Policy",
+      "link": "#privacy"
+    },
+    {
+      "title": "Terms of Service",
+      "link": "#terms"
+    }
+  ],
+  "social": [
+    {
+      "title": "LinkedIn",
+      "link": "https://linkedin.com",
+      "icon": "linkedin"
+    },
+    {
+      "title": "GitHub",
+      "link": "https://github.com",
+      "icon": "github"
+    },
+    {
+      "title": "Twitter",
+      "link": "https://twitter.com",
+      "icon": "twitter"
+    }
+  ],
+  "legal": {
+    "title": "Legal Notice",
+    "content": [
+      {
+        "title": "Company Information",
+        "content": "This website is operated by Maria Leal. The content and information provided on this website is for general information purposes only."
+      },
+      {
+        "title": "Disclaimer",
+        "content": "While we strive to keep the information up to date and correct, we make no representations or warranties of any kind, express or implied, about the completeness, accuracy, reliability, suitability or availability with respect to the website or the information, products, services, or related graphics contained on the website for any purpose."
+      }
+    ]
+  },
+  "privacy": {
+    "title": "Privacy Policy",
+    "content": [
+      {
+        "title": "Data Collection",
+        "content": "We respect your privacy and are committed to protecting your personal data. This privacy policy will inform you about how we handle your personal data when you visit our website and tell you about your privacy rights."
+      },
+      {
+        "title": "Use of Data",
+        "content": "We only collect and use your personal information when necessary to provide and improve our services. We implement appropriate security measures to protect your personal information."
+      }
+    ]
+  },
+  "terms": {
+    "title": "Terms of Service",
+    "content": [
+      {
+        "title": "Acceptance of Terms",
+        "content": "By accessing and using this website, you accept and agree to be bound by the terms and provision of this agreement."
+      },
+      {
+        "title": "Use License",
+        "content": "Permission is granted to temporarily download one copy of the materials (information or software) on this website for personal, non-commercial transitory viewing only."
+      }
+    ]
+  }
+}

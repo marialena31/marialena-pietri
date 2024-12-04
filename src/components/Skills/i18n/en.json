@@ -1,30 +1,34 @@
 {
-  "title": "Skills",
-  "subtitle": "Technical Expertise",
-  "categories": {
-    "frontend": {
+  "title": "Technical Skills",
+  "subtitle": "",
+  "items": [
+    {
       "title": "Frontend Development",
       "skills": [
         "HTML5/CSS3",
+        "SCSS",
         "JavaScript/TypeScript",
+        "Knockout.js",
         "React",
-        "Vue.js",
+        "Next.js",
         "Responsive Design",
-        "PWA"
+        "Accessibility"
       ]
     },
-    "backend": {
+    {
       "title": "Backend Development",
       "skills": [
         "PHP",
         "Node.js",
-        "Python",
         "REST APIs",
         "GraphQL",
-        "MySQL/PostgreSQL"
+        "MongoDB",
+        "Redis",
+        "Varnish",
+        "Elasticsearch"
       ]
     },
-    "ecommerce": {
+    {
       "title": "E-commerce",
       "skills": [
         "Magento 1/2",
@@ -32,19 +36,22 @@
         "Payment Gateways",
         "ERP Integration",
         "PIM Systems",
+        "Marketplaces",
         "B2B Solutions"
       ]
     },
-    "devops": {
+    {
       "title": "DevOps & Tools",
       "skills": [
         "Git",
         "Docker",
         "CI/CD",
         "AWS",
-        "Linux",
-        "Performance Optimization"
+        "Cybersecurity",
+        "Performance Optimization",
+        "New Relic",
+        "Datadog"
       ]
     }
-  }
+  ]
 }

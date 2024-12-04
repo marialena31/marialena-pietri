@@ -1,43 +1,132 @@
 {
   "title": "Portfolio",
   "subtitle": "Projets Magento et Solutions E-commerce",
-  "viewProject": "Voir le Projet",
-  "projects": {
-    "chausson": {
-      "title": "Chausson Matériaux",
-      "project": "Création d'une stratégie omnicanale et lancement de la plateforme e-commerce pour un leader des matériaux de construction, gérant plus de 20 000 produits.<br /><br />Mise en place d'un système PIM complet utilisant Maps, rationalisant la création de catalogues automatisés et de flux de données pour le site web.",
-      "impact": "Réduction du temps de production des catalogues de 50-75% grâce à des workflows automatisés.<br /><br />Livraison d'un site e-commerce haute performance avec une navigation et une gestion des produits optimisées.",
-      "achievements": "Direction d'une équipe de 20 personnes entre parties prenantes internes et externes.<br /><br />Intégration parfaite du PIM et de l'ERP avec la plateforme e-commerce."
+  "projects": [
+    {
+      "id": "chausson",
+      "title": "Chausson Matériaux – Écosystème E-Commerce Complet",
+      "date": "2014-2014",
+      "image": "/images/projects/chausson-matériaux.jpg",
+      "project": {
+        "title": "Projet",
+        "content": "Création d'une stratégie cross-canal et lancement de la plateforme e-commerce pour un leader des matériaux de construction, gérant plus de 20 000 produits. Mise en place d'un système complet de gestion des informations produits (PIM) utilisant Maps, simplifiant la création de catalogues automatisés et de flux de données pour le site web."
+      },
+      "impact": {
+        "title": "Impact",
+        "content": "Réduction du temps de production des catalogues de 50 à 75% grâce aux workflows automatisés. Livraison d'un site e-commerce haute performance avec une navigation et une gestion des produits optimisées, stimulant l'engagement client."
+      },
+      "achievements": {
+        "title": "Réalisations Clés",
+        "items": [
+          "Gestion d'une équipe de 20 personnes entre parties prenantes internes et externes",
+          "Intégration transparente du PIM et de l'ERP avec la plateforme e-commerce"
+        ]
+      }
     },
-    "eram": {
-      "title": "ERAM Group",
-      "project": "Direction de l'évolution technique des sites Magento pour les marques Eram, Mellow Yellow et Bocage.<br /><br />Mise en place de la maintenance préventive, corrective et évolutive, incluant les mises à jour du core Magento, l'adaptation des modules personnalisés et le monitoring des dépendances.<br /><br />Réalisation d'un pré-audit de sécurité en cas de suspicion de compromission, analyse des logs et recommandations pour améliorer la sécurité de la plateforme.",
-      "impact": "Renforcement de la stabilité et de la sécurité de la plateforme grâce à des mises à jour proactives.<br /><br />Amélioration de l'expérience client avec des optimisations de performance ciblées.",
-      "achievements": "Implémentation de pare-feu applicatifs (WAF) pour une sécurité avancée en collaboration avec les équipes IT.<br /><br />Gestion fluide des pipelines CI/CD pour les déploiements multi-environnements."
+    {
+      "id": "valrhona",
+      "title": "Valrhona – Excellence E-Commerce B2B",
+      "date": "2018",
+      "image": "/images/projects/valrhona.jpg",
+      "project": {
+        "title": "Projet",
+        "content": "Refonte de la plateforme B2B Valrhona Selection pour améliorer l'expérience client et intégrer des fonctionnalités avancées de marketplace avec Mirakl. Configuration des flux API Salesforce avec authentification personnalisée, permettant des interactions client plus fluides. Mise en place d'une authentification unique (SSO) utilisant un module SAML personnalisé pour simplifier l'accès des clients entreprise."
+      },
+      "impact": {
+        "title": "Impact",
+        "content": "Simplification du processus d'intégration pour les clients professionnels et amélioration de l'efficacité de la plateforme. Renforcement de la sécurité et de l'utilisabilité pour les transactions B2B à grande échelle."
+      },
+      "achievements": {
+        "title": "Réalisations Clés",
+        "items": [
+          "Direction d'une équipe de 7 développeurs, garantissant une haute qualité de code et une livraison dans les délais",
+          "Réalisation d'audits approfondis et de tests pour préparer la plateforme à un trafic élevé"
+        ]
+      }
     },
-    "whisky": {
-      "title": "La Maison du Whisky",
-      "project": "Leadership technique de la plateforme Magento 2, assurant une fonctionnalité robuste et une haute performance pour ce détaillant de spiritueux de luxe.<br /><br />Focus sur la maintenance préventive, l'implémentation des mises à jour core et l'adaptation des modules personnalisés aux derniers standards Magento.",
-      "impact": "Renforcement de la fiabilité et de la résilience du site pour garantir une excellente expérience utilisateur, même pendant les périodes de pointe.<br /><br />Livraison d'une infrastructure optimisée pour la scalabilité et la croissance future.",
-      "achievements": "Déploiement et configuration de pare-feu applicatifs avancés (Fastly WAF) en collaboration avec les équipes IT.<br /><br />Surveillance et mise à jour des dépendances tout en maintenant la compatibilité avec le code personnalisé."
+    {
+      "id": "legrand",
+      "title": "Legrand – Plateforme E-Commerce B2B Nouvelle Génération",
+      "date": "2016-2019",
+      "image": "/images/projects/legrand.jpg",
+      "project": {
+        "title": "Projet",
+        "content": "Conception et développement de la version alpha d'une plateforme B2B Magento 2 pour un leader mondial des infrastructures électriques et numériques du bâtiment. Livraison d'affichages produits personnalisés et de fonctionnalités de panier améliorées adaptées aux acheteurs professionnels."
+      },
+      "impact": {
+        "title": "Impact",
+        "content": "Réduction significative du temps de développement grâce à une architecture modulaire. Amélioration de l'expérience utilisateur pour les clients B2B avec des fonctionnalités spécifiques à leur secteur."
+      },
+      "achievements": {
+        "title": "Réalisations Clés",
+        "items": [
+          "Développement d'une architecture évolutive prête pour une expansion future",
+          "Mise en place de tests automatisés pour garantir la qualité du code"
+        ]
+      }
     },
-    "legrand": {
-      "title": "Legrand",
-      "project": "Conception et développement de la version alpha d'une plateforme B2B Magento 2 pour un leader mondial des infrastructures électriques et numériques du bâtiment.<br /><br />Création d'affichages produits personnalisés et amélioration des fonctionnalités du panier adaptées aux acheteurs professionnels.",
-      "impact": "Construction d'une base évolutive pour la transformation digitale B2B de Legrand.<br /><br />Amélioration de la gestion du catalogue produits et de l'expérience utilisateur pour les clients professionnels.",
-      "achievements": "Personnalisation de Magento pour gérer des hiérarchies complexes de produits et de catégories.<br /><br />Intégration parfaite entre les systèmes front-end et back-end."
+    {
+      "id": "whisky",
+      "title": "La Maison du Whisky – E-Commerce Premium & Sécurité",
+      "date": "2024",
+      "image": "/images/projects/la-maison-du-whisky.jpg",
+      "project": {
+        "title": "Projet",
+        "content": "Direction technique de la plateforme Magento 2 de La Maison du Whisky, assurant une fonctionnalité robuste du site et une haute performance pour ce détaillant de spiritueux de luxe. Focus sur la maintenance préventive, l'implémentation des mises à jour core et l'adaptation des modules personnalisés aux derniers standards Magento."
+      },
+      "impact": {
+        "title": "Impact",
+        "content": "Amélioration significative des performances du site et renforcement de la sécurité. Optimisation des processus de maintenance et de mise à jour."
+      },
+      "achievements": {
+        "title": "Réalisations Clés",
+        "items": [
+          "Mise en place d'un processus de déploiement continu",
+          "Amélioration des performances et de la sécurité du site"
+        ]
+      }
     },
-    "marjane": {
-      "title": "Marjane Mall",
-      "project": "Gestion de l'intégration Magento 2 et du déploiement de la marketplace Octopia pour le principal détaillant marocain, Marjane.<br /><br />Organisation et exécution du processus de réversibilité de l'application mobile, incluant la gestion des délais, la coordination de plusieurs équipes et la livraison des versions finales sur Google Play et l'Apple Store.<br /><br />Livraison d'une application mobile hybride React Native supportant plus de 70 000 produits avec une feuille de route pour évoluer vers 1 million.",
-      "impact": "Lancement d'une plateforme e-commerce et mobile évolutive conçue pour une gestion à forte croissance des vendeurs et des produits.<br /><br />Amélioration des flux de travail opérationnels grâce à une coordination efficace des équipes et des solutions techniques.",
-      "achievements": "Planification et exécution d'une mise à niveau de Magento 2.4.2 vers 2.4.5, optimisant les performances et la sécurité du site.<br /><br />Établissement d'un nouveau workflow de déploiement des versions, améliorant la fréquence et la stabilité des mises à jour."
+    {
+      "id": "eram",
+      "title": "Groupe Eram – Transformation Digitale Multi-Marques",
+      "date": "2024",
+      "image": "/images/projects/eram-group.jpg",
+      "project": {
+        "title": "Projet",
+        "content": "Direction de l'évolution technique des sites Magento pour des marques leaders comme Eram, Mellow Yellow et Bocage. Réalisation de la maintenance préventive, corrective et évolutive, incluant les mises à niveau du core Magento, l'adaptation des modules personnalisés et la surveillance des dépendances. Conduite d'un pré-audit de sécurité en cas de suspicion de compromission, analyse des logs et fourniture de recommandations actionnables pour améliorer la sécurité de la plateforme."
+      },
+      "impact": {
+        "title": "Impact",
+        "content": "Amélioration de la stabilité et de la sécurité des plateformes. Optimisation des performances et réduction des temps de chargement."
+      },
+      "achievements": {
+        "title": "Réalisations Clés",
+        "items": [
+          "Coordination efficace entre les équipes techniques et métier",
+          "Mise en place de processus de sécurité renforcés"
+        ]
+      }
     },
-    "valrhona": {
-      "title": "Valrhona",
-      "project": "Refonte de la plateforme B2B Valrhona Selection pour améliorer l'expérience client et intégrer des fonctionnalités avancées de marketplace avec Mirakl.<br /><br />Configuration des flux API Salesforce avec authentification personnalisée, permettant des interactions client plus fluides.<br /><br />Implémentation du Single Sign-On (SSO) via un module SAML personnalisé pour simplifier l'accès des clients entreprise.",
-      "impact": "Simplification du processus d'onboarding pour les clients professionnels et amélioration de l'efficacité de la plateforme.<br /><br />Renforcement de la sécurité et de l'utilisabilité pour les transactions B2B à grande échelle.",
-      "achievements": "Direction d'une équipe de 7 développeurs, assurant une haute qualité de code et une livraison dans les délais.<br /><br />Réalisation d'audits approfondis et de tests pour préparer la plateforme à une utilisation à fort trafic."
+    {
+      "id": "marjane",
+      "title": "Marjane Mall – Intégration Marketplace à Grande Échelle",
+      "date": "2023",
+      "image": "/images/projects/marjane-mall.jpg",
+      "project": {
+        "title": "Projet",
+        "content": "Gestion de l'intégration et du déploiement Magento 2 de la marketplace Octopia pour le leader de la distribution au Maroc, Marjane. Organisation et exécution du processus de réversibilité pour l'application mobile, transférant la propriété du prestataire au client. Cela incluait la gestion des délais, la coordination de plusieurs équipes et la livraison des versions finales de l'application sur Google Play et l'Apple Store. Livraison d'une application mobile hybride React Native et support d'un catalogue de plus de 70 000 produits avec une feuille de route pour évoluer vers 1 million."
+      },
+      "impact": {
+        "title": "Impact",
+        "content": "Lancement réussi de la marketplace avec plus de 70 000 produits. Transition en douceur de l'application mobile vers l'équipe interne."
+      },
+      "achievements": {
+        "title": "Réalisations Clés",
+        "items": [
+          "Gestion efficace du processus de réversibilité",
+          "Optimisation des performances pour un large catalogue"
+        ]
+      }
     }
-  }
+  ]
 }

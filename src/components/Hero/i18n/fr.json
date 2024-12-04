@@ -1,6 +1,9 @@
 {
-  "title": "Développeur Full Stack",
-  "subtitle": "Expert Magento & Lead Technique",
-  "description": "Avec plus de 10 ans d'expérience dans le développement e-commerce, je suis spécialisé dans la création de solutions Magento robustes et évolutives. Mon expertise couvre à la fois le leadership technique et le développement pratique, assurant une livraison réussie de projets e-commerce complexes.",
-  "cta": "Voir Mes Projets"
+  "title": "Maria-Lena Pietri",
+  "subtitle": "Experte Magento Senior & Consultante E-commerce",
+  "description": "Spécialisée en maintenance avancée, migrations Magento, et solutions sur mesure pour optimiser vos performances et sécuriser votre plateforme e-commerce.",
+  "cta": {
+    "title": "Prendre RDV",
+    "link": "https://calendly.com/pietri-marialena/contact-30"
+  }
 }

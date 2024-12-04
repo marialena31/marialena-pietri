@@ -21,7 +21,7 @@ const theme = createTheme({
     },
     background: {
       default: '#121212',
-      paper: 'rgba(18, 18, 18, 0.95)',
+      paper: '#1e1e1e',
     },
     divider: 'rgba(255, 255, 255, 0.1)',
     error: {
@@ -48,14 +48,14 @@ const theme = createTheme({
   typography: {
     fontFamily: '"Roboto", "Helvetica", "Arial", sans-serif',
     h1: {
-      fontSize: '3rem',
+      fontSize: '3.5rem',
       fontWeight: 700,
       lineHeight: 1.2,
       color: '#ffffff',
       letterSpacing: '-0.01562em',
     },
     h2: {
-      fontSize: '2.25rem',
+      fontSize: '2.5rem',
       fontWeight: 600,
       lineHeight: 1.3,
       color: '#ffffff',
@@ -84,7 +84,7 @@ const theme = createTheme({
     },
     h6: {
       fontSize: '1.125rem',
-      fontWeight: 600,
+      fontWeight: 500,
       lineHeight: 1.4,
       color: '#ffffff',
       letterSpacing: '0.0075em',
@@ -160,6 +160,20 @@ const theme = createTheme({
               backgroundColor: '#7b7b7b',
             },
           },
+          scrollBehavior: 'smooth',
+          '&::-webkit-scrollbar': {
+            width: '8px',
+          },
+          '&::-webkit-scrollbar-track': {
+            background: '#1e1e1e',
+          },
+          '&::-webkit-scrollbar-thumb': {
+            background: '#3a3a3a',
+            borderRadius: '4px',
+            '&:hover': {
+              background: '#4a4a4a',
+            },
+          },
         },
       },
     },
@@ -187,6 +201,7 @@ const theme = createTheme({
           textTransform: 'none',
           fontWeight: 600,
           transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+          padding: '8px 16px',
           '&:hover': {
             transform: 'translateY(-2px)',
           },
@@ -215,8 +230,8 @@ const theme = createTheme({
     MuiAppBar: {
       styleOverrides: {
         root: {
-          backgroundColor: 'rgba(18, 18, 18, 0.95)',
-          backdropFilter: 'blur(10px)',
+          backgroundColor: '#121212e6',
+          backdropFilter: 'blur(8px)',
           borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
           boxShadow: 'none',
         },
@@ -289,6 +304,41 @@ const theme = createTheme({
           '&:hover': {
             borderColor: 'rgba(255, 255, 255, 0.4)',
           },
+        },
+      },
+    },
+    MuiIconButton: {
+      styleOverrides: {
+        root: {
+          borderRadius: 8,
+        },
+      },
+    },
+    MuiMenu: {
+      styleOverrides: {
+        paper: {
+          backgroundColor: '#1e1e1e',
+          borderRadius: 8,
+          boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)',
+        },
+      },
+    },
+    MuiMenuItem: {
+      styleOverrides: {
+        root: {
+          borderRadius: 4,
+          margin: '4px 8px',
+          padding: '8px 16px',
+          '&:hover': {
+            backgroundColor: 'rgba(255, 255, 255, 0.05)',
+          },
+        },
+      },
+    },
+    MuiSelect: {
+      styleOverrides: {
+        root: {
+          borderRadius: 8,
         },
       },
     },

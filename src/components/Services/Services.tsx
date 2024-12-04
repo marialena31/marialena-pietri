@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import './i18n';
 import {
   Box,
   Container,
@@ -10,21 +11,17 @@ import {
   useTheme,
 } from '@mui/material';
 
-// Import translations
-import './i18n/en.json';
-import './i18n/es.json';
-import './i18n/fr.json';
-
 interface ServiceItem {
   title: string;
   description: string;
 }
 
 const Services = () => {
-  const { t } = useTranslation('services');
+  const { t, i18n } = useTranslation('services');  // Specify the 'services' namespace
   const theme = useTheme();
-  const services = t('items', { returnObjects: true }) as ServiceItem[];
-  const servicesList = Array.isArray(services) ? services : [];
+
+  // Access the items array from the services namespace
+  const services = (t('items', { returnObjects: true }) || []) as ServiceItem[];
 
   return (
     <Box
@@ -78,7 +75,7 @@ const Services = () => {
           variant="subtitle1"
           align="center"
           sx={{ 
-            mb: 6, 
+            mb: 12,
             color: 'rgba(255, 255, 255, 0.7)',
             maxWidth: '800px',
             margin: '0 auto',
@@ -89,8 +86,8 @@ const Services = () => {
           {t('subtitle')}
         </Typography>
 
-        <Grid container spacing={4}>
-          {servicesList.map((service, index) => (
+        <Grid container spacing={4} justifyContent="center" sx={{ mt: 0 }}>
+          {Array.isArray(services) && services.map((service, index) => (
             <Grid item xs={12} sm={6} md={4} key={index}>
               <Card
                 elevation={0}
@@ -157,7 +154,6 @@ const Services = () => {
                     component="h3"
                     align="center"
                     sx={{ 
-                      color: 'white',
                       fontWeight: 600,
                       mb: 3,
                       background: `linear-gradient(135deg, ${theme.palette.primary.light}, ${theme.palette.secondary.light})`,
@@ -188,9 +184,7 @@ const Services = () => {
                       color: 'rgba(255, 255, 255, 0.8)',
                       lineHeight: 1.8,
                       letterSpacing: '0.3px',
-                      fontSize: '1rem',
-                      position: 'relative',
-                      zIndex: 1,
+                      fontSize: '1rem'
                     }}
                   >
                     {service.description}

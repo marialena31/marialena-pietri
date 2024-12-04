@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import './i18n';
 import {
   Box,
   Container,
@@ -13,17 +14,72 @@ import {
 } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
 
+interface FormErrors {
+  name?: string;
+  email?: string;
+  subject?: string;
+  message?: string;
+}
+
 const Contact = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation('contact');
   const theme = useTheme();
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState<{
     text: string;
     type: 'success' | 'error';
   } | null>(null);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  });
+  const [errors, setErrors] = useState<FormErrors>({});
+
+  const validateForm = () => {
+    const newErrors: FormErrors = {};
+
+    // Name validation
+    if (!formData.name) {
+      newErrors.name = t('form.name.required');
+    } else if (formData.name.length < 2) {
+      newErrors.name = t('form.name.minLength');
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!formData.email) {
+      newErrors.email = t('form.email.required');
+    } else if (!emailRegex.test(formData.email)) {
+      newErrors.email = t('form.email.invalid');
+    }
+
+    // Subject validation
+    if (!formData.subject) {
+      newErrors.subject = t('form.subject.required');
+    } else if (formData.subject.length < 5) {
+      newErrors.subject = t('form.subject.minLength');
+    }
+
+    // Message validation
+    if (!formData.message) {
+      newErrors.message = t('form.message.required');
+    } else if (formData.message.length < 10) {
+      newErrors.message = t('form.message.minLength');
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
+    if (!validateForm()) {
+      return;
+    }
+
     setLoading(true);
     setMessage(null);
 
@@ -31,29 +87,43 @@ const Contact = () => {
       const form = event.currentTarget;
       const formData = new FormData(form);
 
-      // Encode the form data for Netlify
-      const encodedData = new URLSearchParams();
-      formData.forEach((value, key) => {
-        encodedData.append(key, value as string);
+      // Convert FormData to object
+      const data = {
+        name: formData.get('name'),
+        email: formData.get('email'),
+        subject: formData.get('subject'),
+        message: formData.get('message'),
+      };
+
+      // Send to our Netlify function
+      const response = await fetch('/.netlify/functions/handle-form', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
       });
 
-      const response = await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: encodedData.toString(),
-      });
-
-      if (response.ok) {
-        setMessage({ type: 'success', text: t('contact.success') });
-        form.reset();
-      } else {
-        throw new Error('Form submission failed');
+      if (!response.ok) {
+        throw new Error('Failed to send email');
       }
+
+      setMessage({ type: 'success', text: t('success.title') + ' : ' + t('success.message') });
+      form.reset();
     } catch (error) {
       console.error('Form submission error:', error);
-      setMessage({ type: 'error', text: t('contact.error') });
+      setMessage({ type: 'error', text: t('error.title') + ' : ' + t('error.message') });
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+    // Clear error when user starts typing
+    if (errors[name as keyof FormErrors]) {
+      setErrors(prev => ({ ...prev, [name]: undefined }));
     }
   };
 
@@ -102,7 +172,7 @@ const Contact = () => {
             }
           }}
         >
-          {t('contact.title')}
+          {t('title')}
         </Typography>
         <Typography
           variant="h6"
@@ -117,7 +187,7 @@ const Contact = () => {
             fontSize: '1.1rem',
           }}
         >
-          {t('contact.subtitle')}
+          {t('subtitle')}
         </Typography>
         <Grid container spacing={4} justifyContent="center">
           <Grid item xs={12} md={8}>
@@ -138,6 +208,7 @@ const Contact = () => {
                 data-netlify="true"
                 netlify-honeypot="bot-field"
                 onSubmit={handleSubmit}
+                noValidate
               >
                 <input type="hidden" name="form-name" value="contact" />
                 <div hidden>
@@ -151,8 +222,12 @@ const Contact = () => {
                       required
                       fullWidth
                       name="name"
-                      label={t('contact.form.name')}
+                      label={t('form.name.label')}
                       variant="outlined"
+                      value={formData.name}
+                      onChange={handleChange}
+                      error={!!errors.name}
+                      helperText={errors.name}
                       sx={{
                         '& .MuiOutlinedInput-root': {
                           backgroundColor: 'rgba(255, 255, 255, 0.03)',
@@ -184,8 +259,12 @@ const Contact = () => {
                       fullWidth
                       name="email"
                       type="email"
-                      label={t('contact.form.email')}
+                      label={t('form.email.label')}
                       variant="outlined"
+                      value={formData.email}
+                      onChange={handleChange}
+                      error={!!errors.email}
+                      helperText={errors.email}
                       sx={{
                         '& .MuiOutlinedInput-root': {
                           backgroundColor: 'rgba(255, 255, 255, 0.03)',
@@ -216,8 +295,12 @@ const Contact = () => {
                       required
                       fullWidth
                       name="subject"
-                      label={t('contact.form.subject')}
+                      label={t('form.subject.label')}
                       variant="outlined"
+                      value={formData.subject}
+                      onChange={handleChange}
+                      error={!!errors.subject}
+                      helperText={errors.subject}
                       sx={{
                         '& .MuiOutlinedInput-root': {
                           backgroundColor: 'rgba(255, 255, 255, 0.03)',
@@ -250,8 +333,12 @@ const Contact = () => {
                       multiline
                       rows={4}
                       name="message"
-                      label={t('contact.form.message')}
+                      label={t('form.message.label')}
                       variant="outlined"
+                      value={formData.message}
+                      onChange={handleChange}
+                      error={!!errors.message}
+                      helperText={errors.message}
                       sx={{
                         '& .MuiOutlinedInput-root': {
                           backgroundColor: 'rgba(255, 255, 255, 0.03)',
@@ -326,7 +413,7 @@ const Contact = () => {
                         },
                       }}
                     >
-                      {loading ? t('contact.form.sending') : t('contact.form.send')}
+                      {loading ? t('form.sending') : t('form.submit')}
                     </Button>
                   </Grid>
                 </Grid>

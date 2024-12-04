@@ -1,6 +1,9 @@
 {
-  "title": "Full Stack Developer",
-  "subtitle": "Magento Expert & Technical Lead",
-  "description": "With over 10 years of experience in e-commerce development, I specialize in creating robust and scalable Magento solutions. My expertise spans both technical leadership and hands-on development, ensuring successful delivery of complex e-commerce projects.",
-  "cta": "View My Work"
+  "title": "Maria-Lena Pietri",
+  "subtitle": "Senior Magento Expert & E-commerce Consultant",
+  "description": "Specialized in advanced maintenance, Magento migrations, and custom solutions to optimize performance and secure your e-commerce platform.",
+  "cta": {
+    "title": "Schedule a Meeting",
+    "link": "https://calendly.com/pietri-marialena/contact-30"
+  }
 }

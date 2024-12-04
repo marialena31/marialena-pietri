@@ -1,17 +1,41 @@
 {
   "copyright": " 2024 Maria-Lena Pietri. All rights reserved.",
-  "links": {
-    "privacy": "Privacy Policy",
-    "terms": "Terms of Service",
-    "legal": "Legal Notice",
-    "contact": "Contact"
-  },
-  "social": {
-    "linkedin": "Follow me on LinkedIn",
-    "github": "Check my GitHub",
-    "twitter": "Follow me on Twitter",
-    "facebook": "Follow me on Facebook"
-  },
+  "items": [
+    {
+      "title": "Privacy Policy",
+      "link": "/privacy"
+    },
+    {
+      "title": "Terms of Service",
+      "link": "/terms"
+    },
+    {
+      "title": "Legal Notice",
+      "link": "/legal"
+    }
+  ],
+  "social": [
+    {
+      "title": "LinkedIn",
+      "link": "https://linkedin.com/in/marialetta",
+      "icon": "linkedin"
+    },
+    {
+      "title": "GitHub",
+      "link": "https://github.com/marialetta",
+      "icon": "github"
+    },
+    {
+      "title": "Twitter",
+      "link": "https://twitter.com/marialetta",
+      "icon": "twitter"
+    },
+    {
+      "title": "Facebook",
+      "link": "https://facebook.com/marialetta",
+      "icon": "facebook"
+    }
+  ],
   "common": {
     "close": "Close"
   },

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import './i18n/index';
 import {
   Box,
   Container,
@@ -8,40 +9,22 @@ import {
   Paper,
   useTheme
 } from '@mui/material';
+import { motion } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
+import referencesConfig from './config.json';
 
 interface Reference {
   name: string;
   logo: string;
   link?: string;
-  isCAC40: boolean;
+  isConfidential: boolean;
 }
 
-const References = () => {
-  const { t } = useTranslation();
+const References: React.FC = () => {
+  const { t } = useTranslation('references');
   const theme = useTheme();
 
-  const references: Reference[] = [
-    { name: 'Bonpoint', logo: '/images/references/bonpoint.png', isCAC40: false },
-    { name: 'CAC 40', logo: '/images/references/cac-40.png', isCAC40: true },
-    { name: 'Chausson Matériaux', logo: '/images/references/chausson-materiaux.png', isCAC40: false },
-    { name: 'ERAM Group', logo: '/images/references/eram-group.png', isCAC40: false },
-    { name: 'France Air', logo: '/images/references/france-air.png', isCAC40: false },
-    { name: 'Hamilton', logo: '/images/references/hamilton.png', isCAC40: false },
-    { name: 'La Maison du Whisky', logo: '/images/references/la-maison-du-whisky.png', isCAC40: false },
-    { name: 'Ludilabel', logo: '/images/references/ludilabel.png', isCAC40: false },
-    { name: 'Maisons du Monde', logo: '/images/references/maisons-du-monde.png', isCAC40: false },
-    { name: 'Maps System', logo: '/images/references/maps-system.png', isCAC40: false },
-    { name: 'Marjane Mall', logo: '/images/references/marjanemall.png', isCAC40: false },
-    { name: 'Maurice Lacroix', logo: '/images/references/maurice-lacroix.png', isCAC40: false },
-    { name: 'MountNPass', logo: '/images/references/mountnpass.png', isCAC40: false },
-    { name: 'Nicoll', logo: '/images/references/nicoll.png', isCAC40: false },
-    { name: 'Nutrixo', logo: '/images/references/nutrixo.png', isCAC40: false },
-    { name: 'OpenClassrooms', logo: '/images/references/openclassrooms.png', isCAC40: false },
-    { name: 'Planet Cards', logo: '/images/references/planet-cards.png', isCAC40: false },
-    { name: 'Pro a Pro', logo: '/images/references/pro-a-pro.png', isCAC40: false },
-    { name: 'Sopra Steria', logo: '/images/references/sopra-steria.png', isCAC40: false },
-    { name: 'Valrhona', logo: '/images/references/valrhona.png', isCAC40: false },
-  ];
+  const references: Reference[] = referencesConfig.references;
 
   return (
     <Box
@@ -89,10 +72,25 @@ const References = () => {
             }
           }}
         >
-          {t('references.title')}
+          {t('title')}
         </Typography>
 
-        <Grid container spacing={4} justifyContent="center">
+        <Typography
+          variant="subtitle1"
+          align="center"
+          sx={{ 
+            mb: 6,
+            color: 'rgba(255, 255, 255, 0.7)',
+            maxWidth: '800px',
+            margin: '0 auto',
+            fontSize: '1.1rem',
+            lineHeight: 1.6,
+          }}
+        >
+          {t('subtitle')}
+        </Typography>
+
+        <Grid container spacing={4} justifyContent="center" sx={{ mt: 6 }}>
           {references.map((reference, index) => (
             <Grid item xs={6} sm={4} md={3} key={index}>
               <Paper
@@ -120,7 +118,7 @@ const References = () => {
                 <Box
                   component="img"
                   src={reference.logo}
-                  alt={`${reference.name} ${reference.isCAC40 ? t('references.cac40Member') : ''}`}
+                  alt={`${reference.name} ${reference.isConfidential ? t('cac40Member') : ''}`}
                   loading="lazy"
                   sx={{
                     width: '100%',
@@ -131,8 +129,9 @@ const References = () => {
                   }}
                   role="img"
                 />
-                {reference.isCAC40 && (
+                {reference.isConfidential && (
                   <Typography
+                    component="span"
                     sx={{
                       position: 'absolute',
                       top: '50%',
@@ -147,9 +146,10 @@ const References = () => {
                       textAlign: 'center',
                       letterSpacing: '0.2em',
                       textTransform: 'uppercase',
+                      display: 'block'
                     }}
                   >
-                    {t('references.confidential')}
+                    {t('confidential')}
                   </Typography>
                 )}
               </Paper>

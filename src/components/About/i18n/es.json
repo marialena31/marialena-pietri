@@ -1,64 +1,30 @@
 {
-  "title": "Sobre Mí",
-  "subtitle": "Trayectoria Profesional",
-  "description": "Soy un Desarrollador Full Stack y Líder Técnico con más de diez años de experiencia en desarrollo de comercio electrónico. Mi experiencia se centra en las plataformas Magento, donde he liderado con éxito numerosos proyectos a gran escala para marcas importantes.",
-  "highlights": {
-    "title": "Puntos Destacados",
-    "items": [
-      "Más de 10 años de experiencia en desarrollo e-commerce",
-      "Experto en plataformas Magento 1 y 2",
-      "Sólida experiencia en liderazgo técnico",
-      "Historial probado con marcas importantes",
-      "Especializado en soluciones B2B/B2C complejas"
-    ]
-  },
-  "experience": {
-    "title": "Experiencia Profesional",
-    "description": "A lo largo de mi carrera, he tenido la oportunidad de trabajar con marcas líderes en diversos sectores, desde retail de lujo hasta materiales de construcción. Mi enfoque siempre ha sido entregar soluciones escalables de alta calidad que impulsen el crecimiento del negocio."
-  },
-  "languages": {
-    "title": "Idiomas",
-    "list": [
+  "about": {
+    "title": "Sobre Mí",
+    "subtitle": "¿Quién soy?",
+    "whoAmI": {
+      "title": "¿Quién soy?",
+      "content": "Soy Desarrollador Full Stack Senior con más de 7 años de experiencia en desarrollo web, especializado en soluciones e-commerce. Mi experiencia se centra en la creación de aplicaciones robustas y escalables utilizando tecnologías modernas."
+    },
+    "expertise": {
+      "title": "Mi Experiencia",
+      "content": "Me especializo en desarrollo Magento, tanto para soluciones B2B como B2C. Mi stack técnico incluye React, Node.js y varias plataformas cloud. Tengo una amplia experiencia en la dirección de equipos técnicos y la implementación de mejores prácticas."
+    },
+    "languages": [
       {
         "language": "Francés",
-        "level": "Nativo"
+        "level": "Nativo",
+        "level2": ""
       },
       {
         "language": "Inglés",
-        "level": "Profesional"
+        "level": "Profesional",
+        "level2": "B2/C1"
       },
       {
         "language": "Español",
-        "level": "Avanzado"
-      }
-    ]
-  },
-  "skills": {
-    "title": "Habilidades Técnicas",
-    "list": [
-      {
-        "name": "Magento 2",
-        "level": 95
-      },
-      {
-        "name": "Magento 1",
-        "level": 90
-      },
-      {
-        "name": "PHP",
-        "level": 90
-      },
-      {
-        "name": "JavaScript",
-        "level": 85
-      },
-      {
-        "name": "React",
-        "level": 80
-      },
-      {
-        "name": "Node.js",
-        "level": 75
+        "level": "Avanzado",
+        "level2": "B1/B2"
       }
     ]
   }

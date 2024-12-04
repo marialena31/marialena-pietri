@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import './i18n';
 import {
   Box,
   Container,
@@ -12,7 +13,7 @@ import {
 import CalendarMonthIcon from '@mui/icons-material/CalendarMonth';
 
 const Hero = () => {
-  const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation('hero');
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
 
@@ -48,7 +49,7 @@ const Hero = () => {
           left: 0,
           right: 0,
           height: '1px',
-          background: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent)',
+          background: `linear-gradient(90deg, transparent, ${theme.palette.mode === 'dark' ? theme.palette.primary.main : theme.palette.primary.main}20, transparent)`,
         }
       }}
     >
@@ -66,7 +67,7 @@ const Hero = () => {
                   left: '-10%',
                   width: '120%',
                   height: '140%',
-                  background: `radial-gradient(ellipse at center, ${theme.palette.primary.main}10 0%, transparent 70%)`,
+                  background: `radial-gradient(ellipse at center, ${theme.palette.mode === 'dark' ? theme.palette.primary.main : theme.palette.primary.main}20 0%, transparent 70%)`,
                   opacity: 0.5,
                   zIndex: -1,
                   filter: 'blur(40px)',
@@ -87,93 +88,64 @@ const Hero = () => {
               <Typography
                 variant="h1"
                 sx={{
-                  fontSize: { xs: '2.5rem', md: '3.5rem' },
-                  fontWeight: 'bold',
+                  fontSize: { xs: '2.5rem', sm: '3rem', md: '4rem' },
+                  fontWeight: 700,
                   mb: 2,
-                  background: `linear-gradient(135deg, ${theme.palette.primary.light}, ${theme.palette.secondary.light})`,
-                  backgroundClip: 'text',
+                  background: `linear-gradient(135deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
                   WebkitBackgroundClip: 'text',
-                  color: 'transparent',
-                  textShadow: '2px 2px 4px rgba(0,0,0,0.3)',
-                  position: 'relative',
-                  '&::after': {
-                    content: '""',
-                    position: 'absolute',
-                    bottom: '-10px',
-                    left: isMobile ? '50%' : '0',
-                    transform: isMobile ? 'translateX(-50%)' : 'none',
-                    width: '60px',
-                    height: '4px',
-                    background: `linear-gradient(90deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
-                    borderRadius: '2px',
-                  }
+                  WebkitTextFillColor: 'transparent',
                 }}
               >
-                {t('hero.title')}
+                {t('title')}
               </Typography>
               <Typography
                 variant="h2"
                 sx={{
-                  fontSize: { xs: '1.5rem', md: '2rem' },
-                  mb: 2,
-                  color: 'rgba(255, 255, 255, 0.9)',
+                  fontSize: { xs: '1.5rem', sm: '2rem', md: '2.5rem' },
                   fontWeight: 500,
-                  letterSpacing: '0.02em',
-                  textShadow: '1px 1px 2px rgba(0,0,0,0.2)',
+                  mb: 3,
+                  color: theme.palette.text.secondary,
                 }}
               >
-                {t('hero.subtitle')}
+                {t('subtitle')}
               </Typography>
               <Typography
                 variant="body1"
                 sx={{
-                  fontSize: { xs: '1rem', md: '1.2rem' },
+                  fontSize: { xs: '1rem', sm: '1.1rem', md: '1.25rem' },
                   mb: 4,
-                  color: 'rgba(255, 255, 255, 0.7)',
-                  lineHeight: 1.6,
-                  maxWidth: '600px',
-                  margin: { xs: 'auto', md: '0' },
-                  position: 'relative',
-                  backdropFilter: 'blur(4px)',
-                  padding: '1rem',
-                  borderRadius: '8px',
-                  background: 'rgba(255, 255, 255, 0.05)',
-                  border: '1px solid rgba(255, 255, 255, 0.1)',
+                  maxWidth: '800px',
+                  color: theme.palette.text.secondary,
                 }}
               >
-                {t('hero.description')}
+                {t('description')}
               </Typography>
               <Box
                 sx={{
                   display: 'flex',
                   justifyContent: { xs: 'center', md: 'flex-start' },
-                  gap: 2,
+                  gap: 3,
+                  mt: 4,
                 }}
               >
                 <Button
                   variant="contained"
+                  color="primary"
                   size="large"
-                  href="https://calendly.com/pietri-marialena/contact-30?month=2024-12"
+                  href={t('cta.link')}
                   target="_blank"
                   startIcon={<CalendarMonthIcon />}
                   sx={{
-                    minWidth: 200,
+                    py: 1.5,
+                    px: 4,
+                    fontSize: '1.1rem',
                     background: `linear-gradient(135deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
-                    border: '1px solid rgba(255,255,255,0.1)',
-                    backdropFilter: 'blur(10px)',
-                    boxShadow: '0 4px 15px rgba(0,0,0,0.2)',
-                    transition: 'all 0.3s ease-in-out',
                     '&:hover': {
-                      transform: 'translateY(-2px)',
-                      boxShadow: '0 8px 25px rgba(0,0,0,0.3)',
                       background: `linear-gradient(135deg, ${theme.palette.primary.dark}, ${theme.palette.secondary.dark})`,
                     },
-                    '&:active': {
-                      transform: 'translateY(1px)',
-                    }
                   }}
                 >
-                  {t('hero.cta')}
+                  {t('cta.title')}
                 </Button>
               </Box>
             </Box>
@@ -193,7 +165,7 @@ const Hero = () => {
                   transform: 'translate(-50%, -50%)',
                   width: '100%',
                   height: '100%',
-                  background: `radial-gradient(circle at center, ${theme.palette.primary.main}20 0%, transparent 70%)`,
+                  background: `radial-gradient(circle at center, ${theme.palette.mode === 'dark' ? theme.palette.primary.main : theme.palette.primary.main}20 0%, transparent 70%)`,
                   filter: 'blur(40px)',
                   opacity: 0.6,
                   animation: 'float 6s ease-in-out infinite',

@@ -1,263 +1,177 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { useSanitize } from '../../hooks/useSanitize';
+import './i18n';
 import {
   Box,
   Container,
-  Grid,
   Typography,
+  Grid,
+  Card,
+  CardContent,
   LinearProgress,
-  Paper,
   useTheme,
 } from '@mui/material';
 
 interface Language {
   language: string;
   level: string;
+  level2: string;
 }
 
 const About = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation('about');
   const theme = useTheme();
-  const sanitize = useSanitize();
 
-  const getLanguageLevel = (level: string): number => {
-    const nativeLevels = ["Langue maternelle", "Native", "Nativo"];
-    const professionalLevels = ["Professionnel", "Professional", "Profesional"];
-    const advancedLevels = ["Avancé", "Advanced", "Avanzado"];
-
-    if (nativeLevels.includes(level)) {
-      return 100;
-    } else if (professionalLevels.includes(level)) {
-      return 90;
-    } else if (advancedLevels.includes(level)) {
-      return 75;
+  const getProgressValue = (level2: string): number => {
+    switch (level2) {
+      case '':
+        return 100;
+      case 'C2':
+        return 100;
+      case 'C1':
+        return 90;
+      case 'B2/C1':
+        return 80;
+      case 'B2':
+        return 70;
+      case 'B1/B2':
+        return 60;
+      case 'B1':
+        return 50;
+      case 'A2/B1':
+        return 40;
+      case 'A2':
+        return 30;
+      case 'A1/A2':
+        return 20;
+      case 'A1':
+        return 10;
+      default:
+        return 0;
     }
-    return 0;
   };
 
-  const languages = t('about.languages.list', { returnObjects: true });
-  const languagesArray = Array.isArray(languages) ? languages : [];
+  const languages = t('languages', { returnObjects: true }) as Language[];
 
   return (
     <Box
+      component="section"
       id="about"
       sx={{
-        py: 8,
-        backgroundColor: 'rgba(18, 18, 18, 0.95)',
-        position: 'relative',
-        '&::before': {
-          content: '""',
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          background: `radial-gradient(circle at 20% 20%, ${theme.palette.primary.dark}15 0%, transparent 60%),
-                      radial-gradient(circle at 80% 80%, ${theme.palette.secondary.dark}15 0%, transparent 60%)`,
-          opacity: 0.6,
-          pointerEvents: 'none',
-        }
+        py: { xs: 8, md: 12 },
+        backgroundColor: theme.palette.background.default,
       }}
     >
-      <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
+      <Container maxWidth="lg">
         <Typography
           variant="h2"
-          align="center"
-          gutterBottom
-          sx={{ 
+          sx={{
+            fontSize: { xs: '2rem', md: '2.5rem' },
+            fontWeight: 700,
             mb: 6,
-            color: 'white',
-            fontWeight: 600,
-            position: 'relative',
-            '&::after': {
-              content: '""',
-              position: 'absolute',
-              bottom: '-10px',
-              left: '50%',
-              transform: 'translateX(-50%)',
-              width: '60px',
-              height: '4px',
-              background: `linear-gradient(90deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
-              borderRadius: '2px',
-            }
+            textAlign: 'center',
+            background: `linear-gradient(135deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
+            backgroundClip: 'text',
+            WebkitBackgroundClip: 'text',
+            color: 'transparent',
           }}
         >
-          {t('about.title')}
+          {t('title')}
         </Typography>
 
         <Grid container spacing={4}>
+          {/* Who Am I Section */}
           <Grid item xs={12} md={4}>
-            <Paper 
-              elevation={0}
-              sx={{ 
-                p: 3, 
+            <Card
+              elevation={3}
+              sx={{
                 height: '100%',
-                backgroundColor: 'rgba(255, 255, 255, 0.05)',
-                backdropFilter: 'blur(10px)',
-                border: '1px solid rgba(255, 255, 255, 0.1)',
-                borderRadius: '16px',
-                transition: 'all 0.3s ease-in-out',
+                backgroundColor: theme.palette.background.paper,
+                transition: 'transform 0.2s ease-in-out',
                 '&:hover': {
                   transform: 'translateY(-5px)',
-                  boxShadow: '0 8px 30px rgba(0, 0, 0, 0.3)',
-                  backgroundColor: 'rgba(255, 255, 255, 0.08)',
-                  border: `1px solid ${theme.palette.primary.main}40`,
-                }
+                },
               }}
             >
-              <Typography 
-                variant="h5" 
-                gutterBottom
-                sx={{ 
-                  color: 'white',
-                  fontWeight: 600,
-                  background: `linear-gradient(135deg, ${theme.palette.primary.light}, ${theme.palette.secondary.light})`,
-                  backgroundClip: 'text',
-                  WebkitBackgroundClip: 'text',
-                  color: 'transparent',
-                }}
-              >
-                {t('about.whoAmI.title')}
-              </Typography>
-              <Typography 
-                dangerouslySetInnerHTML={{ 
-                  __html: sanitize(t('about.whoAmI.content')) 
-                }}
-                sx={{
-                  color: 'rgba(255, 255, 255, 0.8)',
-                  lineHeight: 1.7,
-                  '& a': {
-                    color: theme.palette.primary.main,
-                    textDecoration: 'none',
-                    transition: 'color 0.2s ease',
-                    '&:hover': {
-                      color: theme.palette.primary.light,
-                    }
-                  }
-                }}
-              />
-            </Paper>
+              <CardContent>
+                <Typography variant="h5" color="primary" gutterBottom>
+                  {t('whoAmI.title')}
+                </Typography>
+                <Typography variant="body1" color="textSecondary">
+                  {t('whoAmI.content')}
+                </Typography>
+              </CardContent>
+            </Card>
           </Grid>
 
+          {/* Expertise Section */}
           <Grid item xs={12} md={4}>
-            <Paper 
-              elevation={0}
-              sx={{ 
-                p: 3, 
+            <Card
+              elevation={3}
+              sx={{
                 height: '100%',
-                backgroundColor: 'rgba(255, 255, 255, 0.05)',
-                backdropFilter: 'blur(10px)',
-                border: '1px solid rgba(255, 255, 255, 0.1)',
-                borderRadius: '16px',
-                transition: 'all 0.3s ease-in-out',
+                backgroundColor: theme.palette.background.paper,
+                transition: 'transform 0.2s ease-in-out',
                 '&:hover': {
                   transform: 'translateY(-5px)',
-                  boxShadow: '0 8px 30px rgba(0, 0, 0, 0.3)',
-                  backgroundColor: 'rgba(255, 255, 255, 0.08)',
-                  border: `1px solid ${theme.palette.primary.main}40`,
-                }
+                },
               }}
             >
-              <Typography 
-                variant="h5" 
-                gutterBottom
-                sx={{ 
-                  color: 'white',
-                  fontWeight: 600,
-                  background: `linear-gradient(135deg, ${theme.palette.primary.light}, ${theme.palette.secondary.light})`,
-                  backgroundClip: 'text',
-                  WebkitBackgroundClip: 'text',
-                  color: 'transparent',
-                }}
-              >
-                {t('about.expertise.title')}
-              </Typography>
-              <Typography 
-                dangerouslySetInnerHTML={{ 
-                  __html: sanitize(t('about.expertise.content')) 
-                }}
-                sx={{
-                  color: 'rgba(255, 255, 255, 0.8)',
-                  lineHeight: 1.7,
-                  '& a': {
-                    color: theme.palette.primary.main,
-                    textDecoration: 'none',
-                    transition: 'color 0.2s ease',
-                    '&:hover': {
-                      color: theme.palette.primary.light,
-                    }
-                  }
-                }}
-              />
-            </Paper>
+              <CardContent>
+                <Typography variant="h5" color="primary" gutterBottom>
+                  {t('expertise.title')}
+                </Typography>
+                <Typography variant="body1" color="textSecondary">
+                  {t('expertise.content')}
+                </Typography>
+              </CardContent>
+            </Card>
           </Grid>
 
+          {/* Languages Section */}
           <Grid item xs={12} md={4}>
-            <Paper 
-              elevation={0}
-              sx={{ 
-                p: 3,
+            <Card
+              elevation={3}
+              sx={{
                 height: '100%',
-                backgroundColor: 'rgba(255, 255, 255, 0.05)',
-                backdropFilter: 'blur(10px)',
-                border: '1px solid rgba(255, 255, 255, 0.1)',
-                borderRadius: '16px',
-                transition: 'all 0.3s ease-in-out',
+                backgroundColor: theme.palette.background.paper,
+                transition: 'transform 0.2s ease-in-out',
                 '&:hover': {
                   transform: 'translateY(-5px)',
-                  boxShadow: '0 8px 30px rgba(0, 0, 0, 0.3)',
-                  backgroundColor: 'rgba(255, 255, 255, 0.08)',
-                  border: `1px solid ${theme.palette.primary.main}40`,
-                }
+                },
               }}
             >
-              <Typography 
-                variant="h5" 
-                gutterBottom
-                sx={{ 
-                  color: 'white',
-                  fontWeight: 600,
-                  background: `linear-gradient(135deg, ${theme.palette.primary.light}, ${theme.palette.secondary.light})`,
-                  backgroundClip: 'text',
-                  WebkitBackgroundClip: 'text',
-                  color: 'transparent',
-                }}
-              >
-                {t('about.languages.title')}
-              </Typography>
-              {languagesArray.map((lang: any, index: number) => (
-                <Box key={index} sx={{ mb: 2 }}>
-                  <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1 }}>
-                    <Typography variant="body1" sx={{ color: 'white' }}>
-                      {lang.language}
-                    </Typography>
-                    <Typography 
-                      variant="body2" 
-                      sx={{ 
-                        color: 'rgba(255, 255, 255, 0.6)',
-                        fontStyle: 'italic'
+              <CardContent>
+                <Typography variant="h5" color="primary" gutterBottom>
+                  Languages
+                </Typography>
+                {Array.isArray(languages) && languages.map((lang, index) => (
+                  <Box key={index} sx={{ mb: 2 }}>
+                    <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1 }}>
+                      <Typography variant="body1">
+                        {lang.language}
+                      </Typography>
+                      <Typography variant="body2" color="textSecondary">
+                        {lang.level} {lang.level2 && `(${lang.level2})`}
+                      </Typography>
+                    </Box>
+                    <LinearProgress
+                      variant="determinate"
+                      value={getProgressValue(lang.level2)}
+                      sx={{
+                        height: 8,
+                        borderRadius: 4,
+                        backgroundColor: theme.palette.grey[200],
+                        '& .MuiLinearProgress-bar': {
+                          borderRadius: 4,
+                          background: `linear-gradient(135deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
+                        },
                       }}
-                    >
-                      {lang.level}
-                    </Typography>
+                    />
                   </Box>
-                  <LinearProgress
-                    variant="determinate"
-                    value={getLanguageLevel(lang.level)}
-                    sx={{
-                      height: 6,
-                      borderRadius: 3,
-                      backgroundColor: 'rgba(255, 255, 255, 0.1)',
-                      '& .MuiLinearProgress-bar': {
-                        borderRadius: 3,
-                        background: `linear-gradient(90deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
-                      }
-                    }}
-                  />
-                </Box>
-              ))}
-            </Paper>
+                ))}
+              </CardContent>
+            </Card>
           </Grid>
         </Grid>
       </Container>

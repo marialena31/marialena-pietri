@@ -1,43 +1,126 @@
 {
   "title": "Portfolio",
   "subtitle": "Magento Projects and E-commerce Solutions",
-  "viewProject": "View Project",
-  "projects": {
-    "chausson": {
-      "title": "Chausson Matériaux",
-      "project": "Development of an omnichannel strategy and launch of the e-commerce platform for a building materials leader, managing over 20,000 products.<br /><br />Implementation of a complete PIM system using Maps, streamlining automated catalog creation and data flows for the website.",
-      "impact": "Reduced catalog production time by 50-75% through automated workflows.<br /><br />Delivered a high-performance e-commerce site with optimized navigation and product management.",
-      "achievements": "Led a team of 20 people between internal and external stakeholders.<br /><br />Seamless integration of PIM and ERP with the e-commerce platform."
+  "projects": [
+    {
+      "id": "chausson",
+      "title": "Chausson Matériaux – Full E-Commerce Ecosystem",
+      "date": "2014-2014",
+      "project": {
+        "title": "Project",
+        "content": "Created a cross-channel strategy and launched the e-commerce platform for a leading construction material supplier, managing 20,000+ products. Implemented a comprehensive product information management (PIM) system using Maps, streamlining the creation of automated catalogs and website data feeds."
+      },
+      "impact": {
+        "title": "Impact",
+        "content": "Reduced catalog production time by 50-75% through automated workflows. Delivered a high-performance e-commerce site with optimized navigation and product management, driving increased customer engagement."
+      },
+      "achievements": {
+        "title": "Key Achievements",
+        "items": [
+          "Managed a team of 20 across internal and external stakeholders",
+          "Ensured seamless integration of PIM and ERP with the e-commerce platform"
+        ]
+      }
     },
-    "eram": {
-      "title": "ERAM Group",
-      "project": "Technical leadership of Magento sites for Eram, Mellow Yellow, and Bocage brands.<br /><br />Implementation of preventive, corrective, and evolutionary maintenance, including Magento core updates, custom module adaptation, and dependency monitoring.<br /><br />Conducted pre-security audits when compromise was suspected, analyzed logs, and provided recommendations to improve platform security.",
-      "impact": "Enhanced platform stability and security through proactive updates.<br /><br />Improved customer experience with targeted performance optimizations.",
-      "achievements": "Implementation of Web Application Firewalls (WAF) for advanced security in collaboration with IT teams.<br /><br />Smooth management of CI/CD pipelines for multi-environment deployments."
+    {
+      "id": "valrhona",
+      "title": "Valrhona – B2B E-Commerce Excellence",
+      "date": "2018",
+      "project": {
+        "title": "Project",
+        "content": "Overhauled the Valrhona Selection B2B platform to enhance customer experience and integrate advanced marketplace features using Mirakl. Configured Salesforce API flows with custom authentication, enabling smoother client interactions. Implemented Single Sign-On (SSO) using a custom SAML module to simplify access for enterprise clients."
+      },
+      "impact": {
+        "title": "Impact",
+        "content": "Streamlined the onboarding process for business customers and boosted platform efficiency. Enhanced security and usability for large-scale B2B transactions."
+      },
+      "achievements": {
+        "title": "Key Achievements",
+        "items": [
+          "Led a 7-developer team, ensuring high code quality and timely delivery",
+          "Conducted thorough audits and testing to prepare the platform for high-traffic usage"
+        ]
+      }
     },
-    "whisky": {
-      "title": "La Maison du Whisky",
-      "project": "Technical leadership of the Magento 2 platform, ensuring robust functionality and high performance for this luxury spirits retailer.<br /><br />Focus on preventive maintenance, core update implementation, and adaptation of custom modules to latest Magento standards.",
-      "impact": "Strengthened site reliability and resilience to ensure excellent user experience, even during peak periods.<br /><br />Delivered optimized infrastructure for scalability and future growth.",
-      "achievements": "Deployment and configuration of advanced application firewalls (Fastly WAF) in collaboration with IT teams.<br /><br />Monitoring and updating dependencies while maintaining compatibility with custom code."
+    {
+      "id": "legrand",
+      "title": "Legrand – Next-Gen B2B E-Commerce Platform",
+      "date": "2016-2019",
+      "project": {
+        "title": "Project",
+        "content": "Designed and developed the alpha version of a Magento 2 B2B platform for a global leader in electrical and digital building infrastructure. Delivered custom product displays and enhanced shopping cart functionalities tailored to professional buyers."
+      },
+      "impact": {
+        "title": "Impact",
+        "content": "Built a scalable foundation for Legrand's digital transformation in B2B e-commerce. Improved product catalog management and user experience for professional customers."
+      },
+      "achievements": {
+        "title": "Key Achievements",
+        "items": [
+          "Customized Magento to handle complex product and category hierarchies",
+          "Delivered seamless integration between front-end and back-end systems"
+        ]
+      }
     },
-    "legrand": {
-      "title": "Legrand",
-      "project": "Design and development of the alpha version of a Magento 2 B2B platform for a global leader in electrical and digital building infrastructures.<br /><br />Creation of custom product displays and enhanced cart functionalities adapted for professional buyers.",
-      "impact": "Built an evolving foundation for Legrand's B2B digital transformation.<br /><br />Enhanced product catalog management and user experience for professional clients.",
-      "achievements": "Customization of Magento to handle complex product and category hierarchies.<br /><br />Seamless integration between front-end and back-end systems."
+    {
+      "id": "whisky",
+      "title": "La Maison du Whisky – Premium E-Commerce & Security",
+      "date": "2024",
+      "project": {
+        "title": "Project",
+        "content": "Provided technical leadership for La Maison du Whisky's Magento 2 platform, ensuring robust site functionality and high performance for this luxury spirits retailer. Focused on preventive maintenance, implementing core updates, and adapting custom modules to align with the latest Magento standards."
+      },
+      "impact": {
+        "title": "Impact",
+        "content": "Strengthened the site's reliability and resilience to ensure an excellent user experience, even during peak sales periods. Delivered optimized infrastructure for scalability and future growth."
+      },
+      "achievements": {
+        "title": "Key Achievements",
+        "items": [
+          "Deployed and configured advanced Web Application Firewalls (Fastly WAF) in collaboration with IT teams",
+          "Monitored and updated dependencies while maintaining compatibility with custom code"
+        ]
+      }
     },
-    "marjane": {
-      "title": "Marjane Mall",
-      "project": "Management of Magento 2 integration and deployment of the Octopia marketplace for Morocco's leading retailer, Marjane.<br /><br />Organization and execution of the mobile application reversibility process, including deadline management, coordination of multiple teams, and delivery of final versions on Google Play and Apple Store.<br /><br />Delivery of a React Native hybrid application supporting over 70,000 products with a roadmap to evolve to 1 million.",
-      "impact": "Launch of a scalable e-commerce and mobile platform designed for high-growth vendor and product management.<br /><br />Improvement of operational workflows through efficient team coordination and technical solutions.",
-      "achievements": "Planning and execution of a Magento upgrade from 2.4.2 to 2.4.5, optimizing site performance and security.<br /><br />Establishment of a new version deployment workflow, improving update frequency and stability."
+    {
+      "id": "eram",
+      "title": "Eram Group – Multi-Brand Digital Transformation",
+      "date": "2024",
+      "project": {
+        "title": "Project",
+        "content": "Led the technical evolution of Magento websites for leading brands like Eram, Mellow Yellow, and Bocage. Delivered preventive, corrective, and evolutionary maintenance, including Magento core upgrades, custom module adaptations, and dependency monitoring. Conducted a security pre-audit in cases of suspected compromise, analyzing logs and providing actionable recommendations to improve platform security."
+      },
+      "impact": {
+        "title": "Impact",
+        "content": "Strengthened platform stability and security through proactive patching and core updates. Enhanced customer experience with tailored site improvements and performance optimizations."
+      },
+      "achievements": {
+        "title": "Key Achievements",
+        "items": [
+          "Implemented Web Application Firewalls (WAFs) for advanced security in collaboration with IT teams",
+          "Delivered seamless CI/CD pipeline management for multi-environment deployments"
+        ]
+      }
     },
-    "valrhona": {
-      "title": "Valrhona",
-      "project": "Redesign of the Valrhona Selection B2B platform to enhance customer experience and integrate advanced marketplace features with Mirakl.<br /><br />Configuration of Salesforce API flows with custom authentication, enabling smoother customer interactions.<br /><br />Implementation of Single Sign-On (SSO) via custom SAML module to simplify business client access.",
-      "impact": "Simplified onboarding process for professional clients and improved platform efficiency.<br /><br />Enhanced security and usability for large-scale B2B transactions.",
-      "achievements": "Led a team of 7 developers, ensuring high code quality and timely delivery.<br /><br />Conducted thorough audits and testing to prepare the platform for high-traffic usage."
+    {
+      "id": "marjane",
+      "title": "Marjane Mall – Large-Scale Marketplace Integration",
+      "date": "2023",
+      "project": {
+        "title": "Project",
+        "content": "Managed the Magento 2 integration and deployment of the Octopia marketplace for Morocco's leading retailer, Marjane. Organized and executed the reversibility process for the mobile application, transitioning ownership from the service provider to the client. This included managing timelines, coordinating multiple teams, and delivering the final versions of the application on Google Play and the Apple Store. Delivered a hybrid React Native mobile app and supported a catalog of 70,000+ products with a roadmap to scale to 1 million."
+      },
+      "impact": {
+        "title": "Impact",
+        "content": "Launched a scalable e-commerce and mobile platform designed for high-growth vendor and product management. Improved operational workflows through effective team coordination and technical solutions."
+      },
+      "achievements": {
+        "title": "Key Achievements",
+        "items": [
+          "Planned and executed an upgrade from Magento 2.4.2 to 2.4.5, optimizing site performance and security",
+          "Established a new release deployment workflow, improving update frequency and stability"
+        ]
+      }
     }
-  }
+  ]
 }

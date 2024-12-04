@@ -1,18 +1,41 @@
 {
-  "menu": {
-    "home": "Home",
-    "about": "About",
-    "services": "Services",
-    "portfolio": "Portfolio",
-    "references": "References",
-    "skills": "Skills",
-    "contact": "Contact",
-    "cv": "CV"
-  },
+  "items": [
+    {
+      "label": "Home",
+      "href": "#home"
+    },
+    {
+      "label": "About",
+      "href": "#about"
+    },
+    {
+      "label": "Skills",
+      "href": "#skills"
+    },
+    {
+      "label": "Services",
+      "href": "#services"
+    },
+    {
+      "label": "Portfolio",
+      "href": "#portfolio"
+    },
+    {
+      "label": "References",
+      "href": "#references"
+    },
+    {
+      "label": "Contact",
+      "href": "#contact"
+    }
+  ],
   "language": {
     "select": "Select Language",
     "en": "English",
     "fr": "French",
     "es": "Spanish"
+  },
+  "actions": {
+    "bookMeeting": "Book a Meeting"
   }
 }

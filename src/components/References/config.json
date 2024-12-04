@@ -1,0 +1,24 @@
+{
+  "references": [
+    { "name": "Bonpoint", "logo": "/images/references/bonpoint.png", "isConfidential": false },
+    { "name": "CAC 40", "logo": "/images/references/cac-40.png", "isConfidential": true },
+    { "name": "Chausson Matériaux", "logo": "/images/references/chausson-materiaux.png", "isConfidential": false },
+    { "name": "ERAM Group", "logo": "/images/references/eram-group.png", "isConfidential": false },
+    { "name": "France Air", "logo": "/images/references/france-air.png", "isConfidential": false },
+    { "name": "Hamilton", "logo": "/images/references/hamilton.png", "isConfidential": false },
+    { "name": "La Maison du Whisky", "logo": "/images/references/la-maison-du-whisky.png", "isConfidential": false },
+    { "name": "Ludilabel", "logo": "/images/references/ludilabel.png", "isConfidential": false },
+    { "name": "Maisons du Monde", "logo": "/images/references/maisons-du-monde.png", "isConfidential": false },
+    { "name": "Maps System", "logo": "/images/references/maps-system.png", "isConfidential": false },
+    { "name": "Marjane Mall", "logo": "/images/references/marjanemall.png", "isConfidential": false },
+    { "name": "Maurice Lacroix", "logo": "/images/references/maurice-lacroix.png", "isConfidential": false },
+    { "name": "MountNPass", "logo": "/images/references/mountnpass.png", "isConfidential": false },
+    { "name": "Nicoll", "logo": "/images/references/nicoll.png", "isConfidential": false },
+    { "name": "Nutrixo", "logo": "/images/references/nutrixo.png", "isConfidential": false },
+    { "name": "OpenClassrooms", "logo": "/images/references/openclassrooms.png", "isConfidential": false },
+    { "name": "Planet Cards", "logo": "/images/references/planet-cards.png", "isConfidential": false },
+    { "name": "Pro a Pro", "logo": "/images/references/pro-a-pro.png", "isConfidential": false },
+    { "name": "Sopra Steria", "logo": "/images/references/sopra-steria.png", "isConfidential": false },
+    { "name": "Valrhona", "logo": "/images/references/valrhona.png", "isConfidential": false }
+  ]
+}

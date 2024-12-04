@@ -5,243 +5,149 @@ import {
   Container,
   Typography,
   Grid,
-  Paper,
+  Card,
+  CardContent,
+  LinearProgress,
   useTheme,
 } from '@mui/material';
 
-interface Skill {
-  name: string;
+interface SkillItem {
+  title: string;
   description: string;
-  icon: string;
+  level: number;
 }
 
+const getSkillIcon = (skillName: string): string => {
+  const skillIconMap: { [key: string]: string } = {
+    'HTML5/CSS3': 'HTML5',
+    'JavaScript/TypeScript': 'JavaScript',
+    'TypeScript': 'typescript',
+    'React': 'reactjs',
+    'Next.js': 'nextjs',
+    'Node.js': 'nodejs',
+    'Knockout.js': 'knockoutjs',
+    'PHP': 'php',
+    'MySQL/PostgreSQL': 'my-sql',
+    'MongoDB': 'mongoDB',
+    'GraphQL': 'graphql',
+    'Git': 'git',
+    'Docker': 'docker',
+    'AWS': 'aws',
+    'Redis': 'redis',
+    'Elasticsearch': 'elasticsearch',
+    'Magento 1/2': 'magento',
+    'Adobe Commerce Cloud': 'Adobe-Commerce',
+    'WordPress': 'wordpress',
+    'WooCommerce': 'woo-commerce',
+    'Shopify': 'shopify',
+    'CSS3': 'css3',
+    'SCSS': 'scss',
+    'Varnish': 'varnish-cache',
+    'New Relic': 'newrelic',
+    'Datadog': 'datadog',
+    'APIs REST': 'api-rest',
+    'Design Responsive': 'responsive-design',
+    'Accessibilité': 'accessibility',
+    'Passerelles de Paiement': 'payment-gateway',
+    'Intégration ERP': 'erp',
+    'Systèmes PIM': 'pim',
+    'Marketplaces': 'marketplace',
+    'Solutions B2B': 'b2b',
+    'Cybersécurité': 'security',
+    'Optimisation des Performances': 'performance'
+  };
+
+  const mappedIcon = skillIconMap[skillName];
+  console.log(`Processing skill: "${skillName}" -> ${mappedIcon || 'not found in map'}`);
+
+  if (!mappedIcon) {
+    if (skillName.includes('/')) {
+      const firstPart = skillName.split('/')[0];
+      return `/images/skills/${firstPart.toLowerCase().replace(/[^a-z0-9]/g, '')}.png`;
+    }
+    return `/images/skills/${skillName.toLowerCase().replace(/[^a-z0-9]/g, '')}.png`;
+  }
+
+  return `/images/skills/${mappedIcon}.png`;
+};
+
 const Skills = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation('skills');
   const theme = useTheme();
 
-  const skillCategories = [
-    {
-      title: 'CMS',
-      skills: [
-        { name: 'Magento 2.x', description: 'Expert', icon: '/images/skills/magento.png' },
-        { name: 'Adobe Commerce Cloud', description: 'Expert', icon: '/images/skills/Adobe-Commerce.png' },
-        { name: 'WordPress', description: 'Advanced', icon: '/images/skills/wordpress.png' },
-        { name: 'WooCommerce', description: 'Advanced', icon: '/images/skills/woo-commerce.png' },
-        { name: 'Shopify', description: 'Advanced', icon: '/images/skills/shopify.png' },
-      ],
-    },
-    {
-      title: 'Web Development',
-      skills: [
-        { name: 'PHP', description: 'Expert', icon: '/images/skills/php.png' },
-        { name: 'JavaScript', description: 'Advanced', icon: '/images/skills/JavaScript.png' },
-        { name: 'React', description: 'Advanced', icon: '/images/skills/reactjs.png' },
-        { name: 'HTML5', description: 'Expert', icon: '/images/skills/HTML5.png' },
-        { name: 'CSS3', description: 'Expert', icon: '/images/skills/css3.png' },
-        { name: 'SCSS', description: 'Advanced', icon: '/images/skills/scss.png' },
-      ],
-    },
-    {
-      title: 'DevOps & Infrastructure',
-      skills: [
-        { name: 'Git', description: 'Expert', icon: '/images/skills/git.png' },
-        { name: 'Docker', description: 'Advanced', icon: '/images/skills/docker.png' },
-        { name: 'AWS', description: 'Advanced', icon: '/images/skills/aws.png' },
-        { name: 'MySQL', description: 'Expert', icon: '/images/skills/my-sql.png' },
-        { name: 'MongoDB', description: 'Advanced', icon: '/images/skills/mongoDB.png' },
-        { name: 'Redis', description: 'Advanced', icon: '/images/skills/redis.png' },
-        { name: 'Elasticsearch', description: 'Advanced', icon: '/images/skills/elasticsearch.png' },
-        { name: 'Varnish', description: 'Advanced', icon: '/images/skills/varnish-cache.png' },
-      ],
-    },
-  ];
+  // Ensure we're getting an array by providing a default empty array
+  const items = t('items', { returnObjects: true }) as SkillItem[] || [];
 
   return (
     <Box
+      component="section"
       id="skills"
       sx={{
-        py: 8,
-        backgroundColor: 'rgba(18, 18, 18, 0.95)',
-        position: 'relative',
-        '&::before': {
-          content: '""',
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          background: `radial-gradient(circle at 30% 30%, ${theme.palette.primary.dark}15 0%, transparent 60%),
-                      radial-gradient(circle at 70% 70%, ${theme.palette.secondary.dark}15 0%, transparent 60%)`,
-          opacity: 0.6,
-          pointerEvents: 'none',
-        },
-        borderTop: '1px solid rgba(255, 255, 255, 0.1)',
-        borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
+        py: { xs: 8, md: 12 },
+        backgroundColor: theme.palette.background.default,
       }}
     >
-      <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
+      <Container maxWidth="lg">
         <Typography
           variant="h2"
-          align="center"
-          gutterBottom
-          sx={{ 
-            mb: 6,
-            color: 'white',
-            fontWeight: 600,
-            position: 'relative',
-            '&::after': {
-              content: '""',
-              position: 'absolute',
-              bottom: '-10px',
-              left: '50%',
-              transform: 'translateX(-50%)',
-              width: '60px',
-              height: '4px',
-              background: `linear-gradient(90deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
-              borderRadius: '2px',
-            }
+          sx={{
+            fontSize: { xs: '2rem', md: '2.5rem' },
+            fontWeight: 700,
+            mb: 4,
+            textAlign: 'center',
+            background: `linear-gradient(135deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
+            backgroundClip: 'text',
+            WebkitBackgroundClip: 'text',
+            color: 'transparent',
           }}
         >
-          {t('skills.title')}
-        </Typography>
-        <Typography
-          variant="subtitle1"
-          align="center"
-          sx={{ 
-            mb: 6,
-            color: 'rgba(255, 255, 255, 0.7)',
-            maxWidth: '800px',
-            margin: '0 auto',
-            fontSize: '1.1rem',
-            lineHeight: 1.6,
-          }}
-        >
-          {t('skills.subtitle')}
+          {t('title')}
         </Typography>
 
-        <Grid container spacing={4}>
-          {skillCategories.map((category, index) => (
-            <Grid item xs={12} md={4} key={index}>
-              <Paper
-                elevation={0}
+        <Grid container spacing={3}>
+          {Array.isArray(items) && items.map((item, index) => (
+            <Grid item xs={12} md={6} key={index}>
+              <Card
+                elevation={3}
                 sx={{
-                  p: 3,
                   height: '100%',
-                  backgroundColor: 'rgba(255, 255, 255, 0.05)',
-                  backdropFilter: 'blur(10px)',
-                  border: '1px solid rgba(255, 255, 255, 0.1)',
-                  borderRadius: '16px',
-                  transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                  backgroundColor: theme.palette.background.paper,
+                  transition: 'transform 0.2s ease-in-out',
                   '&:hover': {
                     transform: 'translateY(-5px)',
-                    boxShadow: '0 8px 30px rgba(0, 0, 0, 0.3)',
-                    backgroundColor: 'rgba(255, 255, 255, 0.08)',
-                    border: `1px solid ${theme.palette.primary.main}40`,
                   },
                 }}
               >
-                <Typography
-                  variant="h5"
-                  gutterBottom
-                  sx={{ 
-                    mb: 3,
-                    color: 'white',
-                    fontWeight: 600,
-                    background: `linear-gradient(135deg, ${theme.palette.primary.light}, ${theme.palette.secondary.light})`,
-                    backgroundClip: 'text',
-                    WebkitBackgroundClip: 'text',
-                    color: 'transparent',
-                  }}
-                >
-                  {category.title}
-                </Typography>
-                <Box sx={{ display: 'flex', flexDirection: 'column', gap: 3 }}>
-                  {category.skills.map((skill, skillIndex) => (
-                    <Box 
-                      key={skillIndex}
-                      sx={{
-                        position: 'relative',
-                        '&::before': {
-                          content: '""',
-                          position: 'absolute',
-                          top: -8,
-                          left: -12,
-                          right: -12,
-                          bottom: -8,
-                          background: 'rgba(255, 255, 255, 0.03)',
-                          borderRadius: '12px',
-                          opacity: 0,
-                          transition: 'opacity 0.3s ease',
-                        },
-                        '&:hover': {
-                          '&::before': {
-                            opacity: 1,
-                          },
-                          '& img': {
-                            transform: 'scale(1.05)',
-                            filter: 'brightness(1.2)',
-                          }
-                        }
-                      }}
-                    >
-                      <Box 
-                        sx={{ 
-                          display: 'flex', 
-                          alignItems: 'center', 
-                          mb: 1,
-                          position: 'relative',
-                          zIndex: 1,
-                        }}
-                      >
-                        <Box
-                          component="img"
-                          src={skill.icon}
-                          alt={skill.name}
-                          sx={{
-                            width: category.title === 'CMS' 
-                              ? { xs: 60, sm: 80, md: 100 }
-                              : { xs: 40, sm: 50, md: 60 },
-                            height: category.title === 'CMS'
-                              ? { xs: 60, sm: 80, md: 100 }
-                              : { xs: 40, sm: 50, md: 60 },
-                            mr: category.title === 'CMS' ? 4 : 3,
-                            objectFit: 'contain',
-                            display: 'block',
-                            minWidth: category.title === 'CMS'
-                              ? { xs: 60, sm: 80, md: 100 }
-                              : { xs: 40, sm: 50, md: 60 },
-                            transition: 'all 0.3s ease',
-                            filter: 'brightness(0.9)',
-                          }}
-                        />
-                        <Box>
-                          <Typography 
-                            variant="body1" 
-                            sx={{ 
-                              fontSize: category.title === 'CMS' ? '1.2rem' : '1.1rem',
-                              fontWeight: 500,
-                              color: 'white',
-                              mb: 0.5,
-                            }}
-                          >
-                            {skill.name}
-                          </Typography>
-                          <Typography
-                            variant="body2"
-                            sx={{
-                              color: 'rgba(255, 255, 255, 0.6)',
-                              fontSize: '0.9rem',
-                              fontStyle: 'italic',
-                            }}
-                          >
-                            {skill.description}
-                          </Typography>
-                        </Box>
-                      </Box>
-                    </Box>
-                  ))}
-                </Box>
-              </Paper>
+                <CardContent>
+                  <Typography
+                    variant="h6"
+                    gutterBottom
+                    color="primary"
+                  >
+                    {item.title}
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    color="textSecondary"
+                    sx={{ mb: 2 }}
+                  >
+                    {item.description}
+                  </Typography>
+                  <LinearProgress
+                    variant="determinate"
+                    value={item.level}
+                    sx={{
+                      height: 8,
+                      borderRadius: 4,
+                      backgroundColor: theme.palette.grey[200],
+                      '& .MuiLinearProgress-bar': {
+                        borderRadius: 4,
+                        background: `linear-gradient(90deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
+                      },
+                    }}
+                  />
+                </CardContent>
+              </Card>
             </Grid>
           ))}
         </Grid>

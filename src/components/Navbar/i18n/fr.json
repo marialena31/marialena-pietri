@@ -1,18 +1,41 @@
 {
-  "menu": {
-    "home": "Accueil",
-    "about": "À Propos",
-    "services": "Services",
-    "portfolio": "Portfolio",
-    "references": "Références",
-    "skills": "Compétences",
-    "contact": "Contact",
-    "cv": "CV"
-  },
+  "items": [
+    {
+      "label": "Accueil",
+      "href": "#home"
+    },
+    {
+      "label": "À propos",
+      "href": "#about"
+    },
+    {
+      "label": "Compétences",
+      "href": "#skills"
+    },
+    {
+      "label": "Services",
+      "href": "#services"
+    },
+    {
+      "label": "Portfolio",
+      "href": "#portfolio"
+    },
+    {
+      "label": "Références",
+      "href": "#references"
+    },
+    {
+      "label": "Contact",
+      "href": "#contact"
+    }
+  ],
   "language": {
     "select": "Choisir la Langue",
     "en": "Anglais",
     "fr": "Français",
     "es": "Espagnol"
+  },
+  "actions": {
+    "bookMeeting": "Prendre RDV"
   }
 }
