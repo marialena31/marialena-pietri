@@ -10,10 +10,6 @@
 [[plugins]]
   package = "@netlify/plugin-gatsby"
 
-[forms]
-  [forms."contact"]
-    success_url = "/"
-
 [[redirects]]
   from = "/*"
   to = "/index.html"
