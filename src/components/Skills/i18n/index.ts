@@ -1,28 +1,12 @@
-import i18next from 'i18next';
-import { initReactI18next } from 'react-i18next';
+import i18n from 'i18next';
 
 import en from './en.json';
 import fr from './fr.json';
 import es from './es.json';
 
-const resources = {
-  en: {
-    skills: en,
-  },
-  fr: {
-    skills: fr,
-  },
-  es: {
-    skills: es,
-  },
-};
+// Add resources to existing i18n instance
+i18n.addResourceBundle('en', 'skills', en, true, true);
+i18n.addResourceBundle('fr', 'skills', fr, true, true);
+i18n.addResourceBundle('es', 'skills', es, true, true);
 
-i18next
-  .use(initReactI18next)
-  .init({
-    ns: ['skills'],
-  defaultNS: 'skills',
-  resources,
-  });
-
-export default i18next;
+export default i18n;

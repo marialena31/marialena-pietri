@@ -1,64 +1,63 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import './i18n';
 import {
   Box,
   Container,
   Typography,
   Grid,
-  Card,
-  CardContent,
-  LinearProgress,
+  Paper,
   useTheme,
 } from '@mui/material';
 
-interface SkillItem {
+interface Skill {
+  name: string;
+  icon: string;
+}
+
+interface SkillObject {
+  name: string;
+  icon: string;
+}
+
+interface SkillCategory {
   title: string;
-  description: string;
-  level: number;
+  skills: Skill[];
 }
 
 const getSkillIcon = (skillName: string): string => {
   const skillIconMap: { [key: string]: string } = {
-    'HTML5/CSS3': 'HTML5',
-    'JavaScript/TypeScript': 'JavaScript',
-    'TypeScript': 'typescript',
+    'HTML5/CSS3': 'html5',
+    'JavaScript/TypeScript': 'javascript',
     'React': 'reactjs',
     'Next.js': 'nextjs',
-    'Node.js': 'nodejs',
+    'SCSS': 'scss',
     'Knockout.js': 'knockoutjs',
+    'Accessibilité': 'accessibility',
+    
+    // Backend
+    'Node.js': 'nodejs',
     'PHP': 'php',
-    'MySQL/PostgreSQL': 'my-sql',
-    'MongoDB': 'mongoDB',
     'GraphQL': 'graphql',
+    'MongoDB': 'mongodb',
+    'Redis': 'redis',
+    'Elasticsearch': 'elasticsearch',
+    'APIs REST': 'rest-api',
+    
+    // E-commerce
+    'Magento 1/2': 'magento',
+    'Adobe Commerce Cloud': 'adobe-commerce',
+    
+    // DevOps
     'Git': 'git',
     'Docker': 'docker',
     'AWS': 'aws',
-    'Redis': 'redis',
-    'Elasticsearch': 'elasticsearch',
-    'Magento 1/2': 'magento',
-    'Adobe Commerce Cloud': 'Adobe-Commerce',
-    'WordPress': 'wordpress',
-    'WooCommerce': 'woo-commerce',
-    'Shopify': 'shopify',
-    'CSS3': 'css3',
-    'SCSS': 'scss',
-    'Varnish': 'varnish-cache',
     'New Relic': 'newrelic',
-    'Datadog': 'datadog',
-    'APIs REST': 'api-rest',
-    'Design Responsive': 'responsive-design',
-    'Accessibilité': 'accessibility',
-    'Passerelles de Paiement': 'payment-gateway',
-    'Intégration ERP': 'erp',
-    'Systèmes PIM': 'pim',
-    'Marketplaces': 'marketplace',
-    'Solutions B2B': 'b2b',
-    'Cybersécurité': 'security',
-    'Optimisation des Performances': 'performance'
+    'Datadog': 'datadog'
   };
 
   const mappedIcon = skillIconMap[skillName];
-  console.log(`Processing skill: "${skillName}" -> ${mappedIcon || 'not found in map'}`);
+  console.log(`Getting icon for skill: ${skillName}, mapped to: ${mappedIcon}`);
 
   if (!mappedIcon) {
     if (skillName.includes('/')) {
@@ -72,11 +71,54 @@ const getSkillIcon = (skillName: string): string => {
 };
 
 const Skills = () => {
-  const { t } = useTranslation('skills');
+  const { t, i18n } = useTranslation('skills');
   const theme = useTheme();
 
-  // Ensure we're getting an array by providing a default empty array
-  const items = t('items', { returnObjects: true }) as SkillItem[] || [];
+  console.log('Current language:', i18n.language);
+  console.log('Available namespaces:', i18n.options.ns);
+  console.log('Skills translations:', i18n.getResourceBundle(i18n.language, 'skills'));
+
+  const getSkillsForCategory = (category: string): Skill[] => {
+    console.log(`Getting skills for category: ${category}`);
+    const skills = t(`categories.${category}.skills`, { returnObjects: true });
+    console.log(`Raw skills data for ${category}:`, skills);
+    
+    if (!Array.isArray(skills)) {
+      console.warn(`Skills for category ${category} is not an array:`, skills);
+      return [];
+    }
+    
+    const mappedSkills = skills.map((skill: string | Skill | object) => {
+      let skillObj;
+      if (typeof skill === 'string') {
+        skillObj = {
+          name: skill,
+          icon: getSkillIcon(skill)
+        };
+      } else {
+        skillObj = {
+          name: skill.name,
+          icon: skill.icon
+        };
+      }
+      console.log(`Mapped skill:`, skillObj);
+      return skillObj;
+    });
+    
+    return mappedSkills;
+  };
+
+  const categories = ['frontend', 'backend', 'ecommerce', 'devops'];
+  const skillCategories: SkillCategory[] = categories.map(category => {
+    const categoryData = {
+      title: t(`categories.${category}.title`),
+      skills: getSkillsForCategory(category)
+    };
+    console.log(`Category data for ${category}:`, categoryData);
+    return categoryData;
+  });
+
+  console.log('Final skill categories:', skillCategories);
 
   return (
     <Box
@@ -90,64 +132,84 @@ const Skills = () => {
       <Container maxWidth="lg">
         <Typography
           variant="h2"
+          component="h2"
+          align="center"
+          gutterBottom
           sx={{
-            fontSize: { xs: '2rem', md: '2.5rem' },
-            fontWeight: 700,
-            mb: 4,
-            textAlign: 'center',
-            background: `linear-gradient(135deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
-            backgroundClip: 'text',
+            mb: 8,
+            background: `linear-gradient(45deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
             WebkitBackgroundClip: 'text',
-            color: 'transparent',
+            WebkitTextFillColor: 'transparent',
+            fontWeight: 'bold',
           }}
         >
           {t('title')}
         </Typography>
 
-        <Grid container spacing={3}>
-          {Array.isArray(items) && items.map((item, index) => (
-            <Grid item xs={12} md={6} key={index}>
-              <Card
+        <Grid container spacing={4}>
+          {skillCategories.map((category, index) => (
+            <Grid item xs={12} sm={6} md={3} key={index}>
+              <Paper
                 elevation={3}
                 sx={{
+                  p: 3,
                   height: '100%',
-                  backgroundColor: theme.palette.background.paper,
-                  transition: 'transform 0.2s ease-in-out',
+                  transition: 'transform 0.2s',
                   '&:hover': {
                     transform: 'translateY(-5px)',
                   },
                 }}
               >
-                <CardContent>
-                  <Typography
-                    variant="h6"
-                    gutterBottom
-                    color="primary"
-                  >
-                    {item.title}
-                  </Typography>
-                  <Typography
-                    variant="body2"
-                    color="textSecondary"
-                    sx={{ mb: 2 }}
-                  >
-                    {item.description}
-                  </Typography>
-                  <LinearProgress
-                    variant="determinate"
-                    value={item.level}
-                    sx={{
-                      height: 8,
-                      borderRadius: 4,
-                      backgroundColor: theme.palette.grey[200],
-                      '& .MuiLinearProgress-bar': {
-                        borderRadius: 4,
-                        background: `linear-gradient(90deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
-                      },
-                    }}
-                  />
-                </CardContent>
-              </Card>
+                <Typography
+                  variant="h6"
+                  component="h3"
+                  gutterBottom
+                  sx={{
+                    fontWeight: 'bold',
+                    color: theme.palette.primary.main,
+                  }}
+                >
+                  {category.title}
+                </Typography>
+                <Grid container spacing={2}>
+                  {category.skills.map((skill, skillIndex) => (
+                    <Grid item xs={6} key={skillIndex}>
+                      <Box
+                        sx={{
+                          display: 'flex',
+                          flexDirection: 'column',
+                          alignItems: 'center',
+                          textAlign: 'center',
+                        }}
+                      >
+                        <Box
+                          component="img"
+                          src={skill.icon}
+                          alt={skill.name}
+                          sx={{
+                            width: 48,
+                            height: 48,
+                            mb: 1,
+                            transition: 'transform 0.2s',
+                            '&:hover': {
+                              transform: 'scale(1.1)',
+                            },
+                          }}
+                        />
+                        <Typography
+                          variant="body2"
+                          sx={{
+                            fontSize: '0.875rem',
+                            fontWeight: 'medium',
+                          }}
+                        >
+                          {skill.name}
+                        </Typography>
+                      </Box>
+                    </Grid>
+                  ))}
+                </Grid>
+              </Paper>
             </Grid>
           ))}
         </Grid>

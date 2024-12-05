@@ -1,21 +1,19 @@
 {
   "title": "Habilidades Técnicas",
   "subtitle": "",
-  "items": [
-    {
+  "categories": {
+    "frontend": {
       "title": "Desarrollo Frontend",
       "skills": [
         "HTML5/CSS3",
-        "SCSS",
         "JavaScript/TypeScript",
         "Knockout.js",
         "React",
         "Next.js",
-        "Diseño Responsivo",
-        "Accesibilidad"
+        "Accessibilité"
       ]
     },
-    {
+    "backend": {
       "title": "Desarrollo Backend",
       "skills": [
         "PHP",
@@ -24,34 +22,25 @@
         "GraphQL",
         "MongoDB",
         "Redis",
-        "Varnish",
         "Elasticsearch"
       ]
     },
-    {
+    "ecommerce": {
       "title": "E-commerce",
       "skills": [
         "Magento 1/2",
-        "Adobe Commerce Cloud",
-        "Pasarelas de Pago",
-        "Integración ERP",
-        "Sistemas PIM",
-        "Marketplaces",
-        "Soluciones B2B"
+        "Adobe Commerce Cloud"
       ]
     },
-    {
-      "title": "DevOps y Herramientas",
+    "devops": {
+      "title": "DevOps & Herramientas",
       "skills": [
         "Git",
         "Docker",
-        "CI/CD",
         "AWS",
-        "Ciberseguridad",
-        "Optimización de Rendimiento",
         "New Relic",
         "Datadog"
       ]
     }
-  ]
+  }
 }

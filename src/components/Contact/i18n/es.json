@@ -1,6 +1,6 @@
 {
   "title": "Contáctame",
-  "description": "No dudes en contactarme para cualquier consulta o colaboración.",
+  "subtitle": "No dudes en contactarme para cualquier consulta o colaboración.",
   "form": {
     "name": {
       "label": "Nombre",
