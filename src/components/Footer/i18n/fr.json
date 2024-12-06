@@ -3,6 +3,10 @@
   "common": {
     "close": "Fermer"
   },
+  "icons8": {
+    "api": "Paramètres de l'API",
+    "by": "icône par"
+  },
   "items": [
     {
       "title": "Mentions Légales",

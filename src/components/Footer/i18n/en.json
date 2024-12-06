@@ -3,6 +3,10 @@
   "common": {
     "close": "Close"
   },
+  "icons8": {
+    "api": "Rest API",
+    "by": "icon by"
+  },
   "items": [
     {
       "title": "Legal Notice",
@@ -68,7 +72,8 @@
       },
       "credits": {
         "title": "Credits",
-        "content": "Web design and development: Maria-Lena Pietri"
+        "content": "Web design and development: Maria-Lena Pietri",
+        "icons8": "<a target=\"_blank\" href=\"https://icons8.com/icon/tnfIZrPKFzrW/rest-api\">Rest API</a> icon by <a target=\"_blank\" href=\"https://icons8.com\">Icons8</a>"
       }
     }
   },

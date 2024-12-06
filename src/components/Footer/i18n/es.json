@@ -3,6 +3,10 @@
   "common": {
     "close": "Cerrar"
   },
+  "icons8": {
+    "api": "API Rest",
+    "by": "icono por"
+  },
   "items": [
     {
       "title": "Aviso Legal",

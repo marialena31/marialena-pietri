@@ -117,49 +117,96 @@ const Footer = () => {
             ))}
           </Stack>
 
-          {/* Social Icons and Copyright */}
+          {/* Social Icons */}
           <Stack
-            direction={{ xs: 'column', sm: 'row' }}
-            spacing={{ xs: 2, sm: 3 }}
+            direction="row"
+            spacing={2}
             justifyContent="center"
             alignItems="center"
           >
-            <Stack
-              direction="row"
-              spacing={2}
-              justifyContent="center"
-              alignItems="center"
-            >
-              {Array.isArray(socialItems) && socialItems.map((item, index) => (
-                <IconButton
-                  key={index}
-                  component="a"
-                  href={item.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  sx={{
-                    color: 'rgba(255, 255, 255, 0.7)',
-                    transition: 'all 0.3s ease',
-                    '&:hover': {
-                      color: theme.palette.primary.main,
-                      transform: 'translateY(-2px)',
-                    },
-                  }}
-                >
-                  {getSocialIcon(item.icon)}
-                </IconButton>
-              ))}
-            </Stack>
+            {Array.isArray(socialItems) && socialItems.map((item, index) => (
+              <IconButton
+                key={index}
+                component="a"
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{
+                  color: 'rgba(255, 255, 255, 0.7)',
+                  transition: 'all 0.3s ease',
+                  '&:hover': {
+                    color: theme.palette.primary.main,
+                    transform: 'translateY(-2px)',
+                  },
+                }}
+              >
+                {getSocialIcon(item.icon)}
+              </IconButton>
+            ))}
+          </Stack>
 
+          {/* Copyright and Icons8 Credit */}
+          <Stack
+            direction={{ xs: 'column', sm: 'row' }}
+            spacing={2}
+            justifyContent="center"
+            alignItems="center"
+            sx={{ opacity: 0.7 }}
+          >
             <Typography
               variant="body2"
               align="center"
               sx={{
-                opacity: 0.7,
                 fontSize: '0.875rem',
               }}
             >
               &copy;{t('copyright')}
+            </Typography>
+            <Box 
+              component="span" 
+              sx={{ 
+                display: { xs: 'none', sm: 'inline' },
+                mx: 1 
+              }}
+            >
+              •
+            </Box>
+            <Typography
+              variant="body2"
+              align="center"
+              sx={{
+                fontSize: '0.875rem',
+              }}
+            >
+              <Link
+                href="https://icons8.com/icon/tnfIZrPKFzrW/rest-api"
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{
+                  color: 'inherit',
+                  textDecoration: 'none',
+                  '&:hover': {
+                    color: theme.palette.primary.main,
+                  },
+                }}
+              >
+                {t('icons8.api')}
+              </Link>
+              {' '}{t('icons8.by')}{' '}
+              <Link
+                href="https://icons8.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                sx={{
+                  color: 'inherit',
+                  textDecoration: 'none',
+                  '&:hover': {
+                    color: theme.palette.primary.main,
+                  },
+                }}
+              >
+                Icons8
+              </Link>
             </Typography>
           </Stack>
         </Stack>

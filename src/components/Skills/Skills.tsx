@@ -53,21 +53,27 @@ const getSkillIcon = (skillName: string): string => {
     'Docker': 'docker',
     'AWS': 'aws',
     'New Relic': 'newrelic',
-    'Datadog': 'datadog'
+    'Datadog': 'datadog',
+    'Performance Optimization': 'performance'
   };
 
   const mappedIcon = skillIconMap[skillName];
   console.log(`Getting icon for skill: ${skillName}, mapped to: ${mappedIcon}`);
 
+  let iconPath;
   if (!mappedIcon) {
     if (skillName.includes('/')) {
       const firstPart = skillName.split('/')[0];
-      return `/images/skills/${firstPart.toLowerCase().replace(/[^a-z0-9]/g, '')}.png`;
+      iconPath = `/images/skills/${firstPart.toLowerCase().replace(/[^a-z0-9]/g, '')}.png`;
+    } else {
+      iconPath = `/images/skills/${skillName.toLowerCase().replace(/[^a-z0-9]/g, '')}.png`;
     }
-    return `/images/skills/${skillName.toLowerCase().replace(/[^a-z0-9]/g, '')}.png`;
+  } else {
+    iconPath = `/images/skills/${mappedIcon}.png`;
   }
-
-  return `/images/skills/${mappedIcon}.png`;
+  
+  console.log(`Final icon path for ${skillName}: ${iconPath}`);
+  return iconPath;
 };
 
 const Skills = () => {
@@ -81,7 +87,7 @@ const Skills = () => {
   const getSkillsForCategory = (category: string): Skill[] => {
     console.log(`Getting skills for category: ${category}`);
     const skills = t(`categories.${category}.skills`, { returnObjects: true });
-    console.log(`Raw skills data for ${category}:`, skills);
+    console.log(`Raw skills data for ${category}:`, JSON.stringify(skills, null, 2));
     
     if (!Array.isArray(skills)) {
       console.warn(`Skills for category ${category} is not an array:`, skills);
@@ -101,7 +107,7 @@ const Skills = () => {
           icon: skill.icon
         };
       }
-      console.log(`Mapped skill:`, skillObj);
+      console.log(`Mapped skill for ${category}:`, JSON.stringify(skillObj, null, 2));
       return skillObj;
     });
     
@@ -167,6 +173,10 @@ const Skills = () => {
                   sx={{
                     fontWeight: 'bold',
                     color: theme.palette.primary.main,
+                    mb: 3,
+                    pb: 2,
+                    borderBottom: `2px solid ${theme.palette.primary.main}`,
+                    width: '100%',
                   }}
                 >
                   {category.title}
@@ -177,35 +187,46 @@ const Skills = () => {
                       <Box
                         sx={{
                           display: 'flex',
-                          flexDirection: 'column',
+                          justifyContent: 'center',
                           alignItems: 'center',
-                          textAlign: 'center',
+                          width: 64,
+                          height: 64,
+                          mb: 1,
+                          backgroundColor: '#FFFFFF',
+                          borderRadius: '12px',
+                          boxShadow: 1,
+                          transition: 'transform 0.2s',
+                          '&:hover': {
+                            transform: 'scale(1.1)',
+                          },
                         }}
                       >
                         <Box
                           component="img"
                           src={skill.icon}
                           alt={skill.name}
+                          onError={(e) => {
+                            console.error(`Error loading icon for ${skill.name}:`, e);
+                            console.log('Icon path:', skill.icon);
+                          }}
                           sx={{
-                            width: 48,
-                            height: 48,
-                            mb: 1,
-                            transition: 'transform 0.2s',
-                            '&:hover': {
-                              transform: 'scale(1.1)',
-                            },
+                            maxWidth: '75%',
+                            maxHeight: '75%',
+                            width: 'auto',
+                            height: 'auto',
+                            objectFit: 'contain',
                           }}
                         />
-                        <Typography
-                          variant="body2"
-                          sx={{
-                            fontSize: '0.875rem',
-                            fontWeight: 'medium',
-                          }}
-                        >
-                          {skill.name}
-                        </Typography>
                       </Box>
+                      <Typography
+                        variant="body2"
+                        sx={{
+                          fontSize: '0.875rem',
+                          fontWeight: 'medium',
+                        }}
+                      >
+                        {skill.name}
+                      </Typography>
                     </Grid>
                   ))}
                 </Grid>
