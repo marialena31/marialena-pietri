@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
+import { useInView } from 'react-intersection-observer';
 import './i18n';
 import {
   Box,
@@ -12,6 +13,7 @@ import {
   Chip,
   useTheme,
   useMediaQuery,
+  Fade,
 } from '@mui/material';
 
 interface ProjectAchievement {
@@ -41,6 +43,10 @@ const Projects = () => {
   const { t, i18n } = useTranslation('projects');  
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
+  const [sectionRef, sectionInView] = useInView({
+    threshold: 0.1,
+    triggerOnce: true,
+  });
 
   // Get projects from current language and French fallback
   const currentProjects = t('projects', { returnObjects: true });

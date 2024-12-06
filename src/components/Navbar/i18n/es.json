@@ -1,10 +1,6 @@
 {
   "items": [
     {
-      "label": "Inicio",
-      "href": "#home"
-    },
-    {
       "label": "Sobre Mí",
       "href": "#about"
     },

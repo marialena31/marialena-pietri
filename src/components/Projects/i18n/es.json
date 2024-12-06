@@ -3,7 +3,19 @@
   "subtitle": "Proyectos Magento y Soluciones E-commerce",
   "aria": {
     "projectImage": "Imagen del proyecto: {{project}}",
-    "projectTag": "Etiqueta del proyecto: {{tag}}"
+    "projectTag": "Etiqueta del proyecto: {{tag}}",
+    "projectCard": "Tarjeta del proyecto {{project}}",
+    "projectLink": "Visitar proyecto: {{project}}",
+    "projectTech": "Tecnología utilizada: {{tech}}",
+    "projectDate": "Fecha del proyecto: {{date}}",
+    "expandProject": "Haga clic para expandir los detalles de {{project}}"
+  },
+  "labels": {
+    "date": "Fecha",
+    "impact": "Impacto",
+    "achievements": "Logros Principales",
+    "technologies": "Tecnologías Utilizadas",
+    "viewProject": "Ver Proyecto"
   },
   "tags": {
     "ecommerce": "Comercio Electrónico",
@@ -32,7 +44,7 @@
     {
       "id": "chausson",
       "title": "Chausson Matériaux – Ecosistema Completo de Comercio Electrónico",
-      "date": "2014-2014",
+      "date": "2010-2014",
       "tags": ["ecommerce", "b2b", "pim", "erp", "automation"],
       "project": {
         "title": "Proyecto",
