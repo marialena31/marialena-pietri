@@ -1,11 +1,35 @@
 {
   "title": "Portfolio",
   "subtitle": "Magento Projects and E-commerce Solutions",
+  "tags": {
+    "ecommerce": "E-commerce",
+    "magento": "Magento",
+    "b2b": "B2B",
+    "b2c": "B2C",
+    "pim": "PIM",
+    "erp": "ERP",
+    "performance": "Performance",
+    "security": "Security",
+    "api": "API",
+    "mobile": "Mobile",
+    "pwa": "PWA",
+    "seo": "SEO",
+    "analytics": "Analytics",
+    "automation": "Automation",
+    "sso": "SSO",
+    "marketplace": "Marketplace",
+    "headless": "Headless",
+    "aws": "AWS",
+    "elasticsearch": "Elasticsearch",
+    "adobe commerce cloud": "Adobe Commerce Cloud",
+    "fastly": "Fastly"
+  },
   "projects": [
     {
       "id": "chausson",
       "title": "Chausson Matériaux – Full E-Commerce Ecosystem",
       "date": "2014-2014",
+      "tags": ["ecommerce", "b2b", "pim", "erp", "automation"],
       "project": {
         "title": "Project",
         "content": "Created a cross-channel strategy and launched the e-commerce platform for a leading construction material supplier, managing 20,000+ products. Implemented a comprehensive product information management (PIM) system using Maps, streamlining the creation of automated catalogs and website data feeds."
@@ -26,6 +50,7 @@
       "id": "valrhona",
       "title": "Valrhona – B2B E-Commerce Excellence",
       "date": "2018",
+      "tags": ["b2b", "magento", "sso", "marketplace", "api"],
       "project": {
         "title": "Project",
         "content": "Overhauled the Valrhona Selection B2B platform to enhance customer experience and integrate advanced marketplace features using Mirakl. Configured Salesforce API flows with custom authentication, enabling smoother client interactions. Implemented Single Sign-On (SSO) using a custom SAML module to simplify access for enterprise clients."
@@ -46,6 +71,7 @@
       "id": "legrand",
       "title": "Legrand – Next-Gen B2B E-Commerce Platform",
       "date": "2016-2019",
+      "tags": ["b2b", "magento", "performance", "security"],
       "project": {
         "title": "Project",
         "content": "Designed and developed the alpha version of a Magento 2 B2B platform for a global leader in electrical and digital building infrastructure. Delivered custom product displays and enhanced shopping cart functionalities tailored to professional buyers."
@@ -66,6 +92,7 @@
       "id": "whisky",
       "title": "La Maison du Whisky – Premium E-Commerce & Security",
       "date": "2024",
+      "tags": ["magento", "headless", "aws", "elasticsearch", "performance", "security"],
       "project": {
         "title": "Project",
         "content": "Provided technical leadership for La Maison du Whisky's Magento 2 platform, ensuring robust site functionality and high performance for this luxury spirits retailer. Focused on preventive maintenance, implementing core updates, and adapting custom modules to align with the latest Magento standards."
@@ -86,6 +113,7 @@
       "id": "eram",
       "title": "Eram Group – Multi-Brand Digital Transformation",
       "date": "2024",
+      "tags": ["adobe commerce cloud", "fastly", "performance", "security"],
       "project": {
         "title": "Project",
         "content": "Led the technical evolution of Magento websites for leading brands like Eram, Mellow Yellow, and Bocage. Delivered preventive, corrective, and evolutionary maintenance, including Magento core upgrades, custom module adaptations, and dependency monitoring. Conducted a security pre-audit in cases of suspected compromise, analyzing logs and providing actionable recommendations to improve platform security."
@@ -106,6 +134,7 @@
       "id": "marjane",
       "title": "Marjane Mall – Large-Scale Marketplace Integration",
       "date": "2023",
+      "tags": ["marketplace", "magento", "performance", "security", "mobile"],
       "project": {
         "title": "Project",
         "content": "Managed the Magento 2 integration and deployment of the Octopia marketplace for Morocco's leading retailer, Marjane. Organized and executed the reversibility process for the mobile application, transitioning ownership from the service provider to the client. This included managing timelines, coordinating multiple teams, and delivering the final versions of the application on Google Play and the Apple Store. Delivered a hybrid React Native mobile app and supported a catalog of 70,000+ products with a roadmap to scale to 1 million."

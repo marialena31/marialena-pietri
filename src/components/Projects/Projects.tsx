@@ -33,6 +33,7 @@ interface Project {
   achievements: ProjectAchievement;
   image: string;
   technologies: string[];
+  tags: string[];
   link?: string;
 }
 
@@ -57,7 +58,6 @@ const Projects = () => {
   const projects = Array.isArray(currentProjects) 
     ? currentProjects.map(project => {
         const finalImage = project.image || frProjectImages[project.id] || '/images/projects/default.jpg';
-        console.log(`Project ${project.id} using image:`, finalImage);
         return {
           ...project,
           image: finalImage
@@ -89,6 +89,7 @@ const Projects = () => {
       <Container maxWidth="lg">
         <Typography
           variant="h2"
+          component="div"
           align="center"
           sx={{
             mb: 1,
@@ -103,6 +104,7 @@ const Projects = () => {
         </Typography>
         <Typography
           variant="h6"
+          component="div"
           align="center"
           sx={{
             mb: 6,
@@ -165,6 +167,7 @@ const Projects = () => {
                   />
                   <Typography
                     variant="caption"
+                    component="div"
                     sx={{
                       position: 'absolute',
                       top: 16,
@@ -183,6 +186,7 @@ const Projects = () => {
                 <CardContent sx={{ flexGrow: 1, p: 3 }}>
                   <Typography
                     variant="h6"
+                    component="div"
                     gutterBottom
                     sx={{
                       color: 'white',
@@ -195,6 +199,7 @@ const Projects = () => {
 
                   <Typography
                     variant="body2"
+                    component="div"
                     sx={{
                       color: 'rgba(255, 255, 255, 0.7)',
                       mb: 2,
@@ -206,6 +211,7 @@ const Projects = () => {
 
                   <Typography
                     variant="subtitle2"
+                    component="div"
                     sx={{
                       color: theme.palette.primary.light,
                       mb: 1,
@@ -216,6 +222,7 @@ const Projects = () => {
                   </Typography>
                   <Typography
                     variant="body2"
+                    component="div"
                     sx={{
                       color: 'rgba(255, 255, 255, 0.7)',
                       mb: 2,
@@ -227,6 +234,7 @@ const Projects = () => {
 
                   <Typography
                     variant="subtitle2"
+                    component="div"
                     sx={{
                       color: theme.palette.secondary.light,
                       mb: 1,
@@ -235,20 +243,59 @@ const Projects = () => {
                   >
                     {project.achievements.title}
                   </Typography>
-                  <Box component="ul" sx={{ pl: 3, mb: 2 }}>
+                  <Box 
+                    component="ul" 
+                    sx={{ 
+                      pl: 3, 
+                      mb: 2,
+                      listStyle: 'none',
+                      '& li': {
+                        position: 'relative',
+                        '&::before': {
+                          content: '"•"',
+                          position: 'absolute',
+                          left: '-1em',
+                          color: theme.palette.secondary.light,
+                        }
+                      }
+                    }}
+                  >
                     {project.achievements.items.map((item, index) => (
-                      <Typography
+                      <Box
                         key={index}
                         component="li"
-                        variant="body2"
                         sx={{
                           color: 'rgba(255, 255, 255, 0.7)',
                           mb: 0.5,
+                          fontSize: '0.875rem',
+                          lineHeight: 1.43,
                         }}
                       >
                         {item}
-                      </Typography>
+                      </Box>
                     ))}
+                  </Box>
+
+                  <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, mt: 2 }}>
+                    {project.tags?.map((tagKey, index) => {
+                      const tagTranslation = t(`tags.${tagKey}`, { defaultValue: tagKey });
+                      return (
+                        <Chip
+                          key={index}
+                          label={tagTranslation}
+                          size="small"
+                          sx={{
+                            backgroundColor: 'rgba(255, 255, 255, 0.1)',
+                            color: 'rgba(255, 255, 255, 0.7)',
+                            borderRadius: '4px',
+                            textTransform: 'capitalize',
+                            '&:hover': {
+                              backgroundColor: 'rgba(255, 255, 255, 0.15)',
+                            },
+                          }}
+                        />
+                      );
+                    })}
                   </Box>
 
                   <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1, mt: 'auto' }}>

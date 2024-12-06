@@ -26,23 +26,30 @@ interface LegalModalProps {
 }
 
 const LegalModal: React.FC<LegalModalProps> = ({ open, onClose, type }) => {
-  const { t, i18n } = useTranslation('footer');
+  const { t } = useTranslation('footer');
   const theme = useTheme();
   const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
+  const closeButtonRef = React.useRef<HTMLButtonElement>(null);
+
+  React.useEffect(() => {
+    if (open) {
+      // Focus the close button when modal opens
+      setTimeout(() => {
+        closeButtonRef.current?.focus();
+      }, 100);
+    }
+  }, [open]);
 
   const renderContent = () => {
-    console.log('Rendering modal type:', type);
     const modalData = t(`${type}`, { returnObjects: true });
-    console.log('Modal data:', modalData);
 
     if (!modalData || typeof modalData !== 'object') {
-      console.error('Invalid modal data:', modalData);
       return <Typography>Content not available</Typography>;
     }
 
     return (
       <>
-        <Typography variant="h5" component="h2" gutterBottom>
+        <Typography variant="h5" component="div" gutterBottom>
           {modalData.title}
         </Typography>
         
@@ -50,10 +57,10 @@ const LegalModal: React.FC<LegalModalProps> = ({ open, onClose, type }) => {
         {modalData.sections && typeof modalData.sections === 'object' && (
           Object.entries(modalData.sections).map(([key, section]: [string, any]) => (
             <Box key={key} sx={{ mb: 3 }}>
-              <Typography variant="h6" component="h3" gutterBottom>
+              <Typography variant="h6" component="div" gutterBottom>
                 {section.title}
               </Typography>
-              <Typography paragraph>
+              <Typography component="div" paragraph>
                 {section.content}
               </Typography>
             </Box>
@@ -67,28 +74,24 @@ const LegalModal: React.FC<LegalModalProps> = ({ open, onClose, type }) => {
 
           return (
             <Box key={key} sx={{ mb: 3 }}>
-              {/* Section Title */}
               {section.title && (
-                <Typography variant="h6" component="h3" gutterBottom>
+                <Typography variant="h6" component="div" gutterBottom>
                   {section.title}
                 </Typography>
               )}
 
-              {/* Section Content */}
               {section.content && (
-                <Typography paragraph>
+                <Typography component="div" paragraph>
                   {section.content}
                 </Typography>
               )}
 
-              {/* Section Description */}
               {section.description && (
-                <Typography paragraph>
+                <Typography component="div" paragraph>
                   {section.description}
                 </Typography>
               )}
 
-              {/* Handle different types of lists */}
               {(section.list || section.purposes || section.methods) && (
                 <List>
                   {(section.list || section.purposes || section.methods)?.map((item: string, index: number) => (
@@ -99,9 +102,8 @@ const LegalModal: React.FC<LegalModalProps> = ({ open, onClose, type }) => {
                 </List>
               )}
 
-              {/* Special handling for contact info */}
               {section.contact && (
-                <Typography paragraph sx={{ mt: 1 }}>
+                <Typography component="div" paragraph sx={{ mt: 1 }}>
                   {section.contact}
                 </Typography>
               )}
@@ -119,6 +121,7 @@ const LegalModal: React.FC<LegalModalProps> = ({ open, onClose, type }) => {
       fullScreen={fullScreen}
       maxWidth="md"
       fullWidth
+      aria-labelledby="legal-modal-title"
       sx={{
         '& .MuiDialog-paper': {
           bgcolor: 'background.paper',
@@ -129,6 +132,7 @@ const LegalModal: React.FC<LegalModalProps> = ({ open, onClose, type }) => {
       }}
     >
       <DialogTitle
+        id="legal-modal-title"
         sx={{
           m: 0,
           p: 2,
@@ -137,16 +141,24 @@ const LegalModal: React.FC<LegalModalProps> = ({ open, onClose, type }) => {
           alignItems: 'center',
         }}
       >
-        <Typography variant="h5" component="h2">
+        <Typography variant="h5" component="div">
           {t(`${type}.title`)}
         </Typography>
         <IconButton
+          ref={closeButtonRef}
           aria-label={t('common.close')}
           onClick={onClose}
           sx={{
             color: 'text.primary',
             '&:hover': {
               color: 'primary.main',
+            },
+            '&:focus': {
+              outline: `2px solid ${theme.palette.primary.main}`,
+              outlineOffset: '2px',
+            },
+            '&:focus:not(:focus-visible)': {
+              outline: 'none',
             },
           }}
         >
@@ -165,6 +177,13 @@ const LegalModal: React.FC<LegalModalProps> = ({ open, onClose, type }) => {
             color: 'primary.contrastText',
             '&:hover': {
               bgcolor: 'primary.dark',
+            },
+            '&:focus': {
+              outline: `2px solid ${theme.palette.primary.main}`,
+              outlineOffset: '2px',
+            },
+            '&:focus:not(:focus-visible)': {
+              outline: 'none',
             },
           }}
         >

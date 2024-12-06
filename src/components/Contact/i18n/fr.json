@@ -18,7 +18,7 @@
       "label": "Sujet",
       "placeholder": "Sujet",
       "required": "Le sujet est requis",
-      "minLength": "Le sujet doit contenir au moins 2 caractères"
+      "minLength": "Le sujet doit contenir au moins 5 caractères"
     },
     "message": {
       "label": "Message",
@@ -26,14 +26,9 @@
       "required": "Le message est requis",
       "minLength": "Le message doit contenir au moins 10 caractères"
     },
-    "submit": "Envoyer le Message"
-  },
-  "success": {
-    "title": "Merci !",
-    "message": "Votre message a été envoyé avec succès. Je vous répondrai bientôt."
-  },
-  "error": {
-    "title": "Erreur",
-    "message": "Une erreur s'est produite lors de l'envoi de votre message. Veuillez réessayer plus tard."
+    "submit": "Envoyer le Message",
+    "sending": "Envoi en cours...",
+    "success": "Message envoyé avec succès !",
+    "error": "Une erreur s'est produite. Veuillez réessayer plus tard."
   }
 }

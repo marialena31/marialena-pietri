@@ -1,11 +1,35 @@
 {
   "title": "Portafolio",
   "subtitle": "Proyectos Magento y Soluciones E-commerce",
+  "tags": {
+    "ecommerce": "Comercio Electrónico",
+    "magento": "Magento",
+    "b2b": "B2B",
+    "b2c": "B2C",
+    "pim": "PIM",
+    "erp": "ERP",
+    "performance": "Rendimiento",
+    "security": "Seguridad",
+    "api": "API",
+    "mobile": "Móvil",
+    "pwa": "PWA",
+    "seo": "SEO",
+    "analytics": "Analítica",
+    "automation": "Automatización",
+    "sso": "SSO",
+    "marketplace": "Marketplace",
+    "headless": "Headless",
+    "aws": "AWS",
+    "elasticsearch": "Elasticsearch",
+    "adobe commerce cloud": "Adobe Commerce Cloud",
+    "fastly": "Fastly"
+  },
   "projects": [
     {
       "id": "chausson",
-      "title": "Chausson Matériaux – Ecosistema E-Commerce Completo",
+      "title": "Chausson Matériaux – Ecosistema Completo de Comercio Electrónico",
       "date": "2014-2014",
+      "tags": ["ecommerce", "b2b", "pim", "erp", "automation"],
       "project": {
         "title": "Proyecto",
         "content": "Creación de una estrategia omnicanal y lanzamiento de la plataforma e-commerce para un líder en materiales de construcción, gestionando más de 20.000 productos. Implementación de un sistema completo de gestión de información de productos (PIM) utilizando Maps, optimizando la creación de catálogos automatizados y flujos de datos para el sitio web."
@@ -26,6 +50,7 @@
       "id": "valrhona",
       "title": "Valrhona – Excelencia en E-Commerce B2B",
       "date": "2018",
+      "tags": ["b2b", "magento", "sso", "marketplace", "api"],
       "project": {
         "title": "Proyecto",
         "content": "Renovación de la plataforma B2B Valrhona Selection para mejorar la experiencia del cliente e integrar funcionalidades avanzadas de marketplace utilizando Mirakl. Configuración de flujos API de Salesforce con autenticación personalizada, permitiendo interacciones más fluidas con los clientes. Implementación de Single Sign-On (SSO) mediante un módulo SAML personalizado para simplificar el acceso de clientes empresariales."
@@ -46,6 +71,7 @@
       "id": "legrand",
       "title": "Legrand – Plataforma E-Commerce B2B de Nueva Generación",
       "date": "2016-2019",
+      "tags": ["ecommerce", "b2b", "magento", "performance", "security"],
       "project": {
         "title": "Proyecto",
         "content": "Diseño y desarrollo de la versión alfa de una plataforma B2B Magento 2 para un líder mundial en infraestructura eléctrica y digital de edificios. Entrega de visualizaciones de productos personalizadas y funcionalidades mejoradas de carrito adaptadas a compradores profesionales."
@@ -66,6 +92,7 @@
       "id": "whisky",
       "title": "La Maison du Whisky – E-Commerce Premium y Seguridad",
       "date": "2024",
+      "tags": ["magento", "headless", "aws", "elasticsearch", "performance", "security"],
       "project": {
         "title": "Proyecto",
         "content": "Liderazgo técnico de la plataforma Magento 2 de La Maison du Whisky, asegurando una funcionalidad robusta del sitio y alto rendimiento para este minorista de licores de lujo. Enfoque en mantenimiento preventivo, implementación de actualizaciones core y adaptación de módulos personalizados a los últimos estándares de Magento."
@@ -86,6 +113,7 @@
       "id": "eram",
       "title": "Grupo Eram – Transformación Digital Multi-Marca",
       "date": "2024",
+      "tags": ["adobe commerce cloud", "fastly", "performance", "security"],
       "project": {
         "title": "Proyecto",
         "content": "Liderazgo de la evolución técnica de sitios Magento para marcas líderes como Eram, Mellow Yellow y Bocage. Entrega de mantenimiento preventivo, correctivo y evolutivo, incluyendo actualizaciones del core de Magento, adaptaciones de módulos personalizados y monitoreo de dependencias. Realización de pre-auditoría de seguridad en casos de sospecha de compromiso, análisis de logs y provisión de recomendaciones accionables para mejorar la seguridad de la plataforma."
@@ -106,6 +134,7 @@
       "id": "marjane",
       "title": "Marjane Mall – Integración de Marketplace a Gran Escala",
       "date": "2023",
+      "tags": ["marketplace", "magento", "performance", "security", "mobile"],
       "project": {
         "title": "Proyecto",
         "content": "Gestión de la integración y despliegue Magento 2 del marketplace Octopia para el principal minorista de Marruecos, Marjane. Organización y ejecución del proceso de reversibilidad para la aplicación móvil, transfiriendo la propiedad del proveedor de servicios al cliente. Esto incluyó la gestión de plazos, coordinación de múltiples equipos y entrega de las versiones finales de la aplicación en Google Play y Apple Store. Entrega de una aplicación móvil híbrida React Native y soporte de un catálogo de más de 70.000 productos con plan de escalar a 1 millón."

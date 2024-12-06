@@ -67,7 +67,18 @@ const Footer = () => {
     const type = link.replace('#', '') as 'legal' | 'privacy' | 'terms';
     setModalType(type);
     setModalOpen(true);
-    console.log('Opening modal:', type);
+  };
+
+  const handleModalClose = () => {
+    setModalOpen(false);
+    // Return focus to the last clicked link
+    const links = document.querySelectorAll('button[data-modal-trigger]');
+    const lastClicked = Array.from(links).find(link => 
+      link.getAttribute('data-modal-type') === modalType
+    );
+    if (lastClicked instanceof HTMLElement) {
+      lastClicked.focus();
+    }
   };
 
   return (
@@ -93,6 +104,8 @@ const Footer = () => {
               <Link
                 key={index}
                 component="button"
+                data-modal-trigger
+                data-modal-type={item.link.replace('#', '')}
                 underline="none"
                 onClick={(e) => handleLinkClick(item.link, e)}
                 sx={{
@@ -109,6 +122,13 @@ const Footer = () => {
                     color: theme.palette.primary.main,
                     transform: 'translateY(-1px)',
                     textDecoration: 'none !important',
+                  },
+                  '&:focus': {
+                    outline: `2px solid ${theme.palette.primary.main}`,
+                    outlineOffset: '2px',
+                  },
+                  '&:focus:not(:focus-visible)': {
+                    outline: 'none',
                   },
                 }}
               >
@@ -190,18 +210,25 @@ const Footer = () => {
                   },
                 }}
               >
-                {t('icons8.api')}
               </Link>
               {' '}{t('icons8.by')}{' '}
               <Link
                 href="https://icons8.com"
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={(e) => e.currentTarget.focus()}
                 sx={{
                   color: 'inherit',
                   textDecoration: 'none',
                   '&:hover': {
                     color: theme.palette.primary.main,
+                  },
+                  '&:focus': {
+                    outline: `2px solid ${theme.palette.primary.main}`,
+                    outlineOffset: '2px',
+                  },
+                  '&:focus:not(:focus-visible)': {
+                    outline: 'none',
                   },
                 }}
               >
@@ -214,7 +241,7 @@ const Footer = () => {
 
       <LegalModal
         open={modalOpen}
-        onClose={() => setModalOpen(false)}
+        onClose={handleModalClose}
         type={modalType}
       />
     </Box>

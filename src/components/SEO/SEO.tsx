@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { useLocation } from '@reach/router';
 import { useStaticQuery, graphql } from 'gatsby';
+import { Helmet } from 'react-helmet';
 
 interface SEOProps {
   title?: string;
@@ -22,6 +23,8 @@ const SEO = ({ title, description, image, article = false }: SEOProps) => {
             defaultDescription: description
             siteUrl
             author
+            titleTemplate
+            twitterUsername
           }
         }
       }
@@ -33,6 +36,8 @@ const SEO = ({ title, description, image, article = false }: SEOProps) => {
     defaultDescription,
     siteUrl,
     author,
+    titleTemplate,
+    twitterUsername,
   } = site.siteMetadata;
 
   const seo = {
@@ -48,43 +53,82 @@ const SEO = ({ title, description, image, article = false }: SEOProps) => {
   }));
 
   return (
-    <>
-      <html lang={i18n.language} />
-      <title>{seo.title}</title>
-      <meta name="description" content={seo.description} />
-      <meta name="image" content={seo.image} />
-      <meta name="author" content={author} />
-
-      {/* Open Graph */}
-      <meta property="og:type" content={article ? 'article' : 'website'} />
-      <meta property="og:title" content={seo.title} />
-      <meta property="og:description" content={seo.description} />
-      <meta property="og:image" content={seo.image} />
-      <meta property="og:url" content={seo.url} />
-      <meta property="og:site_name" content={defaultTitle} />
-      <meta property="og:locale" content={i18n.language} />
-      {alternateUrls.map(({ lang }) => (
-        <meta property="og:locale:alternate" content={lang} key={lang} />
-      ))}
-
-      {/* Twitter */}
-      <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={seo.title} />
-      <meta name="twitter:description" content={seo.description} />
-      <meta name="twitter:image" content={seo.image} />
-      <meta name="twitter:creator" content={author} />
-
-      {/* Alternate language versions */}
-      {alternateUrls.map(({ lang, url }) => (
-        <link rel="alternate" hrefLang={lang} href={url} key={lang} />
-      ))}
-      <link rel="canonical" href={seo.url} />
-
-      {/* Additional meta tags */}
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta name="theme-color" content="#4A90E2" />
-      <meta name="keywords" content="Magento Developer, E-commerce Expert, Tech Lead, Project Manager, Web Development, Full Stack Developer, Adobe Commerce" />
-    </>
+    <Helmet
+      htmlAttributes={{
+        lang: i18n.language,
+      }}
+      title={seo.title}
+      titleTemplate={titleTemplate}
+      meta={[
+        {
+          name: 'description',
+          content: seo.description,
+        },
+        {
+          name: 'image',
+          content: seo.image,
+        },
+        {
+          property: 'og:title',
+          content: seo.title,
+        },
+        {
+          property: 'og:description',
+          content: seo.description,
+        },
+        {
+          property: 'og:image',
+          content: seo.image,
+        },
+        {
+          property: 'og:url',
+          content: seo.url,
+        },
+        {
+          property: 'og:type',
+          content: article ? 'article' : 'website',
+        },
+        {
+          name: 'twitter:card',
+          content: 'summary_large_image',
+        },
+        {
+          name: 'twitter:creator',
+          content: twitterUsername,
+        },
+        {
+          name: 'twitter:title',
+          content: seo.title,
+        },
+        {
+          name: 'twitter:description',
+          content: seo.description,
+        },
+        {
+          name: 'twitter:image',
+          content: seo.image,
+        },
+        {
+          name: 'theme-color',
+          content: '#4A90E2',
+        },
+        {
+          name: 'viewport',
+          content: 'width=device-width, initial-scale=1, shrink-to-fit=no',
+        },
+      ]}
+      link={[
+        {
+          rel: 'canonical',
+          href: seo.url,
+        },
+        ...alternateUrls.map(({ lang, url }) => ({
+          rel: 'alternate',
+          hrefLang: lang,
+          href: url,
+        })),
+      ]}
+    />
   );
 };
 

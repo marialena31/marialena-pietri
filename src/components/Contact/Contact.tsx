@@ -38,17 +38,33 @@ const Contact = () => {
   });
   const [errors, setErrors] = useState<FormErrors>({});
 
+  const fetchCsrfToken = async () => {
+    try {
+      const API_URL = process.env.GATSBY_API_URL || 'http://localhost:3000';
+      const response = await axios.get(`${API_URL}/api/csrf-token`, {
+        withCredentials: false
+      });
+      
+      if (response.headers['x-csrf-token']) {
+        return response.headers['x-csrf-token'];
+      } else if (response.data && response.data.token) {
+        return response.data.token;
+      }
+      return null;
+    } catch (error) {
+      return null;
+    }
+  };
+
   const validateForm = () => {
     const newErrors: FormErrors = {};
 
-    // Name validation
     if (!formData.name) {
       newErrors.name = t('form.name.required');
     } else if (formData.name.length < 2) {
       newErrors.name = t('form.name.minLength');
     }
 
-    // Email validation
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!formData.email) {
       newErrors.email = t('form.email.required');
@@ -56,14 +72,12 @@ const Contact = () => {
       newErrors.email = t('form.email.invalid');
     }
 
-    // Subject validation
     if (!formData.subject) {
       newErrors.subject = t('form.subject.required');
     } else if (formData.subject.length < 5) {
       newErrors.subject = t('form.subject.minLength');
     }
 
-    // Message validation
     if (!formData.message) {
       newErrors.message = t('form.message.required');
     } else if (formData.message.length < 10) {
@@ -85,12 +99,14 @@ const Contact = () => {
     setMessage(null);
 
     try {
+      const token = await fetchCsrfToken();
+      if (!token) {
+        throw new Error('Failed to get security token');
+      }
+
       const API_URL = process.env.GATSBY_API_URL || 'http://localhost:3000';
       const API_KEY = process.env.GATSBY_API_KEY;
       const TO_EMAIL = process.env.GATSBY_TO_EMAIL_ADDRESS;
-
-      console.log('Submitting form with data:', formData);
-      console.log('Using API URL:', API_URL);
 
       const response = await axios({
         method: 'post',
@@ -108,28 +124,26 @@ const Contact = () => {
         headers: {
           'Authorization': `Bearer ${API_KEY}`,
           'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        }
+          'Accept': 'application/json',
+          'X-CSRF-Token': token
+        },
+        withCredentials: false
       });
 
-      console.log('API Response:', response.data);
-      setMessage({ type: 'success', text: t('success.title') + ' : ' + t('success.message') });
+      setMessage({ type: 'success', text: t('form.success') });
       setFormData({ name: '', email: '', subject: '', message: '' });
-    } catch (error) {
-      console.error('API Error:', {
-        message: error.message,
-        data: error.response?.data,
-        status: error.response?.status,
-        config: {
-          url: error.config?.url,
-          method: error.config?.method,
-          headers: error.config?.headers
-        }
-      });
-      setMessage({ 
-        type: 'error', 
-        text: `${t('error.title')}: ${error.response?.data?.message || error.message || t('error.message')}` 
-      });
+    } catch (error: any) {
+      if (error.response?.status === 429) {
+        setMessage({ 
+          type: 'error', 
+          text: 'Too many requests. Please wait a moment before trying again.'
+        });
+      } else {
+        setMessage({ 
+          type: 'error', 
+          text: error.response?.data?.message || error.message || t('error.message')
+        });
+      }
     } finally {
       setLoading(false);
     }
@@ -138,7 +152,6 @@ const Contact = () => {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
-    // Clear error when user starts typing
     if (errors[name as keyof FormErrors]) {
       setErrors(prev => ({ ...prev, [name]: undefined }));
     }

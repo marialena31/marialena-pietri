@@ -27,6 +27,7 @@
       "minLength": "El mensaje debe tener al menos 10 caracteres"
     },
     "submit": "Enviar mensaje",
+    "sending": "Enviando mensaje...",
     "success": "¡Mensaje enviado con éxito!",
     "error": "Ha ocurrido un error. Por favor, inténtalo de nuevo."
   }

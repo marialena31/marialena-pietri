@@ -21,6 +21,27 @@ const config: GatsbyConfig = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sitemap`,
     {
+      resolve: 'gatsby-plugin-react-helmet',
+      options: {
+        htmlAttributes: {
+          lang: 'fr'
+        }
+      }
+    },
+    {
+      resolve: '@gatsby-contrib/gatsby-plugin-elasticlunr-search',
+      options: {
+        fields: ['title', 'description', 'content'],
+        resolvers: {
+          SitePage: {
+            title: node => node.context?.title,
+            description: node => node.context?.description,
+            content: node => node.context?.content,
+          },
+        },
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Maria-Lena Pietri - Expert Magento`,

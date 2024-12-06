@@ -25,72 +25,63 @@ interface SkillCategory {
   skills: Skill[];
 }
 
-const getSkillIcon = (skillName: string): string => {
-  const skillIconMap: { [key: string]: string } = {
-    'HTML5/CSS3': 'html5',
-    'JavaScript/TypeScript': 'javascript',
-    'React': 'reactjs',
-    'Next.js': 'nextjs',
-    'SCSS': 'scss',
-    'Knockout.js': 'knockoutjs',
-    'Accessibilité': 'accessibility',
-    
-    // Backend
-    'Node.js': 'nodejs',
-    'PHP': 'php',
-    'GraphQL': 'graphql',
-    'MongoDB': 'mongodb',
-    'Redis': 'redis',
-    'Elasticsearch': 'elasticsearch',
-    'APIs REST': 'rest-api',
-    
-    // E-commerce
-    'Magento 1/2': 'magento',
-    'Adobe Commerce Cloud': 'adobe-commerce',
-    
-    // DevOps
-    'Git': 'git',
-    'Docker': 'docker',
-    'AWS': 'aws',
-    'New Relic': 'newrelic',
-    'Datadog': 'datadog',
-    'Performance Optimization': 'performance'
-  };
-
-  const mappedIcon = skillIconMap[skillName];
-  console.log(`Getting icon for skill: ${skillName}, mapped to: ${mappedIcon}`);
-
-  let iconPath;
-  if (!mappedIcon) {
-    if (skillName.includes('/')) {
-      const firstPart = skillName.split('/')[0];
-      iconPath = `/images/skills/${firstPart.toLowerCase().replace(/[^a-z0-9]/g, '')}.png`;
-    } else {
-      iconPath = `/images/skills/${skillName.toLowerCase().replace(/[^a-z0-9]/g, '')}.png`;
-    }
-  } else {
-    iconPath = `/images/skills/${mappedIcon}.png`;
-  }
-  
-  console.log(`Final icon path for ${skillName}: ${iconPath}`);
-  return iconPath;
-};
-
 const Skills = () => {
   const { t, i18n } = useTranslation('skills');
   const theme = useTheme();
 
-  console.log('Current language:', i18n.language);
-  console.log('Available namespaces:', i18n.options.ns);
-  console.log('Skills translations:', i18n.getResourceBundle(i18n.language, 'skills'));
+  const getSkillIcon = (skillName: string): string => {
+    const skillIconMap: { [key: string]: string } = {
+      'HTML5/CSS3': 'html5',
+      'JavaScript/TypeScript': 'javascript',
+      'React': 'reactjs',
+      'Next.js': 'nextjs',
+      'SCSS': 'scss',
+      'Knockout.js': 'knockoutjs',
+      'Accessibilité': 'accessibility',
+      
+      // Backend
+      'Node.js': 'nodejs',
+      'PHP': 'php',
+      'GraphQL': 'graphql',
+      'MongoDB': 'mongodb',
+      'Redis': 'redis',
+      'Elasticsearch': 'elasticsearch',
+      'APIs REST': 'rest-api',
+      
+      // E-commerce
+      'Magento 1/2': 'magento',
+      'Adobe Commerce Cloud': 'adobe-commerce',
+      
+      // DevOps
+      'Git': 'git',
+      'Docker': 'docker',
+      'AWS': 'aws',
+      'New Relic': 'newrelic',
+      'Datadog': 'datadog',
+      'Performance Optimization': 'performance'
+    };
+
+    const mappedIcon = skillIconMap[skillName];
+
+    let iconPath;
+    if (!mappedIcon) {
+      if (skillName.includes('/')) {
+        const firstPart = skillName.split('/')[0];
+        iconPath = `/images/skills/${firstPart.toLowerCase().replace(/[^a-z0-9]/g, '')}.png`;
+      } else {
+        iconPath = `/images/skills/${skillName.toLowerCase().replace(/[^a-z0-9]/g, '')}.png`;
+      }
+    } else {
+      iconPath = `/images/skills/${mappedIcon}.png`;
+    }
+    
+    return iconPath;
+  };
 
   const getSkillsForCategory = (category: string): Skill[] => {
-    console.log(`Getting skills for category: ${category}`);
     const skills = t(`categories.${category}.skills`, { returnObjects: true });
-    console.log(`Raw skills data for ${category}:`, JSON.stringify(skills, null, 2));
     
     if (!Array.isArray(skills)) {
-      console.warn(`Skills for category ${category} is not an array:`, skills);
       return [];
     }
     
@@ -107,7 +98,6 @@ const Skills = () => {
           icon: skill.icon
         };
       }
-      console.log(`Mapped skill for ${category}:`, JSON.stringify(skillObj, null, 2));
       return skillObj;
     });
     
@@ -120,11 +110,8 @@ const Skills = () => {
       title: t(`categories.${category}.title`),
       skills: getSkillsForCategory(category)
     };
-    console.log(`Category data for ${category}:`, categoryData);
     return categoryData;
   });
-
-  console.log('Final skill categories:', skillCategories);
 
   return (
     <Box
