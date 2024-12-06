@@ -13,29 +13,29 @@
       "link": "#privacy"
     },
     {
-      "title": "Terms of Service",
+      "title": "Terms of Use",
       "link": "#terms"
     }
   ],
   "social": [
     {
-      "title": "LinkedIn",
-      "link": "https://linkedin.com/in/marialetta",
+      "title": "Follow me on LinkedIn",
+      "link": "https://linkedin.com/in/maria-lena-pietri",
       "icon": "linkedin"
     },
     {
-      "title": "GitHub",
-      "link": "https://github.com/marialetta",
+      "title": "Visit my GitHub",
+      "link": "https://github.com/maria-lena-pietri",
       "icon": "github"
     },
     {
-      "title": "Twitter",
-      "link": "https://twitter.com/marialetta",
+      "title": "Follow me on Twitter",
+      "link": "https://twitter.com/maria-lena-pietri",
       "icon": "twitter"
     },
     {
-      "title": "Facebook",
-      "link": "https://facebook.com/marialetta",
+      "title": "Follow me on Facebook",
+      "link": "https://facebook.com/maria-lena-pietri",
       "icon": "facebook"
     }
   ],
@@ -44,7 +44,7 @@
     "sections": {
       "identity": {
         "title": "Identity",
-        "content": "This website is owned and operated by Maria-Lena Pietri, an independent consultant based in France."
+        "content": "This website is owned by Maria-Lena Pietri, an independent consultant based in France."
       },
       "publication": {
         "title": "Publication Director",
@@ -52,36 +52,36 @@
       },
       "hosting": {
         "title": "Hosting",
-        "content": "This website is hosted by Netlify, Inc., located at 2325 3rd Street, Suite 215, San Francisco, California 94107, USA."
+        "content": "This website is hosted by Netlify, Inc., located at 2325 3rd Street, Suite 215, San Francisco, California 94107, United States."
       },
       "cookies": {
         "title": "Cookies",
-        "content": "This website uses essential cookies to ensure its proper functioning. By continuing to use this site, you accept the use of these cookies."
+        "content": "This site uses essential cookies to ensure its proper functioning. By continuing to use this site, you accept the use of these cookies."
       },
       "cnil": {
-        "title": "CNIL Declaration",
-        "content": "In accordance with the French Data Protection Act, you have the right to access, modify, rectify and delete data concerning you (Art. 34 of the law 'Informatique et Libertés')."
+        "title": "Data Protection Declaration",
+        "content": "In accordance with the Data Protection Act, you have the right to access, modify, rectify and delete your personal data."
       },
       "intellectual": {
         "title": "Intellectual Property",
-        "content": "All content on this website (text, images, logos, etc.) is protected by intellectual property rights. Any reproduction, even partial, is prohibited without prior authorization."
+        "content": "All content on this site (texts, images, logos, etc.) is protected by intellectual property rights. Any reproduction, even partial, is prohibited without prior authorization."
       },
       "credits": {
         "title": "Credits",
-        "content": "Website design and development: Maria-Lena Pietri"
+        "content": "Web design and development: Maria-Lena Pietri"
       }
     }
   },
   "terms": {
-    "title": "Terms of Service",
+    "title": "Terms of Use",
     "preamble": {
       "title": "Preamble",
-      "content": "These Terms of Service govern the use of consulting services provided by Maria-Lena Pietri."
+      "content": "These terms of use govern the use of consulting services provided by Maria-Lena Pietri."
     },
     "provider": {
       "title": "Service Provider",
       "name": "Maria-Lena Pietri",
-      "address": "Paris, France",
+      "address": "Colomiers, France",
       "email": "contact@marialena-pietri.fr"
     },
     "services": {
@@ -96,7 +96,7 @@
     },
     "pricing": {
       "title": "Pricing",
-      "content": "Pricing is established on a project basis and communicated through a detailed quote. All prices are in Euros and exclude VAT."
+      "content": "Rates are established on a project basis and communicated via a detailed quote. All prices are in Euros and exclude VAT."
     },
     "payment": {
       "title": "Payment Terms",
@@ -108,7 +108,7 @@
     },
     "execution": {
       "title": "Service Execution",
-      "content": "Services are provided according to the scope and timeline defined in the service agreement."
+      "content": "Services are provided according to the scope and schedule defined in the service contract."
     },
     "withdrawal": {
       "title": "Right of Withdrawal",
@@ -117,18 +117,18 @@
     "liability": {
       "title": "Liability",
       "list": [
-        "The service provider is bound by an obligation of means",
+        "The provider is bound by an obligation of means",
         "The client remains responsible for their business decisions",
-        "Force majeure events exclude liability"
+        "Force majeure cases exclude liability"
       ]
     },
     "property": {
       "title": "Intellectual Property",
-      "content": "All deliverables remain the intellectual property of Maria-Lena Pietri until full payment is received."
+      "content": "All deliverables remain the intellectual property of Maria-Lena Pietri until full payment."
     },
     "disputes": {
       "title": "Disputes",
-      "content": "Any disputes will be subject to French law and the jurisdiction of Paris courts."
+      "content": "Any dispute will be subject to French law and the jurisdiction of the Toulouse courts."
     }
   },
   "privacy": {
@@ -139,8 +139,8 @@
       "purposes": [
         "To provide our consulting services",
         "To communicate with you about our services",
-        "To improve our website and services",
-        "To comply with legal obligations"
+        "To improve our website and our services",
+        "To comply with our legal obligations"
       ]
     },
     "legal_basis": {
@@ -161,11 +161,11 @@
         "Right to access your personal data",
         "Right to rectify inaccurate data",
         "Right to erasure ('right to be forgotten')",
-        "Right to restrict processing",
+        "Right to restriction of processing",
         "Right to data portability",
         "Right to object to processing"
       ],
-      "contact": "To exercise these rights, please contact us at privacy@marialena-pietri.fr"
+      "contact": "To exercise these rights, contact us at privacy@marialena-pietri.fr"
     },
     "security": {
       "title": "Security Measures",

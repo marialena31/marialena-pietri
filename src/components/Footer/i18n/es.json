@@ -13,29 +13,29 @@
       "link": "#privacy"
     },
     {
-      "title": "Términos de Servicio",
+      "title": "Términos de Uso",
       "link": "#terms"
     }
   ],
   "social": [
     {
-      "title": "LinkedIn",
-      "link": "https://linkedin.com/in/marialetta",
+      "title": "Sígueme en LinkedIn",
+      "link": "https://linkedin.com/in/maria-lena-pietri",
       "icon": "linkedin"
     },
     {
-      "title": "GitHub",
-      "link": "https://github.com/marialetta",
+      "title": "Visita mi GitHub",
+      "link": "https://github.com/maria-lena-pietri",
       "icon": "github"
     },
     {
-      "title": "Twitter",
-      "link": "https://twitter.com/marialetta",
+      "title": "Sígueme en Twitter",
+      "link": "https://twitter.com/maria-lena-pietri",
       "icon": "twitter"
     },
     {
-      "title": "Facebook",
-      "link": "https://facebook.com/marialetta",
+      "title": "Sígueme en Facebook",
+      "link": "https://facebook.com/maria-lena-pietri",
       "icon": "facebook"
     }
   ],
@@ -44,87 +44,132 @@
     "sections": {
       "identity": {
         "title": "Identidad",
-        "content": "Este sitio web es propiedad y está operado por Maria-Lena Pietri, consultora independiente con sede en Francia."
+        "content": "Este sitio web es propiedad de Maria-Lena Pietri, consultora independiente con sede en Francia."
       },
       "publication": {
-        "title": "Director de Publicación",
+        "title": "Directora de Publicación",
         "content": "Maria-Lena Pietri es la directora de publicación de este sitio web."
       },
       "hosting": {
         "title": "Alojamiento",
-        "content": "Este sitio web está alojado por Netlify, Inc., ubicado en 2325 3rd Street, Suite 215, San Francisco, California 94107, EE. UU."
+        "content": "Este sitio web está alojado por Netlify, Inc., ubicado en 2325 3rd Street, Suite 215, San Francisco, California 94107, Estados Unidos."
       },
       "cookies": {
         "title": "Cookies",
         "content": "Este sitio utiliza cookies esenciales para garantizar su correcto funcionamiento. Al continuar utilizando este sitio, acepta el uso de estas cookies."
       },
+      "cnil": {
+        "title": "Declaración de Protección de Datos",
+        "content": "De acuerdo con la ley de Protección de Datos, tiene derecho a acceder, modificar, rectificar y eliminar sus datos personales."
+      },
       "intellectual": {
         "title": "Propiedad Intelectual",
-        "content": "Todo el contenido de este sitio web (textos, imágenes, logotipos, etc.) está protegido por derechos de propiedad intelectual. Cualquier reproducción, incluso parcial, está prohibida sin autorización previa."
-      }
-    }
-  },
-  "privacy": {
-    "title": "Política de Privacidad",
-    "sections": {
-      "collection": {
-        "title": "Recopilación de Datos",
-        "content": "Recopilamos y procesamos datos personales para los siguientes fines:",
-        "list": [
-          "Para proporcionar nuestros servicios de consultoría",
-          "Para comunicarnos con usted sobre nuestros servicios",
-          "Para mejorar nuestro sitio web y servicios",
-          "Para cumplir con las obligaciones legales"
-        ]
+        "content": "Todo el contenido de este sitio (textos, imágenes, logotipos, etc.) está protegido por derechos de propiedad intelectual. Cualquier reproducción, incluso parcial, está prohibida sin autorización previa."
       },
-      "rights": {
-        "title": "Sus Derechos",
-        "content": "Bajo el RGPD, tiene varios derechos con respecto a sus datos personales:",
-        "list": [
-          "Derecho de acceso a sus datos personales",
-          "Derecho a rectificar datos inexactos",
-          "Derecho de supresión ('derecho al olvido')",
-          "Derecho a la limitación del tratamiento",
-          "Derecho a la portabilidad de los datos",
-          "Derecho de oposición al tratamiento"
-        ]
-      },
-      "security": {
-        "title": "Seguridad de Datos",
-        "content": "Implementamos medidas técnicas y organizativas apropiadas para proteger sus datos personales contra el acceso, la modificación, la divulgación o la destrucción no autorizados."
-      },
-      "contact": {
-        "title": "Información de Contacto",
-        "content": "Para cualquier consulta relacionada con la privacidad, contáctenos en privacy@marialena-pietri.fr"
+      "credits": {
+        "title": "Créditos",
+        "content": "Diseño y desarrollo web: Maria-Lena Pietri"
       }
     }
   },
   "terms": {
-    "title": "Términos de Servicio",
-    "sections": {
-      "acceptance": {
-        "title": "Aceptación de Términos",
-        "content": "Al acceder y utilizar este sitio web, acepta y se compromete a cumplir estos Términos de Servicio."
-      },
-      "services": {
-        "title": "Servicios",
-        "content": "Proporcionamos servicios de consultoría en:",
-        "list": [
-          "Estrategia Empresarial",
-          "Transformación Digital",
-          "Gestión de Proyectos",
-          "Implementación Tecnológica",
-          "Formación y Talleres"
-        ]
-      },
-      "liability": {
-        "title": "Limitación de Responsabilidad",
-        "content": "Nos esforzamos por proporcionar información precisa y confiable, pero no ofrecemos garantías sobre la integridad, confiabilidad o precisión de esta información."
-      },
-      "changes": {
-        "title": "Cambios en los Términos",
-        "content": "Nos reservamos el derecho de modificar estos términos en cualquier momento. El uso continuado del sitio después de los cambios constituye la aceptación de los términos modificados."
-      }
+    "title": "Términos de Uso",
+    "preamble": {
+      "title": "Preámbulo",
+      "content": "Los presentes términos de uso rigen la utilización de los servicios de consultoría proporcionados por Maria-Lena Pietri."
+    },
+    "provider": {
+      "title": "Proveedor de Servicios",
+      "name": "Maria-Lena Pietri",
+      "address": "Colomiers, Francia",
+      "email": "contact@marialena-pietri.fr"
+    },
+    "services": {
+      "title": "Servicios Prestados",
+      "list": [
+        "Consultoría en Estrategia Empresarial",
+        "Transformación Digital",
+        "Gestión de Proyectos",
+        "Implementación Tecnológica",
+        "Formación y Talleres"
+      ]
+    },
+    "pricing": {
+      "title": "Precios",
+      "content": "Las tarifas se establecen según el proyecto y se comunican mediante un presupuesto detallado. Todos los precios están en Euros y sin IVA."
+    },
+    "payment": {
+      "title": "Condiciones de Pago",
+      "methods": [
+        "Transferencia Bancaria",
+        "Tarjeta de Crédito",
+        "PayPal"
+      ]
+    },
+    "execution": {
+      "title": "Ejecución del Servicio",
+      "content": "Los servicios se prestan según el alcance y el calendario definidos en el contrato de servicio."
+    },
+    "withdrawal": {
+      "title": "Derecho de Desistimiento",
+      "content": "Los clientes profesionales no se benefician del derecho de desistimiento para los servicios prestados."
+    },
+    "liability": {
+      "title": "Responsabilidad",
+      "list": [
+        "El proveedor está sujeto a una obligación de medios",
+        "El cliente sigue siendo responsable de sus decisiones comerciales",
+        "Los casos de fuerza mayor excluyen la responsabilidad"
+      ]
+    },
+    "property": {
+      "title": "Propiedad Intelectual",
+      "content": "Todos los entregables siguen siendo propiedad intelectual de Maria-Lena Pietri hasta el pago completo."
+    },
+    "disputes": {
+      "title": "Disputas",
+      "content": "Cualquier disputa estará sujeta a la ley francesa y a la jurisdicción de los tribunales de Toulouse."
+    }
+  },
+  "privacy": {
+    "title": "Política de Privacidad",
+    "collection": {
+      "title": "Recopilación de Datos",
+      "description": "Recopilamos y procesamos datos personales para los siguientes fines:",
+      "purposes": [
+        "Para proporcionar nuestros servicios de consultoría",
+        "Para comunicarnos con usted sobre nuestros servicios",
+        "Para mejorar nuestro sitio web y nuestros servicios",
+        "Para cumplir con nuestras obligaciones legales"
+      ]
+    },
+    "legal_basis": {
+      "title": "Base Legal",
+      "content": "Procesamos sus datos en base a su consentimiento, la necesidad contractual y nuestros intereses legítimos."
+    },
+    "retention": {
+      "title": "Conservación de Datos",
+      "content": "Conservamos sus datos personales únicamente durante el tiempo necesario para cumplir con los fines para los que fueron recopilados."
+    },
+    "sharing": {
+      "title": "Compartir Datos",
+      "content": "No vendemos sus datos personales. Solo los compartimos con los proveedores de servicios que nos ayudan a operar nuestro sitio web y proporcionar nuestros servicios."
+    },
+    "rights": {
+      "title": "Sus Derechos",
+      "list": [
+        "Derecho de acceso a sus datos personales",
+        "Derecho de rectificación de datos inexactos",
+        "Derecho de supresión ('derecho al olvido')",
+        "Derecho a la limitación del tratamiento",
+        "Derecho a la portabilidad de los datos",
+        "Derecho de oposición al tratamiento"
+      ],
+      "contact": "Para ejercer estos derechos, contáctenos en privacy@marialena-pietri.fr"
+    },
+    "security": {
+      "title": "Medidas de Seguridad",
+      "content": "Implementamos medidas técnicas y organizativas apropiadas para proteger sus datos personales contra el acceso o la divulgación no autorizados."
     }
   }
 }

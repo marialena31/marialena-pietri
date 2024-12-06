@@ -31,34 +31,85 @@ const LegalModal: React.FC<LegalModalProps> = ({ open, onClose, type }) => {
   const fullScreen = useMediaQuery(theme.breakpoints.down('md'));
 
   const renderContent = () => {
-    const content = t(`${type}.sections`, { returnObjects: true });
-    console.log('Modal content:', content);
+    console.log('Rendering modal type:', type);
+    const modalData = t(`${type}`, { returnObjects: true });
+    console.log('Modal data:', modalData);
 
-    if (!content || typeof content !== 'object') {
-      console.error('Invalid content structure:', content);
+    if (!modalData || typeof modalData !== 'object') {
+      console.error('Invalid modal data:', modalData);
       return <Typography>Content not available</Typography>;
     }
 
-    return Object.entries(content).map(([key, section]: [string, any]) => (
-      <Box key={key} sx={{ mb: 3 }}>
-        <Typography variant="h6" component="h3" sx={{ mb: 1 }}>
-          {section.title}
+    return (
+      <>
+        <Typography variant="h5" component="h2" gutterBottom>
+          {modalData.title}
         </Typography>
-        <Typography paragraph>
-          {section.content}
-        </Typography>
-        {section.list && Array.isArray(section.list) && (
-          <List>
-            {section.list.map((item: string, index: number) => (
-              <ListItem key={index}>
-                <ListItemText primary={item} />
-              </ListItem>
-            ))}
-          </List>
+        
+        {/* Handle sections if they exist */}
+        {modalData.sections && typeof modalData.sections === 'object' && (
+          Object.entries(modalData.sections).map(([key, section]: [string, any]) => (
+            <Box key={key} sx={{ mb: 3 }}>
+              <Typography variant="h6" component="h3" gutterBottom>
+                {section.title}
+              </Typography>
+              <Typography paragraph>
+                {section.content}
+              </Typography>
+            </Box>
+          ))
         )}
-        <Divider sx={{ mt: 2 }} />
-      </Box>
-    ));
+
+        {/* Handle direct content if no sections */}
+        {!modalData.sections && Object.entries(modalData).map(([key, section]: [string, any]) => {
+          if (key === 'title') return null;
+          if (typeof section !== 'object') return null;
+
+          return (
+            <Box key={key} sx={{ mb: 3 }}>
+              {/* Section Title */}
+              {section.title && (
+                <Typography variant="h6" component="h3" gutterBottom>
+                  {section.title}
+                </Typography>
+              )}
+
+              {/* Section Content */}
+              {section.content && (
+                <Typography paragraph>
+                  {section.content}
+                </Typography>
+              )}
+
+              {/* Section Description */}
+              {section.description && (
+                <Typography paragraph>
+                  {section.description}
+                </Typography>
+              )}
+
+              {/* Handle different types of lists */}
+              {(section.list || section.purposes || section.methods) && (
+                <List>
+                  {(section.list || section.purposes || section.methods)?.map((item: string, index: number) => (
+                    <ListItem key={index}>
+                      <ListItemText primary={item} />
+                    </ListItem>
+                  ))}
+                </List>
+              )}
+
+              {/* Special handling for contact info */}
+              {section.contact && (
+                <Typography paragraph sx={{ mt: 1 }}>
+                  {section.contact}
+                </Typography>
+              )}
+            </Box>
+          );
+        })}
+      </>
+    );
   };
 
   return (

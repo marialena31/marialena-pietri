@@ -84,28 +84,18 @@ const Contact = () => {
     setLoading(true);
     setMessage(null);
 
-    const API_URL = process.env.GATSBY_API_URL;
-    const API_KEY = process.env.GATSBY_API_KEY;
-    const TO_EMAIL = process.env.GATSBY_TO_EMAIL_ADDRESS;
-
     try {
-      console.log('Attempting to get CSRF token from:', `${API_URL}/api/csrf-token`);
-      // First get CSRF token
-      const tokenResponse = await axios.get(`${API_URL}/api/csrf-token`, {
-        headers: {
-          'Authorization': `Bearer ${API_KEY}`,
-          'Access-Control-Allow-Origin': '*'
-        }
-      });
+      const API_URL = process.env.GATSBY_API_URL || 'http://localhost:3000';
+      const API_KEY = process.env.GATSBY_API_KEY;
+      const TO_EMAIL = process.env.GATSBY_TO_EMAIL_ADDRESS;
 
-      console.log('CSRF token response:', tokenResponse.data);
-      const csrfToken = tokenResponse.data.token;
+      console.log('Submitting form with data:', formData);
+      console.log('Using API URL:', API_URL);
 
-      console.log('Sending email to:', `${API_URL}/api/mail/send`);
-      // Send email
-      const emailResponse = await axios.post(
-        `${API_URL}/api/mail/send`,
-        {
+      const response = await axios({
+        method: 'post',
+        url: `${API_URL}/api/mail/send`,
+        data: {
           to: TO_EMAIL,
           subject: `Contact Form: Message from ${formData.name}`,
           text: `
@@ -115,26 +105,31 @@ const Contact = () => {
             Message: ${formData.message}
           `
         },
-        {
-          headers: {
-            'Authorization': `Bearer ${API_KEY}`,
-            'Content-Type': 'application/json',
-            'X-CSRF-Token': csrfToken,
-            'Access-Control-Allow-Origin': '*'
-          }
+        headers: {
+          'Authorization': `Bearer ${API_KEY}`,
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
         }
-      );
+      });
 
-      console.log('Email response:', emailResponse.data);
+      console.log('API Response:', response.data);
       setMessage({ type: 'success', text: t('success.title') + ' : ' + t('success.message') });
       setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (error) {
-      console.error('Error details:', {
+      console.error('API Error:', {
         message: error.message,
-        response: error.response?.data,
-        status: error.response?.status
+        data: error.response?.data,
+        status: error.response?.status,
+        config: {
+          url: error.config?.url,
+          method: error.config?.method,
+          headers: error.config?.headers
+        }
       });
-      setMessage({ type: 'error', text: t('error.title') + ' : ' + t('error.message') });
+      setMessage({ 
+        type: 'error', 
+        text: `${t('error.title')}: ${error.response?.data?.message || error.message || t('error.message')}` 
+      });
     } finally {
       setLoading(false);
     }

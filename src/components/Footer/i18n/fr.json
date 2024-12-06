@@ -1,17 +1,20 @@
 {
   "copyright": " 2024 Maria-Lena Pietri. Tous droits réservés.",
+  "common": {
+    "close": "Fermer"
+  },
   "items": [
     {
+      "title": "Mentions Légales",
+      "link": "#legal"
+    },
+    {
       "title": "Politique de Confidentialité",
-      "link": "/privacy"
+      "link": "#privacy"
     },
     {
       "title": "Conditions d'Utilisation",
-      "link": "/terms"
-    },
-    {
-      "title": "Mentions Légales",
-      "link": "/legal"
+      "link": "#terms"
     }
   ],
   "social": [
@@ -36,9 +39,6 @@
       "icon": "facebook"
     }
   ],
-  "common": {
-    "close": "Fermer"
-  },
   "legal": {
     "title": "Mentions Légales",
     "sections": {
@@ -81,7 +81,7 @@
     "provider": {
       "title": "Prestataire de Services",
       "name": "Maria-Lena Pietri",
-      "address": "Paris, France",
+      "address": "Colomiers, France",
       "email": "contact@marialena-pietri.fr"
     },
     "services": {
@@ -128,7 +128,7 @@
     },
     "disputes": {
       "title": "Litiges",
-      "content": "Tout litige sera soumis au droit français et à la compétence des tribunaux de Paris."
+      "content": "Tout litige sera soumis au droit français et à la compétence des tribunaux de Toulouse."
     }
   },
   "privacy": {
