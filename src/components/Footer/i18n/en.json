@@ -1,10 +1,12 @@
 {
-  "copyright": " 2024 Maria-Lena Pietri. All rights reserved.",
+  "copyright": "2023 Maria-Lena Pietri. All rights reserved.",
   "common": {
     "close": "Close"
   },
   "icons8": {
-    "by": "Icons by"
+    "by": "by",
+    "apiIcon": "REST API icon by Icons8",
+    "apiIconText": "REST API icon"
   },
   "items": [
     {
@@ -24,22 +26,26 @@
     {
       "title": "Follow me on LinkedIn",
       "link": "https://linkedin.com/in/maria-lena-pietri",
-      "icon": "linkedin"
+      "icon": "linkedin",
+      "ariaLabel": "Visit my LinkedIn profile"
     },
     {
       "title": "Visit my GitHub",
       "link": "https://github.com/maria-lena-pietri",
-      "icon": "github"
+      "icon": "github",
+      "ariaLabel": "Visit my GitHub profile"
     },
     {
       "title": "Follow me on Twitter",
       "link": "https://twitter.com/maria-lena-pietri",
-      "icon": "twitter"
+      "icon": "twitter",
+      "ariaLabel": "Visit my Twitter profile"
     },
     {
       "title": "Follow me on Facebook",
       "link": "https://facebook.com/maria-lena-pietri",
-      "icon": "facebook"
+      "icon": "facebook",
+      "ariaLabel": "Visit my Facebook profile"
     }
   ],
   "legal": {

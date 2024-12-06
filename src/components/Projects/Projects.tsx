@@ -120,6 +120,9 @@ const Projects = () => {
             <Grid item xs={12} sm={6} md={4} key={project.id}>
               <Card
                 elevation={0}
+                component="article"
+                role="article"
+                aria-labelledby={`project-title-${project.id}`}
                 sx={{
                   height: '100%',
                   display: 'flex',
@@ -143,7 +146,7 @@ const Projects = () => {
                   <CardMedia
                     component="img"
                     image={project.image}
-                    alt={project.title}
+                    alt={t('aria.projectImage', { project: project.title })}
                     className="project-image"
                     sx={{
                       position: 'absolute',
@@ -186,7 +189,8 @@ const Projects = () => {
                 <CardContent sx={{ flexGrow: 1, p: 3 }}>
                   <Typography
                     variant="h6"
-                    component="div"
+                    component="h3"
+                    id={`project-title-${project.id}`}
                     gutterBottom
                     sx={{
                       color: 'white',
@@ -284,6 +288,8 @@ const Projects = () => {
                           key={index}
                           label={tagTranslation}
                           size="small"
+                          role="listitem"
+                          aria-label={t('aria.projectTag', { tag: tagTranslation })}
                           sx={{
                             backgroundColor: 'rgba(255, 255, 255, 0.1)',
                             color: 'rgba(255, 255, 255, 0.7)',

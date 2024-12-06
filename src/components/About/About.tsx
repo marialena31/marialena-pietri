@@ -94,7 +94,7 @@ const About = () => {
               }}
             >
               <CardContent>
-                <Typography variant="h5" color="primary" gutterBottom>
+                <Typography variant="h3" component="h3" color="primary" gutterBottom>
                   {t('whoAmI.title')}
                 </Typography>
                 <Typography variant="body1" color="textSecondary">
@@ -118,7 +118,7 @@ const About = () => {
               }}
             >
               <CardContent>
-                <Typography variant="h5" color="primary" gutterBottom>
+                <Typography variant="h3" component="h3" color="primary" gutterBottom>
                   {t('expertise.title')}
                 </Typography>
                 <Typography variant="body1" color="textSecondary">
@@ -142,7 +142,7 @@ const About = () => {
               }}
             >
               <CardContent>
-                <Typography variant="h5" color="primary" gutterBottom>
+                <Typography variant="h3" component="h3" color="primary" gutterBottom>
                   Languages
                 </Typography>
                 {Array.isArray(languages) && languages.map((lang, index) => (

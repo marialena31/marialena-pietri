@@ -49,6 +49,7 @@ const Services = () => {
       <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
         <Typography
           variant="h2"
+          component="h2"
           align="center"
           gutterBottom
           sx={{ 
@@ -72,7 +73,8 @@ const Services = () => {
           {t('title')}
         </Typography>
         <Typography
-          variant="subtitle1"
+          variant="h3"
+          component="h3"
           align="center"
           sx={{ 
             mb: 12,

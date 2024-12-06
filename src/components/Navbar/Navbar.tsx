@@ -203,45 +203,26 @@ const Navbar = () => {
                   <Select
                     value={language}
                     onChange={handleLanguageChange}
-                    size="small"
-                    variant="standard"
+                    id="language-select"
                     inputProps={{
-                      'aria-label': t('language.select'),
-                      id: 'language-select'
+                      'aria-label': t('language.select')
                     }}
-                    sx={{ 
-                      '.MuiSelect-select': {
-                        padding: '4px',
-                        paddingRight: '24px !important'
+                    sx={{
+                      color: 'white',
+                      '&:before': {
+                        borderColor: 'rgba(255, 255, 255, 0.2)',
                       },
-                      '.MuiInput-root': {
-                        '&:before, &:after': {
-                          display: 'none'
-                        }
+                      '&:after': {
+                        borderColor: theme.palette.primary.main,
                       },
-                      '.MuiSvgIcon-root': {
-                        color: 'white'
-                      }
+                      '& .MuiSvgIcon-root': {
+                        color: 'white',
+                      },
                     }}
                   >
-                    {['en', 'fr', 'es'].map((lang) => (
-                      <MenuItem 
-                        key={lang} 
-                        value={lang}
-                        sx={{
-                          '&:hover': {
-                            backgroundColor: 'rgba(255, 255, 255, 0.1)'
-                          }
-                        }}
-                      >
-                        <Box
-                          component="img"
-                          src={`/images/flags/${lang === 'en' ? 'england' : lang === 'fr' ? 'france' : 'spain'}.png`}
-                          alt={t(`language.${lang}`)}
-                          sx={{ width: 24 }}
-                        />
-                      </MenuItem>
-                    ))}
+                    <MenuItem value="en">{t('language.en')}</MenuItem>
+                    <MenuItem value="fr">{t('language.fr')}</MenuItem>
+                    <MenuItem value="es">{t('language.es')}</MenuItem>
                   </Select>
                 </FormControl>
 
@@ -340,45 +321,26 @@ const Navbar = () => {
                 <Select
                   value={language}
                   onChange={handleLanguageChange}
-                  size="small"
-                  variant="standard"
+                  id="language-select"
                   inputProps={{
-                    'aria-label': t('language.select'),
-                    id: 'language-select'
+                    'aria-label': t('language.select')
                   }}
-                  sx={{ 
-                    '.MuiSelect-select': {
-                      padding: '4px',
-                      paddingRight: '24px !important'
+                  sx={{
+                    color: 'white',
+                    '&:before': {
+                      borderColor: 'rgba(255, 255, 255, 0.2)',
                     },
-                    '.MuiInput-root': {
-                      '&:before, &:after': {
-                        display: 'none'
-                      }
+                    '&:after': {
+                      borderColor: theme.palette.primary.main,
                     },
-                    '.MuiSvgIcon-root': {
-                      color: 'white'
-                    }
+                    '& .MuiSvgIcon-root': {
+                      color: 'white',
+                    },
                   }}
                 >
-                  {['en', 'fr', 'es'].map((lang) => (
-                    <MenuItem 
-                      key={lang} 
-                      value={lang}
-                      sx={{
-                        '&:hover': {
-                          backgroundColor: 'rgba(255, 255, 255, 0.1)'
-                        }
-                      }}
-                    >
-                      <Box
-                        component="img"
-                        src={`/images/flags/${lang === 'en' ? 'england' : lang === 'fr' ? 'france' : 'spain'}.png`}
-                        alt={t(`language.${lang}`)}
-                        sx={{ width: 24 }}
-                      />
-                    </MenuItem>
-                  ))}
+                  <MenuItem value="en">{t('language.en')}</MenuItem>
+                  <MenuItem value="fr">{t('language.fr')}</MenuItem>
+                  <MenuItem value="es">{t('language.es')}</MenuItem>
                 </Select>
               </FormControl>
 

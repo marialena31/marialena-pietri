@@ -1,6 +1,10 @@
 {
   "title": "Portafolio",
   "subtitle": "Proyectos Magento y Soluciones E-commerce",
+  "aria": {
+    "projectImage": "Imagen del proyecto: {{project}}",
+    "projectTag": "Etiqueta del proyecto: {{tag}}"
+  },
   "tags": {
     "ecommerce": "Comercio Electrónico",
     "magento": "Magento",

@@ -151,6 +151,7 @@ const Footer = () => {
                 href={item.link}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={t(`social.${item.icon}.ariaLabel`)}
                 sx={{
                   color: 'rgba(255, 255, 255, 0.7)',
                   transition: 'all 0.3s ease',
@@ -202,14 +203,24 @@ const Footer = () => {
                 href="https://icons8.com/icon/tnfIZrPKFzrW/rest-api"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={t('icons8.apiIcon')}
+                onClick={(e) => e.currentTarget.focus()}
                 sx={{
                   color: 'inherit',
                   textDecoration: 'none',
                   '&:hover': {
                     color: theme.palette.primary.main,
                   },
+                  '&:focus': {
+                    outline: `2px solid ${theme.palette.primary.main}`,
+                    outlineOffset: '2px',
+                  },
+                  '&:focus:not(:focus-visible)': {
+                    outline: 'none',
+                  },
                 }}
               >
+                {t('icons8.apiIconText')}
               </Link>
               {' '}{t('icons8.by')}{' '}
               <Link

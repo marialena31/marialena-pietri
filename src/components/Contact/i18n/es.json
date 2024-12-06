@@ -12,7 +12,7 @@
       "label": "Correo electrónico",
       "placeholder": "Tu correo electrónico",
       "required": "El correo electrónico es requerido",
-      "invalid": "Por favor, introduce un correo electrónico válido"
+      "invalid": "Por favor, ingresa una dirección de correo electrónico válida"
     },
     "subject": {
       "label": "Asunto",
@@ -29,6 +29,10 @@
     "submit": "Enviar mensaje",
     "sending": "Enviando mensaje...",
     "success": "¡Mensaje enviado con éxito!",
-    "error": "Ha ocurrido un error. Por favor, inténtalo de nuevo."
+    "error": "Ha ocurrido un error. Por favor, inténtalo de nuevo.",
+    "aria": {
+      "formLabel": "Formulario de contacto",
+      "submitLabel": "Enviar mensaje"
+    }
   }
 }

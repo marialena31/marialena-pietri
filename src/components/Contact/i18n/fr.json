@@ -1,16 +1,16 @@
 {
-  "title": "Contact",
+  "title": "Contactez-moi",
   "subtitle": "N'hésitez pas à me contacter pour toute demande ou collaboration.",
   "form": {
     "name": {
       "label": "Nom",
       "placeholder": "Votre nom",
       "required": "Le nom est requis",
-      "minLength": "Le nom doit contenir au moins 2 caractères"
+      "minLength": "Le nom doit comporter au moins 2 caractères"
     },
     "email": {
       "label": "Email",
-      "placeholder": "votre.email@exemple.com",
+      "placeholder": "Votre email",
       "required": "L'email est requis",
       "invalid": "Veuillez entrer une adresse email valide"
     },
@@ -18,17 +18,21 @@
       "label": "Sujet",
       "placeholder": "Sujet",
       "required": "Le sujet est requis",
-      "minLength": "Le sujet doit contenir au moins 5 caractères"
+      "minLength": "Le sujet doit comporter au moins 5 caractères"
     },
     "message": {
       "label": "Message",
       "placeholder": "Votre message",
       "required": "Le message est requis",
-      "minLength": "Le message doit contenir au moins 10 caractères"
+      "minLength": "Le message doit comporter au moins 10 caractères"
     },
-    "submit": "Envoyer le Message",
+    "submit": "Envoyer le message",
     "sending": "Envoi en cours...",
     "success": "Message envoyé avec succès !",
-    "error": "Une erreur s'est produite. Veuillez réessayer plus tard."
+    "error": "Une erreur s'est produite. Veuillez réessayer.",
+    "aria": {
+      "formLabel": "Formulaire de contact",
+      "submitLabel": "Envoyer le message"
+    }
   }
 }

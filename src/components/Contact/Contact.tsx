@@ -182,6 +182,7 @@ const Contact = () => {
       <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
         <Typography 
           variant="h2" 
+          component="h2"
           align="center" 
           gutterBottom 
           sx={{ 
@@ -205,16 +206,13 @@ const Contact = () => {
           {t('title')}
         </Typography>
         <Typography
-          variant="h6"
+          variant="h3"
+          component="h3"
           align="center"
-          sx={{ 
+          gutterBottom
+          sx={{
             mb: 6,
-            maxWidth: '800px',
-            mx: 'auto',
-            fontWeight: 400,
-            lineHeight: 1.6,
-            color: 'rgba(255, 255, 255, 0.7)',
-            fontSize: '1.1rem',
+            color: theme.palette.text.secondary,
           }}
         >
           {t('subtitle')}
@@ -239,6 +237,7 @@ const Contact = () => {
                 netlify-honeypot="bot-field"
                 onSubmit={handleSubmit}
                 noValidate
+                aria-label={t('form.aria.formLabel')}
               >
                 <input type="hidden" name="form-name" value="contact" />
                 <div hidden>
@@ -423,6 +422,7 @@ const Contact = () => {
                       size="large"
                       disabled={loading}
                       startIcon={<SendIcon />}
+                      aria-label={t('form.aria.submitLabel')}
                       sx={{
                         minWidth: 200,
                         background: `linear-gradient(90deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,

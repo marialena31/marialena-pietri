@@ -76,7 +76,8 @@ const References: React.FC = () => {
         </Typography>
 
         <Typography
-          variant="subtitle1"
+          variant="h3"
+          component="h3"
           align="center"
           sx={{ 
             mb: 6,

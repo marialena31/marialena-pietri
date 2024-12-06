@@ -174,46 +174,64 @@ const Skills = () => {
                       <Box
                         sx={{
                           display: 'flex',
-                          justifyContent: 'center',
+                          flexDirection: 'column',
                           alignItems: 'center',
-                          width: 64,
-                          height: 64,
-                          mb: 1,
-                          backgroundColor: '#FFFFFF',
-                          borderRadius: '12px',
-                          boxShadow: 1,
-                          transition: 'transform 0.2s',
-                          '&:hover': {
-                            transform: 'scale(1.1)',
-                          },
+                          textAlign: 'center',
+                          height: '100%',
                         }}
                       >
                         <Box
-                          component="img"
-                          src={skill.icon}
-                          alt={skill.name}
-                          onError={(e) => {
-                            console.error(`Error loading icon for ${skill.name}:`, e);
-                            console.log('Icon path:', skill.icon);
-                          }}
                           sx={{
-                            maxWidth: '75%',
-                            maxHeight: '75%',
-                            width: 'auto',
-                            height: 'auto',
-                            objectFit: 'contain',
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            width: 64,
+                            height: 64,
+                            mb: 1,
+                            backgroundColor: '#FFFFFF',
+                            borderRadius: '12px',
+                            boxShadow: 1,
+                            transition: 'transform 0.2s',
+                            '&:hover': {
+                              transform: 'scale(1.1)',
+                            },
                           }}
-                        />
+                        >
+                          <Box
+                            component="img"
+                            src={skill.icon}
+                            alt=""
+                            aria-hidden="true"
+                            onError={(e) => {
+                              console.error(`Error loading icon for ${skill.name}:`, e);
+                              console.log('Icon path:', skill.icon);
+                            }}
+                            sx={{
+                              maxWidth: '75%',
+                              maxHeight: '75%',
+                              objectFit: 'contain',
+                            }}
+                          />
+                        </Box>
+                        <Typography
+                          variant="body2"
+                          sx={{
+                            mt: 1,
+                            fontWeight: 500,
+                            color: theme.palette.text.primary,
+                            fontSize: '0.875rem',
+                            lineHeight: 1.2,
+                            wordBreak: 'break-word',
+                            minHeight: '2.4em',
+                            display: '-webkit-box',
+                            WebkitLineClamp: 2,
+                            WebkitBoxOrient: 'vertical',
+                            overflow: 'hidden',
+                          }}
+                        >
+                          {skill.name}
+                        </Typography>
                       </Box>
-                      <Typography
-                        variant="body2"
-                        sx={{
-                          fontSize: '0.875rem',
-                          fontWeight: 'medium',
-                        }}
-                      >
-                        {skill.name}
-                      </Typography>
                     </Grid>
                   ))}
                 </Grid>
