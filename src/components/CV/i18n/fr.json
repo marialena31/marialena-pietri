@@ -1,0 +1,117 @@
+{
+  "contact": "Contact",
+  "technicalSkills": "Compétences Techniques",
+  "languages": "Langues",
+  "languagesList": [
+    {
+      "language": "Français",
+      "level": "Natif",
+      "progress": 100
+    },
+    {
+      "language": "Anglais",
+      "level": "Professionnel",
+      "progress": 90
+    },
+    {
+      "language": "Espagnol",
+      "level": "Professionnel",
+      "progress": 70
+    }
+  ],
+  "categories": {
+    "frontend": {
+      "title": "Développement Frontend",
+      "skills": [
+        "HTML5/CSS3",
+        "SCSS",
+        "JavaScript/TypeScript",
+        "Knockout.js",
+        "React",
+        "Next.js",
+        "Accessibilité"
+      ]
+    },
+    "backend": {
+      "title": "Développement Backend",
+      "skills": [
+        "PHP",
+        "Node.js",
+        "APIs REST",
+        "GraphQL",
+        "MongoDB",
+        "Redis",
+        "Elasticsearch"
+      ]
+    },
+    "ecommerce": {
+      "title": "E-commerce",
+      "skills": [
+        "Magento",
+        "Adobe Commerce Cloud"
+      ]
+    },
+    "devops": {
+      "title": "DevOps & Outils",
+      "skills": [
+        "Git",
+        "Docker",
+        "AWS",
+        "New Relic",
+        "Datadog",
+        "Performance Optimization"
+      ]
+    }
+  },
+  "projects": {
+    "title": "Projets Clés",
+    "items": [
+      {
+        "title": "La Maison du Whisky – E-Commerce Premium",
+        "date": "2024",
+        "company": "La Maison du Whisky",
+        "description": "Direction technique de la plateforme Magento 2, focus sur la performance et la sécurité. Implémentation d'une architecture headless avec AWS et Elasticsearch.",
+        "tags": ["magento2", "headless", "performance"]
+      },
+      {
+        "title": "Valrhona – Plateforme B2B",
+        "date": "2018",
+        "company": "Valrhona",
+        "description": "Refonte de la plateforme B2B avec intégration marketplace Mirakl et SSO. Configuration des flux API Salesforce et authentification personnalisée.",
+        "tags": ["b2b", "magento", "api"]
+      },
+      {
+        "title": "Legrand – Solution B2B",
+        "date": "2016-2019",
+        "company": "Legrand",
+        "description": "Développement d'une plateforme B2B Magento 2 avec fonctionnalités avancées pour acheteurs professionnels. Architecture modulaire et évolutive.",
+        "tags": ["b2b", "magento", "performance"]
+      },
+      {
+        "title": "Chausson Matériaux – E-commerce B2B",
+        "date": "2010-2014",
+        "company": "Chausson Matériaux",
+        "description": "Création d'une plateforme e-commerce cross-canal avec PIM intégré pour plus de 20 000 produits. Automatisation des catalogues et flux de données.",
+        "tags": ["b2b", "pim", "automation"]
+      }
+    ],
+    "tags": {
+      "magento2": "Magento 2",
+      "headless": "Headless",
+      "performance": "Performance",
+      "b2b": "B2B",
+      "magento": "Magento",
+      "api": "API",
+      "pim": "PIM",
+      "automation": "Automatisation"
+    }
+  },
+  "summary": "Experte senior Magento avec une expérience approfondie dans le développement e-commerce. Projets majeurs : Migration Magento 2 pour Groupe Beaumanoir (2022-2023), Optimisation des performances pour Groupe Zannier (2022), Développement B2B pour Groupe Royer (2021-2022), Migration Cloud pour Morgan (2021), Développement de la plateforme Magento 2 pour Legrand (2016-2019), et Création de la plateforme e-commerce pour Chausson Matériaux (2010-2014). Spécialisée dans les migrations complexes, l'optimisation des performances et le développement de solutions B2B.",
+  "hero": {
+    "title": "Maria-Lena Pietri",
+    "subtitle": "Experte Senior Magento & Consultante E-commerce"
+  },
+  "about": {
+    "content": "Experte senior Magento avec plus de 8 ans d'expérience dans le développement e-commerce. Spécialisée dans la création de solutions robustes et évolutives, je combine expertise technique et vision stratégique pour optimiser les performances des plateformes e-commerce. Mon approche allie excellence technique et compréhension business pour garantir le succès des projets."
+  }
+}

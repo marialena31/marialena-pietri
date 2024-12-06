@@ -1,0 +1,117 @@
+{
+  "contact": "Contact",
+  "technicalSkills": "Technical Skills",
+  "languages": "Languages",
+  "languagesList": [
+    {
+      "language": "French",
+      "level": "Native",
+      "progress": 100
+    },
+    {
+      "language": "English",
+      "level": "Professional",
+      "progress": 90
+    },
+    {
+      "language": "Spanish",
+      "level": "Professional",
+      "progress": 70
+    }
+  ],
+  "categories": {
+    "frontend": {
+      "title": "Frontend Development",
+      "skills": [
+        "HTML5/CSS3",
+        "SCSS",
+        "JavaScript/TypeScript",
+        "Knockout.js",
+        "React",
+        "Next.js",
+        "Accessibility"
+      ]
+    },
+    "backend": {
+      "title": "Backend Development",
+      "skills": [
+        "PHP",
+        "Node.js",
+        "REST APIs",
+        "GraphQL",
+        "MongoDB",
+        "Redis",
+        "Elasticsearch"
+      ]
+    },
+    "ecommerce": {
+      "title": "E-commerce",
+      "skills": [
+        "Magento",
+        "Adobe Commerce Cloud"
+      ]
+    },
+    "devops": {
+      "title": "DevOps & Tools",
+      "skills": [
+        "Git",
+        "Docker",
+        "AWS",
+        "New Relic",
+        "Datadog",
+        "Performance Optimization"
+      ]
+    }
+  },
+  "projects": {
+    "title": "Key Projects",
+    "items": [
+      {
+        "title": "La Maison du Whisky - Premium E-Commerce",
+        "date": "2024",
+        "company": "La Maison du Whisky",
+        "description": "Technical leadership of Magento 2 platform, focusing on performance and security. Implementation of headless architecture with AWS and Elasticsearch.",
+        "tags": ["magento2", "headless", "performance"]
+      },
+      {
+        "title": "Valrhona - B2B Platform",
+        "date": "2018",
+        "company": "Valrhona",
+        "description": "B2B platform redesign with Mirakl marketplace integration and SSO. Configuration of Salesforce API flows and custom authentication.",
+        "tags": ["b2b", "magento", "api"]
+      },
+      {
+        "title": "Legrand - B2B Solution",
+        "date": "2016-2019",
+        "company": "Legrand",
+        "description": "Development of Magento 2 B2B platform with advanced features for professional buyers. Modular and scalable architecture.",
+        "tags": ["b2b", "magento", "performance"]
+      },
+      {
+        "title": "Chausson Matériaux - B2B E-commerce",
+        "date": "2010-2014",
+        "company": "Chausson Matériaux",
+        "description": "Creation of cross-channel e-commerce platform with integrated PIM for over 20,000 products. Automation of catalogs and data flows.",
+        "tags": ["b2b", "pim", "automation"]
+      }
+    ],
+    "tags": {
+      "magento2": "Magento 2",
+      "headless": "Headless",
+      "performance": "Performance",
+      "b2b": "B2B",
+      "magento": "Magento",
+      "api": "API",
+      "pim": "PIM",
+      "automation": "Automation"
+    }
+  },
+  "hero": {
+    "title": "Maria-Lena Pietri",
+    "subtitle": "Senior Magento Expert & E-commerce Consultant"
+  },
+  "about": {
+    "content": "Senior Magento expert with over 8 years of experience in e-commerce development. Specialized in creating robust and scalable solutions, I combine technical expertise with strategic vision to optimize e-commerce platform performance. My approach combines technical excellence with business understanding to ensure project success."
+  },
+  "summary": "Senior Magento expert with extensive experience in e-commerce development. Major projects: Magento 2 Migration for Beaumanoir Group (2022-2023), Performance Optimization for Zannier Group (2022), B2B Development for Royer Group (2021-2022), Cloud Migration for Morgan (2021), Magento 2 Platform Development for Legrand (2016-2019), and E-commerce Platform Creation for Chausson Matériaux (2010-2014). Specialized in complex migrations, performance optimization, and B2B solution development."
+}

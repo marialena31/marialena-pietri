@@ -1,0 +1,117 @@
+{
+  "contact": "Contacto",
+  "technicalSkills": "Habilidades Técnicas",
+  "languages": "Idiomas",
+  "languagesList": [
+    {
+      "language": "Francés",
+      "level": "Nativo",
+      "progress": 100
+    },
+    {
+      "language": "Inglés",
+      "level": "Profesional",
+      "progress": 90
+    },
+    {
+      "language": "Español",
+      "level": "Profesional",
+      "progress": 70
+    }
+  ],
+  "categories": {
+    "frontend": {
+      "title": "Desarrollo Frontend",
+      "skills": [
+        "HTML5/CSS3",
+        "SCSS",
+        "JavaScript/TypeScript",
+        "Knockout.js",
+        "React",
+        "Next.js",
+        "Accesibilidad"
+      ]
+    },
+    "backend": {
+      "title": "Desarrollo Backend",
+      "skills": [
+        "PHP",
+        "Node.js",
+        "APIs REST",
+        "GraphQL",
+        "MongoDB",
+        "Redis",
+        "Elasticsearch"
+      ]
+    },
+    "ecommerce": {
+      "title": "E-commerce",
+      "skills": [
+        "Magento",
+        "Adobe Commerce Cloud"
+      ]
+    },
+    "devops": {
+      "title": "DevOps y Herramientas",
+      "skills": [
+        "Git",
+        "Docker",
+        "AWS",
+        "New Relic",
+        "Datadog",
+        "Performance Optimization"
+      ]
+    }
+  },
+  "projects": {
+    "title": "Proyectos Clave",
+    "items": [
+      {
+        "title": "La Maison du Whisky - E-Commerce Premium",
+        "date": "2024",
+        "company": "La Maison du Whisky",
+        "description": "Dirección técnica de la plataforma Magento 2, enfocada en rendimiento y seguridad. Implementación de arquitectura headless con AWS y Elasticsearch.",
+        "tags": ["magento2", "headless", "performance"]
+      },
+      {
+        "title": "Valrhona - Plataforma B2B",
+        "date": "2018",
+        "company": "Valrhona",
+        "description": "Rediseño de plataforma B2B con integración de marketplace Mirakl y SSO. Configuración de flujos API de Salesforce y autenticación personalizada.",
+        "tags": ["b2b", "magento", "api"]
+      },
+      {
+        "title": "Legrand - Solución B2B",
+        "date": "2016-2019",
+        "company": "Legrand",
+        "description": "Desarrollo de plataforma B2B Magento 2 con funcionalidades avanzadas para compradores profesionales. Arquitectura modular y escalable.",
+        "tags": ["b2b", "magento", "performance"]
+      },
+      {
+        "title": "Chausson Matériaux - E-commerce B2B",
+        "date": "2010-2014",
+        "company": "Chausson Matériaux",
+        "description": "Creación de plataforma e-commerce multicanal con PIM integrado para más de 20.000 productos. Automatización de catálogos y flujos de datos.",
+        "tags": ["b2b", "pim", "automation"]
+      }
+    ],
+    "tags": {
+      "magento2": "Magento 2",
+      "headless": "Headless",
+      "performance": "Rendimiento",
+      "b2b": "B2B",
+      "magento": "Magento",
+      "api": "API",
+      "pim": "PIM",
+      "automation": "Automatización"
+    }
+  },
+  "hero": {
+    "title": "Maria-Lena Pietri",
+    "subtitle": "Experta Senior en Magento y Consultora E-commerce"
+  },
+  "about": {
+    "content": "Experta senior en Magento con más de 8 años de experiencia en desarrollo de comercio electrónico. Especializada en crear soluciones robustas y escalables, combino experiencia técnica con visión estratégica para optimizar el rendimiento de plataformas e-commerce. Mi enfoque une excelencia técnica y comprensión empresarial para garantizar el éxito de los proyectos."
+  },
+  "summary": "Experta senior en Magento con amplia experiencia en desarrollo de comercio electrónico. Proyectos principales: Migración Magento 2 para Grupo Beaumanoir (2022-2023), Optimización de rendimiento para Grupo Zannier (2022), Desarrollo B2B para Grupo Royer (2021-2022), Migración Cloud para Morgan (2021), Desarrollo de plataforma Magento 2 para Legrand (2016-2019), y Creación de plataforma e-commerce para Chausson Matériaux (2010-2014). Especializada en migraciones complejas, optimización de rendimiento y desarrollo de soluciones B2B."
+}
