@@ -38,24 +38,6 @@ const Contact = () => {
   });
   const [errors, setErrors] = useState<FormErrors>( {});
 
-  const fetchCsrfToken = async () => {
-    try {
-      const API_URL = process.env.GATSBY_API_URL || 'http://localhost:3000';
-      const response = await axios.get(`${API_URL}/api/csrf-token`, {
-        withCredentials: false
-      });
-      
-      if (response.headers['x-csrf-token']) {
-        return response.headers['x-csrf-token'];
-      } else if (response.data && response.data.token) {
-        return response.data.token;
-      }
-      return null;
-    } catch (error) {
-      return null;
-    }
-  };
-
   const validateForm = () => {
     const newErrors: FormErrors = {};
 
@@ -99,51 +81,50 @@ const Contact = () => {
     setMessage(null);
 
     try {
-      const token = await fetchCsrfToken();
-      if (!token) {
-        throw new Error('Failed to get security token');
-      }
-
       const API_URL = process.env.GATSBY_API_URL || 'http://localhost:3000';
       const API_KEY = process.env.GATSBY_API_KEY;
       const TO_EMAIL = process.env.GATSBY_TO_EMAIL_ADDRESS;
 
-      const response = await axios({
-        method: 'post',
-        url: `${API_URL}/api/mail/send`,
-        data: {
+      // First get CSRF token
+      const csrfResponse = await axios.get(`${API_URL}/api/csrf-token`);
+      const csrfToken = csrfResponse.data.token;
+
+      console.log('Sending email to:', `${API_URL}/api/mail/send`);
+
+      const response = await axios.post(
+        `${API_URL}/api/mail/send`,
+        {
           to: TO_EMAIL,
-          subject: `Contact Form: Message from ${formData.name}`,
+          subject: `Contact Form: ${formData.subject}`,
           text: `
-            Name: ${formData.name}
-            Email: ${formData.email}
-            Subject: ${formData.subject}
-            Message: ${formData.message}
+Name: ${formData.name}
+Email: ${formData.email}
+Subject: ${formData.subject}
+
+Message:
+${formData.message}
           `
         },
-        headers: {
-          'x-api-key': API_KEY,
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-          'X-CSRF-Token': token
-        },
-        withCredentials: false
-      });
+        {
+          headers: {
+            'Content-Type': 'application/json',
+            'x-api-key': API_KEY || '',
+            'X-CSRF-Token': csrfToken
+          }
+        }
+      );
 
+      console.log('Response:', response.data);
+
+      // If we get here, it means the request was successful
       setMessage({ type: 'success', text: t('form.success') });
       setFormData({ name: '', email: '', subject: '', message: '' });
     } catch (error: any) {
-      if (error.response?.status === 429) {
-        setMessage({ 
-          type: 'error', 
-          text: 'Too many requests. Please wait a moment before trying again.'
-        });
-      } else {
-        setMessage({ 
-          type: 'error', 
-          text: error.response?.data?.message || error.message || t('error.message')
-        });
-      }
+      console.error('Send error:', error);
+      setMessage({ 
+        type: 'error', 
+        text: error.message || t('error.message')
+      });
     } finally {
       setLoading(false);
     }
