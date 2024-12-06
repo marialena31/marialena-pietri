@@ -189,7 +189,19 @@ const Hero = () => {
                   maxWidth: 400,
                   height: 'auto',
                   borderRadius: '50%',
-                  boxShadow: theme.shadows[10],
+                  boxShadow: `0 0 20px ${theme.palette.primary.main}40,
+                             0 0 40px ${theme.palette.secondary.main}20`,
+                  transition: 'all 0.3s ease-in-out',
+                  position: 'relative',
+                  zIndex: 1,
+                  border: `4px solid rgba(255, 255, 255, 0.1)`,
+                  background: `linear-gradient(135deg, ${theme.palette.primary.main}10, ${theme.palette.secondary.main}10)`,
+                  '&:hover': {
+                    transform: 'scale(1.02)',
+                    boxShadow: `0 0 25px ${theme.palette.primary.main}60,
+                               0 0 50px ${theme.palette.secondary.main}30`,
+                    border: `4px solid rgba(255, 255, 255, 0.2)`,
+                  }
                 }}
               />
             </Box>

@@ -122,7 +122,7 @@ const Contact = () => {
           `
         },
         headers: {
-          'Authorization': `Bearer ${API_KEY}`,
+          'x-api-key': API_KEY,
           'Content-Type': 'application/json',
           'Accept': 'application/json',
           'X-CSRF-Token': token
