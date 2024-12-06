@@ -65,15 +65,25 @@ const About = () => {
       <Container maxWidth="lg">
         <Typography
           variant="h2"
+          component="h2"
+          align="center"
+          gutterBottom
           sx={{
-            fontSize: { xs: '2rem', md: '2.5rem' },
-            fontWeight: 700,
             mb: 6,
-            textAlign: 'center',
-            background: `linear-gradient(135deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
-            backgroundClip: 'text',
-            WebkitBackgroundClip: 'text',
-            color: 'transparent',
+            color: 'white',
+            fontWeight: 600,
+            position: 'relative',
+            '&::after': {
+              content: '""',
+              position: 'absolute',
+              bottom: '-10px',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              width: '60px',
+              height: '4px',
+              background: `linear-gradient(90deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
+              borderRadius: '2px',
+            }
           }}
         >
           {t('title')}

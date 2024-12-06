@@ -36,7 +36,7 @@ const Contact = () => {
     subject: '',
     message: '',
   });
-  const [errors, setErrors] = useState<FormErrors>({});
+  const [errors, setErrors] = useState<FormErrors>( {});
 
   const fetchCsrfToken = async () => {
     try {
@@ -206,13 +206,13 @@ const Contact = () => {
           {t('title')}
         </Typography>
         <Typography
-          variant="h3"
-          component="h3"
+          variant="h6"
+          component="div"
           align="center"
-          gutterBottom
           sx={{
             mb: 6,
-            color: theme.palette.text.secondary,
+            color: 'rgba(255, 255, 255, 0.7)',
+            fontWeight: 400,
           }}
         >
           {t('subtitle')}

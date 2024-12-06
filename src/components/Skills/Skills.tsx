@@ -128,12 +128,22 @@ const Skills = () => {
           component="h2"
           align="center"
           gutterBottom
-          sx={{
-            mb: 8,
-            background: `linear-gradient(45deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
-            WebkitBackgroundClip: 'text',
-            WebkitTextFillColor: 'transparent',
-            fontWeight: 'bold',
+          sx={{ 
+            mb: 6,
+            color: 'white',
+            fontWeight: 600,
+            position: 'relative',
+            '&::after': {
+              content: '""',
+              position: 'absolute',
+              bottom: '-10px',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              width: '60px',
+              height: '4px',
+              background: `linear-gradient(90deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
+              borderRadius: '2px',
+            }
           }}
         >
           {t('title')}

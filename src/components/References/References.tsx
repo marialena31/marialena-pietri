@@ -76,16 +76,13 @@ const References: React.FC = () => {
         </Typography>
 
         <Typography
-          variant="h3"
-          component="h3"
+          variant="h6"
+          component="div"
           align="center"
-          sx={{ 
+          sx={{
             mb: 6,
             color: 'rgba(255, 255, 255, 0.7)',
-            maxWidth: '800px',
-            margin: '0 auto',
-            fontSize: '1.1rem',
-            lineHeight: 1.6,
+            fontWeight: 400,
           }}
         >
           {t('subtitle')}

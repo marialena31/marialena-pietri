@@ -95,15 +95,25 @@ const Projects = () => {
       <Container maxWidth="lg">
         <Typography
           variant="h2"
-          component="div"
+          component="h2"
           align="center"
-          sx={{
-            mb: 1,
-            background: `linear-gradient(135deg, ${theme.palette.primary.light}, ${theme.palette.secondary.light})`,
-            backgroundClip: 'text',
-            WebkitBackgroundClip: 'text',
-            color: 'transparent',
+          gutterBottom
+          sx={{ 
+            mb: 6,
+            color: 'white',
             fontWeight: 600,
+            position: 'relative',
+            '&::after': {
+              content: '""',
+              position: 'absolute',
+              bottom: '-10px',
+              left: '50%',
+              transform: 'translateX(-50%)',
+              width: '60px',
+              height: '4px',
+              background: `linear-gradient(90deg, ${theme.palette.primary.main}, ${theme.palette.secondary.main})`,
+              borderRadius: '2px',
+            }
           }}
         >
           {t('title')}
