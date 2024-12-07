@@ -1,5 +1,5 @@
 import React from 'react';
-import { Box, Typography, Stack, Link, Chip, IconButton, Grid } from '@mui/material';
+import { Box, Typography, Stack, Link, Chip } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import './i18n';
 import EmailIcon from '@mui/icons-material/Email';
@@ -12,7 +12,7 @@ interface CVContentProps {
 }
 
 const CVContent: React.FC<CVContentProps> = () => {
-  const { t, i18n } = useTranslation('cv');
+  const { t } = useTranslation('cv');
   const categories = t('categories', { returnObjects: true }) || {};
   const languages = t('languagesList', { returnObjects: true }) || [];
   const projects = t('projects.items', { returnObjects: true }) || [];
@@ -20,6 +20,9 @@ const CVContent: React.FC<CVContentProps> = () => {
   return (
     <Box 
       data-cv-content
+      component="article"
+      role="article"
+      aria-label="CV Content"
       sx={{
         height: '100%',
         display: 'flex',
@@ -45,23 +48,31 @@ const CVContent: React.FC<CVContentProps> = () => {
         }}
       >
         {/* Left Column */}
-        <Box sx={{ 
-          width: { xs: '100%', sm: '30%' },
-          position: 'relative',
-          display: 'flex',
-          flexDirection: 'column',
-          gap: 2
-        }}>
+        <Box 
+          component="aside"
+          role="complementary"
+          sx={{ 
+            width: { xs: '100%', sm: '30%' },
+            position: 'relative',
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 2
+          }}
+        >
           {/* Profile Photo */}
-          <Box sx={{ 
-            mb: 2, 
-            display: 'flex', 
-            justifyContent: 'center',
-            height: '300px',
-            minHeight: '300px',
-            flexShrink: 0,
-            alignItems: 'center'
-          }}>
+          <Box 
+            component="figure"
+            sx={{ 
+              mb: 2, 
+              display: 'flex', 
+              justifyContent: 'center',
+              height: '300px',
+              minHeight: '300px',
+              flexShrink: 0,
+              alignItems: 'center',
+              margin: 0
+            }}
+          >
             <Box
               sx={{
                 width: '200px !important',
@@ -79,6 +90,10 @@ const CVContent: React.FC<CVContentProps> = () => {
               <Box
                 component="img"
                 src="/images/profile.webp"
+                alt="Maria Lena Pietri profile photo"
+                loading="eager"
+                width={200}
+                height={200}
                 sx={{
                   position: 'absolute',
                   top: '50%',
@@ -93,14 +108,18 @@ const CVContent: React.FC<CVContentProps> = () => {
           </Box>
 
           {/* Contact Info */}
-          <Box sx={{
-            mb: 2,
-            p: 2.5,
-            borderRadius: '12px',
-            background: 'linear-gradient(145deg, rgba(25, 25, 25, 0.9), rgba(35, 35, 35, 0.9))',
-            backdropFilter: 'blur(5px)',
-          }}>
-            <Typography variant="h6" sx={{ 
+          <Box 
+            component="section"
+            aria-label="Contact Information"
+            sx={{
+              mb: 2,
+              p: 2.5,
+              borderRadius: '12px',
+              background: 'linear-gradient(145deg, rgba(25, 25, 25, 0.9), rgba(35, 35, 35, 0.9))',
+              backdropFilter: 'blur(5px)',
+            }}
+          >
+            <Typography variant="h6" component="h2" sx={{ 
               color: '#90caf9', 
               mb: 2, 
               fontWeight: 600,
@@ -108,13 +127,23 @@ const CVContent: React.FC<CVContentProps> = () => {
             }}>
               {t('contact')}
             </Typography>
-            <Stack spacing={1.5}>
+            <Stack spacing={1.5} component="address" sx={{ fontStyle: 'normal' }}>
               <Stack direction="row" alignItems="center" spacing={1}>
-                <PhoneIcon sx={{ color: '#90caf9', fontSize: '1.1rem' }} />
-                <Typography sx={{ fontSize: '0.875rem' }}>+33 07 61 81 11 01</Typography>
+                <PhoneIcon sx={{ color: '#90caf9', fontSize: '1.1rem' }} aria-hidden="true" />
+                <Link
+                  href="tel:+33076181101"
+                  sx={{
+                    color: 'white',
+                    textDecoration: 'none',
+                    '&:hover': { color: '#90caf9' },
+                    fontSize: '0.875rem'
+                  }}
+                >
+                  +33 07 61 81 11 01
+                </Link>
               </Stack>
               <Stack direction="row" alignItems="center" spacing={1}>
-                <EmailIcon sx={{ color: '#90caf9', fontSize: '1.1rem' }} />
+                <EmailIcon sx={{ color: '#90caf9', fontSize: '1.1rem' }} aria-hidden="true" />
                 <Link 
                   href="mailto:contact@marialena-pietri.fr"
                   sx={{
@@ -128,22 +157,26 @@ const CVContent: React.FC<CVContentProps> = () => {
                 </Link>
               </Stack>
               <Stack direction="row" alignItems="center" spacing={1}>
-                <LocationOnIcon sx={{ color: '#90caf9', fontSize: '1.1rem' }} />
+                <LocationOnIcon sx={{ color: '#90caf9', fontSize: '1.1rem' }} aria-hidden="true" />
                 <Typography sx={{ fontSize: '0.875rem' }}>Colomiers, France</Typography>
               </Stack>
             </Stack>
           </Box>
 
           {/* Technical Skills */}
-          <Box sx={{
-            mb: 2,
-            p: 3,
-            width: '100%',
-            borderRadius: '12px',
-            background: 'linear-gradient(145deg, rgba(25, 25, 25, 0.9), rgba(35, 35, 35, 0.9))',
-            backdropFilter: 'blur(5px)',
-          }}>
-            <Typography variant="h5" sx={{ 
+          <Box 
+            component="section"
+            aria-label="Technical Skills"
+            sx={{
+              mb: 2,
+              p: 3,
+              width: '100%',
+              borderRadius: '12px',
+              background: 'linear-gradient(145deg, rgba(25, 25, 25, 0.9), rgba(35, 35, 35, 0.9))',
+              backdropFilter: 'blur(5px)',
+            }}
+          >
+            <Typography variant="h5" component="h2" sx={{ 
               color: '#90caf9',
               mb: 3,
               fontWeight: 600,
@@ -151,10 +184,10 @@ const CVContent: React.FC<CVContentProps> = () => {
             }}>
               {t('technicalSkills')}
             </Typography>
-            <Stack spacing={3}>
-              {Object.entries(t('categories', { returnObjects: true })).map(([key, category]: [string, any]) => (
-                <Box key={key}>
-                  <Typography sx={{ 
+            <Stack spacing={3} component="ul" sx={{ listStyle: 'none', p: 0, m: 0 }}>
+              {Object.entries(categories).map(([key, category]: [string, any]) => (
+                <Box component="li" key={key}>
+                  <Typography component="h3" sx={{ 
                     color: '#90caf9',
                     mb: 1.5,
                     fontWeight: 500,
@@ -162,25 +195,19 @@ const CVContent: React.FC<CVContentProps> = () => {
                   }}>
                     {category.title}
                   </Typography>
-                  <Box sx={{ 
-                    display: 'flex', 
-                    flexWrap: 'wrap', 
-                    gap: 1.5,
-                    '& img': {
-                      width: '24px',
-                      height: '24px',
-                      objectFit: 'contain',
-                      transition: 'transform 0.2s ease',
-                      filter: 'brightness(0.9)',
-                      '&:hover': {
-                        transform: 'scale(1.1)',
-                        filter: 'brightness(1)'
-                      }
-                    }
-                  }}>
+                  <Box 
+                    component="ul"
+                    sx={{ 
+                      display: 'flex', 
+                      flexWrap: 'wrap', 
+                      gap: 1.5,
+                      p: 0,
+                      m: 0,
+                      listStyle: 'none'
+                    }}
+                  >
                     {Array.isArray(category.skills) && category.skills.map((skill: string) => {
                       const skillMap: { [key: string]: string } = {
-                        // Frontend
                         'HTML5/CSS3': 'html5',
                         'JavaScript/TypeScript': 'javascript',
                         'React': 'reactjs',
@@ -188,8 +215,6 @@ const CVContent: React.FC<CVContentProps> = () => {
                         'SCSS': 'scss',
                         'Knockout.js': 'knockoutjs',
                         'Accessibilité': 'accessibility',
-                        
-                        // Backend
                         'Node.js': 'nodejs',
                         'PHP': 'php',
                         'GraphQL': 'graphql',
@@ -197,12 +222,8 @@ const CVContent: React.FC<CVContentProps> = () => {
                         'Redis': 'redis',
                         'Elasticsearch': 'elasticsearch',
                         'APIs REST': 'rest-api',
-                        
-                        // E-commerce
                         'Magento': 'magento',
-                        'Adobe Commerce Cloud': 'adobe',
-                        
-                        // DevOps
+                        'Adobe Commerce Cloud': 'Adobe-Commerce',
                         'Git': 'git',
                         'Docker': 'docker',
                         'AWS': 'aws',
@@ -216,6 +237,7 @@ const CVContent: React.FC<CVContentProps> = () => {
 
                       return (
                         <Box
+                          component="li"
                           key={skill}
                           sx={{
                             display: 'flex',
@@ -230,10 +252,18 @@ const CVContent: React.FC<CVContentProps> = () => {
                             },
                           }}
                         >
-                          <img
+                          <Box
+                            component="img"
                             src={iconPath}
-                            alt={skill}
+                            alt={`${skill} icon`}
                             loading="lazy"
+                            width={24}
+                            height={24}
+                            sx={{
+                              width: '24px',
+                              height: '24px',
+                              objectFit: 'contain'
+                            }}
                           />
                         </Box>
                       );
@@ -245,13 +275,17 @@ const CVContent: React.FC<CVContentProps> = () => {
           </Box>
 
           {/* Languages */}
-          <Box sx={{
-            p: 2.5,
-            borderRadius: '12px',
-            background: 'linear-gradient(145deg, rgba(25, 25, 25, 0.9), rgba(35, 35, 35, 0.9))',
-            backdropFilter: 'blur(5px)',
-          }}>
-            <Typography variant="h6" sx={{ 
+          <Box 
+            component="section"
+            aria-label="Language Skills"
+            sx={{
+              p: 2.5,
+              borderRadius: '12px',
+              background: 'linear-gradient(145deg, rgba(25, 25, 25, 0.9), rgba(35, 35, 35, 0.9))',
+              backdropFilter: 'blur(5px)',
+            }}
+          >
+            <Typography variant="h6" component="h2" sx={{ 
               color: '#90caf9', 
               mb: 2, 
               fontWeight: 600,
@@ -259,23 +293,30 @@ const CVContent: React.FC<CVContentProps> = () => {
             }}>
               {t('languages')}
             </Typography>
-            <Stack spacing={2}>
+            <Stack spacing={2} component="ul" sx={{ listStyle: 'none', p: 0, m: 0 }}>
               {Array.isArray(languages) && languages.map((lang: any, index: number) => (
-                <Box key={index}>
-                  <Typography sx={{ 
+                <Box component="li" key={index}>
+                  <Typography component="h3" sx={{ 
                     fontSize: '0.875rem',
                     mb: 0.5
                   }}>
                     {lang.language}
                   </Typography>
-                  <Box sx={{ 
-                    width: '100%', 
-                    height: '4px',
-                    bgcolor: 'rgba(144, 202, 249, 0.1)',
-                    borderRadius: '2px',
-                    position: 'relative',
-                    overflow: 'hidden'
-                  }}>
+                  <Box 
+                    role="progressbar"
+                    aria-valuenow={lang.progress}
+                    aria-valuemin={0}
+                    aria-valuemax={100}
+                    aria-label={`${lang.language} proficiency: ${lang.progress}%`}
+                    sx={{ 
+                      width: '100%', 
+                      height: '4px',
+                      bgcolor: 'rgba(144, 202, 249, 0.1)',
+                      borderRadius: '2px',
+                      position: 'relative',
+                      overflow: 'hidden'
+                    }}
+                  >
                     <Box sx={{ 
                       position: 'absolute',
                       top: 0,
@@ -294,10 +335,13 @@ const CVContent: React.FC<CVContentProps> = () => {
         </Box>
 
         {/* Right Column */}
-        <Box sx={{ width: { xs: '100%', sm: '70%' }, pl: { sm: 2 } }}>
+        <Box 
+          component="main"
+          sx={{ width: { xs: '100%', sm: '70%' }, pl: { sm: 2 } }}
+        >
           {/* Header */}
-          <Box sx={{ mb: 5, textAlign: { xs: 'center', sm: 'left' } }}>
-            <Typography variant="h4" sx={{
+          <Box component="header" sx={{ mb: 5, textAlign: { xs: 'center', sm: 'left' } }}>
+            <Typography variant="h1" sx={{
               color: '#90caf9',
               fontWeight: 600,
               mb: 1,
@@ -305,7 +349,7 @@ const CVContent: React.FC<CVContentProps> = () => {
             }}>
               {t('hero.title')}
             </Typography>
-            <Typography variant="h6" sx={{
+            <Typography variant="h2" sx={{
               color: 'text.secondary',
               fontWeight: 500,
               fontSize: { xs: '1rem', sm: '1.1rem' }
@@ -315,14 +359,18 @@ const CVContent: React.FC<CVContentProps> = () => {
           </Box>
 
           {/* About */}
-          <Box sx={{
-            mb: 5,
-            p: 4,
-            width: '100%',
-            borderRadius: '12px',
-            background: 'linear-gradient(145deg, rgba(25, 25, 25, 0.9), rgba(35, 35, 35, 0.9))',
-            backdropFilter: 'blur(5px)',
-          }}>
+          <Box 
+            component="section"
+            aria-label="About Me"
+            sx={{
+              mb: 5,
+              p: 4,
+              width: '100%',
+              borderRadius: '12px',
+              background: 'linear-gradient(145deg, rgba(25, 25, 25, 0.9), rgba(35, 35, 35, 0.9))',
+              backdropFilter: 'blur(5px)',
+            }}
+          >
             <Typography paragraph sx={{ 
               color: 'rgba(255,255,255,0.9)',
               lineHeight: 1.6,
@@ -334,14 +382,18 @@ const CVContent: React.FC<CVContentProps> = () => {
           </Box>
 
           {/* Projects */}
-          <Box sx={{
-            p: 4,
-            width: '100%',
-            borderRadius: '12px',
-            background: 'linear-gradient(145deg, rgba(25, 25, 25, 0.9), rgba(35, 35, 35, 0.9))',
-            backdropFilter: 'blur(5px)',
-          }}>
-            <Typography variant="h5" sx={{ 
+          <Box 
+            component="section"
+            aria-label="Projects"
+            sx={{
+              p: 4,
+              width: '100%',
+              borderRadius: '12px',
+              background: 'linear-gradient(145deg, rgba(25, 25, 25, 0.9), rgba(35, 35, 35, 0.9))',
+              backdropFilter: 'blur(5px)',
+            }}
+          >
+            <Typography variant="h2" sx={{ 
               color: '#90caf9',
               mb: 3,
               fontWeight: 600,
@@ -349,9 +401,10 @@ const CVContent: React.FC<CVContentProps> = () => {
             }}>
               {t('projects.title')}
             </Typography>
-            <Stack spacing={2}>
+            <Stack spacing={2} component="ul" sx={{ listStyle: 'none', p: 0, m: 0 }}>
               {Array.isArray(projects) && projects.map((project: any, index: number) => (
                 <Box
+                  component="li"
                   key={index}
                   sx={{
                     p: 2.5,
@@ -366,18 +419,22 @@ const CVContent: React.FC<CVContentProps> = () => {
                   }}
                 >
                   <Box sx={{ display: 'flex', justifyContent: 'space-between', mb: 1, alignItems: 'center' }}>
-                    <Typography sx={{ 
+                    <Typography component="h3" sx={{ 
                       color: '#90caf9', 
                       fontWeight: 600,
                       fontSize: '0.95rem'
                     }}>
                       {project?.title}
                     </Typography>
-                    <Typography sx={{ 
-                      color: '#90caf9', 
-                      opacity: 0.8,
-                      fontSize: '0.8rem'
-                    }}>
+                    <Typography 
+                      component="time"
+                      dateTime={project?.date}
+                      sx={{ 
+                        color: '#90caf9', 
+                        opacity: 0.8,
+                        fontSize: '0.8rem'
+                      }}
+                    >
                       {project?.date}
                     </Typography>
                   </Box>
@@ -395,20 +452,31 @@ const CVContent: React.FC<CVContentProps> = () => {
                   }}>
                     {project?.description}
                   </Typography>
-                  <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 1 }}>
+                  <Box 
+                    component="ul"
+                    sx={{ 
+                      display: 'flex', 
+                      flexWrap: 'wrap', 
+                      gap: 1,
+                      p: 0,
+                      m: 0,
+                      listStyle: 'none'
+                    }}
+                  >
                     {Array.isArray(project?.tags) && project.tags.map((tag: string) => (
-                      <Chip
-                        key={tag}
-                        label={t(`projects.tags.${tag}`)}
-                        size="small"
-                        sx={{
-                          bgcolor: 'rgba(144, 202, 249, 0.1)',
-                          color: 'white',
-                          '&:hover': { bgcolor: 'rgba(144, 202, 249, 0.2)' },
-                          fontSize: '0.75rem',
-                          height: '24px'
-                        }}
-                      />
+                      <Box component="li" key={tag}>
+                        <Chip
+                          label={t(`projects.tags.${tag}`)}
+                          size="small"
+                          sx={{
+                            bgcolor: 'rgba(144, 202, 249, 0.1)',
+                            color: 'white',
+                            '&:hover': { bgcolor: 'rgba(144, 202, 249, 0.2)' },
+                            fontSize: '0.75rem',
+                            height: '24px'
+                          }}
+                        />
+                      </Box>
                     ))}
                   </Box>
                 </Box>
