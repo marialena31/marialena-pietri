@@ -41,12 +41,11 @@ const config: GatsbyConfig = {
           "frame-src": "https://www.google.com/recaptcha/ https://*.netlify.app https://*.netlify.com",
           "base-uri": "'self'",
           "form-action": "'self'",
-          "frame-ancestors": "'none'",
+          "frame-ancestors": "'self' https://*.netlify.app https://*.netlify.com",
           "object-src": "'none'",
           "manifest-src": "'self'",
           "media-src": "'self'",
-          "worker-src": "'self' blob:",
-          "prefetch-src": "'self'"
+          "worker-src": "'self' blob:"
         }
       }
     },
