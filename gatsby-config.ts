@@ -33,9 +33,9 @@ const config: GatsbyConfig = {
         mergeDefaultDirectives: true,
         directives: {
           "default-src": "'self'",
-          "script-src": "'self' 'sha256-egpbluqkD8NT0bY3bWy7raM9tRIMkfUWboq0Y8KqsFk=' https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/ https://*.netlify.app https://*.netlify.com",
-          "script-src-elem": "'self' 'sha256-v1oYH69RcooFs6F5XhMTzHiWlftYwnuQHDxIz0suNeo=' https://*.netlify.app https://*.netlify.com",
-          "style-src": "'self' 'sha256-Ext49gspPHCvQnkZPoRZMwmNL03mSa1YCzbtXrbKjec=' https://fonts.googleapis.com https://*.netlify.app https://*.netlify.com",
+          "script-src": "'self' https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/ https://*.netlify.app https://*.netlify.com",
+          "script-src-elem": "'self' https://*.netlify.app https://*.netlify.com",
+          "style-src": "'self' https://fonts.googleapis.com https://*.netlify.app https://*.netlify.com",
           "img-src": "'self' data: https: blob:",
           "font-src": "'self' data: https://fonts.gstatic.com",
           "connect-src": "'self' https://mail-server-api-nu.vercel.app http://localhost:3000 https://*.netlify.app https://*.netlify.com",
