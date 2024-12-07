@@ -45,7 +45,7 @@ const config: GatsbyConfig = {
           "object-src": "'none'",
           "manifest-src": "'self'",
           "media-src": "'self'",
-          "worker-src": "'self' blob:"
+          "worker-src": "'self' blob: data:",
         }
       }
     },
