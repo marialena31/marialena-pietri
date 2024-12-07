@@ -21,6 +21,26 @@ const config: GatsbyConfig = {
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sitemap`,
     {
+      resolve: 'gatsby-plugin-csp',
+      options: {
+        mergeDefaultDirectives: true,
+        directives: {
+          "default-src": "'self'",
+          "script-src": "'self' 'unsafe-inline' 'unsafe-eval' https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/",
+          "style-src": "'self' 'unsafe-inline' https://fonts.googleapis.com",
+          "img-src": "'self' data: https:",
+          "font-src": "'self' https://fonts.gstatic.com",
+          "connect-src": process.env.GATSBY_API_URL ? `'self' https://api.mailgun.net ${process.env.GATSBY_API_URL}` : "'self' https://api.mailgun.net",
+          "frame-src": "'self' https://www.google.com/recaptcha/",
+          "base-uri": "'self'",
+          "form-action": "'self'",
+          "frame-ancestors": "'none'",
+          "object-src": "'none'",
+          "upgrade-insecure-requests": true
+        }
+      }
+    },
+    {
       resolve: 'gatsby-plugin-react-helmet',
       options: {
         htmlAttributes: {
@@ -73,7 +93,7 @@ const config: GatsbyConfig = {
     {
       resolve: 'gatsby-plugin-env-variables',
       options: {
-        allowList: ['MAILGUN_API_KEY', 'MAILGUN_DOMAIN', 'MAILGUN_URL', 'TO_EMAIL_ADDRESS']
+        allowList: ['MAILGUN_API_KEY', 'MAILGUN_DOMAIN', 'MAILGUN_URL', 'TO_EMAIL_ADDRESS', 'GATSBY_API_URL']
       }
     },
     {
@@ -90,19 +110,13 @@ const config: GatsbyConfig = {
         path: `${__dirname}/src/i18n/data`,
       },
     },
-    {
-      resolve: `gatsby-plugin-sharp`,
-      options: {
-        defaults: {
-          formats: [`auto`, `webp`, `avif`],
-          placeholder: `blurred`,
-          quality: 90,
-          breakpoints: [320, 480, 768, 1024, 1366],
-          backgroundColor: `transparent`,
-        },
-      },
-    },
   ],
+  flags: {
+    PRESERVE_FILE_DOWNLOAD_CACHE: true,
+    PARALLEL_SOURCING: true,
+    PARTIAL_HYDRATION: true,
+    DETECT_NODE_MUTATIONS: true
+  }
 }
 
 export default config

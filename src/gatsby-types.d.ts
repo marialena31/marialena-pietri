@@ -28,8 +28,6 @@ type Scalars = {
   GatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData;
   /** The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf). */
   JSON: Record<string, unknown>;
-  /** Serialized elasticlunr search index */
-  SiteSearchIndex_Index: any;
 };
 
 type AVIFOptions = {
@@ -1316,7 +1314,6 @@ type Query = {
   readonly allSiteFunction: SiteFunctionConnection;
   readonly allSitePage: SitePageConnection;
   readonly allSitePlugin: SitePluginConnection;
-  readonly allSiteSearchIndex: SiteSearchIndexConnection;
   readonly directory: Maybe<Directory>;
   readonly file: Maybe<File>;
   readonly imageSharp: Maybe<ImageSharp>;
@@ -1325,7 +1322,6 @@ type Query = {
   readonly siteFunction: Maybe<SiteFunction>;
   readonly sitePage: Maybe<SitePage>;
   readonly sitePlugin: Maybe<SitePlugin>;
-  readonly siteSearchIndex: Maybe<SiteSearchIndex>;
 };
 
 
@@ -1390,14 +1386,6 @@ type Query_allSitePluginArgs = {
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
   sort: InputMaybe<ReadonlyArray<InputMaybe<SitePluginSortInput>>>;
-};
-
-
-type Query_allSiteSearchIndexArgs = {
-  filter: InputMaybe<SiteSearchIndexFilterInput>;
-  limit: InputMaybe<Scalars['Int']>;
-  skip: InputMaybe<Scalars['Int']>;
-  sort: InputMaybe<ReadonlyArray<InputMaybe<SiteSearchIndexSortInput>>>;
 };
 
 
@@ -1500,6 +1488,7 @@ type Query_imageSharpArgs = {
 type Query_siteArgs = {
   buildTime: InputMaybe<DateQueryOperatorInput>;
   children: InputMaybe<NodeFilterListInput>;
+  flags: InputMaybe<SiteFlagsFilterInput>;
   graphqlTypegen: InputMaybe<SiteGraphqlTypegenFilterInput>;
   host: InputMaybe<StringQueryOperatorInput>;
   id: InputMaybe<StringQueryOperatorInput>;
@@ -1569,19 +1558,10 @@ type Query_sitePluginArgs = {
   version: InputMaybe<StringQueryOperatorInput>;
 };
 
-
-type Query_siteSearchIndexArgs = {
-  children: InputMaybe<NodeFilterListInput>;
-  id: InputMaybe<StringQueryOperatorInput>;
-  index: InputMaybe<SiteSearchIndex_IndexQueryOperatorInput>;
-  internal: InputMaybe<InternalFilterInput>;
-  pages: InputMaybe<StringQueryOperatorInput>;
-  parent: InputMaybe<NodeFilterInput>;
-};
-
 type Site = Node & {
   readonly buildTime: Maybe<Scalars['Date']>;
   readonly children: ReadonlyArray<Node>;
+  readonly flags: Maybe<SiteFlags>;
   readonly graphqlTypegen: Maybe<SiteGraphqlTypegen>;
   readonly host: Maybe<Scalars['String']>;
   readonly id: Scalars['ID'];
@@ -1777,6 +1757,7 @@ type SiteEdge = {
 type SiteFieldSelector = {
   readonly buildTime: InputMaybe<FieldSelectorEnum>;
   readonly children: InputMaybe<NodeFieldSelector>;
+  readonly flags: InputMaybe<SiteFlagsFieldSelector>;
   readonly graphqlTypegen: InputMaybe<SiteGraphqlTypegenFieldSelector>;
   readonly host: InputMaybe<FieldSelectorEnum>;
   readonly id: InputMaybe<FieldSelectorEnum>;
@@ -1793,6 +1774,7 @@ type SiteFieldSelector = {
 type SiteFilterInput = {
   readonly buildTime: InputMaybe<DateQueryOperatorInput>;
   readonly children: InputMaybe<NodeFilterListInput>;
+  readonly flags: InputMaybe<SiteFlagsFilterInput>;
   readonly graphqlTypegen: InputMaybe<SiteGraphqlTypegenFilterInput>;
   readonly host: InputMaybe<StringQueryOperatorInput>;
   readonly id: InputMaybe<StringQueryOperatorInput>;
@@ -1804,6 +1786,34 @@ type SiteFilterInput = {
   readonly port: InputMaybe<IntQueryOperatorInput>;
   readonly siteMetadata: InputMaybe<SiteSiteMetadataFilterInput>;
   readonly trailingSlash: InputMaybe<StringQueryOperatorInput>;
+};
+
+type SiteFlags = {
+  readonly DETECT_NODE_MUTATIONS: Maybe<Scalars['Boolean']>;
+  readonly PARALLEL_SOURCING: Maybe<Scalars['Boolean']>;
+  readonly PARTIAL_HYDRATION: Maybe<Scalars['Boolean']>;
+  readonly PRESERVE_FILE_DOWNLOAD_CACHE: Maybe<Scalars['Boolean']>;
+};
+
+type SiteFlagsFieldSelector = {
+  readonly DETECT_NODE_MUTATIONS: InputMaybe<FieldSelectorEnum>;
+  readonly PARALLEL_SOURCING: InputMaybe<FieldSelectorEnum>;
+  readonly PARTIAL_HYDRATION: InputMaybe<FieldSelectorEnum>;
+  readonly PRESERVE_FILE_DOWNLOAD_CACHE: InputMaybe<FieldSelectorEnum>;
+};
+
+type SiteFlagsFilterInput = {
+  readonly DETECT_NODE_MUTATIONS: InputMaybe<BooleanQueryOperatorInput>;
+  readonly PARALLEL_SOURCING: InputMaybe<BooleanQueryOperatorInput>;
+  readonly PARTIAL_HYDRATION: InputMaybe<BooleanQueryOperatorInput>;
+  readonly PRESERVE_FILE_DOWNLOAD_CACHE: InputMaybe<BooleanQueryOperatorInput>;
+};
+
+type SiteFlagsSortInput = {
+  readonly DETECT_NODE_MUTATIONS: InputMaybe<SortOrderEnum>;
+  readonly PARALLEL_SOURCING: InputMaybe<SortOrderEnum>;
+  readonly PARTIAL_HYDRATION: InputMaybe<SortOrderEnum>;
+  readonly PRESERVE_FILE_DOWNLOAD_CACHE: InputMaybe<SortOrderEnum>;
 };
 
 type SiteFunction = Node & {
@@ -2305,135 +2315,6 @@ type SitePluginSortInput = {
   readonly version: InputMaybe<SortOrderEnum>;
 };
 
-type SiteSearchIndex = Node & {
-  readonly children: ReadonlyArray<Node>;
-  readonly id: Scalars['ID'];
-  readonly index: Maybe<Scalars['SiteSearchIndex_Index']>;
-  readonly internal: Internal;
-  readonly pages: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
-  readonly parent: Maybe<Node>;
-};
-
-type SiteSearchIndexConnection = {
-  readonly distinct: ReadonlyArray<Scalars['String']>;
-  readonly edges: ReadonlyArray<SiteSearchIndexEdge>;
-  readonly group: ReadonlyArray<SiteSearchIndexGroupConnection>;
-  readonly max: Maybe<Scalars['Float']>;
-  readonly min: Maybe<Scalars['Float']>;
-  readonly nodes: ReadonlyArray<SiteSearchIndex>;
-  readonly pageInfo: PageInfo;
-  readonly sum: Maybe<Scalars['Float']>;
-  readonly totalCount: Scalars['Int'];
-};
-
-
-type SiteSearchIndexConnection_distinctArgs = {
-  field: SiteSearchIndexFieldSelector;
-};
-
-
-type SiteSearchIndexConnection_groupArgs = {
-  field: SiteSearchIndexFieldSelector;
-  limit: InputMaybe<Scalars['Int']>;
-  skip: InputMaybe<Scalars['Int']>;
-};
-
-
-type SiteSearchIndexConnection_maxArgs = {
-  field: SiteSearchIndexFieldSelector;
-};
-
-
-type SiteSearchIndexConnection_minArgs = {
-  field: SiteSearchIndexFieldSelector;
-};
-
-
-type SiteSearchIndexConnection_sumArgs = {
-  field: SiteSearchIndexFieldSelector;
-};
-
-type SiteSearchIndexEdge = {
-  readonly next: Maybe<SiteSearchIndex>;
-  readonly node: SiteSearchIndex;
-  readonly previous: Maybe<SiteSearchIndex>;
-};
-
-type SiteSearchIndexFieldSelector = {
-  readonly children: InputMaybe<NodeFieldSelector>;
-  readonly id: InputMaybe<FieldSelectorEnum>;
-  readonly index: InputMaybe<FieldSelectorEnum>;
-  readonly internal: InputMaybe<InternalFieldSelector>;
-  readonly pages: InputMaybe<FieldSelectorEnum>;
-  readonly parent: InputMaybe<NodeFieldSelector>;
-};
-
-type SiteSearchIndexFilterInput = {
-  readonly children: InputMaybe<NodeFilterListInput>;
-  readonly id: InputMaybe<StringQueryOperatorInput>;
-  readonly index: InputMaybe<SiteSearchIndex_IndexQueryOperatorInput>;
-  readonly internal: InputMaybe<InternalFilterInput>;
-  readonly pages: InputMaybe<StringQueryOperatorInput>;
-  readonly parent: InputMaybe<NodeFilterInput>;
-};
-
-type SiteSearchIndexGroupConnection = {
-  readonly distinct: ReadonlyArray<Scalars['String']>;
-  readonly edges: ReadonlyArray<SiteSearchIndexEdge>;
-  readonly field: Scalars['String'];
-  readonly fieldValue: Maybe<Scalars['String']>;
-  readonly group: ReadonlyArray<SiteSearchIndexGroupConnection>;
-  readonly max: Maybe<Scalars['Float']>;
-  readonly min: Maybe<Scalars['Float']>;
-  readonly nodes: ReadonlyArray<SiteSearchIndex>;
-  readonly pageInfo: PageInfo;
-  readonly sum: Maybe<Scalars['Float']>;
-  readonly totalCount: Scalars['Int'];
-};
-
-
-type SiteSearchIndexGroupConnection_distinctArgs = {
-  field: SiteSearchIndexFieldSelector;
-};
-
-
-type SiteSearchIndexGroupConnection_groupArgs = {
-  field: SiteSearchIndexFieldSelector;
-  limit: InputMaybe<Scalars['Int']>;
-  skip: InputMaybe<Scalars['Int']>;
-};
-
-
-type SiteSearchIndexGroupConnection_maxArgs = {
-  field: SiteSearchIndexFieldSelector;
-};
-
-
-type SiteSearchIndexGroupConnection_minArgs = {
-  field: SiteSearchIndexFieldSelector;
-};
-
-
-type SiteSearchIndexGroupConnection_sumArgs = {
-  field: SiteSearchIndexFieldSelector;
-};
-
-type SiteSearchIndexSortInput = {
-  readonly children: InputMaybe<NodeSortInput>;
-  readonly id: InputMaybe<SortOrderEnum>;
-  readonly index: InputMaybe<SortOrderEnum>;
-  readonly internal: InputMaybe<InternalSortInput>;
-  readonly pages: InputMaybe<SortOrderEnum>;
-  readonly parent: InputMaybe<NodeSortInput>;
-};
-
-type SiteSearchIndex_IndexQueryOperatorInput = {
-  readonly eq: InputMaybe<Scalars['SiteSearchIndex_Index']>;
-  readonly in: InputMaybe<ReadonlyArray<InputMaybe<Scalars['SiteSearchIndex_Index']>>>;
-  readonly ne: InputMaybe<Scalars['SiteSearchIndex_Index']>;
-  readonly nin: InputMaybe<ReadonlyArray<InputMaybe<Scalars['SiteSearchIndex_Index']>>>;
-};
-
 type SiteSiteMetadata = {
   readonly author: Maybe<Scalars['String']>;
   readonly description: Maybe<Scalars['String']>;
@@ -2477,6 +2358,7 @@ type SiteSiteMetadataSortInput = {
 type SiteSortInput = {
   readonly buildTime: InputMaybe<SortOrderEnum>;
   readonly children: InputMaybe<NodeSortInput>;
+  readonly flags: InputMaybe<SiteFlagsSortInput>;
   readonly graphqlTypegen: InputMaybe<SiteGraphqlTypegenSortInput>;
   readonly host: InputMaybe<SortOrderEnum>;
   readonly id: InputMaybe<SortOrderEnum>;

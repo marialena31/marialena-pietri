@@ -18,6 +18,7 @@
     "form-data": "^4.0.1",
     "framer-motion": "^11.13.1",
     "gatsby": "^5.12.4",
+    "gatsby-plugin-csp": "^1.1.4",
     "gatsby-plugin-env-variables": "^2.3.0",
     "gatsby-plugin-html-attributes": "^1.0.5",
     "gatsby-plugin-image": "^3.14.0",

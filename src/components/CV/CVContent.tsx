@@ -223,7 +223,6 @@ const CVContent: React.FC<CVContentProps> = () => {
                         'MongoDB': 'mongodb',
                         'Redis': 'redis',
                         'Elasticsearch': 'elasticsearch',
-                        'APIs REST': 'rest-api',
                         'REST APIs': 'rest-api',
                         'APIs REST': 'rest-api',
                         'Magento': 'magento',
