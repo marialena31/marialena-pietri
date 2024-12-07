@@ -5,6 +5,13 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const config: GatsbyConfig = {
+  flags: {
+    PRESERVE_FILE_DOWNLOAD_CACHE: true,
+    PARALLEL_SOURCING: true,
+    PARTIAL_HYDRATION: false,  // Disable experimental partial hydration
+    DETECT_NODE_MUTATIONS: true,
+    FAST_DEV: true  // Enable faster development server startup
+  },
   siteMetadata: {
     title: `Maria-Lena Pietri - Expert Magento & E-commerce`,
     titleTemplate: `%s | Maria-Lena Pietri`,
@@ -30,13 +37,17 @@ const config: GatsbyConfig = {
           "style-src": "'self' 'unsafe-inline' https://fonts.googleapis.com",
           "img-src": "'self' data: https:",
           "font-src": "'self' https://fonts.gstatic.com",
-          "connect-src": process.env.GATSBY_API_URL ? `'self' https://api.mailgun.net ${process.env.GATSBY_API_URL}` : "'self' https://api.mailgun.net",
-          "frame-src": "'self' https://www.google.com/recaptcha/",
+          "connect-src": "'self' https://mail-server-api-nu.vercel.app http://localhost:3000",
+          "frame-src": "https://www.google.com/recaptcha/",
           "base-uri": "'self'",
           "form-action": "'self'",
           "frame-ancestors": "'none'",
           "object-src": "'none'",
-          "upgrade-insecure-requests": true
+          "upgrade-insecure-requests": true,
+          "manifest-src": "'self'",
+          "media-src": "'self'",
+          "worker-src": "'self'",
+          "prefetch-src": "'self'"
         }
       }
     },
@@ -93,7 +104,7 @@ const config: GatsbyConfig = {
     {
       resolve: 'gatsby-plugin-env-variables',
       options: {
-        allowList: ['MAILGUN_API_KEY', 'MAILGUN_DOMAIN', 'MAILGUN_URL', 'TO_EMAIL_ADDRESS', 'GATSBY_API_URL']
+        allowList: ['GATSBY_TO_EMAIL_ADDRESS', 'GATSBY_API_URL', 'GATSBY_API_KEY']
       }
     },
     {
@@ -111,12 +122,6 @@ const config: GatsbyConfig = {
       },
     },
   ],
-  flags: {
-    PRESERVE_FILE_DOWNLOAD_CACHE: true,
-    PARALLEL_SOURCING: true,
-    PARTIAL_HYDRATION: true,
-    DETECT_NODE_MUTATIONS: true
-  }
 }
 
 export default config
