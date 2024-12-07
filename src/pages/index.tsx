@@ -17,15 +17,44 @@ const IndexPage = () => {
 
   return (
     <Layout>
-      <Box component="div">
-        <Hero />
-        <About />
-        <Skills />
-        <Services />
-        <Projects />
-        <References />
-        <Contact />
-      </Box>
+      <main id="main-content" role="main">
+        <Box 
+          component="div" 
+          sx={{
+            display: 'flex',
+            flexDirection: 'column',
+            gap: 4
+          }}
+        >
+          <section aria-labelledby="hero-title">
+            <Hero />
+          </section>
+
+          <section aria-labelledby="about-title">
+            <About />
+          </section>
+
+          <section aria-labelledby="skills-title">
+            <Skills />
+          </section>
+
+          <section aria-labelledby="services-title">
+            <Services />
+          </section>
+
+          <section aria-labelledby="projects-title">
+            <Projects />
+          </section>
+
+          <section aria-labelledby="references-title">
+            <References />
+          </section>
+
+          <section aria-labelledby="contact-title">
+            <Contact />
+          </section>
+        </Box>
+      </main>
     </Layout>
   );
 };
@@ -44,5 +73,7 @@ export const Head: HeadFC = () => (
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Maria-Lena Pietri | Magento Developer & E-commerce Consultant" />
     <meta name="twitter:description" content="Senior Magento Developer and E-commerce Consultant with expertise in custom development, performance optimization, and e-commerce strategy." />
+    <meta name="theme-color" content="#121212" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
   </>
 );

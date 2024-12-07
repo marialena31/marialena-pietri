@@ -1,0 +1,67 @@
+/* Global accessibility styles */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+/* Focus styles */
+*:focus-visible {
+  outline: 2px solid #90caf9;
+  outline-offset: 2px;
+}
+
+/* Skip to main content */
+.skip-to-main {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #90caf9;
+  color: #000;
+  padding: 8px;
+  z-index: 100;
+  transition: top 0.3s;
+}
+
+.skip-to-main:focus {
+  top: 0;
+}
+
+/* Better keyboard navigation */
+[role="button"],
+button,
+a {
+  cursor: pointer;
+}
+
+[role="button"]:focus-visible,
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid #90caf9 !important;
+  outline-offset: 2px !important;
+}
+
+/* High contrast mode improvements */
+@media (forced-colors: active) {
+  .MuiButton-root {
+    border: 2px solid currentColor;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

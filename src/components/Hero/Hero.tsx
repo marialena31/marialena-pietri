@@ -80,18 +80,24 @@ const Hero = () => {
 
   return (
     <>
-      <div id="cv-container" style={{ 
-        position: 'absolute', 
-        left: '-9999px', 
-        top: 0,
-        width: '210mm',
-        height: '297mm',
-        background: '#121212',
-      }}>
+      <div 
+        id="cv-container" 
+        aria-hidden="true"
+        style={{ 
+          position: 'absolute', 
+          left: '-9999px', 
+          top: 0,
+          width: '210mm',
+          height: '297mm',
+          background: '#121212',
+        }}
+      >
         <CVContent />
       </div>
       <Box
-        id="home"
+        component="section"
+        id="hero"
+        aria-labelledby="hero-title"
         sx={{
           minHeight: '100vh',
           display: 'flex',
@@ -126,9 +132,10 @@ const Hero = () => {
         }}
       >
         <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
-          <Grid container spacing={4} alignItems="center">
-            <Grid item xs={12} md={6}>
+          <Grid container spacing={4} alignItems="center" component="article">
+            <Grid item xs={12} md={6} component="header">
               <Box
+                component="div"
                 sx={{
                   textAlign: 'left',
                   position: 'relative',
@@ -159,6 +166,7 @@ const Hero = () => {
               >
                 <Typography
                   variant="h1"
+                  id="hero-title"
                   sx={{
                     fontWeight: 700,
                     fontSize: { xs: '2rem', sm: '2.5rem', md: '3rem' },
@@ -174,6 +182,7 @@ const Hero = () => {
                 </Typography>
                 <Typography
                   variant="h2"
+                  component="p"
                   sx={{
                     fontWeight: 400,
                     fontSize: { xs: '1.1rem', sm: '1.3rem', md: '1.5rem' },
@@ -187,6 +196,7 @@ const Hero = () => {
                 </Typography>
                 <Typography
                   variant="body1"
+                  component="p"
                   sx={{
                     fontSize: { xs: '1rem', sm: '1.1rem' },
                     mb: 4,
@@ -198,10 +208,12 @@ const Hero = () => {
                   {t('description')}
                 </Typography>
                 <Stack 
+                  component="nav"
                   direction={{ xs: 'column', sm: 'row' }} 
-                  spacing={2}
+                  spacing={2} 
                   sx={{ 
-                    justifyContent: { xs: 'center', md: 'flex-start' }
+                    justifyContent: { xs: 'center', md: 'flex-start' },
+                    mb: { xs: 4, md: 0 }
                   }}
                 >
                   <Button
@@ -209,43 +221,42 @@ const Hero = () => {
                     color="primary"
                     size="large"
                     startIcon={<CalendarMonthIcon />}
-                    href="https://calendly.com/marialena-pietri/30min"
-                    target="_blank"
+                    onClick={handleViewCV}
+                    disabled={isGenerating}
+                    aria-label={t('downloadCV')}
                     sx={{
-                      textTransform: 'none',
-                      px: 4,
-                      py: 1.5,
-                      borderRadius: 2,
-                      fontSize: '1.1rem',
-                      boxShadow: `0 0 20px ${theme.palette.primary.main}40`,
-                      '&:hover': {
-                        boxShadow: `0 0 30px ${theme.palette.primary.main}60`,
-                      },
+                      minWidth: 200,
+                      position: 'relative',
+                      overflow: 'hidden'
                     }}
                   >
-                    {t('schedule')}
+                    {isGenerating ? (
+                      <>
+                        <CircularProgress
+                          size={24}
+                          sx={{
+                            position: 'absolute',
+                            left: '50%',
+                            marginLeft: '-12px'
+                          }}
+                          aria-label={t('generating')}
+                        />
+                        <span className="visually-hidden">{t('generating')}</span>
+                      </>
+                    ) : (
+                      t('downloadCV')
+                    )}
                   </Button>
                   <Button
                     variant="outlined"
                     color="primary"
                     size="large"
-                    startIcon={isGenerating ? <CircularProgress size={20} color="primary" /> : <DescriptionIcon />}
-                    onClick={handleViewCV}
-                    disabled={isGenerating}
-                    sx={{
-                      textTransform: 'none',
-                      px: 4,
-                      py: 1.5,
-                      borderRadius: 2,
-                      fontSize: '1.1rem',
-                      borderWidth: 2,
-                      '&:hover': {
-                        borderWidth: 2,
-                        boxShadow: `0 0 20px ${theme.palette.primary.main}40`,
-                      },
-                    }}
+                    startIcon={<DescriptionIcon />}
+                    href="#contact"
+                    aria-label={t('contactMe')}
+                    sx={{ minWidth: 200 }}
                   >
-                    {isGenerating ? t('generatingCV') : t('viewCV')}
+                    {t('contactMe')}
                   </Button>
                 </Stack>
               </Box>
@@ -283,7 +294,10 @@ const Hero = () => {
                 <Box
                   component="img"
                   src="/images/profile.webp"
-                  alt="Maria-Lena Pietri"
+                  alt="Maria-Lena Pietri - Magento Developer & E-commerce Consultant"
+                  loading="eager"
+                  width={256}
+                  height={256}
                   sx={{
                     width: 256,
                     height: 256,
@@ -296,7 +310,10 @@ const Hero = () => {
                     mx: 'auto',
                     aspectRatio: '1',
                     minWidth: 256,
-                    flexShrink: 0
+                    flexShrink: 0,
+                    '@media (prefers-reduced-motion: reduce)': {
+                      animation: 'none',
+                    }
                   }}
                 />
               </Box>
