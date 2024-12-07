@@ -33,20 +33,19 @@ const config: GatsbyConfig = {
         mergeDefaultDirectives: true,
         directives: {
           "default-src": "'self'",
-          "script-src": "'self' 'unsafe-inline' 'unsafe-eval' https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/",
-          "style-src": "'self' 'unsafe-inline' https://fonts.googleapis.com",
-          "img-src": "'self' data: https:",
-          "font-src": "'self' https://fonts.gstatic.com",
-          "connect-src": "'self' https://mail-server-api-nu.vercel.app http://localhost:3000",
-          "frame-src": "https://www.google.com/recaptcha/",
+          "script-src": "'self' 'unsafe-inline' 'unsafe-eval' https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/ https://*.netlify.app https://*.netlify.com",
+          "style-src": "'self' 'unsafe-inline' https://fonts.googleapis.com https://*.netlify.app https://*.netlify.com",
+          "img-src": "'self' data: https: blob:",
+          "font-src": "'self' data: https://fonts.gstatic.com",
+          "connect-src": "'self' https://mail-server-api-nu.vercel.app http://localhost:3000 https://*.netlify.app https://*.netlify.com",
+          "frame-src": "https://www.google.com/recaptcha/ https://*.netlify.app https://*.netlify.com",
           "base-uri": "'self'",
           "form-action": "'self'",
           "frame-ancestors": "'none'",
           "object-src": "'none'",
-          "upgrade-insecure-requests": true,
           "manifest-src": "'self'",
           "media-src": "'self'",
-          "worker-src": "'self'",
+          "worker-src": "'self' blob:",
           "prefetch-src": "'self'"
         }
       }
