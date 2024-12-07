@@ -215,6 +215,8 @@ const CVContent: React.FC<CVContentProps> = () => {
                         'SCSS': 'scss',
                         'Knockout.js': 'knockoutjs',
                         'Accessibilité': 'accessibility',
+                        'Accesibilidad': 'accessibility',
+                        'Accessibility': 'accessibility',
                         'Node.js': 'nodejs',
                         'PHP': 'php',
                         'GraphQL': 'graphql',
@@ -222,14 +224,18 @@ const CVContent: React.FC<CVContentProps> = () => {
                         'Redis': 'redis',
                         'Elasticsearch': 'elasticsearch',
                         'APIs REST': 'rest-api',
+                        'REST APIs': 'rest-api',
+                        'APIs REST': 'rest-api',
                         'Magento': 'magento',
-                        'Adobe Commerce Cloud': 'Adobe-Commerce',
+                        'Adobe Commerce Cloud': 'adobe-commerce',
                         'Git': 'git',
                         'Docker': 'docker',
                         'AWS': 'aws',
                         'New Relic': 'newrelic',
                         'Datadog': 'datadog',
-                        'Performance Optimization': 'performance'
+                        'Performance Optimization': 'performance',
+                        'Optimisation des performances': 'performance',
+                        'Optimización de rendimiento': 'performance'
                       };
 
                       const iconName = skillMap[skill] || skill.toLowerCase().replace(/[^a-z0-9]/g, '');

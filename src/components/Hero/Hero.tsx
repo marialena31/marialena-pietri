@@ -28,7 +28,7 @@ const Hero = () => {
   const handleViewCV = async () => {
     try {
       setIsGenerating(true);
-      const element = document.querySelector('[data-cv-content]');
+      const element = document.querySelector('#cv-container [data-cv-content]');
       if (!element) {
         console.error('CV content not found');
         return;
@@ -37,10 +37,7 @@ const Hero = () => {
       const canvas = await html2canvas(element as HTMLElement, {
         scale: 2,
         useCORS: true,
-        logging: true,
         backgroundColor: '#121212',
-        windowWidth: 210 * 3.78, // Convert mm to px (1mm ≈ 3.78px)
-        windowHeight: 297 * 3.78,
         onclone: (clonedDoc) => {
           const clonedElement = clonedDoc.querySelector('[data-cv-content]') as HTMLElement;
           if (clonedElement) {
@@ -49,17 +46,11 @@ const Hero = () => {
             clonedElement.style.height = 'auto';
             clonedElement.style.position = 'relative';
             clonedElement.style.opacity = '1';
-            
-            const images = clonedElement.getElementsByTagName('img');
-            Array.from(images).forEach(img => {
-              img.style.opacity = '1';
-              img.style.visibility = 'visible';
-            });
           }
         }
       });
 
-      const imgData = canvas.toDataURL('image/png');
+      const imgData = canvas.toDataURL('image/png', 1.0);
       const pdf = new jsPDF({
         orientation: 'portrait',
         unit: 'mm',
@@ -70,7 +61,7 @@ const Hero = () => {
       const pdfHeight = pdf.internal.pageSize.getHeight();
 
       pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-      pdf.save('CV-Maria-Lena-Pietri.pdf');
+      pdf.save(`CV-Maria-Lena-Pietri-${i18n.language}.pdf`);
     } catch (error) {
       console.error('Error generating CV:', error);
     } finally {
@@ -90,6 +81,8 @@ const Hero = () => {
           width: '210mm',
           height: '297mm',
           background: '#121212',
+          opacity: 0,
+          pointerEvents: 'none',
         }}
       >
         <CVContent />
@@ -104,8 +97,10 @@ const Hero = () => {
           alignItems: 'center',
           pt: { xs: 12, md: 16 },
           pb: 8,
-          background: 'rgba(18, 18, 18, 0.95)',
-          color: 'white',
+          background: theme.palette.mode === 'dark' 
+            ? 'rgba(18, 18, 18, 0.95)'
+            : 'rgba(255, 255, 255, 0.95)',
+          color: theme.palette.text.primary,
           position: 'relative',
           overflow: 'hidden',
           '&::before': {
@@ -115,53 +110,23 @@ const Hero = () => {
             left: 0,
             right: 0,
             bottom: 0,
-            background: `radial-gradient(circle at 30% 40%, ${theme.palette.primary.dark}20, transparent 60%),
-                      radial-gradient(circle at 70% 60%, ${theme.palette.secondary.dark}20, transparent 60%)`,
+            background: theme.palette.mode === 'dark'
+              ? `radial-gradient(circle at 30% 40%, ${theme.palette.primary.dark}20, transparent 60%),
+                 radial-gradient(circle at 70% 60%, ${theme.palette.secondary.dark}20, transparent 60%)`
+              : `radial-gradient(circle at 30% 40%, ${theme.palette.primary.light}20, transparent 60%),
+                 radial-gradient(circle at 70% 60%, ${theme.palette.secondary.light}20, transparent 60%)`,
             opacity: 0.8,
             zIndex: 0,
           },
-          '&::after': {
-            content: '""',
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            right: 0,
-            height: '1px',
-            background: `linear-gradient(90deg, transparent, ${theme.palette.mode === 'dark' ? theme.palette.primary.main : theme.palette.primary.main}20, transparent)`,
-          }
         }}
       >
         <Container maxWidth="lg" sx={{ position: 'relative', zIndex: 1 }}>
-          <Grid container spacing={4} alignItems="center" component="article">
-            <Grid item xs={12} md={6} component="header">
+          <Grid container spacing={4} alignItems="center">
+            <Grid item xs={12} md={6}>
               <Box
-                component="div"
                 sx={{
                   textAlign: 'left',
                   position: 'relative',
-                  '&::before': {
-                    content: '""',
-                    position: 'absolute',
-                    top: '-20%',
-                    left: '-10%',
-                    width: '120%',
-                    height: '140%',
-                    background: `radial-gradient(ellipse at center, ${theme.palette.mode === 'dark' ? theme.palette.primary.main : theme.palette.primary.main}20 0%, transparent 70%)`,
-                    opacity: 0.5,
-                    zIndex: -1,
-                    filter: 'blur(40px)',
-                    animation: 'pulse 8s ease-in-out infinite',
-                  },
-                  '@keyframes pulse': {
-                    '0%, 100%': {
-                      transform: 'scale(1)',
-                      opacity: 0.5,
-                    },
-                    '50%': {
-                      transform: 'scale(1.05)',
-                      opacity: 0.7,
-                    },
-                  },
                 }}
               >
                 <Typography
@@ -202,13 +167,12 @@ const Hero = () => {
                     mb: 4,
                     maxWidth: '600px',
                     mx: { xs: 'auto', md: 0 },
-                    color: 'rgba(255, 255, 255, 0.8)',
+                    color: theme.palette.text.secondary,
                   }}
                 >
                   {t('description')}
                 </Typography>
                 <Stack 
-                  component="nav"
                   direction={{ xs: 'column', sm: 'row' }} 
                   spacing={2} 
                   sx={{ 
@@ -223,11 +187,9 @@ const Hero = () => {
                     startIcon={<CalendarMonthIcon />}
                     onClick={handleViewCV}
                     disabled={isGenerating}
-                    aria-label={t('downloadCV')}
                     sx={{
                       minWidth: 200,
                       position: 'relative',
-                      overflow: 'hidden'
                     }}
                   >
                     {isGenerating ? (
@@ -237,11 +199,11 @@ const Hero = () => {
                           sx={{
                             position: 'absolute',
                             left: '50%',
-                            marginLeft: '-12px'
+                            marginLeft: '-12px',
+                            color: 'inherit'
                           }}
-                          aria-label={t('generating')}
                         />
-                        <span className="visually-hidden">{t('generating')}</span>
+                        <span style={{ visibility: 'hidden' }}>{t('generatingCV')}</span>
                       </>
                     ) : (
                       t('downloadCV')
@@ -253,7 +215,6 @@ const Hero = () => {
                     size="large"
                     startIcon={<DescriptionIcon />}
                     href="#contact"
-                    aria-label={t('contactMe')}
                     sx={{ minWidth: 200 }}
                   >
                     {t('contactMe')}
@@ -268,33 +229,12 @@ const Hero = () => {
                   justifyContent: 'center',
                   alignItems: 'center',
                   position: 'relative',
-                  '&::before': {
-                    content: '""',
-                    position: 'absolute',
-                    top: '50%',
-                    left: '50%',
-                    transform: 'translate(-50%, -50%)',
-                    width: '100%',
-                    height: '100%',
-                    background: `radial-gradient(circle at center, ${theme.palette.mode === 'dark' ? theme.palette.primary.main : theme.palette.primary.main}20 0%, transparent 70%)`,
-                    filter: 'blur(40px)',
-                    opacity: 0.6,
-                    animation: 'float 6s ease-in-out infinite',
-                  },
-                  '@keyframes float': {
-                    '0%, 100%': {
-                      transform: 'translate(-50%, -50%) scale(1)',
-                    },
-                    '50%': {
-                      transform: 'translate(-50%, -50%) scale(1.1)',
-                    },
-                  },
                 }}
               >
                 <Box
                   component="img"
                   src="/images/profile.webp"
-                  alt="Maria-Lena Pietri - Magento Developer & E-commerce Consultant"
+                  alt={t('profileImageAlt')}
                   loading="eager"
                   width={256}
                   height={256}
@@ -303,17 +243,14 @@ const Hero = () => {
                     height: 256,
                     position: 'relative',
                     borderRadius: '50%',
-                    border: '4px solid rgba(144, 202, 249, 0.5)',
-                    boxShadow: '0 8px 32px rgba(0, 0, 0, 0.2)',
-                    background: 'linear-gradient(145deg, rgba(25, 25, 25, 0.9), rgba(35, 35, 35, 0.9))',
+                    border: `4px solid ${theme.palette.primary.main}40`,
+                    boxShadow: theme.shadows[8],
+                    background: theme.palette.background.paper,
                     overflow: 'hidden',
                     mx: 'auto',
                     aspectRatio: '1',
                     minWidth: 256,
                     flexShrink: 0,
-                    '@media (prefers-reduced-motion: reduce)': {
-                      animation: 'none',
-                    }
                   }}
                 />
               </Box>

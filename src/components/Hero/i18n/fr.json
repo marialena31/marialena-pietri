@@ -4,6 +4,11 @@
   "description": "Spécialisée en maintenance avancée, migrations Magento, et solutions sur mesure pour optimiser vos performances et sécuriser votre plateforme e-commerce.",
   "schedule": "Planifier un appel",
   "viewCV": "Voir CV",
+  "downloadCV": "Télécharger CV",
+  "generating": "Génération en cours...",
+  "generatingCV": "Génération du PDF...",
+  "contactMe": "Me contacter",
+  "profileImageAlt": "Maria-Lena Pietri - Experte Magento & Consultante E-commerce",
   "cta": {
     "title": "Prendre RDV",
     "link": "https://calendly.com/pietri-marialena/contact-30"
