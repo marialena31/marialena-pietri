@@ -28,8 +28,6 @@ type Scalars = {
   GatsbyImageData: import('gatsby-plugin-image').IGatsbyImageData;
   /** The `JSON` scalar type represents JSON values as specified by [ECMA-404](http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf). */
   JSON: Record<string, unknown>;
-  /** Serialized elasticlunr search index */
-  SiteSearchIndex_Index: any;
 };
 
 type AVIFOptions = {
@@ -1316,7 +1314,6 @@ type Query = {
   readonly allSiteFunction: SiteFunctionConnection;
   readonly allSitePage: SitePageConnection;
   readonly allSitePlugin: SitePluginConnection;
-  readonly allSiteSearchIndex: SiteSearchIndexConnection;
   readonly directory: Maybe<Directory>;
   readonly file: Maybe<File>;
   readonly imageSharp: Maybe<ImageSharp>;
@@ -1325,7 +1322,6 @@ type Query = {
   readonly siteFunction: Maybe<SiteFunction>;
   readonly sitePage: Maybe<SitePage>;
   readonly sitePlugin: Maybe<SitePlugin>;
-  readonly siteSearchIndex: Maybe<SiteSearchIndex>;
 };
 
 
@@ -1390,14 +1386,6 @@ type Query_allSitePluginArgs = {
   limit: InputMaybe<Scalars['Int']>;
   skip: InputMaybe<Scalars['Int']>;
   sort: InputMaybe<ReadonlyArray<InputMaybe<SitePluginSortInput>>>;
-};
-
-
-type Query_allSiteSearchIndexArgs = {
-  filter: InputMaybe<SiteSearchIndexFilterInput>;
-  limit: InputMaybe<Scalars['Int']>;
-  skip: InputMaybe<Scalars['Int']>;
-  sort: InputMaybe<ReadonlyArray<InputMaybe<SiteSearchIndexSortInput>>>;
 };
 
 
@@ -1500,13 +1488,18 @@ type Query_imageSharpArgs = {
 type Query_siteArgs = {
   buildTime: InputMaybe<DateQueryOperatorInput>;
   children: InputMaybe<NodeFilterListInput>;
-  default: InputMaybe<SiteDefaultFilterInput>;
+  flags: InputMaybe<SiteFlagsFilterInput>;
+  graphqlTypegen: InputMaybe<SiteGraphqlTypegenFilterInput>;
   host: InputMaybe<StringQueryOperatorInput>;
   id: InputMaybe<StringQueryOperatorInput>;
   internal: InputMaybe<InternalFilterInput>;
+  jsxRuntime: InputMaybe<StringQueryOperatorInput>;
   parent: InputMaybe<NodeFilterInput>;
+  pathPrefix: InputMaybe<StringQueryOperatorInput>;
+  polyfill: InputMaybe<BooleanQueryOperatorInput>;
   port: InputMaybe<IntQueryOperatorInput>;
   siteMetadata: InputMaybe<SiteSiteMetadataFilterInput>;
+  trailingSlash: InputMaybe<StringQueryOperatorInput>;
 };
 
 
@@ -1565,26 +1558,21 @@ type Query_sitePluginArgs = {
   version: InputMaybe<StringQueryOperatorInput>;
 };
 
-
-type Query_siteSearchIndexArgs = {
-  children: InputMaybe<NodeFilterListInput>;
-  id: InputMaybe<StringQueryOperatorInput>;
-  index: InputMaybe<SiteSearchIndex_IndexQueryOperatorInput>;
-  internal: InputMaybe<InternalFilterInput>;
-  pages: InputMaybe<StringQueryOperatorInput>;
-  parent: InputMaybe<NodeFilterInput>;
-};
-
 type Site = Node & {
   readonly buildTime: Maybe<Scalars['Date']>;
   readonly children: ReadonlyArray<Node>;
-  readonly default: Maybe<SiteDefault>;
+  readonly flags: Maybe<SiteFlags>;
+  readonly graphqlTypegen: Maybe<SiteGraphqlTypegen>;
   readonly host: Maybe<Scalars['String']>;
   readonly id: Scalars['ID'];
   readonly internal: Internal;
+  readonly jsxRuntime: Maybe<Scalars['String']>;
   readonly parent: Maybe<Node>;
+  readonly pathPrefix: Maybe<Scalars['String']>;
+  readonly polyfill: Maybe<Scalars['Boolean']>;
   readonly port: Maybe<Scalars['Int']>;
   readonly siteMetadata: Maybe<SiteSiteMetadata>;
+  readonly trailingSlash: Maybe<Scalars['String']>;
 };
 
 
@@ -1760,102 +1748,6 @@ type SiteConnection_sumArgs = {
   field: SiteFieldSelector;
 };
 
-type SiteDefault = {
-  readonly flags: Maybe<SiteDefaultFlags>;
-  readonly graphqlTypegen: Maybe<Scalars['Boolean']>;
-  readonly siteMetadata: Maybe<SiteDefaultSiteMetadata>;
-};
-
-type SiteDefaultFieldSelector = {
-  readonly flags: InputMaybe<SiteDefaultFlagsFieldSelector>;
-  readonly graphqlTypegen: InputMaybe<FieldSelectorEnum>;
-  readonly siteMetadata: InputMaybe<SiteDefaultSiteMetadataFieldSelector>;
-};
-
-type SiteDefaultFilterInput = {
-  readonly flags: InputMaybe<SiteDefaultFlagsFilterInput>;
-  readonly graphqlTypegen: InputMaybe<BooleanQueryOperatorInput>;
-  readonly siteMetadata: InputMaybe<SiteDefaultSiteMetadataFilterInput>;
-};
-
-type SiteDefaultFlags = {
-  readonly DETECT_NODE_MUTATIONS: Maybe<Scalars['Boolean']>;
-  readonly FAST_DEV: Maybe<Scalars['Boolean']>;
-  readonly PARALLEL_SOURCING: Maybe<Scalars['Boolean']>;
-  readonly PARTIAL_HYDRATION: Maybe<Scalars['Boolean']>;
-  readonly PRESERVE_FILE_DOWNLOAD_CACHE: Maybe<Scalars['Boolean']>;
-};
-
-type SiteDefaultFlagsFieldSelector = {
-  readonly DETECT_NODE_MUTATIONS: InputMaybe<FieldSelectorEnum>;
-  readonly FAST_DEV: InputMaybe<FieldSelectorEnum>;
-  readonly PARALLEL_SOURCING: InputMaybe<FieldSelectorEnum>;
-  readonly PARTIAL_HYDRATION: InputMaybe<FieldSelectorEnum>;
-  readonly PRESERVE_FILE_DOWNLOAD_CACHE: InputMaybe<FieldSelectorEnum>;
-};
-
-type SiteDefaultFlagsFilterInput = {
-  readonly DETECT_NODE_MUTATIONS: InputMaybe<BooleanQueryOperatorInput>;
-  readonly FAST_DEV: InputMaybe<BooleanQueryOperatorInput>;
-  readonly PARALLEL_SOURCING: InputMaybe<BooleanQueryOperatorInput>;
-  readonly PARTIAL_HYDRATION: InputMaybe<BooleanQueryOperatorInput>;
-  readonly PRESERVE_FILE_DOWNLOAD_CACHE: InputMaybe<BooleanQueryOperatorInput>;
-};
-
-type SiteDefaultFlagsSortInput = {
-  readonly DETECT_NODE_MUTATIONS: InputMaybe<SortOrderEnum>;
-  readonly FAST_DEV: InputMaybe<SortOrderEnum>;
-  readonly PARALLEL_SOURCING: InputMaybe<SortOrderEnum>;
-  readonly PARTIAL_HYDRATION: InputMaybe<SortOrderEnum>;
-  readonly PRESERVE_FILE_DOWNLOAD_CACHE: InputMaybe<SortOrderEnum>;
-};
-
-type SiteDefaultSiteMetadata = {
-  readonly author: Maybe<Scalars['String']>;
-  readonly description: Maybe<Scalars['String']>;
-  readonly image: Maybe<Scalars['String']>;
-  readonly siteUrl: Maybe<Scalars['String']>;
-  readonly title: Maybe<Scalars['String']>;
-  readonly titleTemplate: Maybe<Scalars['String']>;
-  readonly twitterUsername: Maybe<Scalars['String']>;
-};
-
-type SiteDefaultSiteMetadataFieldSelector = {
-  readonly author: InputMaybe<FieldSelectorEnum>;
-  readonly description: InputMaybe<FieldSelectorEnum>;
-  readonly image: InputMaybe<FieldSelectorEnum>;
-  readonly siteUrl: InputMaybe<FieldSelectorEnum>;
-  readonly title: InputMaybe<FieldSelectorEnum>;
-  readonly titleTemplate: InputMaybe<FieldSelectorEnum>;
-  readonly twitterUsername: InputMaybe<FieldSelectorEnum>;
-};
-
-type SiteDefaultSiteMetadataFilterInput = {
-  readonly author: InputMaybe<StringQueryOperatorInput>;
-  readonly description: InputMaybe<StringQueryOperatorInput>;
-  readonly image: InputMaybe<StringQueryOperatorInput>;
-  readonly siteUrl: InputMaybe<StringQueryOperatorInput>;
-  readonly title: InputMaybe<StringQueryOperatorInput>;
-  readonly titleTemplate: InputMaybe<StringQueryOperatorInput>;
-  readonly twitterUsername: InputMaybe<StringQueryOperatorInput>;
-};
-
-type SiteDefaultSiteMetadataSortInput = {
-  readonly author: InputMaybe<SortOrderEnum>;
-  readonly description: InputMaybe<SortOrderEnum>;
-  readonly image: InputMaybe<SortOrderEnum>;
-  readonly siteUrl: InputMaybe<SortOrderEnum>;
-  readonly title: InputMaybe<SortOrderEnum>;
-  readonly titleTemplate: InputMaybe<SortOrderEnum>;
-  readonly twitterUsername: InputMaybe<SortOrderEnum>;
-};
-
-type SiteDefaultSortInput = {
-  readonly flags: InputMaybe<SiteDefaultFlagsSortInput>;
-  readonly graphqlTypegen: InputMaybe<SortOrderEnum>;
-  readonly siteMetadata: InputMaybe<SiteDefaultSiteMetadataSortInput>;
-};
-
 type SiteEdge = {
   readonly next: Maybe<Site>;
   readonly node: Site;
@@ -1865,25 +1757,67 @@ type SiteEdge = {
 type SiteFieldSelector = {
   readonly buildTime: InputMaybe<FieldSelectorEnum>;
   readonly children: InputMaybe<NodeFieldSelector>;
-  readonly default: InputMaybe<SiteDefaultFieldSelector>;
+  readonly flags: InputMaybe<SiteFlagsFieldSelector>;
+  readonly graphqlTypegen: InputMaybe<SiteGraphqlTypegenFieldSelector>;
   readonly host: InputMaybe<FieldSelectorEnum>;
   readonly id: InputMaybe<FieldSelectorEnum>;
   readonly internal: InputMaybe<InternalFieldSelector>;
+  readonly jsxRuntime: InputMaybe<FieldSelectorEnum>;
   readonly parent: InputMaybe<NodeFieldSelector>;
+  readonly pathPrefix: InputMaybe<FieldSelectorEnum>;
+  readonly polyfill: InputMaybe<FieldSelectorEnum>;
   readonly port: InputMaybe<FieldSelectorEnum>;
   readonly siteMetadata: InputMaybe<SiteSiteMetadataFieldSelector>;
+  readonly trailingSlash: InputMaybe<FieldSelectorEnum>;
 };
 
 type SiteFilterInput = {
   readonly buildTime: InputMaybe<DateQueryOperatorInput>;
   readonly children: InputMaybe<NodeFilterListInput>;
-  readonly default: InputMaybe<SiteDefaultFilterInput>;
+  readonly flags: InputMaybe<SiteFlagsFilterInput>;
+  readonly graphqlTypegen: InputMaybe<SiteGraphqlTypegenFilterInput>;
   readonly host: InputMaybe<StringQueryOperatorInput>;
   readonly id: InputMaybe<StringQueryOperatorInput>;
   readonly internal: InputMaybe<InternalFilterInput>;
+  readonly jsxRuntime: InputMaybe<StringQueryOperatorInput>;
   readonly parent: InputMaybe<NodeFilterInput>;
+  readonly pathPrefix: InputMaybe<StringQueryOperatorInput>;
+  readonly polyfill: InputMaybe<BooleanQueryOperatorInput>;
   readonly port: InputMaybe<IntQueryOperatorInput>;
   readonly siteMetadata: InputMaybe<SiteSiteMetadataFilterInput>;
+  readonly trailingSlash: InputMaybe<StringQueryOperatorInput>;
+};
+
+type SiteFlags = {
+  readonly DETECT_NODE_MUTATIONS: Maybe<Scalars['Boolean']>;
+  readonly FAST_DEV: Maybe<Scalars['Boolean']>;
+  readonly PARALLEL_SOURCING: Maybe<Scalars['Boolean']>;
+  readonly PARTIAL_HYDRATION: Maybe<Scalars['Boolean']>;
+  readonly PRESERVE_FILE_DOWNLOAD_CACHE: Maybe<Scalars['Boolean']>;
+};
+
+type SiteFlagsFieldSelector = {
+  readonly DETECT_NODE_MUTATIONS: InputMaybe<FieldSelectorEnum>;
+  readonly FAST_DEV: InputMaybe<FieldSelectorEnum>;
+  readonly PARALLEL_SOURCING: InputMaybe<FieldSelectorEnum>;
+  readonly PARTIAL_HYDRATION: InputMaybe<FieldSelectorEnum>;
+  readonly PRESERVE_FILE_DOWNLOAD_CACHE: InputMaybe<FieldSelectorEnum>;
+};
+
+type SiteFlagsFilterInput = {
+  readonly DETECT_NODE_MUTATIONS: InputMaybe<BooleanQueryOperatorInput>;
+  readonly FAST_DEV: InputMaybe<BooleanQueryOperatorInput>;
+  readonly PARALLEL_SOURCING: InputMaybe<BooleanQueryOperatorInput>;
+  readonly PARTIAL_HYDRATION: InputMaybe<BooleanQueryOperatorInput>;
+  readonly PRESERVE_FILE_DOWNLOAD_CACHE: InputMaybe<BooleanQueryOperatorInput>;
+};
+
+type SiteFlagsSortInput = {
+  readonly DETECT_NODE_MUTATIONS: InputMaybe<SortOrderEnum>;
+  readonly FAST_DEV: InputMaybe<SortOrderEnum>;
+  readonly PARALLEL_SOURCING: InputMaybe<SortOrderEnum>;
+  readonly PARTIAL_HYDRATION: InputMaybe<SortOrderEnum>;
+  readonly PRESERVE_FILE_DOWNLOAD_CACHE: InputMaybe<SortOrderEnum>;
 };
 
 type SiteFunction = Node & {
@@ -2026,6 +1960,30 @@ type SiteFunctionSortInput = {
   readonly parent: InputMaybe<NodeSortInput>;
   readonly pluginName: InputMaybe<SortOrderEnum>;
   readonly relativeCompiledFilePath: InputMaybe<SortOrderEnum>;
+};
+
+type SiteGraphqlTypegen = {
+  readonly documentSearchPaths: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
+  readonly generateOnBuild: Maybe<Scalars['Boolean']>;
+  readonly typesOutputPath: Maybe<Scalars['String']>;
+};
+
+type SiteGraphqlTypegenFieldSelector = {
+  readonly documentSearchPaths: InputMaybe<FieldSelectorEnum>;
+  readonly generateOnBuild: InputMaybe<FieldSelectorEnum>;
+  readonly typesOutputPath: InputMaybe<FieldSelectorEnum>;
+};
+
+type SiteGraphqlTypegenFilterInput = {
+  readonly documentSearchPaths: InputMaybe<StringQueryOperatorInput>;
+  readonly generateOnBuild: InputMaybe<BooleanQueryOperatorInput>;
+  readonly typesOutputPath: InputMaybe<StringQueryOperatorInput>;
+};
+
+type SiteGraphqlTypegenSortInput = {
+  readonly documentSearchPaths: InputMaybe<SortOrderEnum>;
+  readonly generateOnBuild: InputMaybe<SortOrderEnum>;
+  readonly typesOutputPath: InputMaybe<SortOrderEnum>;
 };
 
 type SiteGroupConnection = {
@@ -2361,165 +2319,61 @@ type SitePluginSortInput = {
   readonly version: InputMaybe<SortOrderEnum>;
 };
 
-type SiteSearchIndex = Node & {
-  readonly children: ReadonlyArray<Node>;
-  readonly id: Scalars['ID'];
-  readonly index: Maybe<Scalars['SiteSearchIndex_Index']>;
-  readonly internal: Internal;
-  readonly pages: Maybe<ReadonlyArray<Maybe<Scalars['String']>>>;
-  readonly parent: Maybe<Node>;
-};
-
-type SiteSearchIndexConnection = {
-  readonly distinct: ReadonlyArray<Scalars['String']>;
-  readonly edges: ReadonlyArray<SiteSearchIndexEdge>;
-  readonly group: ReadonlyArray<SiteSearchIndexGroupConnection>;
-  readonly max: Maybe<Scalars['Float']>;
-  readonly min: Maybe<Scalars['Float']>;
-  readonly nodes: ReadonlyArray<SiteSearchIndex>;
-  readonly pageInfo: PageInfo;
-  readonly sum: Maybe<Scalars['Float']>;
-  readonly totalCount: Scalars['Int'];
-};
-
-
-type SiteSearchIndexConnection_distinctArgs = {
-  field: SiteSearchIndexFieldSelector;
-};
-
-
-type SiteSearchIndexConnection_groupArgs = {
-  field: SiteSearchIndexFieldSelector;
-  limit: InputMaybe<Scalars['Int']>;
-  skip: InputMaybe<Scalars['Int']>;
-};
-
-
-type SiteSearchIndexConnection_maxArgs = {
-  field: SiteSearchIndexFieldSelector;
-};
-
-
-type SiteSearchIndexConnection_minArgs = {
-  field: SiteSearchIndexFieldSelector;
-};
-
-
-type SiteSearchIndexConnection_sumArgs = {
-  field: SiteSearchIndexFieldSelector;
-};
-
-type SiteSearchIndexEdge = {
-  readonly next: Maybe<SiteSearchIndex>;
-  readonly node: SiteSearchIndex;
-  readonly previous: Maybe<SiteSearchIndex>;
-};
-
-type SiteSearchIndexFieldSelector = {
-  readonly children: InputMaybe<NodeFieldSelector>;
-  readonly id: InputMaybe<FieldSelectorEnum>;
-  readonly index: InputMaybe<FieldSelectorEnum>;
-  readonly internal: InputMaybe<InternalFieldSelector>;
-  readonly pages: InputMaybe<FieldSelectorEnum>;
-  readonly parent: InputMaybe<NodeFieldSelector>;
-};
-
-type SiteSearchIndexFilterInput = {
-  readonly children: InputMaybe<NodeFilterListInput>;
-  readonly id: InputMaybe<StringQueryOperatorInput>;
-  readonly index: InputMaybe<SiteSearchIndex_IndexQueryOperatorInput>;
-  readonly internal: InputMaybe<InternalFilterInput>;
-  readonly pages: InputMaybe<StringQueryOperatorInput>;
-  readonly parent: InputMaybe<NodeFilterInput>;
-};
-
-type SiteSearchIndexGroupConnection = {
-  readonly distinct: ReadonlyArray<Scalars['String']>;
-  readonly edges: ReadonlyArray<SiteSearchIndexEdge>;
-  readonly field: Scalars['String'];
-  readonly fieldValue: Maybe<Scalars['String']>;
-  readonly group: ReadonlyArray<SiteSearchIndexGroupConnection>;
-  readonly max: Maybe<Scalars['Float']>;
-  readonly min: Maybe<Scalars['Float']>;
-  readonly nodes: ReadonlyArray<SiteSearchIndex>;
-  readonly pageInfo: PageInfo;
-  readonly sum: Maybe<Scalars['Float']>;
-  readonly totalCount: Scalars['Int'];
-};
-
-
-type SiteSearchIndexGroupConnection_distinctArgs = {
-  field: SiteSearchIndexFieldSelector;
-};
-
-
-type SiteSearchIndexGroupConnection_groupArgs = {
-  field: SiteSearchIndexFieldSelector;
-  limit: InputMaybe<Scalars['Int']>;
-  skip: InputMaybe<Scalars['Int']>;
-};
-
-
-type SiteSearchIndexGroupConnection_maxArgs = {
-  field: SiteSearchIndexFieldSelector;
-};
-
-
-type SiteSearchIndexGroupConnection_minArgs = {
-  field: SiteSearchIndexFieldSelector;
-};
-
-
-type SiteSearchIndexGroupConnection_sumArgs = {
-  field: SiteSearchIndexFieldSelector;
-};
-
-type SiteSearchIndexSortInput = {
-  readonly children: InputMaybe<NodeSortInput>;
-  readonly id: InputMaybe<SortOrderEnum>;
-  readonly index: InputMaybe<SortOrderEnum>;
-  readonly internal: InputMaybe<InternalSortInput>;
-  readonly pages: InputMaybe<SortOrderEnum>;
-  readonly parent: InputMaybe<NodeSortInput>;
-};
-
-type SiteSearchIndex_IndexQueryOperatorInput = {
-  readonly eq: InputMaybe<Scalars['SiteSearchIndex_Index']>;
-  readonly in: InputMaybe<ReadonlyArray<InputMaybe<Scalars['SiteSearchIndex_Index']>>>;
-  readonly ne: InputMaybe<Scalars['SiteSearchIndex_Index']>;
-  readonly nin: InputMaybe<ReadonlyArray<InputMaybe<Scalars['SiteSearchIndex_Index']>>>;
-};
-
 type SiteSiteMetadata = {
+  readonly author: Maybe<Scalars['String']>;
   readonly description: Maybe<Scalars['String']>;
+  readonly image: Maybe<Scalars['String']>;
+  readonly siteUrl: Maybe<Scalars['String']>;
   readonly title: Maybe<Scalars['String']>;
+  readonly titleTemplate: Maybe<Scalars['String']>;
+  readonly twitterUsername: Maybe<Scalars['String']>;
 };
 
 type SiteSiteMetadataFieldSelector = {
+  readonly author: InputMaybe<FieldSelectorEnum>;
   readonly description: InputMaybe<FieldSelectorEnum>;
+  readonly image: InputMaybe<FieldSelectorEnum>;
+  readonly siteUrl: InputMaybe<FieldSelectorEnum>;
   readonly title: InputMaybe<FieldSelectorEnum>;
+  readonly titleTemplate: InputMaybe<FieldSelectorEnum>;
+  readonly twitterUsername: InputMaybe<FieldSelectorEnum>;
 };
 
 type SiteSiteMetadataFilterInput = {
+  readonly author: InputMaybe<StringQueryOperatorInput>;
   readonly description: InputMaybe<StringQueryOperatorInput>;
+  readonly image: InputMaybe<StringQueryOperatorInput>;
+  readonly siteUrl: InputMaybe<StringQueryOperatorInput>;
   readonly title: InputMaybe<StringQueryOperatorInput>;
+  readonly titleTemplate: InputMaybe<StringQueryOperatorInput>;
+  readonly twitterUsername: InputMaybe<StringQueryOperatorInput>;
 };
 
 type SiteSiteMetadataSortInput = {
+  readonly author: InputMaybe<SortOrderEnum>;
   readonly description: InputMaybe<SortOrderEnum>;
+  readonly image: InputMaybe<SortOrderEnum>;
+  readonly siteUrl: InputMaybe<SortOrderEnum>;
   readonly title: InputMaybe<SortOrderEnum>;
+  readonly titleTemplate: InputMaybe<SortOrderEnum>;
+  readonly twitterUsername: InputMaybe<SortOrderEnum>;
 };
 
 type SiteSortInput = {
   readonly buildTime: InputMaybe<SortOrderEnum>;
   readonly children: InputMaybe<NodeSortInput>;
-  readonly default: InputMaybe<SiteDefaultSortInput>;
+  readonly flags: InputMaybe<SiteFlagsSortInput>;
+  readonly graphqlTypegen: InputMaybe<SiteGraphqlTypegenSortInput>;
   readonly host: InputMaybe<SortOrderEnum>;
   readonly id: InputMaybe<SortOrderEnum>;
   readonly internal: InputMaybe<InternalSortInput>;
+  readonly jsxRuntime: InputMaybe<SortOrderEnum>;
   readonly parent: InputMaybe<NodeSortInput>;
+  readonly pathPrefix: InputMaybe<SortOrderEnum>;
+  readonly polyfill: InputMaybe<SortOrderEnum>;
   readonly port: InputMaybe<SortOrderEnum>;
   readonly siteMetadata: InputMaybe<SiteSiteMetadataSortInput>;
+  readonly trailingSlash: InputMaybe<SortOrderEnum>;
 };
 
 type SortOrderEnum =

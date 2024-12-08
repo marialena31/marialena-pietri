@@ -32,7 +32,13 @@ const config: GatsbyConfig = {
       options: {
         htmlAttributes: {
           lang: 'fr'
-        }
+        },
+        meta: [
+          {
+            name: 'permissions-policy',
+            content: 'accelerometer=(),camera=(),display-capture=(),encrypted-media=(),fullscreen=(),geolocation=(),gyroscope=(),microphone=(),payment=(),picture-in-picture=(),screen-wake-lock=(),usb=()'
+          }
+        ]
       }
     },
     {
