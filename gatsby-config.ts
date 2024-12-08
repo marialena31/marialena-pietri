@@ -36,7 +36,7 @@ const config: GatsbyConfig = {
         meta: [
           {
             name: 'permissions-policy',
-            content: 'accelerometer=(),camera=(),display-capture=(),encrypted-media=(),fullscreen=(),geolocation=(),gyroscope=(),microphone=(),payment=(),picture-in-picture=(),screen-wake-lock=(),usb=()'
+            content: 'accelerometer=(),camera=(),display-capture=(),encrypted-media=(),fullscreen=(),geolocation=(),gyroscope=(),microphone=(),payment=(),picture-in-picture=self,screen-wake-lock=(),usb=()'
           }
         ]
       }

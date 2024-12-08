@@ -18,4 +18,4 @@
 [[headers]]
   for = "/*"
   [headers.values]
-    Permissions-Policy = "accelerometer=(),camera=(),display-capture=(),encrypted-media=(),fullscreen=(),geolocation=(),gyroscope=(),microphone=(),payment=(),picture-in-picture=(),screen-wake-lock=(),usb=()"
+    Permissions-Policy = "accelerometer=(),camera=(),display-capture=(),encrypted-media=(),fullscreen=(),geolocation=(),gyroscope=(),microphone=(),payment=(),picture-in-picture=self,screen-wake-lock=(),usb=()"
