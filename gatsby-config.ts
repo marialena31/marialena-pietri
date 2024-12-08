@@ -27,28 +27,7 @@ const config: GatsbyConfig = {
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sitemap`,
-    {
-      resolve: 'gatsby-plugin-csp',
-      options: {
-        mergeDefaultDirectives: true,
-        directives: {
-          "default-src": "'self'",
-          "script-src": "'self' https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/ https://*.netlify.app https://*.netlify.com",
-          "script-src-elem": "'self' https://*.netlify.app https://*.netlify.com",
-          "style-src": "'self' https://fonts.googleapis.com https://*.netlify.app https://*.netlify.com",
-          "img-src": "'self' data: https: blob:",
-          "font-src": "'self' data: https://fonts.gstatic.com",
-          "connect-src": "'self' https://mail-server-api-nu.vercel.app http://localhost:3000 https://*.netlify.app https://*.netlify.com",
-          "frame-src": "https://www.google.com/recaptcha/ https://*.netlify.app https://*.netlify.com",
-          "base-uri": "'self'",
-          "form-action": "'self'",
-          "object-src": "'none'",
-          "manifest-src": "'self'",
-          "media-src": "'self'",
-          "worker-src": "'self' blob: data:",
-        }
-      }
-    },
+    // Removed CSP plugin configuration
     {
       resolve: 'gatsby-plugin-react-helmet',
       options: {
