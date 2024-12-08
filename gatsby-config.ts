@@ -102,29 +102,7 @@ const config: GatsbyConfig = {
         name: `i18n`,
         path: `${__dirname}/src/i18n/data`,
       },
-    },
-    {
-      resolve: 'gatsby-plugin-csp',
-      options: {
-        mergeDefaultDirectives: true,
-        directives: {
-          "default-src": "'self'",
-          "script-src": "'self' 'nonce-gatsby-*' 'nonce-react-*' 'nonce-mui-*' https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/ https://fonts.googleapis.com https://fonts.gstatic.com https://*.netlify.app https://*.netlify.com",
-          "script-src-elem": "'self' 'nonce-gatsby-*' 'nonce-react-*' 'nonce-mui-*' https://*.netlify.app https://*.netlify.com",
-          "style-src": "'self' 'nonce-gatsby-*' 'nonce-react-*' 'nonce-mui-*' https://fonts.googleapis.com https://*.netlify.app https://*.netlify.com",
-          "img-src": "'self' data: https: blob:",
-          "font-src": "'self' data: https://fonts.gstatic.com",
-          "connect-src": "'self' https://mail-server-api-nu.vercel.app http://localhost:3000 https://*.netlify.app https://*.netlify.com",
-          "frame-src": "https://www.google.com/recaptcha/ https://*.netlify.app https://*.netlify.com",
-          "base-uri": "'self'",
-          "form-action": "'self'",
-          "object-src": "'none'",
-          "manifest-src": "'self'",
-          "media-src": "'self'",
-          "worker-src": "'self' blob: data:",
-        }
-      }
-    },
+    }
   ],
 }
 
